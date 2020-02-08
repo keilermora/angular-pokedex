@@ -1,1 +1,7 @@
-<p>home works!</p>
+<main>
+  <div class="pokemon-list">
+    <ng-container *ngFor="let pokemon of pokemons; let i = index">
+      <app-pokemon-card number="{{ i }}" name="{{ pokemon.name }}"></app-pokemon-card>
+    </ng-container>
+  </div>
+</main>

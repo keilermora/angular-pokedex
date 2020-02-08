@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../../shared/shared.module';
 
 import { HomeComponent } from './home.component';
+import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
 
 const routes: Routes = [
   {
@@ -15,9 +16,11 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     HomeComponent,
+    PokemonCardComponent,
   ],
   imports: [
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    SharedModule
   ]
 })
 export class HomeModule { }

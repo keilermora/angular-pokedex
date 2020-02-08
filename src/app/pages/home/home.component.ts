@@ -7,6 +7,7 @@ import { PokemonService } from '../../core/services/pokemon.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  pokemons: any[];
 
   constructor(
     private pokemonService: PokemonService
@@ -14,8 +15,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.pokemonService.getPokemons(150).subscribe(value => {
-      console.log(value);
+      this.pokemons = value.results;
     });
   }
-
 }
