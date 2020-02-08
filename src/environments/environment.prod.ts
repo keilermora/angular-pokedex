@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  pokeApi: 'https://pokeapi.co/api/v2',
 };
