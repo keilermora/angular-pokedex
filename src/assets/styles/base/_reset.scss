@@ -1,0 +1,22 @@
+@import "typography";
+
+html {
+  /// Evitar el scroll horizontal
+  max-width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  /// Establecer Pokemon Font como fuente principal
+  font-size: 10px;
+  font-family: $pokemonFont;
+
+  /// Corregir el alisado de letras en MACOS
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /// Evitar el scroll horizontal
+  max-width: 100%;
+  overflow-x: hidden;
+}

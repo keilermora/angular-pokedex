@@ -54,6 +54,6 @@ export class PokemonCardComponent implements OnInit {
    */
   formatNumber(position: number): string {
     position++;
-    return '#' + (position.toString()).padStart(3, '0');
+    return (position.toString()).padStart(3, '0');
   }
 }
