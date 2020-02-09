@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-sidenav',
@@ -9,6 +9,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 export class SidenavComponent implements OnInit {
   showNav: boolean;
   faBars = faBars;
+  faTimes = faTimes;
 
   constructor() { }
 
