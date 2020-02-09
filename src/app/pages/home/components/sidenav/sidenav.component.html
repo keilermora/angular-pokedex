@@ -4,17 +4,17 @@
       <fa-icon [icon]="showNav ? faTimes : faBars"></fa-icon>
     </button>
     <div class="filter">
-      <div>
-        <input type="radio" id="huey" name="drone" value="huey" checked>
-        <label for="huey">Green</label>
-      </div>
-      <div>
-        <input type="radio" id="dewey" name="drone" value="dewey">
-        <label for="dewey">Red & Blue</label>
-      </div>
-      <div>
-        <input type="radio" id="louie" name="drone" value="louie">
-        <label for="louie">Yellow</label>
+      <span>Version</span>
+      <div *ngFor="let version of pokedexVersions">
+        <input
+          type="radio"
+          id="version-{{ version.id }}"
+          name="version"
+          [value]="version.id"
+          [(ngModel)]="currentVersionId"
+          (change)="changeVersion(version.id)"
+        >
+        <label for="version-{{ version.id }}">{{ version.name }}</label>
       </div>
     </div>
   </div>

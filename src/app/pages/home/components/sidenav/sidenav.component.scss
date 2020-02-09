@@ -1,7 +1,7 @@
 @import "base/colors";
 
 $open-sidenav-width: 250px;
-$open-content-width: 240px;
+$open-content-width: 236px;
 $closed-sidenav-width: 45px;
 $closed-content-width: 32px;
 
@@ -34,10 +34,10 @@ $closed-content-width: 32px;
       border: 1px solid white;
       box-shadow: 0 1px 0 1px black, inset 0 1px 0 1px black, 0 0 0 1px black, inset 0 0 0 1px black;
       border-radius: 2px;
-      padding: 4px;
+      padding: 8px;
       opacity: 1;
       transition: 500ms;
-      width: 225px;
+      width: 218px;
     }
   }
 
