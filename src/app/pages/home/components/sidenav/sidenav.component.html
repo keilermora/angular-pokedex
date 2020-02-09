@@ -1,0 +1,21 @@
+<aside class="sidenav" [ngClass]="{ 'closed': !showNav }">
+  <div class="content">
+    <button class="toggle-nav-btn" (click)="toggleNav()">
+      <fa-icon [icon]="faBars"></fa-icon>
+    </button>
+    <div class="filter">
+      <div>
+        <input type="radio" id="huey" name="drone" value="huey" checked>
+        <label for="huey">Green</label>
+      </div>
+      <div>
+        <input type="radio" id="dewey" name="drone" value="dewey">
+        <label for="dewey">Red & Blue</label>
+      </div>
+      <div>
+        <input type="radio" id="louie" name="drone" value="louie">
+        <label for="louie">Yellow</label>
+      </div>
+    </div>
+  </div>
+</aside>

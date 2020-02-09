@@ -9,7 +9,7 @@ html {
 
 body {
   /// Establecer Pokemon Font como fuente principal
-  font-size: 10px;
+  font-size: 14px;
   font-family: $pokemonFont;
 
   /// Corregir el alisado de letras en MACOS
@@ -19,4 +19,13 @@ body {
   /// Evitar el scroll horizontal
   max-width: 100%;
   overflow-x: hidden;
+
+  margin: 55px 0 0;
+
+  a:focus,
+  button:focus {
+    /// Eliminar la línea azul en el elemento señalado
+    outline-width: 0;
+    box-shadow: none !important;
+  }
 }

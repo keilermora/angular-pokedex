@@ -1,0 +1,12 @@
+@import "base/colors";
+
+.navbar {
+  position: fixed;
+  background-color: $black;
+  color: $white;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  text-align: right;
+}

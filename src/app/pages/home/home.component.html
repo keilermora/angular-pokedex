@@ -1,4 +1,6 @@
-<main>
+<main class="home">
+  <app-sidenav></app-sidenav>
+
   <div class="pokemon-list">
     <ng-container *ngFor="let pokemon of pokemons; let i = index">
       <app-pokemon-card number="{{ i }}" name="{{ pokemon.name }}"></app-pokemon-card>

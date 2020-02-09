@@ -5,6 +5,7 @@ import { SharedModule } from '../../shared/shared.module';
 
 import { HomeComponent } from './home.component';
 import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,7 @@ const routes: Routes = [
   declarations: [
     HomeComponent,
     PokemonCardComponent,
+    SidenavComponent,
   ],
   imports: [
     RouterModule.forChild(routes),

@@ -1,0 +1,49 @@
+@import "base/colors";
+
+$open-sidenav-width: 200px;
+$closed-sidenav-width: 40px;
+
+.sidenav {
+  overflow: hidden;
+  position: relative;
+  width: $open-sidenav-width;
+  transition: 500ms;
+  text-align: right;
+
+  .content {
+    position: fixed;
+    top:55px;
+    left: 0;
+    transition: 500ms;
+    width: $open-sidenav-width;
+    overflow: hidden;
+
+    .toggle-nav-btn {
+      z-index: 1;
+      cursor: pointer;
+      background-color: $white;
+      border: none;
+      font-size: 24px;
+    }
+
+    .filter {
+      text-align: left;
+      opacity: 1;
+      transition: 250ms;
+      width: $open-sidenav-width;
+    }
+  }
+
+  &.closed {
+    width: $closed-sidenav-width;
+
+    .content {
+      opacity: 1;
+      width: $closed-sidenav-width;
+
+      .filter {
+        opacity: 0;
+      }
+    }
+  }
+}
