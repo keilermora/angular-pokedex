@@ -4,8 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../../shared/shared.module';
 
 import { HomeComponent } from './home.component';
-import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 
 const routes: Routes = [
   {
@@ -17,8 +17,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     HomeComponent,
-    PokemonCardComponent,
     SidenavComponent,
+    PokemonListComponent,
   ],
   imports: [
     RouterModule.forChild(routes),

@@ -1,0 +1,10 @@
+<div class="pokemon-list">
+  <ng-container *ngFor="let pokemon of pokemons; let i = index">
+    <div class="pokemon-card">
+      <div class="image" [ngStyle]="calcSpritePosition(i)">
+      </div>
+      <span class="number">{{ i + 1 | pokemonNumber }}</span>
+      <span class="name">{{ pokemon.name | pokemonName }}</span>
+    </div>
+  </ng-container>
+</div>
