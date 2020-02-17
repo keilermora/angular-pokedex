@@ -1,3 +1,7 @@
 @charset "UTF-8";
 
-@import "assets/styles/base/reset";
+// Base
+@import "base/reset";
+
+// Themes
+@import "themes/game-boy";
