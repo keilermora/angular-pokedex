@@ -1,22 +1,16 @@
 @import "base/colors";
 
-$open-sidenav-width: 250px;
-$open-content-width: 236px;
-$closed-sidenav-width: 45px;
-$closed-content-width: 32px;
-
 .sidenav {
   overflow: hidden;
-  position: relative;
-  width: $open-sidenav-width;
-  transition: 500ms;
+  width: 250px;
+  transition: 250ms;
+  position: sticky;
+  top: 70px;
 
   .content {
-    position: fixed;
-    top: 59px;
-    left: 10px;
-    transition: 500ms;
-    width: $open-content-width;
+    position: relative;
+    margin: 4px 20px;
+    transition: 250ms;
 
     .toggle-nav-btn {
       z-index: 1;
@@ -26,31 +20,24 @@ $closed-content-width: 32px;
       font-size: 24px;
       position: absolute;
       top: 4px;
-      right: 8px;
-      transition: 500ms;
+      right: 4px;
     }
 
     .filter {
-      border: 1px solid white;
-      box-shadow: 0 1px 0 1px black, inset 0 1px 0 1px black, 0 0 0 1px black, inset 0 0 0 1px black;
-      border-radius: 2px;
       padding: 8px;
       opacity: 1;
-      transition: 500ms;
-      width: 218px;
+      white-space: nowrap;
+      overflow: hidden;
+      transition: 250ms;
     }
   }
 
   &.closed {
-    width: $closed-sidenav-width;
+    width: 45px;
 
     .content {
+      margin: 3px 0;
       opacity: 1;
-      width: $closed-content-width;
-
-      .toggle-nav-btn {
-        right: 0;
-      }
 
       .filter {
         opacity: 0;

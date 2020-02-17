@@ -1,3 +1,5 @@
 .home {
-  display: flex;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  padding: 70px 0 50px;
 }
