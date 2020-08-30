@@ -5,15 +5,15 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('src/app/pages/home/home.module').then(m => m.HomeModule),
+    loadChildren: () => import('@modules/home/home.module').then(m => m.HomeModule),
   },
   {
     path: 'pokemon/:id',
-    loadChildren: () => import('src/app/pages/pokemon-details/pokemon-details.module').then(m => m.PokemonDetailsModule),
+    loadChildren: () => import('@modules/pokemon-details/pokemon-details.module').then(m => m.PokemonDetailsModule),
   },
   {
     path: '**',
-    loadChildren: () => import('src/app/pages/not-found/not-found.module').then(m => m.NotFoundModule),
+    loadChildren: () => import('@modules/not-found/not-found.module').then(m => m.NotFoundModule),
   },
 ];
 

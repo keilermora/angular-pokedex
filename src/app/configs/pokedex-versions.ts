@@ -1,4 +1,4 @@
-import { PokedexVersion } from '../shared/models/pokedex-version';
+import { PokedexVersion } from '@data/types/pokedex-version';
 
 const IMG_PATH = '/assets/images';
 
