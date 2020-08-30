@@ -12,7 +12,7 @@
           name="version"
           [value]="version.id"
           [(ngModel)]="currentVersionId"
-          (change)="changeVersion(version.id)"
+          (change)="changeVersion(version)"
         >
         <label for="version-{{ version.id }}">{{ version.name }}</label>
       </div>

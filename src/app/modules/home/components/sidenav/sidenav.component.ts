@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
-import { pokedexVersions } from '../../../../configs/pokedex-versions';
 import { PokedexVersion } from '@data/types/pokedex-version';
+import { PokedexService } from '@data/services/pokedex.service';
 
 @Component({
   selector: 'app-sidenav',
@@ -14,16 +14,20 @@ export class SidenavComponent implements OnInit {
   faTimes = faTimes;
 
   showNav: boolean = true;
-  pokedexVersions: PokedexVersion[] = pokedexVersions;
+  pokedexVersions: PokedexVersion[];
   currentVersionId: number = 1;
 
-  constructor() { }
+  constructor(
+    private pokedexService: PokedexService
+  ) {
+    this.pokedexVersions = this.pokedexService.getPokedexVersions();
+  }
 
   ngOnInit() {
   }
 
-  changeVersion(version: number) {
-    this.currentVersionId = version;
+  changeVersion(version: PokedexVersion) {
+    this.pokedexService.setPokedexVersion(version);
   }
 
   toggleNav(): void {
