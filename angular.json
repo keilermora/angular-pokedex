@@ -132,6 +132,6 @@
   },
   "defaultProject": "pokedex",
   "cli": {
-    "analytics": false
+    "analytics": true
   }
 }
