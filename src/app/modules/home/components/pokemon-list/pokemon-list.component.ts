@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '@data/services/pokemon.service';
-import { Observable } from 'rxjs';
 import { Pokedex } from '@data/types/pokedex';
 import { PokedexService } from '@data/services/pokedex.service';
 
@@ -25,7 +24,6 @@ export class PokemonListComponent implements OnInit {
   }
 
   ngOnInit() {
-
   }
 
   /**

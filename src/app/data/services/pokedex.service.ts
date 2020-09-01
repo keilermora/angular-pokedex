@@ -16,11 +16,11 @@ export class PokedexService {
     const IMG_PATH = '/assets/images';
     this.pokedexVersions = [
       new PokedexVersion(1, 'Green', `${IMG_PATH}/pokemon-green.png`, 151),
-      new PokedexVersion(2, 'Red & Blue', `${IMG_PATH}/pokemon-green.png`, 151),
-      new PokedexVersion(3, 'Yellow', `${IMG_PATH}/pokemon-green.png`, 151),
-      new PokedexVersion(4, 'Gold', `${IMG_PATH}/pokemon-green.png`, 251),
-      new PokedexVersion(5, 'Silver', `${IMG_PATH}/pokemon-green.png`, 251),
-      new PokedexVersion(6, 'Crystal', `${IMG_PATH}/pokemon-green.png`, 251),
+      new PokedexVersion(2, 'Red & Blue', `${IMG_PATH}/pokemon-red-and-blue.png`, 151),
+      new PokedexVersion(3, 'Yellow', `${IMG_PATH}/pokemon-yellow.png`, 151),
+      new PokedexVersion(4, 'Gold', `${IMG_PATH}/pokemon-gold.png`, 251),
+      new PokedexVersion(5, 'Silver', `${IMG_PATH}/pokemon-silver.png`, 251),
+      new PokedexVersion(6, 'Crystal', `${IMG_PATH}/pokemon-gold.png`, 251),
     ];
 
     this.pokedex = new Pokedex(this.pokedexVersions[0]);
