@@ -5,8 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class PokemonNamePipe implements PipeTransform {
 
-  transform(value: string): string {
-    return value
+  transform(name: string): string {
+    return name
       .replace(/-f$/g, '♀')
       .replace(/-m$/g, '♂')
       .replace(/^mr-/g, 'Mr. ');

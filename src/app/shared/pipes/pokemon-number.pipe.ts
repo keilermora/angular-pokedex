@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class PokemonNumberPipe implements PipeTransform {
 
-  transform(value: number): string {
-    return value.toString().padStart(3, '0');
+  transform(number: number): string {
+    return number.toString().padStart(3, '0');
   }
 }
