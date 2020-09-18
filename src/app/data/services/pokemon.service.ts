@@ -10,12 +10,15 @@ import  { environment } from '@env';
 })
 export class PokemonService {
 
-  private pokemons: any[] = [];
+  private pokemons: any[];
   private pokemonsObservable: Observable<any> | null = null;
 
   constructor(
     private http: HttpClient
-  ) { }
+  ) {
+    const pokemons = localStorage.getItem('pokemons');
+    this.pokemons = pokemons ? JSON.parse(pokemons) : [];
+  }
 
   /**
    * Obtener la lista de Pokémon.
@@ -31,6 +34,7 @@ export class PokemonService {
         .pipe(map((response:any) => {
           this.pokemonsObservable = null;
           this.pokemons = response.results;
+          localStorage.setItem('pokemons', JSON.stringify(this.pokemons));
           return this.pokemons;
         })).pipe(share());
 
