@@ -51,8 +51,18 @@ export class PokedexService {
   /**
    * Actualizar la versión la Pokédex
    */
-  setPokedexVersion(version: PokedexVersion): void {
-    this.pokedex.version = version;
+  setPokedexVersion(versionId: number): void {
+    const pokedexVersion = this.pokedexVersions.find((version) => {
+      return version.id === versionId;
+    });
+
+    if(!pokedexVersion) {
+      console.warn(`La versión de Pokédex ${versionId} no existe. Se mostrará la primera versión por defecto`);
+      this.pokedex.version = this.pokedexVersions[0];
+    } else {
+      this.pokedex.version = pokedexVersion
+    }
+
     this.refresh();
   }
 }

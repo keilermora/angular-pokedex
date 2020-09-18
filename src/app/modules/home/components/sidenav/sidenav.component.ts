@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import { PokedexVersion } from '@data/types/pokedex-version';
@@ -18,16 +19,36 @@ export class SidenavComponent implements OnInit {
   currentVersionId: number = 1;
 
   constructor(
-    private pokedexService: PokedexService
+    private pokedexService: PokedexService,
+    private route: ActivatedRoute,
+    private router: Router
   ) {
     this.pokedexVersions = this.pokedexService.getPokedexVersions();
   }
 
   ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      const versionId = params['version'];
+
+      if(versionId) {
+        this.currentVersionId = parseInt(versionId);
+        this.pokedexService.setPokedexVersion(parseInt(versionId));
+      }
+    });
   }
 
-  changeVersion(version: PokedexVersion) {
-    this.pokedexService.setPokedexVersion(version);
+  changeVersion(versionId: number) {
+
+    // Establecer la versión de la Pokédex
+    this.pokedexService.setPokedexVersion(versionId);
+
+    // Actualizar query param
+    this.router.navigate([], {
+      queryParams: {
+        version: versionId,
+      },
+      queryParamsHandling: 'merge',
+    });
   }
 
   toggleNav(): void {

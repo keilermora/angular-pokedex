@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '@data/services/pokemon.service';
 import { Pokedex } from '@data/types/pokedex';
 import { PokedexService } from '@data/services/pokedex.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -13,6 +14,7 @@ export class PokemonListComponent implements OnInit {
   pokemons: any[] = [];
 
   constructor(
+    private route: ActivatedRoute,
     private pokedexService: PokedexService,
     private pokemonService: PokemonService
   ) {

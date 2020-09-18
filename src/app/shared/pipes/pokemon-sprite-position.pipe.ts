@@ -16,7 +16,6 @@ export class PokemonSpritePositionPipe implements PipeTransform {
     const numberDiv = parseFloat((position / 10).toString()).toFixed(1);
     const posX = parseInt(numberDiv.substring(numberDiv.toString().length - 1), 10) * 56;
     const posY = Math.floor(parseFloat(numberDiv)) * 56;
-    console.log(position);
 
     return {
       backgroundImage: `url(${pokedexVersion.spritesUrl})`,
