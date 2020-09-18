@@ -6,6 +6,8 @@ html {
   overflow-x: hidden;
   scroll-behavior: smooth;
 
+  height: 100%;
+
   body {
     /// Establecer Pokémon Font como fuente principal
     font-size: 14px;
@@ -18,6 +20,10 @@ html {
     /// Evitar el scroll horizontal
     max-width: 100%;
 
+    /// Mostrar siempre el scroll vertical
+    overflow-y: scroll;
+
+    height: 100%;
     margin: 0;
 
     a:focus,

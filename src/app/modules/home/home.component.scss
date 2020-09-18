@@ -1,5 +1,7 @@
 .home {
   display: grid;
   grid-template-columns: min-content 1fr;
-  padding: 70px 0 50px;
+  padding: 25px 0 0;
+  height: 100%;
+  padding-bottom: 25px;
 }
