@@ -29,11 +29,8 @@ export class SidenavComponent implements OnInit {
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
       const versionId = params['version'];
-
-      if(versionId) {
-        this.currentVersionId = parseInt(versionId);
-        this.pokedexService.setPokedexVersion(parseInt(versionId));
-      }
+      this.currentVersionId = versionId ? parseInt(versionId) : 1;
+      this.pokedexService.setPokedexVersion(this.currentVersionId);
     });
   }
 
