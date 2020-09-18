@@ -7,7 +7,7 @@ html {
   scroll-behavior: smooth;
 
   body {
-    /// Establecer Pokemon Font como fuente principal
+    /// Establecer Pokémon Font como fuente principal
     font-size: 14px;
     font-family: $pokemonFont;
 
@@ -24,7 +24,7 @@ html {
     button:focus {
       /// Eliminar la línea azul en el elemento señalado
       outline-width: 0;
-      box-shadow: none !important;
+      box-shadow: none;
     }
   }
 }
