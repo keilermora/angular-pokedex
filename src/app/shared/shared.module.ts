@@ -26,9 +26,9 @@ import { PokemonSpritePositionPipe } from './pipes/pokemon-sprite-position.pipe'
   exports: [
     CommonModule,
     FontAwesomeModule,
-    FooterComponent,
     FormsModule,
     NavbarComponent,
+    FooterComponent,
     PokemonImageUrlPipe,
     PokemonNamePipe,
     PokemonNumberPipe,

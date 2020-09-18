@@ -3,7 +3,7 @@
     <button class="toggle-nav-btn" (click)="toggleNav()">
       <fa-icon [icon]="showNav ? faTimes : faBars"></fa-icon>
     </button>
-    <div class="filter container-theme">
+    <div class="filter">
       <span>Version</span>
       <div *ngFor="let version of pokedexVersions">
         <input

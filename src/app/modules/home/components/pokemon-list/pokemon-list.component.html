@@ -1,11 +1,9 @@
-<div class="pokemon-list">
+<div class="pokemon-list" *ngIf="pokedex && pokedex.version">
   <ng-container *ngFor="let pokemon of pokemons; let i = index">
-    <div class="pokemon-card container-theme">
-      <ng-container *ngIf="pokedex && pokedex.version">
-        <div *ngIf="!pokedex.version.animated" class="image" [ngStyle]="i | pokemonSpritePosition : pokedex.version">
-        </div>
-        <img *ngIf="pokedex.version.animated" [src]="i | pokemonImageUrl : pokedex.version" alt="" width="60" height="60">
-      </ng-container>
+    <div class="pokemon-card">
+      <div *ngIf="!pokedex.version.animated" class="image" [ngStyle]="i | pokemonSpritePosition : pokedex.version">
+      </div>
+      <img *ngIf="pokedex.version.animated" [src]="i | pokemonImageUrl : pokedex.version" alt="" width="56" height="56">
       <span class="number">{{ i + 1 | pokemonNumber }}</span>
       <span class="name">{{ pokemon.name | pokemonName }}</span>
     </div>

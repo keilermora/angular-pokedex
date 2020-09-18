@@ -1,0 +1,13 @@
+@import "../utils/colors";
+
+input[type=radio] {
+  & + label {
+    cursor: pointer;
+    padding-left: 8px;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $crimson;
+    }
+  }
+}

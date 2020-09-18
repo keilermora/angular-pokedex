@@ -1,9 +1,9 @@
-@import "../../../../styles/base/colors";
+@import "../../../../styles/utils/colors";
 @import "../../../../styles/utils/z-index";
 
 .navbar {
   position: fixed;
-  background-color: $black;
+  background-color: $shark;
   color: $white;
   top: 0;
   left: 0;

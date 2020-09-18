@@ -1,13 +1,6 @@
-@import "../base/colors";
+@import "../utils/colors";
 
 .game-boy-theme {
   background: url("~assets/images/game-boy-background.png") repeat fixed;
   background-size: 8px;
-
-  .container-theme {
-    background-color: $white;
-    border: 1px solid $white;
-    box-shadow: 0 1px 0 1px $black, inset 0 1px 0 1px $black, 0 0 0 1px $black, inset 0 0 0 1px $black;
-    border-radius: 2px;
-  }
 }
