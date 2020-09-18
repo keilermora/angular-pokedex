@@ -1,9 +1,9 @@
 import { PokedexVersion } from './pokedex-version';
 
 export class Pokedex {
-  version: PokedexVersion;
+  version: PokedexVersion | null;
 
-  constructor(version: PokedexVersion) {
+  constructor(version: PokedexVersion | null) {
     this.version = version;
   }
 }

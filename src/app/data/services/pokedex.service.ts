@@ -23,7 +23,7 @@ export class PokedexService {
       new PokedexVersion(6, 'Crystal', `${IMG_PATH}/pokemon-crystal`, true, 251),
     ];
 
-    this.pokedex = new Pokedex(this.pokedexVersions[0]);
+    this.pokedex = new Pokedex(null);
     this.pokedexSubject = new BehaviorSubject(this.pokedex);
   }
 
