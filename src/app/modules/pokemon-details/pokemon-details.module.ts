@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+import { SharedModule } from '@shared/shared.module';
+
 import { PokemonDetailsComponent } from './pokemon-details.component';
 
 const routes: Routes = [
@@ -14,7 +17,8 @@ const routes: Routes = [
     PokemonDetailsComponent,
   ],
   imports: [
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    SharedModule,
   ]
 })
 export class PokemonDetailsModule { }

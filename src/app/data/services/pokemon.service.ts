@@ -20,6 +20,10 @@ export class PokemonService {
     this.pokemons = pokemons ? JSON.parse(pokemons) : [];
   }
 
+  getPokemon(pokemonId: number): Observable<any> {
+    return this.http.get(`${environment.pokeApi}/pokemon/${pokemonId}`);
+  }
+
   /**
    * Obtener la lista de Pokémon.
    * La petición se hará 1 vez a la api, mientras que se tengan todos los pokémon solicitados
@@ -40,5 +44,9 @@ export class PokemonService {
 
       return this.pokemonsObservable;
     }
+  }
+
+  getPokemonSpecie(pokemonId: number): Observable<any> {
+    return this.http.get(`${environment.pokeApi}/pokemon-species/${pokemonId}`);
   }
 }

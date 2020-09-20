@@ -22,5 +22,4 @@ export class PokemonSpritePositionPipe implements PipeTransform {
       backgroundPosition: `-${posX}px -${posY}px`,
     };
   }
-
 }

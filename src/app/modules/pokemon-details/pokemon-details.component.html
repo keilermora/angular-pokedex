@@ -1,1 +1,47 @@
-<p>pokemon-details works! {{ id }}</p>
+<section class="pokemon-details" [ngClass]="pokemon ? pokemon.types[0].type.name : ''">
+  <div class="pokemon" *ngIf="pokemon">
+
+    <!-- Imagen -->
+    <div class="image container-theme" [ngClass]="pokemon.types[0].type.name">
+      <img [src]="pokemon.sprites.other['official-artwork'].front_default" [alt]="pokemon.name" width="270" height="270">
+    </div>
+
+    <!-- Detalles -->
+    <div class="details container-theme" [ngClass]="pokemon.types[0].type.name">
+      <ul>
+        <li><span class="number">#{{ pokemon.id | pokemonNumber }}</span></li>
+        <li><span class="name">{{ pokemon.name | pokemonName }}</span></li>
+        <li>
+          <ng-container *ngFor="let pokemonType of pokemon.types">
+            <span class="type" [ngClass]="pokemonType.type.name">{{ pokemonType.type.name | pokemonType }}</span>
+          </ng-container>
+        </li>
+      </ul>
+
+      <table>
+        <tr>
+          <td class="stat-name">Altura</td>
+          <td class="stat-value">{{ pokemon.height | pokemonHeight }}</td>
+        </tr>
+        <tr>
+          <td class="stat-name">Peso</td>
+          <td class="stat-value">{{ pokemon.weight | pokemonWeight }}</td>
+        </tr>
+        <tr *ngFor="let pokemonStat of pokemon.stats">
+          <td class="stat-name">{{ pokemonStat.stat.name | pokemonStat }}</td>
+          <td class="stat-value">{{ pokemonStat.base_stat }}</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Más detalles -->
+    <div class="more-details container-theme" [ngClass]="pokemon.types[0].type.name">
+      <h2 *ngIf="pokemonGenera">{{ pokemonGenera.genus }}</h2>
+      <ng-container *ngFor="let textEntry of pokemonFlavorTextEntries">
+        <p [ngClass]="textEntry.version.name">
+          <span class="pokedex-version-name">{{ textEntry.version.name | pokedexVersionName }}</span>: {{ textEntry.flavor_text }}
+        </p>
+      </ng-container>
+    </div>
+  </div>
+</section>
