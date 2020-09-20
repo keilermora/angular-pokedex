@@ -28,7 +28,6 @@
     }
 
     .image {
-      background-color: $white;
       grid-row-start: 1;
 
       display: flex;
@@ -44,7 +43,6 @@
     }
 
     .details {
-      background-color: $white;
       grid-row-start: 1;
       grid-row-end: 2;
       padding: 16px 24px;
@@ -108,7 +106,6 @@
 
     .more-details {
       padding: 16px 24px;
-      background-color: $white;
       grid-column-start: 1;
       grid-column-end: 3;
 

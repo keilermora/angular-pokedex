@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { FooterComponent } from './component/footer/footer.component';
@@ -32,6 +33,7 @@ import { PokedexVersionNamePipe } from './pipes/pokedex-version-name.pipe';
     CommonModule,
     FontAwesomeModule,
     FormsModule,
+    RouterModule,
   ],
   exports: [
     CommonModule,

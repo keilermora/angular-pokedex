@@ -1,0 +1,14 @@
+.about {
+  display: grid;
+  place-items: center;
+  min-height: 100%;
+
+  .about-container {
+    max-width: 602px;
+    padding: 0 25px 25px;
+
+    p {
+      margin: 0;
+    }
+  }
+}
