@@ -4,12 +4,16 @@
     <!-- Imagen -->
     <div class="image container-theme container-theme--large">
       <img [src]="pokemon.sprites.other['official-artwork'].front_default" [alt]="pokemon.name" width="270" height="270">
+      <div class="buttons-container">
+        <a *ngIf="pokemon.id - 1" class="button-theme button-theme--black" [routerLink]="'/pokemon/' + (pokemon.id - 1)">Ant.</a>
+        <div class="number container-theme container-theme--small">{{ pokemon.id | pokemonNumber }}</div>
+        <a class="button-theme button-theme--black" [routerLink]="'/pokemon/' + (pokemon.id + 1)">Sig.</a>
+      </div>
     </div>
 
     <!-- Detalles -->
     <div class="details container-theme container-theme--large">
       <ul>
-        <li><span class="number">#{{ pokemon.id | pokemonNumber }}</span></li>
         <li><span class="name">{{ pokemon.name | pokemonName }}</span></li>
         <li>
           <ng-container *ngFor="let pokemonType of pokemon.types">
@@ -42,6 +46,9 @@
           <span class="pokedex-version-name">{{ textEntry.version.name | pokedexVersionName }}</span>: {{ textEntry.flavor_text }}
         </p>
       </ng-container>
+      <a class="button-theme button-theme--black" routerLink="/">
+        Inicio
+      </a>
     </div>
   </div>
 </section>

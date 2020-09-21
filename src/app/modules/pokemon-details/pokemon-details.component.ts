@@ -16,6 +16,8 @@ export class PokemonDetailsComponent implements OnInit {
   pokemonGenera: PokemonGenera | null = null;
   pokemonFlavorTextEntries: PokemonFlavorTextEntry[] = [];
 
+  busy: boolean = false;
+
   constructor(
     private pokemonService: PokemonService,
     private route: ActivatedRoute
@@ -24,38 +26,39 @@ export class PokemonDetailsComponent implements OnInit {
   ngOnInit() {
     let pokemonId;
 
-    if(this.route && this.route.snapshot && this.route.snapshot.paramMap) {
-      let routeParamId = this.route.snapshot.paramMap.get('id');
+    this.route.paramMap.subscribe((paramMap) => {
+      this.busy = true;
+
+      let routeParamId = paramMap.get('id');
       pokemonId = routeParamId ? parseInt(routeParamId) : 0;
-    } else {
-      pokemonId = 0;
-    }
 
-    this.pokemonService.getPokemon(pokemonId).subscribe((pokemon) => {
-      this.pokemon = pokemon;
-    });
-
-    this.pokemonService.getPokemonSpecie(pokemonId).subscribe((pokemonSpecie) => {
-      // Obtener el tipo de Pokémon.
-      const pokemonGenera = pokemonSpecie.genera.find((genera: any) => {
-        return genera.language.name === 'es';
+      this.pokemonService.getPokemon(pokemonId).subscribe((pokemon) => {
+        this.pokemon = pokemon;
+        this.busy = false;
       });
 
-      // Obtener los registros de la Pokédex en español.
-      const pokemonFlavorTextEntriesES = pokemonSpecie.flavor_text_entries.filter((flavorTextEntry: PokemonFlavorTextEntry) => {
-        return flavorTextEntry.language.name === 'es';
-      });
-
-      // Eliminar duplicados.
-      const uniquePokemonFlavorTextEntries = pokemonFlavorTextEntriesES.reduce((accumulator: any, currentValue: PokemonFlavorTextEntry) => {
-        const x = accumulator.find((flavorTextEntry: PokemonFlavorTextEntry) => {
-          return flavorTextEntry.version.name === currentValue.version.name;
+      this.pokemonService.getPokemonSpecie(pokemonId).subscribe((pokemonSpecie) => {
+        // Obtener el tipo de Pokémon.
+        const pokemonGenera = pokemonSpecie.genera.find((genera: any) => {
+          return genera.language.name === 'es';
         });
-        return !x ? accumulator.concat([ currentValue ]) : accumulator;
-      }, []);
 
-      this.pokemonGenera = pokemonGenera;
-      this.pokemonFlavorTextEntries = uniquePokemonFlavorTextEntries;
-    });
+        // Obtener los registros de la Pokédex en español.
+        const pokemonFlavorTextEntriesES = pokemonSpecie.flavor_text_entries.filter((flavorTextEntry: PokemonFlavorTextEntry) => {
+          return flavorTextEntry.language.name === 'es';
+        });
+
+        // Eliminar duplicados.
+        const uniquePokemonFlavorTextEntries = pokemonFlavorTextEntriesES.reduce((accumulator: any, currentValue: PokemonFlavorTextEntry) => {
+          const x = accumulator.find((flavorTextEntry: PokemonFlavorTextEntry) => {
+            return flavorTextEntry.version.name === currentValue.version.name;
+          });
+          return !x ? accumulator.concat([ currentValue ]) : accumulator;
+        }, []);
+
+        this.pokemonGenera = pokemonGenera;
+        this.pokemonFlavorTextEntries = uniquePokemonFlavorTextEntries;
+      });
+    })
   }
 }
