@@ -4,7 +4,17 @@
 
 export const environment = {
   production: false,
+
+  // API
   pokeApi: 'https://pokeapi.co/api/v2',
+
+  // Páginas de referencias
+  homeAngular: 'https://angular.io/',
+  homePokeApi: 'https://pokeapi.co/',
+
+  // Redes sociales
+  keilerLinkedin: 'https://www.linkedin.com/in/keilermora/',
+  pokedexGithub: 'https://github.com/keilermora/pokedex',
 };
 
 /*
