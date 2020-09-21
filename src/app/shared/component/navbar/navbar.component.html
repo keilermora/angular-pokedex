@@ -1,7 +1,7 @@
 <nav class="navbar">
   <ul class="desktop-navbar">
-    <li><a [routerLink]="'/'">Inicio</a></li>
-    <li><a [routerLink]="'/acerca-de'">Acerca de</a></li>
+    <li><a class="button-theme button-theme--white" [routerLink]="'/'">Inicio</a></li>
+    <li><a class="button-theme button-theme--white" [routerLink]="'/acerca-de'">Acerca de</a></li>
     <li><a class="icon" [href]="pokedexGithub"><fa-icon [icon]="iconGithub"></fa-icon></a></li>
     <li><a class="icon" [href]="keilerLinkedin"><fa-icon [icon]="iconLinkedin"></fa-icon></a></li>
   </ul>
@@ -13,10 +13,10 @@
   <div class="mobile-sidenav" [ngClass]="{'open': showSidenav}">
     <div class="sidenav-container container-theme container-theme--large">
       <ul>
-        <li><a [routerLink]="'/'">Inicio</a></li>
-        <li><a [routerLink]="'/acerca-de'">Acerca de</a></li>
-        <li><a class="icon" [href]="pokedexGithub">Github</a></li>
-        <li><a class="icon" [href]="keilerLinkedin">Linkedin</a></li>
+        <li><a class="button-theme button-theme--black" [routerLink]="'/'">Inicio</a></li>
+        <li><a class="button-theme button-theme--black" [routerLink]="'/acerca-de'">Acerca de</a></li>
+        <li><a class="button-theme button-theme--black" [href]="pokedexGithub">Github</a></li>
+        <li><a class="button-theme button-theme--black" [href]="keilerLinkedin">Linkedin</a></li>
       </ul>
       <button class="close-sidenav-btn" (click)="showSidenav = false">
         <fa-icon [icon]="iconTimes"></fa-icon>

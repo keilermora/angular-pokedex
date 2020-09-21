@@ -36,15 +36,14 @@
       a {
         color: $white;
         text-decoration: none;
-        text-transform: uppercase;
-
-        &:hover {
-          color: $yellow-version-light;
-        }
 
         &.icon {
           line-height: 0;
           font-size: 1.5rem;
+
+          &:hover {
+            color: $yellow-version-light;
+          }
         }
       }
     }
@@ -127,17 +126,6 @@
         li {
           & + li {
             padding-top: 1em;
-          }
-
-          a {
-            color: $black;
-            text-decoration: none;
-            white-space: nowrap;
-            text-transform: uppercase;
-
-            &:hover {
-              color: $crimson;
-            }
           }
         }
       }
