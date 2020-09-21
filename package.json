@@ -23,6 +23,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "normalize.css": "^8.0.1",
     "pokemon-font": "^1.8.1",
     "rxjs": "~6.6.2",
     "tslib": "^2.0.0",
