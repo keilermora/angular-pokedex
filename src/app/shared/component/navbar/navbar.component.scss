@@ -3,12 +3,43 @@
 
 .navbar {
   position: fixed;
-  background-color: $shark;
+  background-color: $crimson;
   color: $white;
   top: 0;
   left: 0;
   right: 0;
   height: 50px;
-  text-align: right;
   z-index: $navbar-index;
+  padding: 0 15px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom: 4px solid $gallery;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    li {
+      padding: 0 1.5em;
+
+      a {
+        color: $white;
+        text-decoration: none;
+
+        &:hover {
+          color: $yellow-version-light;
+        }
+
+        &.icon {
+          line-height: 0;
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
 }
