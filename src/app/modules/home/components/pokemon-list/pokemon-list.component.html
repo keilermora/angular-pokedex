@@ -3,7 +3,9 @@
     <a class="pokemon-card" routerLink="pokemon/{{i + 1}}">
       <div *ngIf="!pokedex.version.animated" class="image" [ngStyle]="i | pokemonSpritePosition : pokedex.version">
       </div>
-      <img *ngIf="pokedex.version.animated" [src]="i | pokemonImageUrl : pokedex.version" alt="" width="56" height="56">
+      <div *ngIf="pokedex.version.animated" class="image-animated">
+        <img *ngIf="pokedex.version.animated" [src]="i | pokemonImageUrl : pokedex.version" alt="" width="60" height="60">
+      </div>
       <span class="number">{{ i + 1 | pokemonNumber }}</span>
       <span class="name">{{ pokemon.name | pokemonName }}</span>
     </a>
