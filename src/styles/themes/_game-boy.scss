@@ -5,28 +5,17 @@
 
   .container-theme {
     background-color: $white;
-    border: 1px solid $white;
-    box-shadow: 0 1px 0 1px $shark, inset 0 1px 0 1px $shark, 0 0 0 1px $shark, inset 0 0 0 1px $shark;
-    border-radius: 2px;
+    border-style: solid;
+    overflow: hidden;
 
-    &.bug { box-shadow: 0 1px 0 1px $bug-type-light, inset 0 1px 0 1px $bug-type-light, 0 0 0 1px $bug-type-light, inset 0 0 0 1px $bug-type-light; }
-    &.dark { box-shadow: 0 1px 0 1px $dark-type-light, inset 0 1px 0 1px $dark-type-light, 0 0 0 1px $dark-type-light, inset 0 0 0 1px $dark-type-light; }
-    &.dragon { box-shadow: 0 1px 0 1px $dragon-type-light, inset 0 1px 0 1px $dragon-type-light, 0 0 0 1px $dragon-type-light, inset 0 0 0 1px $dragon-type-light; }
-    &.electric { box-shadow: 0 1px 0 1px $electric-type-light, inset 0 1px 0 1px $electric-type-light, 0 0 0 1px $electric-type-light, inset 0 0 0 1px $electric-type-light; }
-    &.fairy { box-shadow: 0 1px 0 1px $fairy-type-light, inset 0 1px 0 1px $fairy-type-light, 0 0 0 1px $fairy-type-light, inset 0 0 0 1px $fairy-type-light; }
-    &.fighting { box-shadow: 0 1px 0 1px $fighting-type-light, inset 0 1px 0 1px $fighting-type-light, 0 0 0 1px $fighting-type-light, inset 0 0 0 1px $fighting-type-light; }
-    &.fire { box-shadow: 0 1px 0 1px $fire-type-light, inset 0 1px 0 1px $fire-type-light, 0 0 0 1px $fire-type-light, inset 0 0 0 1px $fire-type-light; }
-    &.flying { box-shadow: 0 1px 0 1px $flying-type-light, inset 0 1px 0 1px $flying-type-light, 0 0 0 1px $flying-type-light, inset 0 0 0 1px $flying-type-light; }
-    &.ghost { box-shadow: 0 1px 0 1px $ghost-type-light, inset 0 1px 0 1px $ghost-type-light, 0 0 0 1px $ghost-type-light, inset 0 0 0 1px $ghost-type-light; }
-    &.grass { box-shadow: 0 1px 0 1px $grass-type-light, inset 0 1px 0 1px $grass-type-light, 0 0 0 1px $grass-type-light, inset 0 0 0 1px $grass-type-light; }
-    &.ground { box-shadow: 0 1px 0 1px $ground-type-light, inset 0 1px 0 1px $ground-type-light, 0 0 0 1px $ground-type-light, inset 0 0 0 1px $ground-type-light; }
-    &.ice { box-shadow: 0 1px 0 1px $ice-type-light, inset 0 1px 0 1px $ice-type-light, 0 0 0 1px $ice-type-light, inset 0 0 0 1px $ice-type-light; }
-    &.normal { box-shadow: 0 1px 0 1px $normal-type-light, inset 0 1px 0 1px $normal-type-light, 0 0 0 1px $normal-type-light, inset 0 0 0 1px $normal-type-light; }
-    &.poison { box-shadow: 0 1px 0 1px $poison-type-light, inset 0 1px 0 1px $poison-type-light, 0 0 0 1px $poison-type-light, inset 0 0 0 1px $poison-type-light; }
-    &.psychic { box-shadow: 0 1px 0 1px $psychic-type-light, inset 0 1px 0 1px $psychic-type-light, 0 0 0 1px $psychic-type-light, inset 0 0 0 1px $psychic-type-light; }
-    &.rock { box-shadow: 0 1px 0 1px $rock-type-light, inset 0 1px 0 1px $rock-type-light, 0 0 0 1px $rock-type-light, inset 0 0 0 1px $rock-type-light; }
-    &.steel { box-shadow: 0 1px 0 1px $steel-type-light, inset 0 1px 0 1px $steel-type-light, 0 0 0 1px $steel-type-light, inset 0 0 0 1px $steel-type-light; }
-    &.water { box-shadow: 0 1px 0 1px $water-type-light, inset 0 1px 0 1px $water-type-light, 0 0 0 1px $water-type-light, inset 0 0 0 1px $water-type-light; }
-    &.unknown { box-shadow: 0 1px 0 1px $unknown-type-light, inset 0 1px 0 1px $unknown-type-light, 0 0 0 1px $unknown-type-light, inset 0 0 0 1px $unknown-type-light; }
+    &--small {
+      border-image: url('../../assets/images/frame-small.png') 7 round;
+      border-width: 7px;
+    }
+
+    &--large {
+      border-image: url('../../assets/images/frame-large.png') 42 round;
+      border-width: 21px;
+    }
   }
 }

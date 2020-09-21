@@ -1,9 +1,9 @@
 <aside class="sidenav" [ngClass]="{ 'closed': !showNav }">
   <div class="content">
-    <button class="toggle-nav-btn" (click)="toggleNav()">
+    <button class="toggle-nav-btn" (click)="showNav = !showNav">
       <fa-icon [icon]="showNav ? faTimes : faBars"></fa-icon>
     </button>
-    <div class="filter container-theme">
+    <div class="filter container-theme container-theme--small">
       <span>Version</span>
       <div *ngFor="let version of pokedexVersions">
         <input

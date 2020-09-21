@@ -47,8 +47,4 @@ export class SidenavComponent implements OnInit {
       queryParamsHandling: 'merge',
     });
   }
-
-  toggleNav(): void {
-    this.showNav = !this.showNav;
-  }
 }

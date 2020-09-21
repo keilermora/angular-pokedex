@@ -1,13 +1,13 @@
-<section class="pokemon-details" [ngClass]="pokemon ? pokemon.types[0].type.name : ''">
+<section class="pokemon-details">
   <div class="pokemon" *ngIf="pokemon">
 
     <!-- Imagen -->
-    <div class="image container-theme" [ngClass]="pokemon.types[0].type.name">
+    <div class="image container-theme container-theme--large">
       <img [src]="pokemon.sprites.other['official-artwork'].front_default" [alt]="pokemon.name" width="270" height="270">
     </div>
 
     <!-- Detalles -->
-    <div class="details container-theme" [ngClass]="pokemon.types[0].type.name">
+    <div class="details container-theme container-theme--large">
       <ul>
         <li><span class="number">#{{ pokemon.id | pokemonNumber }}</span></li>
         <li><span class="name">{{ pokemon.name | pokemonName }}</span></li>
@@ -35,7 +35,7 @@
     </div>
 
     <!-- Más detalles -->
-    <div class="more-details container-theme" [ngClass]="pokemon.types[0].type.name">
+    <div class="more-details container-theme container-theme--large">
       <h2 *ngIf="pokemonGenera">{{ pokemonGenera.genus }}</h2>
       <ng-container *ngFor="let textEntry of pokemonFlavorTextEntries">
         <p [ngClass]="textEntry.version.name">

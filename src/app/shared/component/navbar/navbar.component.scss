@@ -36,6 +36,7 @@
       a {
         color: $white;
         text-decoration: none;
+        text-transform: uppercase;
 
         &:hover {
           color: $yellow-version-light;
@@ -68,7 +69,7 @@
   }
 
   .mobile-sidenav {
-    background-color: $crimson;
+    background-color: $gallery;
     display: none;
     position: fixed;
     bottom: 0;
@@ -86,7 +87,7 @@
     &.open {
       width: 100%;
 
-      .container-theme {
+      .sidenav-container {
         .close-sidenav-btn {
           display: inline;
         }
@@ -100,8 +101,8 @@
     .close-sidenav-btn {
       display: none;
       position: absolute;
-      top: 25px;
-      right: 25px;
+      top: 30px;
+      right: 40px;
       font-size: 1.5rem;
       background-color: $transparent;
       color: $black;
@@ -113,7 +114,7 @@
       }
     }
 
-    .container-theme {
+    .sidenav-container {
       margin: 15px;
       padding: 15px;
 
@@ -124,12 +125,15 @@
         margin: 0;
 
         li {
-          padding: 1em 0;
+          & + li {
+            padding-top: 1em;
+          }
 
           a {
             color: $black;
             text-decoration: none;
             white-space: nowrap;
+            text-transform: uppercase;
 
             &:hover {
               color: $crimson;

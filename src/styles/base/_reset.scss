@@ -12,6 +12,7 @@ html {
     /// Establecer Pokémon Font como fuente principal
     font-size: 14px;
     font-family: $pokemonFont;
+    line-height: 1.8;
 
     /// Corregir el alisado de letras en MACOS
     -webkit-font-smoothing: antialiased;

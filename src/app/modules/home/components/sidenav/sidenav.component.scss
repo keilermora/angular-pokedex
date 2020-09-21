@@ -15,12 +15,17 @@
     .toggle-nav-btn {
       z-index: 1;
       cursor: pointer;
-      background-color: $white;
+      background-color: $transparent;
       border: none;
-      font-size: 24px;
+      font-size: 1.5rem;
+      line-height: 0;
       position: absolute;
-      top: 4px;
-      right: 4px;
+      top: 6px;
+      right: 6px;
+
+      &:hover {
+        color: $crimson;
+      }
     }
 
     .filter {
@@ -38,6 +43,10 @@
     .content {
       margin: 3px 0;
       opacity: 1;
+
+      .toggle-nav-btn {
+        background-color: $white;
+      }
 
       .filter {
         opacity: 0;
