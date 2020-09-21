@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faTimes, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 import { PokedexVersion } from '@data/types/pokedex-version';
 import { PokedexService } from '@data/services/pokedex.service';
@@ -11,8 +11,8 @@ import { PokedexService } from '@data/services/pokedex.service';
   styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent implements OnInit {
-  faBars = faBars;
-  faTimes = faTimes;
+  iconSearch: IconDefinition = faSearch;
+  iconTimes: IconDefinition = faTimes;
 
   showNav: boolean = true;
   pokedexVersions: PokedexVersion[];

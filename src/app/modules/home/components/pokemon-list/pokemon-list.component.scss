@@ -1,53 +1,69 @@
 @import "../../../../../styles/utils/colors";
+@import "../../../../../styles/utils/media-query";
 @import "../../../../../styles/utils/transition";
 
 .pokemon-list {
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
-  justify-content: center;
 
-  .pokemon-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: $black;
-    text-decoration: none;
-    cursor: pointer;
-    width: 142px;
-    padding: 4px;
-    margin: 4px;
+  .pokemon-length {
+    padding: 0 15px;
 
-    &:hover,
-    &:focus {
-      color: $crimson;
-    }
-
-    .image {
-      background-repeat: no-repeat;
-      width: 56px;
-      height: 56px;
-    }
-
-    .image-animated {
-      width: 56px;
-      height: 56px;
-      overflow: hidden;
+    @include respond(xs, md) {
       text-align: center;
+    }
+  }
 
-      img {
-        position: relative;
-        left: -4px;
+  .pokemons-container {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: flex-start;
+
+    @include respond(xs, md) {
+      justify-content: center;
+    }
+
+    .pokemon-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: $black;
+      text-decoration: none;
+      cursor: pointer;
+      width: 142px;
+      padding: 4px;
+      margin: 4px;
+
+      &:hover,
+      &:focus {
+        color: $crimson;
       }
-    }
 
-    .number {
-      font-size: 16px;
-    }
+      .image {
+        background-repeat: no-repeat;
+        width: 56px;
+        height: 56px;
+      }
 
-    .name {
-      text-transform: uppercase;
-      font-size: 14px;
+      .image-animated {
+        width: 56px;
+        height: 56px;
+        overflow: hidden;
+        text-align: center;
+
+        img {
+          position: relative;
+          left: -4px;
+        }
+      }
+
+      .number {
+        font-size: 16px;
+      }
+
+      .name {
+        text-transform: uppercase;
+        font-size: 14px;
+      }
     }
   }
 }

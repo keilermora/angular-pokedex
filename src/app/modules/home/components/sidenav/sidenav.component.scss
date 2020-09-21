@@ -1,11 +1,14 @@
 @import "../../../../../styles/utils/colors";
+@import "../../../../../styles/utils/media-query";
 
 .sidenav {
   overflow: hidden;
   width: 250px;
+  height: 210px;;
   transition: 250ms;
   position: sticky;
   top: 75px;
+  margin: 0 auto;
 
   .content {
     position: relative;
@@ -39,6 +42,7 @@
 
   &.closed {
     width: 45px;
+    height: 45px;
 
     .content {
       margin: 3px 0;
@@ -46,6 +50,12 @@
 
       .toggle-nav-btn {
         background-color: $white;
+
+        @include respond(xs, sm) {
+          right: 0;
+          left: 0;
+          margin: auto;
+        }
       }
 
       .filter {

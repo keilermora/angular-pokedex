@@ -1,7 +1,7 @@
 <aside class="sidenav" [ngClass]="{ 'closed': !showNav }">
   <div class="content">
     <button class="toggle-nav-btn" (click)="showNav = !showNav">
-      <fa-icon [icon]="showNav ? faTimes : faBars"></fa-icon>
+      <fa-icon [icon]="showNav ? iconTimes : iconSearch"></fa-icon>
     </button>
     <div class="filter container-theme container-theme--small">
       <span>Version</span>

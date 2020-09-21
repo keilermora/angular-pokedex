@@ -1,13 +1,16 @@
 <div class="pokemon-list" *ngIf="pokedex && pokedex.version">
-  <ng-container *ngFor="let pokemon of pokemons; let i = index">
-    <a class="pokemon-card container-theme container-theme--small" routerLink="pokemon/{{i + 1}}">
-      <div *ngIf="!pokedex.version.animated" class="image" [ngStyle]="i | pokemonSpritePosition : pokedex.version">
-      </div>
-      <div *ngIf="pokedex.version.animated" class="image-animated">
-        <img *ngIf="pokedex.version.animated" [src]="i | pokemonImageUrl : pokedex.version" alt="" width="60" height="60">
-      </div>
-      <span class="number">{{ i + 1 | pokemonNumber }}</span>
-      <span class="name">{{ pokemon.name | pokemonName }}</span>
-    </a>
-  </ng-container>
+  <div class="pokemon-length">{{ pokemons.length }} resultados</div>
+  <div class="pokemons-container">
+    <ng-container *ngFor="let pokemon of pokemons; let i = index">
+      <a class="pokemon-card container-theme container-theme--small" routerLink="pokemon/{{i + 1}}">
+        <div *ngIf="!pokedex.version.animated" class="image" [ngStyle]="i | pokemonSpritePosition : pokedex.version">
+        </div>
+        <div *ngIf="pokedex.version.animated" class="image-animated">
+          <img *ngIf="pokedex.version.animated" [src]="i | pokemonImageUrl : pokedex.version" alt="" width="60" height="60">
+        </div>
+        <span class="number">{{ i + 1 | pokemonNumber }}</span>
+        <span class="name">{{ pokemon.name | pokemonName }}</span>
+      </a>
+    </ng-container>
+  </div>
 </div>
