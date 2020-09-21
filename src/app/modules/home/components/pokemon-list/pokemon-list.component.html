@@ -1,6 +1,6 @@
 <div class="pokemon-list" *ngIf="pokedex && pokedex.version">
   <ng-container *ngFor="let pokemon of pokemons; let i = index">
-    <a class="pokemon-card" routerLink="pokemon/{{i + 1}}">
+    <a class="pokemon-card container-theme" routerLink="pokemon/{{i + 1}}">
       <div *ngIf="!pokedex.version.animated" class="image" [ngStyle]="i | pokemonSpritePosition : pokedex.version">
       </div>
       <div *ngIf="pokedex.version.animated" class="image-animated">

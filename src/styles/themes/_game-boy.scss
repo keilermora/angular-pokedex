@@ -1,8 +1,7 @@
 @import "../utils/colors";
 
 .game-boy-theme {
-  background: url("~assets/images/game-boy-background.png") repeat fixed;
-  background-size: 8px;
+  background-color: $gallery;
 
   .container-theme {
     background-color: $white;
