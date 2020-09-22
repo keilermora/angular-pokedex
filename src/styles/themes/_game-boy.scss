@@ -26,6 +26,9 @@
     padding: 0 0 0 1em;
     text-transform: uppercase;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: 32px;
     cursor: pointer;
 
     &--black {
@@ -33,7 +36,7 @@
 
       &::before {
         color: $black;
-        top: 4px;
+        top: 10px;
         box-shadow:
           1em 0em 0 $black,
           2em 0em 0 $black,
@@ -66,7 +69,7 @@
 
       &::before {
         color: $white;
-        top: 4px;
+        top: 10px;
         box-shadow:
           1em 0em 0 $white,
           2em 0em 0 $white,

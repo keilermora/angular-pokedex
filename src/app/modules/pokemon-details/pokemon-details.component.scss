@@ -20,7 +20,11 @@
     column-gap: 15px;
     row-gap: 15px;
 
-    @include respond-to(xs) {
+    @include respond-to(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond(xs, sm) {
       padding: 0;
       grid-template-rows: repeat(3, auto);
       grid-template-columns: 1fr;
@@ -73,7 +77,7 @@
       grid-row-end: 2;
       padding: 16px 24px;
 
-      @include respond-to(xs) {
+      @include respond(xs, sm) {
         grid-row-start: initial;
         grid-row-end: initial;
       }
@@ -135,7 +139,7 @@
       grid-column-start: 1;
       grid-column-end: 3;
 
-      @include respond-to(xs) {
+      @include respond(xs, sm) {
         grid-column-end: 2;
       }
 
