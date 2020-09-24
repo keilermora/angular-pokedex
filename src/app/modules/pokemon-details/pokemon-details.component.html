@@ -3,7 +3,7 @@
 
     <!-- Imagen -->
     <div class="image container-theme container-theme--large">
-      <img [src]="pokemon.sprites.other['official-artwork'].front_default" [alt]="pokemon.name" width="270" height="270">
+      <img *ngIf="!busy" [src]="pokemon.sprites.other['official-artwork'].front_default" [alt]="pokemon.name" width="270" height="270">
       <div class="buttons-container">
         <a *ngIf="pokemon.id - 1" class="button-theme button-theme--black" [routerLink]="'/pokemon/' + (pokemon.id - 1)">Ant.</a>
         <div class="number container-theme container-theme--small">{{ pokemon.id | pokemonNumber }}</div>
@@ -40,15 +40,18 @@
 
     <!-- Más detalles -->
     <div class="more-details container-theme container-theme--large">
-      <h2 *ngIf="pokemonGenera">{{ pokemonGenera.genus }}</h2>
-      <ng-container *ngFor="let textEntry of pokemonFlavorTextEntries">
-        <p [ngClass]="textEntry.version.name">
-          <span class="pokedex-version-name">{{ textEntry.version.name | pokedexVersionName }}</span>: {{ textEntry.flavor_text }}
-        </p>
-      </ng-container>
-      <a class="button-theme button-theme--black" routerLink="/">
-        Inicio
-      </a>
+      <h2 *ngIf="busyDetails">Cargando... No apague la consola.</h2>
+      <h2 *ngIf="!busyDetails && pokemonGenera">{{ pokemonGenera.genus }}</h2>
+      <div class="content" [ngClass]="{'busy': busyDetails}">
+        <ng-container *ngFor="let textEntry of pokemonFlavorTextEntries">
+          <p [ngClass]="textEntry.version.name">
+            <span class="pokedex-version-name">{{ textEntry.version.name | pokedexVersionName }}</span>: {{ textEntry.flavor_text }}
+          </p>
+        </ng-container>
+        <a class="button-theme button-theme--black" routerLink="/">
+          Inicio
+        </a>
+      </div>
     </div>
   </div>
 </section>

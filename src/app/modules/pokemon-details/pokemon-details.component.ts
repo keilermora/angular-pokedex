@@ -17,6 +17,7 @@ export class PokemonDetailsComponent implements OnInit {
   pokemonFlavorTextEntries: PokemonFlavorTextEntry[] = [];
 
   busy: boolean = false;
+  busyDetails: boolean = false;
 
   constructor(
     private pokemonService: PokemonService,
@@ -28,6 +29,7 @@ export class PokemonDetailsComponent implements OnInit {
 
     this.route.paramMap.subscribe((paramMap) => {
       this.busy = true;
+      this.busyDetails = true;
 
       let routeParamId = paramMap.get('id');
       pokemonId = routeParamId ? parseInt(routeParamId) : 0;
@@ -58,6 +60,7 @@ export class PokemonDetailsComponent implements OnInit {
 
         this.pokemonGenera = pokemonGenera;
         this.pokemonFlavorTextEntries = uniquePokemonFlavorTextEntries;
+        this.busyDetails = false;
       });
     })
   }

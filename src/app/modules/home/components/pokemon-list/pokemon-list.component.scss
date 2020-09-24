@@ -5,7 +5,7 @@
 .pokemon-list {
 
   .message {
-    padding: 0 15px;
+    padding: 0 20px;
 
     @include respond(xs, md) {
       text-align: center;
