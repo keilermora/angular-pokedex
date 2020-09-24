@@ -4,13 +4,14 @@ import { Observable, of } from 'rxjs';
 import { map, share } from 'rxjs/operators';
 
 import  { environment } from '@env';
+import { Pokemon } from '@data/types/pokemon';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PokemonService {
 
-  private pokemons: any[];
+  private pokemons: any[] = [];
   private pokemonsObservable: Observable<any> | null = null;
 
   constructor(
@@ -38,6 +39,9 @@ export class PokemonService {
         .pipe(map((response:any) => {
           this.pokemonsObservable = null;
           this.pokemons = response.results;
+          this.pokemons.forEach((pokemon: Pokemon, index: number) => {
+            pokemon.id = index + 1;
+          });
           localStorage.setItem('pokemons', JSON.stringify(this.pokemons));
           return this.pokemons;
         })).pipe(share());

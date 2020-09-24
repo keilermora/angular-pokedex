@@ -4,17 +4,23 @@
       <fa-icon [icon]="showNav ? iconTimes : iconSearch"></fa-icon>
     </button>
     <div class="filter container-theme container-theme--small">
-      <span>Version</span>
-      <div *ngFor="let version of pokedexVersions">
-        <input
-          type="radio"
-          id="version-{{ version.id }}"
-          name="version"
-          [value]="version.id"
-          [(ngModel)]="currentVersionId"
-          (change)="changeVersion(version.id)"
-        >
-        <label for="version-{{ version.id }}">{{ version.name }}</label>
+      <div class="form-group-theme">
+        <span class="label">VERSIÓN</span>
+        <div *ngFor="let version of pokedexVersions">
+          <input
+            type="radio"
+            id="version-{{ version.id }}"
+            name="version"
+            [value]="version.id"
+            [(ngModel)]="currentVersionId"
+            (change)="changeVersion(version.id)"
+          >
+          <label for="version-{{ version.id }}">{{ version.name }}</label>
+        </div>
+      </div>
+      <div class="form-group-theme">
+        <label class="label" for="field-name">NOMBRE</label>
+        <input id="field-name" type="text" [ngModel]="currentPokemonName" (ngModelChange)="changePokemonName($event)" maxlength="10">
       </div>
     </div>
   </div>

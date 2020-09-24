@@ -13,6 +13,6 @@ export class PokemonImageUrlPipe implements PipeTransform {
    * @param pokedexVersion Versión seleccionada de la Pokédex.
    */
   transform(position: number, pokedexVersion: PokedexVersion): string {
-    return `${pokedexVersion.spritesUrl}/${position + 1}.gif`;
+    return `${pokedexVersion.spritesUrl}/${position}.gif`;
   }
 }

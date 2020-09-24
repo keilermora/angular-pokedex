@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '@data/services/pokemon.service';
 import { Pokedex } from '@data/types/pokedex';
 import { PokedexService } from '@data/services/pokedex.service';
+import { Pokemon } from '@data/types/pokemon';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -9,6 +10,7 @@ import { PokedexService } from '@data/services/pokedex.service';
   styleUrls: ['./pokemon-list.component.scss']
 })
 export class PokemonListComponent implements OnInit {
+  busy: boolean = true;
   pokedex: Pokedex | null = null;
   pokemons: any[] = [];
 
@@ -30,10 +32,22 @@ export class PokemonListComponent implements OnInit {
    * Actualizar la lista de Pokémon
    */
   updatePokemonList(): void {
-    if(this.pokedex && this.pokedex.version) {
-      this.pokemonService.getPokemons(this.pokedex.version.limit).subscribe(pokemons => {
-        this.pokemons = pokemons;
-      });
+    if(this.pokedex) {
+      const { version, pokemonName } = this.pokedex;
+
+      if(version) {
+        this.busy = true;
+        this.pokemonService.getPokemons(version.limit).subscribe(pokemons => {
+          if(pokemonName) {
+            const re = new RegExp(pokemonName);
+            this.pokemons = pokemons.filter((pokemon: Pokemon) => re.test(pokemon.name));
+          } else {
+            this.pokemons = pokemons;
+          }
+
+          this.busy = false;
+        });
+      }
     }
   }
 }

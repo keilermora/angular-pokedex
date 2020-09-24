@@ -23,7 +23,7 @@ export class PokedexService {
       new PokedexVersion(6, 'Crystal', `${IMG_PATH}/pokemon-crystal`, true, 251),
     ];
 
-    this.pokedex = new Pokedex(null);
+    this.pokedex = new Pokedex(null, '');
     this.pokedexSubject = new BehaviorSubject(this.pokedex);
   }
 
@@ -49,7 +49,8 @@ export class PokedexService {
   }
 
   /**
-   * Actualizar la versión la Pokédex
+   * Actualizar la versión de la Pokédex
+   * @param versionId Número identificador de la versión
    */
   setPokedexVersion(versionId: number): void {
     const pokedexVersion = this.pokedexVersions.find((version) => {
@@ -63,6 +64,15 @@ export class PokedexService {
       this.pokedex.version = pokedexVersion
     }
 
+    this.refresh();
+  }
+
+  /**
+   * Actualizar el nombre del Pokémon a filtrar
+   * @param pokemonName Nombre del Pokémon
+   */
+  setPokemonName(pokemonName: string): void {
+    this.pokedex.pokemonName = pokemonName;
     this.refresh();
   }
 }

@@ -12,7 +12,8 @@ export class PokemonSpritePositionPipe implements PipeTransform {
    * La parte entera representa la posición Y y la parte decimal la posición X.
    * Las dimensiones de cada sprite es de 56x56.
    */
-  transform(position: number, pokedexVersion: PokedexVersion): any {
+  transform(pokemonNumber: number, pokedexVersion: PokedexVersion): any {
+    const position = pokemonNumber - 1;
     const numberDiv = parseFloat((position / 10).toString()).toFixed(1);
     const posX = parseInt(numberDiv.substring(numberDiv.toString().length - 1), 10) * 56;
     const posY = Math.floor(parseFloat(numberDiv)) * 56;

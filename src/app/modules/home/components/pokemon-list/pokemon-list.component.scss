@@ -4,7 +4,7 @@
 
 .pokemon-list {
 
-  .pokemon-length {
+  .message {
     padding: 0 15px;
 
     @include respond(xs, md) {
@@ -17,6 +17,7 @@
     flex-wrap: wrap;
     position: relative;
     justify-content: flex-start;
+    margin: 4px 14px;
 
     @include respond(xs, md) {
       justify-content: center;

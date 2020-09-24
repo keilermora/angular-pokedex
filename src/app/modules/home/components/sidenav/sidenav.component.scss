@@ -3,12 +3,16 @@
 
 .sidenav {
   overflow: hidden;
-  width: 250px;
-  height: 210px;;
+  max-width: 250px;
+  height: 272px;
   transition: 250ms;
   position: sticky;
   top: 75px;
   margin: 0 auto;
+
+  @include respond(xs, sm) {
+    max-width: 100%;
+  }
 
   .content {
     position: relative;
@@ -37,11 +41,33 @@
       white-space: nowrap;
       overflow: hidden;
       transition: 250ms;
+      display: grid;
+      grid-template-rows: repeat(2, auto);
+      grid-template-columns: auto;
+
+      @include respond-to(sm) {
+        grid-template-rows: auto;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include respond(xs, sm) {
+        padding: 8px 16px;
+      }
+
+      .form-group {
+        & + .form-group {
+          padding-top: 12px;
+        }
+
+        .label {
+          display: block;
+        }
+      }
     }
   }
 
   &.closed {
-    width: 45px;
+    max-width: 45px;
     height: 45px;
 
     .content {

@@ -17,6 +17,7 @@ export class SidenavComponent implements OnInit {
   showNav: boolean = true;
   pokedexVersions: PokedexVersion[];
   currentVersionId: number = 1;
+  currentPokemonName: string = '';
 
   constructor(
     private pokedexService: PokedexService,
@@ -31,6 +32,10 @@ export class SidenavComponent implements OnInit {
       const versionId = params['version'];
       this.currentVersionId = versionId ? parseInt(versionId) : 1;
       this.pokedexService.setPokedexVersion(this.currentVersionId);
+
+      const pokemonName = params['pokemon'];
+      this.currentPokemonName = pokemonName;
+      this.pokedexService.setPokemonName(pokemonName);
     });
   }
 
@@ -43,6 +48,21 @@ export class SidenavComponent implements OnInit {
     this.router.navigate([], {
       queryParams: {
         version: versionId,
+      },
+      queryParamsHandling: 'merge',
+    });
+  }
+
+  changePokemonName(pokemonName: string): void {
+    const name = pokemonName.toLowerCase();
+
+    // Establecer el nombre del Pokémon
+    this.pokedexService.setPokemonName(name);
+
+    // Actualizar query param
+    this.router.navigate([], {
+      queryParams: {
+        pokemon: name || null,
       },
       queryParamsHandling: 'merge',
     });
