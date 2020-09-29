@@ -4,7 +4,7 @@
 .sidenav {
   overflow: hidden;
   max-width: 250px;
-  height: 272px;
+  height: 275px;
   transition: 250ms;
   position: sticky;
   top: 75px;
@@ -24,8 +24,6 @@
       cursor: pointer;
       background-color: $transparent;
       border: none;
-      font-size: 1.5rem;
-      line-height: 0;
       position: absolute;
       top: 6px;
       right: 6px;
@@ -76,6 +74,8 @@
 
       .toggle-nav-btn {
         background-color: $white;
+        font-size: 1.5rem;
+        line-height: 0;
 
         @include respond(xs, sm) {
           right: 0;
