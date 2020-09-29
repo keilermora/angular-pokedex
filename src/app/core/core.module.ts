@@ -1,6 +1,7 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { RequestInterceptor } from './interceptors/request.interceptor';
 
 import { throwIfAlreadyLoaded } from './guards/module-import.guard';
 
@@ -9,6 +10,13 @@ import { throwIfAlreadyLoaded } from './guards/module-import.guard';
   imports: [
     BrowserModule,
     HttpClientModule
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: RequestInterceptor,
+      multi: true
+    }
   ]
 })
 export class CoreModule {

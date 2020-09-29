@@ -19,6 +19,11 @@ const routes: Routes = [
     loadChildren: () => import('@modules/about/about.module').then(m => m.AboutModule),
   },
   {
+    path: 'error',
+    component: MainLayoutComponent,
+    loadChildren: () => import('@modules/internal-server-error/internal-server-error.module').then(m => m.InternalServerErrorModule),
+  },
+  {
     path: '**',
     component: MainLayoutComponent,
     loadChildren: () => import('@modules/not-found/not-found.module').then(m => m.NotFoundModule),
