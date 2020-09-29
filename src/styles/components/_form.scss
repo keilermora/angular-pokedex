@@ -1,0 +1,24 @@
+@import "../utils/colors";
+
+.form-group-theme {
+  & + .form-group-theme {
+    padding-top: 16px;
+  }
+
+  .label {
+    display: block;
+  }
+
+  input[type='text'] {
+    border: 1px solid $shark;
+    width: 100%;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    padding-bottom: 4px;
+
+    &:focus {
+      outline: none;
+      border-color: $crimson;
+    }
+  }
+}
