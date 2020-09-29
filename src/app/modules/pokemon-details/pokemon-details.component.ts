@@ -5,6 +5,9 @@ import { PokemonService } from '@data/services/pokemon.service';
 import { Pokemon } from '@data/types/pokemon';
 import { PokemonFlavorTextEntry } from '@data/types/pokemon-flavor-text-entry';
 import { PokemonGenera } from '@data/types/pokemon-genera';
+import { missingNo } from '@data/mocks/missingno.mock';
+import { missingNoGenera } from '@data/mocks/missingno-genera.mock';
+import { missingNoFlavorTextEntries } from '@data/mocks/missingno-flavor-text-entries.mock';
 
 @Component({
   selector: 'app-pokemon-details',
@@ -18,6 +21,7 @@ export class PokemonDetailsComponent implements OnInit {
 
   busy: boolean = false;
   busyDetails: boolean = false;
+  error:boolean = false;
 
   constructor(
     private pokemonService: PokemonService,
@@ -34,8 +38,12 @@ export class PokemonDetailsComponent implements OnInit {
       let routeParamId = paramMap.get('id');
       pokemonId = routeParamId ? parseInt(routeParamId) : 0;
 
-      this.pokemonService.getPokemon(pokemonId).subscribe((pokemon) => {
+      this.pokemonService.getPokemon(pokemonId).subscribe(pokemon => {
         this.pokemon = pokemon;
+        this.busy = false;
+      }, error => {
+        console.log(error);
+        this.pokemon = missingNo;
         this.busy = false;
       });
 
@@ -60,6 +68,11 @@ export class PokemonDetailsComponent implements OnInit {
 
         this.pokemonGenera = pokemonGenera;
         this.pokemonFlavorTextEntries = uniquePokemonFlavorTextEntries;
+        this.busyDetails = false;
+      }, error => {
+        console.log(error);
+        this.pokemonGenera = missingNoGenera;
+        this.pokemonFlavorTextEntries = missingNoFlavorTextEntries;
         this.busyDetails = false;
       });
     })

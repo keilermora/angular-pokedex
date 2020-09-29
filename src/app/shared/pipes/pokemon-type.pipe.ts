@@ -11,6 +11,7 @@ export class PokemonTypePipe implements PipeTransform {
    */
   transform(type: string): string {
     switch(type) {
+      case 'bird': return 'pájaro';
       case 'bug': return 'bicho';
       case 'dark': return 'siniestro';
       case 'dragon': return type;

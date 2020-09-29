@@ -5,9 +5,9 @@
     <div class="image container-theme container-theme--large">
       <img *ngIf="!busy" [src]="pokemon.sprites.other['official-artwork'].front_default" [alt]="pokemon.name" width="270" height="270">
       <div class="buttons-container">
-        <a *ngIf="pokemon.id - 1" class="button-theme button-theme--black" [routerLink]="'/pokemon/' + (pokemon.id - 1)">Ant.</a>
+        <a *ngIf="pokemon.id - 1 > 1" [routerLink]="'/pokemon/' + (pokemon.id - 1)">&lt;</a>
         <div class="number container-theme container-theme--small">{{ pokemon.id | pokemonNumber }}</div>
-        <a class="button-theme button-theme--black" [routerLink]="'/pokemon/' + (pokemon.id + 1)">Sig.</a>
+        <a [routerLink]="'/pokemon/' + (pokemon.id + 1)">&gt;</a>
       </div>
     </div>
 

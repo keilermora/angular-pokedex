@@ -1,19 +1,9 @@
 export class Pokemon {
   id: number = 0;
   name: string = '';
-  base_experience: number = 0;
   height: number = 0;
-  is_default: boolean = false;
-  order: number = 0;
   weight: number = 0;
-  abilities: any[] = [];
-  forms: any[] = [];
-  game_indices: any[] = [];
-  held_items: any[] = [];
-  location_area_encounters: string = '';
-  moves: any[] = [];
   sprites: any = null;
-  species: any = null;
   stats: any[] = [];
   types: any[] = [];
 }

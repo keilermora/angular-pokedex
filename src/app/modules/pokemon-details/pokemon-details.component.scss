@@ -115,7 +115,7 @@
           &.rock { color: $rock-type-dark; }
           &.steel { color: $steel-type-dark; }
           &.water { color: $water-type-dark; }
-          &.unknown { color: $unknown-type-dark; }
+          &.unknown, &.bird { color: $unknown-type-dark; }
         }
       }
 
