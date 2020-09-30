@@ -1,9 +1,12 @@
 @import "../../../styles/utils/media-query";
 
 .about {
-  display: grid;
-  place-items: center;
-  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 580px;
+  margin: 0 auto;
   padding: 25px 0;
 
   @include respond-to(xs) {
