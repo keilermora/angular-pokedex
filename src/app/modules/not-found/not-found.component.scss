@@ -1,4 +1,5 @@
 @import "../../../styles/utils/colors";
+@import "../../../styles/utils/media-query";
 
 .not-found {
   display: flex;
@@ -6,7 +7,11 @@
   align-items: center;
   justify-content: center;
   min-height: 100%;
-  padding: 0 0 52px;
+  padding: 25px 0;
+
+  @include respond-to(xs) {
+    padding: 25px 15px;
+  }
 
   .container-theme {
     margin-top: 16px;

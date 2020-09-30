@@ -16,7 +16,7 @@
 
   .content {
     position: relative;
-    margin: 4px 14px;
+    margin: 4px 30px;
     transition: 250ms;
 
     .toggle-nav-btn {
@@ -25,7 +25,7 @@
       background-color: $transparent;
       border: none;
       position: absolute;
-      top: 6px;
+      top: 8px;
       right: 6px;
 
       &:hover {

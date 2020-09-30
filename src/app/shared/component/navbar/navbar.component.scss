@@ -100,9 +100,8 @@
     .close-sidenav-btn {
       display: none;
       position: absolute;
-      top: 30px;
-      right: 40px;
-      font-size: 1.5rem;
+      top: 50px;
+      right: 38px;
       background-color: $transparent;
       color: $black;
       border: none;
@@ -114,7 +113,7 @@
     }
 
     .sidenav-container {
-      margin: 15px;
+      margin: 25px 15px;
       padding: 15px;
 
       ul {

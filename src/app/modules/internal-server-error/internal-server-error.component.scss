@@ -1,12 +1,18 @@
+@import "../../../styles/utils/media-query";
+
 .internal-server-error {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   max-width: 580px;
-  padding: 0 0 52px;
   min-height: 100%;
   margin: 0 auto;
+  padding: 25px 0;
+
+  @include respond-to(xs) {
+    padding: 25px 15px;
+  }
 
   h2 {
     padding: 0 24px;

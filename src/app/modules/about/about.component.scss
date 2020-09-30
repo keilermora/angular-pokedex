@@ -1,8 +1,14 @@
+@import "../../../styles/utils/media-query";
+
 .about {
   display: grid;
   place-items: center;
   min-height: 100%;
-  padding: 12px 0 54px;
+  padding: 25px 0;
+
+  @include respond-to(xs) {
+    padding: 25px 15px;
+  }
 
   .about-container {
     max-width: 602px;
@@ -15,6 +21,7 @@
     p {
       margin: 0;
       padding-bottom: 3rem;
+      font-size: 0.75rem;
     }
   }
 }
