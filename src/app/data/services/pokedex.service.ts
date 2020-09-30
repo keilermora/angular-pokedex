@@ -14,19 +14,15 @@ export class PokedexService {
   private pokedexVersions: PokedexVersion[];
 
   constructor() {
-    let IMG_PATH = '/assets/images';
-
-    if(environment.production) {
-      IMG_PATH = `/pokedex/${IMG_PATH}`;
-    }
+    const imagesPath = environment.imagesPath;
 
     this.pokedexVersions = [
-      new PokedexVersion(1, 'Green', `${IMG_PATH}/pokemon-green.png`, false, 151),
-      new PokedexVersion(2, 'Red & Blue', `${IMG_PATH}/pokemon-red-and-blue.png`, false, 151),
-      new PokedexVersion(3, 'Yellow', `${IMG_PATH}/pokemon-yellow.png`, false, 151),
-      new PokedexVersion(4, 'Gold', `${IMG_PATH}/pokemon-gold.png`, false, 251),
-      new PokedexVersion(5, 'Silver', `${IMG_PATH}/pokemon-silver.png`, false, 251),
-      new PokedexVersion(6, 'Crystal', `${IMG_PATH}/pokemon-crystal`, true, 251),
+      new PokedexVersion(1, 'Green', `${imagesPath}/pokemon-green.png`, false, 151),
+      new PokedexVersion(2, 'Red & Blue', `${imagesPath}/pokemon-red-and-blue.png`, false, 151),
+      new PokedexVersion(3, 'Yellow', `${imagesPath}/pokemon-yellow.png`, false, 151),
+      new PokedexVersion(4, 'Gold', `${imagesPath}/pokemon-gold.png`, false, 251),
+      new PokedexVersion(5, 'Silver', `${imagesPath}/pokemon-silver.png`, false, 251),
+      new PokedexVersion(6, 'Crystal', `${imagesPath}/pokemon-crystal`, true, 251),
     ];
 
     this.pokedex = new Pokedex(null, '');

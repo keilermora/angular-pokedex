@@ -15,6 +15,9 @@ export const environment = {
   // Redes sociales
   keilerLinkedin: 'https://www.linkedin.com/in/keilermora/',
   pokedexGithub: 'https://github.com/keilermora/pokedex',
+
+  // Ruta a la carpeta de imágenes que no están asociadas directamente a la plantilla
+  imagesPath: '/assets/images',
 };
 
 /*
