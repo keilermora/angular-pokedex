@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Pokedex } from '@data/types/pokedex';
 import { PokedexVersion } from '@data/types/pokedex-version';
+import { environment } from '@env';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,12 @@ export class PokedexService {
   private pokedexVersions: PokedexVersion[];
 
   constructor() {
-    const IMG_PATH = '/assets/images';
+    let IMG_PATH = '/assets/images';
+
+    if(environment.production) {
+      IMG_PATH = `/pokedex/${IMG_PATH}`;
+    }
+
     this.pokedexVersions = [
       new PokedexVersion(1, 'Green', `${IMG_PATH}/pokemon-green.png`, false, 151),
       new PokedexVersion(2, 'Red & Blue', `${IMG_PATH}/pokemon-red-and-blue.png`, false, 151),
