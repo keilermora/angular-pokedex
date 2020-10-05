@@ -3,7 +3,9 @@
 
     <!-- Imagen -->
     <div class="image container-theme container-theme--large">
-      <img [src]="pokemon.sprites.other['official-artwork'].front_default" [alt]="pokemon.name" width="270" height="270">
+      <div class="image-container">
+        <img *ngIf="!busy" [src]="pokemon.sprites.other['official-artwork'].front_default" [alt]="pokemon.name" width="250" height="250">
+      </div>
       <div class="buttons-container">
         <a *ngIf="pokemon.id - 1 >= 1" [routerLink]="'/pokemon/' + (pokemon.id - 1)">&lt;</a>
         <div class="number container-theme container-theme--small">{{ pokemon.id | pokemonNumber }}</div>

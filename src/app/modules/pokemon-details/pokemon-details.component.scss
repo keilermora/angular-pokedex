@@ -10,7 +10,7 @@
   max-width: 700px;
   margin: 0 auto;
 
-  @include respond-to(xs) {
+  @include respond(xs, sm) {
     padding: 25px 15px;
   }
 
@@ -38,15 +38,13 @@
       align-items: center;
       justify-content: flex-end;
 
-      img {
-        @include respond(xs, sm) {
-          width: 100%;
-          height: auto;
-        }
+      .image-container {
+        height: 250px;
+        width: 250px;
       }
 
       .buttons-container {
-        padding: 10px 15px;
+        padding: 10px 15px 0;
         width: calc(100% - 44px);
         line-height: 1.1rem;
         display: grid;
@@ -189,6 +187,7 @@
       }
 
       p {
+        font-size: 0.75rem;
         &:last-of-type {
           padding-bottom: 3em;
         }
