@@ -5,26 +5,8 @@
   text-transform: uppercase;
 
   &:hover {
-    color: $crimson;
-  }
-
-  input {
-    opacity: 0;
-    margin-right: 8px;
-
-    &:checked {
+    input {
       opacity: 1;
-      position: relative;
-
-      &:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: $white;
-      }
 
       &:after {
         content: "";
@@ -33,7 +15,51 @@
         width: 2px;
         height: 2px;
         font-size: 2px;
-        color: $black;
+        top: 0;
+        box-shadow:
+          1em 0em 0 $black,
+          2em 0em 0 $black,
+          1em 1em 0 $black,
+          3em 1em 0 $black,
+          1em 2em 0 $black,
+          4em 2em 0 $black,
+          1em 3em 0 $black,
+          5em 3em 0 $black,
+          1em 4em 0 $black,
+          4em 4em 0 $black,
+          1em 5em 0 $black,
+          3em 5em 0 $black,
+          1em 6em 0 $black,
+          2em 6em 0 $black;
+      }
+    }
+  }
+
+  input {
+    opacity: 0;
+    margin-right: 8px;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $white;
+    }
+
+    &:checked {
+      opacity: 1;
+
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 2px;
+        height: 2px;
+        font-size: 2px;
         top: 0;
         box-shadow:
           1em 0em 0 $black,
