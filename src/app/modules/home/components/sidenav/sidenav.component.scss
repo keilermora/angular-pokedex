@@ -76,6 +76,7 @@
         background-color: $transparent;
         font-size: 1.5rem;
         line-height: 0;
+        padding: 0;
 
         @include respond(xs, sm) {
           right: 0;
