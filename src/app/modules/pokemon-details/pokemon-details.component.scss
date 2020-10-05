@@ -15,7 +15,6 @@
   }
 
   .pokemon {
-    padding: 0 25px;
     display: grid;
     grid-template-rows: repeat(2, auto);
     grid-template-columns: 1fr 1fr;
@@ -76,7 +75,6 @@
     .details {
       grid-row-start: 1;
       grid-row-end: 2;
-      padding: 16px 24px;
 
       @include respond(xs, sm) {
         grid-row-start: initial;
@@ -139,6 +137,10 @@
       padding: 16px 24px;
       grid-column-start: 1;
       grid-column-end: 3;
+
+      h2 {
+        margin-top: 0;
+      }
 
       @include respond(xs, sm) {
         grid-column-end: 2;

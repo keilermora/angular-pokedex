@@ -8,6 +8,7 @@
   justify-content: center;
   min-height: 100%;
   max-width: 700px;
+  margin: 0 auto;
   padding: 25px 0;
 
   @include respond-to(xs) {
@@ -16,7 +17,6 @@
 
   .container-theme {
     margin-top: 16px;
-    padding: 8px 16px;
 
     p {
       margin: 0 0 16px;

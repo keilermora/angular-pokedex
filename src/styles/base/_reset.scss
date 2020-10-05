@@ -8,6 +8,14 @@ html {
 
   height: 100%;
 
+  box-sizing: border-box;
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
   body {
     /// Establecer Pokémon Font como fuente principal
     font-size: 14px;
