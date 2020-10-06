@@ -14,6 +14,7 @@ import { PokemonWeightPipe } from './pipes/pokemon-weight.pipe';
 import { PokemonTypePipe } from './pipes/pokemon-type.pipe';
 import { PokemonStatPipe } from './pipes/pokemon-stat.pipe';
 import { PokedexVersionNamePipe } from './pipes/pokedex-version-name.pipe';
+import { SearchResultsMessagePipe } from './pipes/search-results-message.pipe';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { PokedexVersionNamePipe } from './pipes/pokedex-version-name.pipe';
     PokemonStatPipe,
     PokemonTypePipe,
     PokemonWeightPipe,
+    SearchResultsMessagePipe,
   ],
   imports: [
     CommonModule,
@@ -50,6 +52,7 @@ import { PokedexVersionNamePipe } from './pipes/pokedex-version-name.pipe';
     PokemonStatPipe,
     PokemonTypePipe,
     PokemonWeightPipe,
+    SearchResultsMessagePipe,
   ]
 })
 export class SharedModule { }

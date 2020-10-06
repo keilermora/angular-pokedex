@@ -3,7 +3,7 @@
     <div class="message">Cargando... No apagar la consola.</div>
   </ng-container>
   <ng-container *ngIf="!busy">
-    <div class="message">{{ pokemons.length }} resultados</div>
+    <div class="message">{{ pokemons.length | searchResultsMessage }}</div>
     <div class="pokemons-container">
       <ng-container *ngFor="let pokemon of pokemons">
         <a class="pokemon-card container-theme container-theme--small" routerLink="pokemon/{{pokemon.id}}">
