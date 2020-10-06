@@ -6,8 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
+  currentYear: number;
 
-  constructor() { }
+  constructor() {
+    // Agregar fecha actual a la línea de copyright.
+    const date = new Date()
+    this.currentYear = date.getFullYear();
+  }
 
   ngOnInit() {
   }
