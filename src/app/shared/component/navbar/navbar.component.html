@@ -2,8 +2,8 @@
   <ul class="desktop-navbar">
     <li><a class="button-theme button-theme--white" [routerLink]="'/'">Inicio</a></li>
     <li><a class="button-theme button-theme--white" [routerLink]="'/acerca-de'">Acerca de</a></li>
-    <li><a class="button-theme button-theme--white icon" [href]="pokedexGithub"><fa-icon [icon]="iconGithub"></fa-icon></a></li>
-    <li><a class="button-theme button-theme--white icon" [href]="keilerLinkedin"><fa-icon [icon]="iconLinkedin"></fa-icon></a></li>
+    <li><a class="button-theme button-theme--white icon" [href]="pokedexGithub" target="_blank"><fa-icon [icon]="iconGithub"></fa-icon></a></li>
+    <li><a class="button-theme button-theme--white icon" [href]="keilerLinkedin" target="_blank"><fa-icon [icon]="iconLinkedin"></fa-icon></a></li>
   </ul>
 
   <button class="open-sidenav-btn" (click)="showSidenav = true">
@@ -15,8 +15,8 @@
       <ul>
         <li><a class="button-theme button-theme--black" (click)="goTo('/')">Inicio</a></li>
         <li><a class="button-theme button-theme--black" (click)="goTo('/acerca-de')">Acerca de</a></li>
-        <li><a class="button-theme button-theme--black" [href]="pokedexGithub">Github</a></li>
-        <li><a class="button-theme button-theme--black" [href]="keilerLinkedin">Linkedin</a></li>
+        <li><a class="button-theme button-theme--black" [href]="pokedexGithub" target="_blank">Github</a></li>
+        <li><a class="button-theme button-theme--black" [href]="keilerLinkedin" target="_blank">Linkedin</a></li>
       </ul>
       <button class="close-sidenav-btn" (click)="showSidenav = false">
         X
