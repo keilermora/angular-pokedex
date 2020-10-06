@@ -6,7 +6,7 @@
     </button>
     <div class="filter container-theme container-theme--small">
       <div class="form-group-theme">
-        <span class="label">VERSIÓN</span>
+        <span class="label">Versión:</span>
         <div *ngFor="let version of pokedexVersions">
           <label class="radio-button-theme">
             <input
@@ -21,7 +21,7 @@
         </div>
       </div>
       <div class="form-group-theme">
-        <label class="label" for="field-name">NOMBRE</label>
+        <label class="label" for="field-name">Nombre:</label>
         <input id="field-name" type="text" [ngModel]="currentPokemonName" (ngModelChange)="changePokemonName($event)" maxlength="10">
       </div>
     </div>

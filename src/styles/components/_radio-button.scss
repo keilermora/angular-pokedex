@@ -3,8 +3,12 @@
 .radio-button-theme {
   cursor: pointer;
   text-transform: uppercase;
+  display: block;
+  width: 100%;
 
   &:hover {
+    color: $crimson;
+
     input {
       opacity: 1;
 

@@ -62,6 +62,10 @@
           text-decoration: none;
           color: $black;
 
+          &:hover {
+            color: $crimson;
+          }
+
           &:last-of-type {
             grid-column-start: 3;
             justify-self: flex-end;

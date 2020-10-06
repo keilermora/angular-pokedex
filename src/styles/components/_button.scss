@@ -15,6 +15,10 @@
   &--black {
     color: $black;
 
+    &:hover {
+      color: $crimson;
+    }
+
     &::before {
       color: $black;
       top: 10px;
@@ -47,6 +51,10 @@
 
   &--white {
     color: $white;
+
+    &:hover {
+      color: $yellow-version-light;
+    }
 
     &::before {
       color: $white;

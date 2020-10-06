@@ -7,18 +7,26 @@
 
   .label {
     display: block;
+    cursor: default;
   }
 
   input[type='text'] {
+    border: none;
     border: 1px solid $shark;
     width: 100%;
     box-sizing: border-box;
     text-transform: uppercase;
     padding-bottom: 4px;
+    background-color: $gallery;
+    padding: 4px 10px;
+
+    &:hover {
+      border-color: $crimson;
+    }
 
     &:focus {
+      border-color: $shark;
       outline: none;
-      border-color: $crimson;
     }
   }
 }
