@@ -12,10 +12,14 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.router.events.subscribe((evt) => {
       if (!(evt instanceof NavigationEnd)) {
-          return;
+        return;
       }
-      document.body.scrollTop = 0;
-      window.scrollTo(0, 0);
+
+      // Scrollear al top sólo si el cambio de ruta no incluye query params.
+      if(!/\?/.test(evt.url)) {
+        document.body.scrollTop = 0;
+        window.scrollTo(0, 0);
+      }
   });
   }
 }
