@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { environment } from '@env';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin, IconDefinition } from '@fortawesome/free-brands-svg-icons';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -18,9 +19,20 @@ export class NavbarComponent implements OnInit {
 
   showSidenav: boolean = false;
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
 
+  /**
+   * Navegar a la ruta. Luego, cerrar el sidenav.
+   * @param route Ruta a la cual dirigir.
+   */
+  goTo(route: string) {
+    this.router.navigate([route]).then(()=>{
+      this.showSidenav = false;
+    });
+  }
 }

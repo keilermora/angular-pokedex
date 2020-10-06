@@ -13,8 +13,8 @@
   <div class="mobile-sidenav" [ngClass]="{'open': showSidenav}">
     <div class="sidenav-container container-theme container-theme--large">
       <ul>
-        <li><a class="button-theme button-theme--black" (click)="showSidenav = false" [routerLink]="'/'">Inicio</a></li>
-        <li><a class="button-theme button-theme--black" (click)="showSidenav = false" [routerLink]="'/acerca-de'">Acerca de</a></li>
+        <li><a class="button-theme button-theme--black" (click)="goTo('/')">Inicio</a></li>
+        <li><a class="button-theme button-theme--black" (click)="goTo('/acerca-de')">Acerca de</a></li>
         <li><a class="button-theme button-theme--black" [href]="pokedexGithub">Github</a></li>
         <li><a class="button-theme button-theme--black" [href]="keilerLinkedin">Linkedin</a></li>
       </ul>
