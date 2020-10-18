@@ -21,3 +21,12 @@ Ejecutar en la raíz del proyecto:
 ```
 npm start
 ```
+
+## Referencias
+
+* [Angular](https://angular.io/): One framework.
+* [Angular Folder Structure](https://angular-folder-structure.readthedocs.io/en/latest/): Create a skeleton structure which is flexible for projects big or small.
+* [Font Awesome](https://fontawesome.com/): The web's most popular icon set and toolkit.
+* [Normalize.css](https://necolas.github.io/normalize.css/): A modern, HTML5-ready alternative to CSS resets.
+* [PokéAPI](https://pokeapi.co/): The RESTful Pokémon API.
+* [Pokémon Font](https://github.com/PascalPixel/pokemon-font): Pokémon GAMEBOY font from the 90's, updated form modern computers.
