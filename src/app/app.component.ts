@@ -14,10 +14,10 @@ export class AppComponent implements OnInit {
     // Si existe una ruta en el localStorage, navegar a ella.
     // Esto ocurre cuando el servidor muestra la pagina 404 sin saber que se
     // trata de una single page application.
-    const path = localStorage.getItem('path');
-    if(path) {
-      localStorage.removeItem('path');
-      this.router.navigate([path]);
+    const route = localStorage.getItem('angular-route');
+    if(route) {
+      localStorage.removeItem('angular-route');
+      this.router.navigate([route]);
     }
 
     this.router.events.subscribe((evt) => {
