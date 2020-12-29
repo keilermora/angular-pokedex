@@ -1,7 +1,5 @@
 <script>
-  // Página para redireccionar al home, en caso de que el servidor no sabe que
-  // se trata de una single page application.
   const path = window.location.pathname.slice(1);
   localStorage.setItem('path', path);
-  window.location.href='../';
+  window.location.href = '../';
 </script>
