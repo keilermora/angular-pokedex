@@ -6,7 +6,7 @@ export const missingNo: Pokemon = {
   sprites: {
     other: {
       'official-artwork': {
-        front_default: '/assets/images/missingno.png'
+        front_default: './assets/images/missingno.png'
       }
     }
   },
