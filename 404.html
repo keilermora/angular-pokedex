@@ -1,6 +1,6 @@
 <script>
   const path = window.location.pathname.slice(1);
-  path.replace(/pokedex/, '');
-  localStorage.setItem('path', path);
+  const route = path.replace(/pokedex/, '');
+  localStorage.setItem('angular-route', route);
   window.location.href = '../';
 </script>
