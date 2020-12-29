@@ -1,6 +1,6 @@
 <script>
   const path = window.location.pathname.slice(1);
-  console.log(path);
+  path.replace(/pokedex/, '');
   localStorage.setItem('path', path);
   window.location.href = '../';
 </script>
