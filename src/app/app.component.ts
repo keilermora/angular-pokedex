@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
     // Esto ocurre cuando el servidor muestra la pagina 404 sin saber que se
     // trata de una single page application.
     const path = localStorage.getItem('path');
+    console.log(path);
     if(path) {
       localStorage.removeItem('path');
       this.router.navigate([path]);
