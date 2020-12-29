@@ -22,7 +22,7 @@
     "@angular/router": "~11.0.5",
     "@fortawesome/angular-fontawesome": "^0.8.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
-    "@fortawesome/free-brands-svg-icons": "^5.14.0",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "normalize.css": "^8.0.1",
     "pokemon-font": "^1.8.1",
