@@ -8,13 +8,17 @@
     border-style: solid;
     overflow: hidden;
 
-    &--small {
-      border-image: url('../../assets/images/frame-small.png') 7 round;
+    &.--small {
+      border-image: url('../../assets/images/frame-black-small.png') 7 round;
       border-width: 6px;
+
+      &.--hoverable:hover {
+        border-image: url('../../assets/images/frame-crimson-small.png') 7 round;
+      }
     }
 
-    &--large {
-      border-image: url('../../assets/images/frame-large.png') 14 round;
+    &.--large {
+      border-image: url('../../assets/images/frame-black-large.png') 14 round;
       border-width: 12px;
       padding: 16px 24px;
     }

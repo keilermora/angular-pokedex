@@ -6,7 +6,7 @@
     <div class="message">{{ pokemons.length | searchResultsMessage }}</div>
     <div class="pokemons-container">
       <ng-container *ngFor="let pokemon of pokemons">
-        <a class="pokemon-card container-theme container-theme--small" routerLink="pokemon/{{pokemon.id}}">
+        <a class="pokemon-card container-theme --small --hoverable" routerLink="pokemon/{{pokemon.id}}">
           <div *ngIf="!pokedex.version.animated" class="image" [ngStyle]="pokemon.id | pokemonSpritePosition : pokedex.version">
           </div>
           <div *ngIf="pokedex.version.animated" class="image-animated">

@@ -1,6 +1,6 @@
 <aside class="sidenav" [ngClass]="{ 'closed': !showNav }">
   <div class="content">
-    <div class="filter container-theme container-theme--small">
+    <div class="filter container-theme --small">
       <button class="toggle-nav-btn" (click)="showNav = !showNav">
         <span *ngIf="showNav">X</span>
         <fa-icon *ngIf="!showNav" [icon]="iconSearch"></fa-icon>
