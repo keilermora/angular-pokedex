@@ -46,8 +46,9 @@
       <h2 *ngIf="!busyDetails && pokemonGenera">{{ pokemonGenera.genus }}</h2>
       <div class="content" [ngClass]="{'busy': busyDetails}">
         <ng-container *ngFor="let textEntry of pokemonFlavorTextEntries">
-          <p [ngClass]="textEntry.version.name">
-            <span class="pokedex-version-name">{{ textEntry.version.name | pokedexVersionName }}</span>: {{ textEntry.flavor_text }}
+          <h3 [ngClass]="textEntry.version.name" class="pokedex-version-name">{{ textEntry.version.name | pokedexVersionName }}</h3>
+          <p *ngIf="textEntry.flavor_text">
+            {{ textEntry.flavor_text }}
           </p>
         </ng-container>
         <a class="button-theme button-theme--black" routerLink="/">

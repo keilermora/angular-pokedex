@@ -148,8 +148,8 @@
         grid-column-end: 2;
       }
 
-      .busy p {
-        color: $transparent !important;
+      .busy {
+        visibility: hidden;
       }
 
       .red { color: $red-version-dark; }
@@ -188,10 +188,17 @@
 
       .pokedex-version-name {
         text-transform: uppercase;
+        margin-bottom: 0;
+
+        & + .pokedex-version-name {
+          margin-top: 0;
+        }
       }
 
       p {
         font-size: 0.75rem;
+        margin-top: 0;
+
         &:last-of-type {
           padding-bottom: 3em;
         }

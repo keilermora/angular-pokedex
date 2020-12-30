@@ -47,27 +47,38 @@ export class PokemonDetailsComponent implements OnInit {
         this.busy = false;
       });
 
-      this.pokemonService.getPokemonSpecie(pokemonId).subscribe((pokemonSpecie) => {
+      this.pokemonService.getPokemonSpecie(pokemonId).subscribe((pokemonSpecie: any) => {
         // Obtener el tipo de Pokémon.
-        const pokemonGenera = pokemonSpecie.genera.find((genera: any) => {
+        const pokemonGenera: PokemonGenera = pokemonSpecie.genera.find((genera: any) => {
           return genera.language.name === 'es';
         });
 
         // Obtener los registros de la Pokédex en español.
-        const pokemonFlavorTextEntriesES = pokemonSpecie.flavor_text_entries.filter((flavorTextEntry: PokemonFlavorTextEntry) => {
+        let pokemonFlavorTextEntries: PokemonFlavorTextEntry[] = pokemonSpecie.flavor_text_entries.filter((flavorTextEntry: PokemonFlavorTextEntry) => {
           return flavorTextEntry.language.name === 'es';
         });
 
-        // Eliminar duplicados.
-        const uniquePokemonFlavorTextEntries = pokemonFlavorTextEntriesES.reduce((accumulator: any, currentValue: PokemonFlavorTextEntry) => {
-          const x = accumulator.find((flavorTextEntry: PokemonFlavorTextEntry) => {
-            return flavorTextEntry.version.name === currentValue.version.name;
+        // Eliminar registros duplicados.
+        pokemonFlavorTextEntries = pokemonFlavorTextEntries.reduce((acc: PokemonFlavorTextEntry[], cur: PokemonFlavorTextEntry) => {
+          const elementFound: PokemonFlavorTextEntry | undefined = acc.find((flavorTextEntry: PokemonFlavorTextEntry) => {
+            return flavorTextEntry.version.name === cur.version.name;
           });
-          return !x ? accumulator.concat([ currentValue ]) : accumulator;
+          return elementFound ? acc : acc.concat([ cur ]);
+        }, []);
+
+        // Eliminar texto descriptivo duplicados entre versiones.
+        pokemonFlavorTextEntries = pokemonFlavorTextEntries.reduce((acc: PokemonFlavorTextEntry[], cur: PokemonFlavorTextEntry) => {
+          const elementFound: PokemonFlavorTextEntry | undefined = acc.find((flavorTextEntry: PokemonFlavorTextEntry) => {
+            return flavorTextEntry.flavor_text === cur.flavor_text;
+          });
+          if(elementFound) {
+            elementFound.flavor_text = '';
+          }
+          return acc.concat([ cur ]);
         }, []);
 
         this.pokemonGenera = pokemonGenera;
-        this.pokemonFlavorTextEntries = uniquePokemonFlavorTextEntries;
+        this.pokemonFlavorTextEntries = pokemonFlavorTextEntries;
         this.busyDetails = false;
       }, error => {
         console.log(error);
