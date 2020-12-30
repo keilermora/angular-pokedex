@@ -1,47 +1,30 @@
 @import "../../../../../styles/utils/colors";
 @import "../../../../../styles/utils/media-query";
+@import "../../../../../styles/utils/transition";
 
 .sidenav {
   overflow: hidden;
-  width: 250px;
-  height: 280px;
-  transition: 250ms;
+  max-width: 100%;
+  transition: $slow;
   position: sticky;
   top: 75px;
-  margin: 0 auto;
 
   @include respond(xs, sm) {
     width: auto;
   }
 
   .content {
-    position: relative;
-    margin: 4px 30px;
-    transition: 250ms;
-
-    .toggle-nav-btn {
-      z-index: 1;
-      cursor: pointer;
-      background-color: $transparent;
-      border: none;
-      position: absolute;
-      top: 8px;
-      right: 6px;
-
-      &:hover {
-        color: $crimson;
-      }
-    }
 
     .filter {
       padding: 8px;
-      opacity: 1;
       white-space: nowrap;
-      overflow: hidden;
-      transition: 250ms;
       display: grid;
       grid-template-rows: repeat(2, auto);
       grid-template-columns: auto;
+      max-height: 268px;
+      width: 192px;
+      transition: $slow;
+      position: relative;
 
       @include respond-to(sm) {
         grid-template-rows: auto;
@@ -49,44 +32,52 @@
       }
 
       @include respond(xs, sm) {
-        padding: 8px 16px;
+        margin: 0 auto;
+        width: 100%;
       }
 
-      .form-group {
-        & + .form-group {
-          padding-top: 12px;
+      .toggle-nav-btn {
+        z-index: 1;
+        cursor: pointer;
+        background-color: $transparent;
+        border: none;
+        position: absolute;
+        right: 3px;
+        top: 3px;
+  
+        &:hover {
+          color: $crimson;
         }
+      }
 
-        .label {
-          display: block;
-        }
+      .form-group-theme {
+        opacity: 1;
+        transition: $slow;
       }
     }
   }
 
   &.closed {
-    max-width: 45px;
-    height: 45px;
+    transition: $slow;
 
     .content {
-      margin: 3px 0;
       opacity: 1;
-
-      .toggle-nav-btn {
-        background-color: $transparent;
-        font-size: 1.5rem;
-        line-height: 0;
-        padding: 0;
-
-        @include respond(xs, sm) {
-          right: 0;
-          left: 0;
-          margin: auto;
-        }
-      }
+      transition: $slow;
 
       .filter {
-        opacity: 0;
+        max-height: 42px;
+        width: 42px;
+
+        .toggle-nav-btn {
+          background-color: $transparent;
+          font-size: 1.5rem;
+          line-height: 0;
+          padding: 0;
+        }
+
+        .form-group-theme {
+          opacity: 0;
+        }
       }
     }
   }

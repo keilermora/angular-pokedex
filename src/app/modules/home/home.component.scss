@@ -24,9 +24,8 @@
   .content {
     display: grid;
     grid-template-columns: min-content 1fr;
-    padding: 25px 0 0;
+    margin: 25px 15px;
     height: 100%;
-    padding-bottom: 25px;
 
     @include respond(xs, sm) {
       grid-template-columns: 1fr;
