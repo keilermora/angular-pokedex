@@ -3,7 +3,7 @@
 
 .sidenav {
   overflow: hidden;
-  max-width: 255px;
+  width: 250px;
   height: 280px;
   transition: 250ms;
   position: sticky;
@@ -11,7 +11,7 @@
   margin: 0 auto;
 
   @include respond(xs, sm) {
-    max-width: 100%;
+    width: auto;
   }
 
   .content {
