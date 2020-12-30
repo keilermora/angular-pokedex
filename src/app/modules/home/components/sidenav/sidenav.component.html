@@ -2,7 +2,7 @@
   <div class="content">
     <div class="filter container-theme --small">
       <button class="toggle-nav-btn" (click)="showNav = !showNav">
-        <span *ngIf="showNav">X</span>
+        <fa-icon *ngIf="showNav" [icon]="iconTimes"></fa-icon>
         <fa-icon *ngIf="!showNav" [icon]="iconSearch"></fa-icon>
       </button>
       <div class="form-group-theme">
