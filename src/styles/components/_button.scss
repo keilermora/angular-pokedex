@@ -4,7 +4,7 @@
   position: relative;
   background: none;
   border: none;
-  padding: 0 0 0 1em;
+  padding: 0 0 0 16px;
   text-transform: uppercase;
   text-decoration: none;
   display: flex;
@@ -17,35 +17,17 @@
 
     &:hover {
       color: $crimson;
-    }
 
-    &::before {
-      color: $black;
-      top: 10px;
-      box-shadow:
-        1em 0em 0 $black,
-        2em 0em 0 $black,
-        1em 1em 0 $black,
-        2em 1em 0 $black,
-        3em 1em 0 $black,
-        1em 2em 0 $black,
-        2em 2em 0 $black,
-        3em 2em 0 $black,
-        4em 2em 0 $black,
-        1em 3em 0 $black,
-        2em 3em 0 $black,
-        3em 3em 0 $black,
-        4em 3em 0 $black,
-        5em 3em 0 $black,
-        1em 4em 0 $black,
-        2em 4em 0 $black,
-        3em 4em 0 $black,
-        4em 4em 0 $black,
-        1em 5em 0 $black,
-        2em 5em 0 $black,
-        3em 5em 0 $black,
-        1em 6em 0 $black,
-        2em 6em 0 $black;
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        width: 10px;
+        height: 14px;
+        background: transparent url('../../assets/images/arrow-black-filled.png') no-repeat;
+        background-size: 10px 14px;
+      }
     }
   }
 
@@ -54,46 +36,17 @@
 
     &:hover {
       color: $yellow-version-light;
-    }
 
-    &::before {
-      color: $white;
-      top: 10px;
-      box-shadow:
-        1em 0em 0 $white,
-        2em 0em 0 $white,
-        1em 1em 0 $white,
-        2em 1em 0 $white,
-        3em 1em 0 $white,
-        1em 2em 0 $white,
-        2em 2em 0 $white,
-        3em 2em 0 $white,
-        4em 2em 0 $white,
-        1em 3em 0 $white,
-        2em 3em 0 $white,
-        3em 3em 0 $white,
-        4em 3em 0 $white,
-        5em 3em 0 $white,
-        1em 4em 0 $white,
-        2em 4em 0 $white,
-        3em 4em 0 $white,
-        4em 4em 0 $white,
-        1em 5em 0 $white,
-        2em 5em 0 $white,
-        3em 5em 0 $white,
-        1em 6em 0 $white,
-        2em 6em 0 $white;
-    }
-  }
-
-  &:hover {
-    &::before {
-      content: "";
-      position: absolute;
-      left: -2px;
-      width: 2px;
-      height: 2px;
-      font-size: 2px;
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: -4px;
+        width: 10px;
+        height: 14px;
+        background: transparent url('../../assets/images/arrow-white-filled.png') no-repeat;
+        background-size: 10px 14px;
+      }
     }
   }
 }
