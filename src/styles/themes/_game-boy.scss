@@ -9,13 +9,13 @@
     overflow: hidden;
 
     &--small {
-      border-image: url('../../assets/images/frame-small.png') 19 round;
-      border-width: 10px;
+      border-image: url('../../assets/images/frame-small.png') 7 round;
+      border-width: 6px;
     }
 
     &--large {
-      border-image: url('../../assets/images/frame-large.png') 42 round;
-      border-width: 21px;
+      border-image: url('../../assets/images/frame-large.png') 14 round;
+      border-width: 12px;
       padding: 16px 24px;
     }
   }
