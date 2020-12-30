@@ -1,15 +1,37 @@
 @import "../../../styles/utils/media-query";
 
 .home {
-  display: grid;
-  grid-template-columns: min-content 1fr;
-  padding: 25px 0 0;
-  height: 100%;
-  padding-bottom: 25px;
-
-  @include respond(xs, sm) {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, auto);
+  header {
+    height: 200px;
+    background-image: url('../../../assets/images/lab.png');
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    display: flex;
+    align-items: center;
     justify-content: center;
+
+    .container-theme {
+      display: inline-block;
+
+      h1 {
+        margin: 0;
+        text-transform: uppercase;
+        line-height: 1.2;
+      }
+    }
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    padding: 25px 0 0;
+    height: 100%;
+    padding-bottom: 25px;
+
+    @include respond(xs, sm) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, auto);
+      justify-content: center;
+    }
   }
 }
