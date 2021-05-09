@@ -28,6 +28,7 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
+              "src/og-image.jpg",
               "src/assets",
               "src/404.html"
             ],
