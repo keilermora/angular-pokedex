@@ -5,16 +5,12 @@ import { InternalServerErrorComponent } from './internal-server-error.component'
 const routes: Routes = [
   {
     path: '',
-    component: InternalServerErrorComponent
-  }
+    component: InternalServerErrorComponent,
+  },
 ];
 
 @NgModule({
-  declarations: [
-    InternalServerErrorComponent
-  ],
-  imports: [
-    RouterModule.forChild(routes)
-  ]
+  declarations: [InternalServerErrorComponent],
+  imports: [RouterModule.forChild(routes)],
 })
-export class InternalServerErrorModule { }
+export class InternalServerErrorModule {}

@@ -9,16 +9,11 @@ const routes: Routes = [
   {
     path: '',
     component: AboutComponent,
-  }
+  },
 ];
 
 @NgModule({
-  declarations: [
-    AboutComponent
-  ],
-  imports: [
-    RouterModule.forChild(routes),
-    SharedModule,
-  ]
+  declarations: [AboutComponent],
+  imports: [RouterModule.forChild(routes), SharedModule],
 })
-export class AboutModule { }
+export class AboutModule {}

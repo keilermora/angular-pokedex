@@ -8,17 +8,12 @@ import { PokemonDetailsComponent } from './pokemon-details.component';
 const routes: Routes = [
   {
     path: '',
-    component: PokemonDetailsComponent
-  }
+    component: PokemonDetailsComponent,
+  },
 ];
 
 @NgModule({
-  declarations: [
-    PokemonDetailsComponent,
-  ],
-  imports: [
-    RouterModule.forChild(routes),
-    SharedModule,
-  ]
+  declarations: [PokemonDetailsComponent],
+  imports: [RouterModule.forChild(routes), SharedModule],
 })
-export class PokemonDetailsModule { }
+export class PokemonDetailsModule {}

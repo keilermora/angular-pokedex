@@ -6,12 +6,13 @@ describe('PokemonDetailsComponent', () => {
   let component: PokemonDetailsComponent;
   let fixture: ComponentFixture<PokemonDetailsComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ PokemonDetailsComponent ]
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [PokemonDetailsComponent],
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(PokemonDetailsComponent);

@@ -22,7 +22,7 @@ export class PokedexService {
 
       this.pokedex = {
         pokemonName,
-        version: this.getPokedexVersion(versionId) || this.pokedexVersions[0],
+        version: this.getPokedexVersion(versionId),
       };
     });
 
@@ -43,8 +43,11 @@ export class PokedexService {
     return this.pokedexSubject.asObservable();
   }
 
-  getPokedexVersion(versionId: number): PokedexVersion | undefined {
-    return this.pokedexVersions.find((version) => version.id === versionId);
+  getPokedexVersion(versionId: number): PokedexVersion {
+    return (
+      this.pokedexVersions.find((version) => version.id === versionId) ||
+      this.pokedexVersions[0]
+    );
   }
 
   /**

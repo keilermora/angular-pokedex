@@ -4,7 +4,7 @@ import { environment } from '@env';
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+  styleUrls: ['./about.component.scss'],
 })
 export class AboutComponent implements OnInit {
   homeAngular: string = environment.homeAngular;
@@ -12,9 +12,7 @@ export class AboutComponent implements OnInit {
   pokedexGithub: string = environment.pokedexGithub;
   keilerLinkedin: string = environment.keilerLinkedin;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

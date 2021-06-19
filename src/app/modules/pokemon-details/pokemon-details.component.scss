@@ -1,6 +1,6 @@
-@import "../../../styles/utils/colors";
-@import "../../../styles/utils/media-query";
-@import "../../../styles/utils/transition";
+@import '../../../styles/utils/colors';
+@import '../../../styles/utils/media-query';
+@import '../../../styles/utils/transition';
 
 .pokemon-details {
   display: flex;
@@ -100,25 +100,64 @@
             padding-left: 16px;
           }
 
-          &.bug { color: $bug-type-dark; }
-          &.dark { color: $dark-type-dark; }
-          &.dragon { color: $dragon-type-dark; }
-          &.electric { color: $electric-type-dark; }
-          &.fairy { color: $fairy-type-dark; }
-          &.fighting { color: $fighting-type-dark; }
-          &.fire { color: $fire-type-dark; }
-          &.flying { color: $flying-type-dark; }
-          &.ghost { color: $ghost-type-dark; }
-          &.grass { color: $grass-type-dark; }
-          &.ground { color: $ground-type-dark; }
-          &.ice { color: $ice-type-dark; }
-          &.normal { color: $normal-type-dark; }
-          &.poison { color: $poison-type-dark; }
-          &.psychic { color: $psychic-type-dark; }
-          &.rock { color: $rock-type-dark; }
-          &.steel { color: $steel-type-dark; }
-          &.water { color: $water-type-dark; }
-          &.unknown, &.bird { color: $unknown-type-dark; }
+          &.bug {
+            color: $bug-type-dark;
+          }
+          &.dark {
+            color: $dark-type-dark;
+          }
+          &.dragon {
+            color: $dragon-type-dark;
+          }
+          &.electric {
+            color: $electric-type-dark;
+          }
+          &.fairy {
+            color: $fairy-type-dark;
+          }
+          &.fighting {
+            color: $fighting-type-dark;
+          }
+          &.fire {
+            color: $fire-type-dark;
+          }
+          &.flying {
+            color: $flying-type-dark;
+          }
+          &.ghost {
+            color: $ghost-type-dark;
+          }
+          &.grass {
+            color: $grass-type-dark;
+          }
+          &.ground {
+            color: $ground-type-dark;
+          }
+          &.ice {
+            color: $ice-type-dark;
+          }
+          &.normal {
+            color: $normal-type-dark;
+          }
+          &.poison {
+            color: $poison-type-dark;
+          }
+          &.psychic {
+            color: $psychic-type-dark;
+          }
+          &.rock {
+            color: $rock-type-dark;
+          }
+          &.steel {
+            color: $steel-type-dark;
+          }
+          &.water {
+            color: $water-type-dark;
+          }
+          &.unknown,
+          &.bird {
+            color: $unknown-type-dark;
+          }
         }
       }
 
@@ -153,39 +192,105 @@
         visibility: hidden;
       }
 
-      .red { color: $red-version-dark; }
-      .green { color: $green-version-dark; }
-      .blue { color: $blue-version-dark; }
-      .yellow { color: $yellow-version-dark; }
-      .gold { color: $gold-version-dark; }
-      .silver { color: $silver-version-dark; }
-      .crystal { color: $crystal-version-dark; }
-      .ruby { color: $ruby-version-dark; }
-      .sapphire { color: $sapphire-version-dark; }
-      .emerald { color: $emerald-version-dark; }
-      .fire-red { color: $fire-red-version-dark; }
-      .leaf-green { color: $leaf-green-version-dark; }
-      .diamond { color: $diamond-version-dark; }
-      .pearl { color: $pearl-version-dark; }
-      .platinum { color: $platinum-version-dark; }
-      .heart-gold { color: $heart-gold-version-dark; }
-      .soul-silver { color: $soul-silver-version-dark; }
-      .black { color: $black-version-dark; }
-      .white { color: $white-version-dark; }
-      .black-2 { color: $black-2-version-dark; }
-      .white-2 { color: $white-2-version-dark; }
-      .x { color: $x-version-dark; }
-      .y { color: $y-version-dark; }
-      .omega-ruby { color: $omega-ruby-version-dark; }
-      .alpha-sapphire { color: $alpha-sapphire-version-dark; }
-      .sun { color: $sun-version-dark; }
-      .moon { color: $moon-version-dark; }
-      .ultra-sun { color: $ultra-sun-version-dark; }
-      .ultra-moon { color: $ultra-moon-version-dark; }
-      .lets-go-pikachu { color: $lets-go-pikachu-version-dark; }
-      .lets-go-eevee { color: $lets-go-eevee-version-dark; }
-      .sword { color: $sword-version-dark; }
-      .shield { color: $shield-version-dark; }
+      .red {
+        color: $red-version-dark;
+      }
+      .green {
+        color: $green-version-dark;
+      }
+      .blue {
+        color: $blue-version-dark;
+      }
+      .yellow {
+        color: $yellow-version-dark;
+      }
+      .gold {
+        color: $gold-version-dark;
+      }
+      .silver {
+        color: $silver-version-dark;
+      }
+      .crystal {
+        color: $crystal-version-dark;
+      }
+      .ruby {
+        color: $ruby-version-dark;
+      }
+      .sapphire {
+        color: $sapphire-version-dark;
+      }
+      .emerald {
+        color: $emerald-version-dark;
+      }
+      .fire-red {
+        color: $fire-red-version-dark;
+      }
+      .leaf-green {
+        color: $leaf-green-version-dark;
+      }
+      .diamond {
+        color: $diamond-version-dark;
+      }
+      .pearl {
+        color: $pearl-version-dark;
+      }
+      .platinum {
+        color: $platinum-version-dark;
+      }
+      .heart-gold {
+        color: $heart-gold-version-dark;
+      }
+      .soul-silver {
+        color: $soul-silver-version-dark;
+      }
+      .black {
+        color: $black-version-dark;
+      }
+      .white {
+        color: $white-version-dark;
+      }
+      .black-2 {
+        color: $black-2-version-dark;
+      }
+      .white-2 {
+        color: $white-2-version-dark;
+      }
+      .x {
+        color: $x-version-dark;
+      }
+      .y {
+        color: $y-version-dark;
+      }
+      .omega-ruby {
+        color: $omega-ruby-version-dark;
+      }
+      .alpha-sapphire {
+        color: $alpha-sapphire-version-dark;
+      }
+      .sun {
+        color: $sun-version-dark;
+      }
+      .moon {
+        color: $moon-version-dark;
+      }
+      .ultra-sun {
+        color: $ultra-sun-version-dark;
+      }
+      .ultra-moon {
+        color: $ultra-moon-version-dark;
+      }
+      .lets-go-pikachu {
+        color: $lets-go-pikachu-version-dark;
+      }
+      .lets-go-eevee {
+        color: $lets-go-eevee-version-dark;
+      }
+      .sword {
+        color: $sword-version-dark;
+      }
+      .shield {
+        color: $shield-version-dark;
+      }
 
       .pokedex-version-name {
         text-transform: uppercase;
