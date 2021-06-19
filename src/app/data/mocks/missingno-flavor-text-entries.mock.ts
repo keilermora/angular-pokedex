@@ -2,31 +2,39 @@ import { PokemonFlavorTextEntry } from '@data/types/pokemon-flavor-text-entry';
 
 export const missingNoFlavorTextEntries: PokemonFlavorTextEntry[] = [
   {
-    language: 'es',
-    version: {
-      name: 'green'
+    language: {
+      name: 'es',
     },
-    flavor_text: 'けつばん'
+    version: {
+      name: 'green',
+    },
+    flavor_text: 'けつばん',
   },
   {
-    language: 'es',
-    version: {
-      name: 'red'
+    language: {
+      name: 'es',
     },
-    flavor_text: '???'
+    version: {
+      name: 'red',
+    },
+    flavor_text: '???',
   },
   {
-    language: 'es',
-    version: {
-      name: 'blue'
+    language: {
+      name: 'es',
     },
-    flavor_text: '???'
+    version: {
+      name: 'blue',
+    },
+    flavor_text: '???',
   },
   {
-    language: 'es',
-    version: {
-      name: 'yellow'
+    language: {
+      name: 'es',
     },
-    flavor_text: ''
-  }
+    version: {
+      name: 'yellow',
+    },
+    flavor_text: '',
+  },
 ];

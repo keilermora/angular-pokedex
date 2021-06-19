@@ -5,7 +5,7 @@
       <div class="image-container">
         <img
           *ngIf="!busy"
-          [src]="pokemon.sprites.other['official-artwork'].front_default"
+          [src]="pokemon.sprites?.other?.['official-artwork']?.front_default"
           [alt]="pokemon.name"
           width="250"
           height="250"

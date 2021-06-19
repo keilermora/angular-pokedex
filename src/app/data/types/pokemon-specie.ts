@@ -3,5 +3,5 @@ import { PokemonGenera } from './pokemon-genera';
 
 export interface PokemonSpecie {
   flavor_text_entries: PokemonFlavorTextEntry[];
-  genera: PokemonGenera;
+  genera: PokemonGenera[];
 }

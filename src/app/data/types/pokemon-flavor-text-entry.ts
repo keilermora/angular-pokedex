@@ -1,5 +1,7 @@
+import { NamedPokeAPIResource } from './named-poke-api-resource';
+
 export interface PokemonFlavorTextEntry {
   flavor_text: string;
-  language: any;
-  version: any;
+  language: NamedPokeAPIResource;
+  version: NamedPokeAPIResource;
 }

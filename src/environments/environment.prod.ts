@@ -6,4 +6,5 @@ export const environment = {
   keilerLinkedin: 'https://www.linkedin.com/in/keilermora/',
   pokedexGithub: 'https://github.com/keilermora/pokedex',
   imagesPath: '/pokedex/assets/images',
+  language: 'es',
 };
