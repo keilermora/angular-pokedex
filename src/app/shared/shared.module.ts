@@ -3,8 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+// Components
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { FooterComponent } from './component/footer/footer.component';
+
+// Pipes
 import { PokemonImageUrlPipe } from './pipes/pokemon-image-url.pipe';
 import { PokemonNumberPipe } from './pipes/pokemon-number.pipe';
 import { PokemonNamePipe } from './pipes/pokemon-name.pipe';
@@ -16,33 +20,33 @@ import { PokemonStatPipe } from './pipes/pokemon-stat.pipe';
 import { PokedexVersionNamePipe } from './pipes/pokedex-version-name.pipe';
 import { SearchResultsMessagePipe } from './pipes/search-results-message.pipe';
 
+// Directives
+import { LazyImgDirective } from './directives/lazy-img.directive';
+
 @NgModule({
   declarations: [
-    NavbarComponent,
     FooterComponent,
+    LazyImgDirective,
+    NavbarComponent,
     PokedexVersionNamePipe,
     PokemonHeightPipe,
     PokemonImageUrlPipe,
-    PokemonNumberPipe,
     PokemonNamePipe,
+    PokemonNumberPipe,
     PokemonSpritePositionPipe,
     PokemonStatPipe,
     PokemonTypePipe,
     PokemonWeightPipe,
     SearchResultsMessagePipe,
   ],
-  imports: [
-    CommonModule,
-    FontAwesomeModule,
-    FormsModule,
-    RouterModule,
-  ],
+  imports: [CommonModule, FontAwesomeModule, FormsModule, RouterModule],
   exports: [
     CommonModule,
     FontAwesomeModule,
-    FormsModule,
-    NavbarComponent,
     FooterComponent,
+    FormsModule,
+    LazyImgDirective,
+    NavbarComponent,
     PokedexVersionNamePipe,
     PokemonHeightPipe,
     PokemonImageUrlPipe,
@@ -53,6 +57,6 @@ import { SearchResultsMessagePipe } from './pipes/search-results-message.pipe';
     PokemonTypePipe,
     PokemonWeightPipe,
     SearchResultsMessagePipe,
-  ]
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}

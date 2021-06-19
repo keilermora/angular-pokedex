@@ -19,7 +19,8 @@
             <img
               *ngIf="_pokedex.version.animated"
               [src]="pokemon.id | pokemonImageUrl: _pokedex.version"
-              alt=""
+              appLazyImg
+              [alt]="pokemon.name"
               width="60"
               height="60"
             />
