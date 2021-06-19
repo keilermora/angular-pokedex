@@ -1,4 +1,6 @@
 import { PokemonSprites } from './pokemon-sprites';
+import { PokemonStat } from './pokemon-stat';
+import { PokemonType } from './pokemon-type';
 
 export interface Pokemon {
   id: number;
@@ -6,6 +8,6 @@ export interface Pokemon {
   height?: number;
   weight?: number;
   sprites?: PokemonSprites;
-  stats?: any[];
-  types?: any[];
+  stats?: PokemonStat[];
+  types?: PokemonType[];
 }

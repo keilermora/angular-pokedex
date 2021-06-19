@@ -4,8 +4,8 @@
     <div class="image container-theme --large">
       <div class="image-container">
         <img
-          *ngIf="!busy"
-          [src]="pokemon.sprites?.other?.['official-artwork']?.front_default"
+          *ngIf="!busy && pokemon.sprites && pokemon.sprites.other"
+          [src]="pokemon.sprites.other['official-artwork']?.front_default"
           [alt]="pokemon.name"
           width="250"
           height="250"
@@ -31,11 +31,12 @@
           <span class="name">{{ pokemon.name | pokemonName }}</span>
         </li>
         <li>
-          <ng-container *ngFor="let pokemonType of pokemon.types">
-            <span class="type" [ngClass]="pokemonType.type.name">{{
-              pokemonType.type.name | pokemonType
-            }}</span>
-          </ng-container>
+          <span
+            class="type"
+            [ngClass]="pokemonType.type.name"
+            *ngFor="let pokemonType of pokemon.types"
+            >{{ pokemonType.type.name | pokemonType }}</span
+          >
         </li>
       </ul>
 
