@@ -1,4 +1,4 @@
-export class PokemonGenera {
-  genus: string = '';
-  language: any = null;
+export interface PokemonGenera {
+  genus: string;
+  language: any;
 }

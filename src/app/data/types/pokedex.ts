@@ -1,11 +1,6 @@
 import { PokedexVersion } from './pokedex-version';
 
-export class Pokedex {
-  version: PokedexVersion | null;
+export interface Pokedex {
+  version: PokedexVersion;
   pokemonName: string;
-
-  constructor(version: PokedexVersion | null, pokemonName: string) {
-    this.version = version;
-    this.pokemonName = pokemonName;
-  }
 }

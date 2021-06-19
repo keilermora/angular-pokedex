@@ -2,30 +2,30 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Pokedex } from '@data/types/pokedex';
 import { PokedexVersion } from '@data/types/pokedex-version';
-import { environment } from '@env';
+import { ActivatedRoute } from '@angular/router';
+import { pokedexVersions } from '@data/mocks/pokedex-versions.mock';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PokedexService {
-  private pokedexSubject: BehaviorSubject<Pokedex>;
-  private pokedex: Pokedex;
-
+  private pokedex: Pokedex = {} as Pokedex;
   private pokedexVersions: PokedexVersion[];
+  private pokedexSubject: BehaviorSubject<Pokedex>;
 
-  constructor() {
-    const imagesPath = environment.imagesPath;
+  constructor(private route: ActivatedRoute) {
+    this.pokedexVersions = pokedexVersions;
 
-    this.pokedexVersions = [
-      new PokedexVersion(1, 'Green', `${imagesPath}/pokemon-green.png`, false, 151),
-      new PokedexVersion(2, 'Red & Blue', `${imagesPath}/pokemon-red-and-blue.png`, false, 151),
-      new PokedexVersion(3, 'Yellow', `${imagesPath}/pokemon-yellow.png`, false, 151),
-      new PokedexVersion(4, 'Gold', `${imagesPath}/pokemon-gold.png`, false, 251),
-      new PokedexVersion(5, 'Silver', `${imagesPath}/pokemon-silver.png`, false, 251),
-      new PokedexVersion(6, 'Crystal', `${imagesPath}/pokemon-crystal`, true, 251),
-    ];
+    route.queryParams.subscribe(({ pokemon, version }) => {
+      const pokemonName = pokemon || '';
+      const versionId = version ? parseInt(version) : 0;
 
-    this.pokedex = new Pokedex(null, '');
+      this.pokedex = {
+        pokemonName,
+        version: this.getPokedexVersion(versionId) || this.pokedexVersions[0],
+      };
+    });
+
     this.pokedexSubject = new BehaviorSubject(this.pokedex);
   }
 
@@ -43,6 +43,10 @@ export class PokedexService {
     return this.pokedexSubject.asObservable();
   }
 
+  getPokedexVersion(versionId: number): PokedexVersion | undefined {
+    return this.pokedexVersions.find((version) => version.id === versionId);
+  }
+
   /**
    * Obtiene el listado de versiones de la Pokédex
    */
@@ -55,15 +59,15 @@ export class PokedexService {
    * @param versionId Número identificador de la versión
    */
   setPokedexVersion(versionId: number): void {
-    const pokedexVersion = this.pokedexVersions.find((version) => {
-      return version.id === versionId;
-    });
+    const pokedexVersion = this.getPokedexVersion(versionId);
 
-    if(!pokedexVersion) {
-      console.warn(`La versión de Pokédex ${versionId} no existe. Se mostrará la primera versión por defecto`);
+    if (!pokedexVersion) {
+      console.warn(
+        `La versión de Pokédex ${versionId} no existe. Se mostrará la primera versión por defecto`
+      );
       this.pokedex.version = this.pokedexVersions[0];
     } else {
-      this.pokedex.version = pokedexVersion
+      this.pokedex.version = pokedexVersion;
     }
 
     this.refresh();

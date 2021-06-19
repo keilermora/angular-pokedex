@@ -1,16 +1,28 @@
-<div class="pokemon-list" *ngIf="pokedex && pokedex.version">
+<div class="pokemon-list" *ngIf="_pokedex.version">
   <ng-container *ngIf="busy">
     <div class="message">Cargando... No apagar la consola.</div>
   </ng-container>
   <ng-container *ngIf="!busy">
-    <div class="message">{{ pokemons.length | searchResultsMessage }}</div>
+    <div class="message">{{ _pokemons.length | searchResultsMessage }}</div>
     <div class="pokemons-container">
-      <ng-container *ngFor="let pokemon of pokemons">
-        <a class="pokemon-card container-theme --small --hoverable" routerLink="pokemon/{{pokemon.id}}">
-          <div *ngIf="!pokedex.version.animated" class="image" [ngStyle]="pokemon.id | pokemonSpritePosition : pokedex.version">
-          </div>
-          <div *ngIf="pokedex.version.animated" class="image-animated">
-            <img *ngIf="pokedex.version.animated" [src]="pokemon.id | pokemonImageUrl : pokedex.version" alt="" width="60" height="60">
+      <ng-container *ngFor="let pokemon of _pokemons">
+        <a
+          class="pokemon-card container-theme --small --hoverable"
+          routerLink="pokemon/{{ pokemon.id }}"
+        >
+          <div
+            *ngIf="!_pokedex.version.animated"
+            class="image"
+            [ngStyle]="pokemon.id | pokemonSpritePosition: _pokedex.version"
+          ></div>
+          <div *ngIf="_pokedex.version.animated" class="image-animated">
+            <img
+              *ngIf="_pokedex.version.animated"
+              [src]="pokemon.id | pokemonImageUrl: _pokedex.version"
+              alt=""
+              width="60"
+              height="60"
+            />
           </div>
           <span class="number">{{ pokemon.id | pokemonNumber }}</span>
           <span class="name">{{ pokemon.name | pokemonName }}</span>

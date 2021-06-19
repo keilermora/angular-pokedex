@@ -1,6 +1,5 @@
-
-export class PokemonFlavorTextEntry {
-  flavor_text: string = '';
+export interface PokemonFlavorTextEntry {
+  flavor_text: string;
   language: any;
   version: any;
 }

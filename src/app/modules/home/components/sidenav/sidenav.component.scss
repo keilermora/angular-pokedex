@@ -1,6 +1,6 @@
-@import "../../../../../styles/utils/colors";
-@import "../../../../../styles/utils/media-query";
-@import "../../../../../styles/utils/transition";
+@import '../../../../../styles/utils/colors';
+@import '../../../../../styles/utils/media-query';
+@import '../../../../../styles/utils/transition';
 
 .sidenav {
   overflow: hidden;
@@ -14,7 +14,6 @@
   }
 
   .content {
-
     .filter {
       padding: 8px;
       white-space: nowrap;
@@ -44,7 +43,7 @@
         position: absolute;
         right: 3px;
         top: 3px;
-  
+
         &:hover {
           color: $crimson;
         }

@@ -1,14 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { faSearch, faTimes, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { Component, Input, OnInit } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
+import {
+  faSearch,
+  faTimes,
+  IconDefinition,
+} from '@fortawesome/free-solid-svg-icons';
 
 import { PokedexVersion } from '@data/types/pokedex-version';
 import { PokedexService } from '@data/services/pokedex.service';
+import { first } from 'rxjs/operators';
+import { Pokedex } from '@data/types/pokedex';
 
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.scss']
+  styleUrls: ['./sidenav.component.scss'],
 })
 export class SidenavComponent implements OnInit {
   iconSearch: IconDefinition = faSearch;
@@ -16,54 +22,46 @@ export class SidenavComponent implements OnInit {
 
   showNav: boolean = true;
   pokedexVersions: PokedexVersion[];
-  currentVersionId: number = 1;
-  currentPokemonName: string = '';
+  currentPokemonName!: string;
+  currentVersionId!: number;
 
-  constructor(
-    private pokedexService: PokedexService,
-    private route: ActivatedRoute,
-    private router: Router
-  ) {
+  @Input() set pokedex(pokedex: Pokedex) {
+    this.currentVersionId = pokedex.version.id;
+    this.currentPokemonName = pokedex.pokemonName;
+  }
+
+  constructor(private pokedexService: PokedexService, private router: Router) {
     this.pokedexVersions = this.pokedexService.getPokedexVersions();
   }
 
-  ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      const versionId = params['version'];
-      this.currentVersionId = versionId ? parseInt(versionId) : 1;
-      this.pokedexService.setPokedexVersion(this.currentVersionId);
+  ngOnInit() {}
 
-      const pokemonName = params['pokemon'];
-      this.currentPokemonName = pokemonName;
-      this.pokedexService.setPokemonName(pokemonName);
-    });
-  }
-
-  changeVersion(versionId: number) {
-
-    // Establecer la versión de la Pokédex
-    this.pokedexService.setPokedexVersion(versionId);
-
-    // Actualizar query param
-    this.router.navigate([], {
-      queryParams: {
-        version: versionId,
-      },
-      queryParamsHandling: 'merge',
-    });
-  }
-
+  /**
+   * Establecer el nombre del Pokémon y actualizar los query params.
+   * @param {string} pokemonName - Nombre del Pokémon.
+   */
   changePokemonName(pokemonName: string): void {
-    const name = pokemonName.toLowerCase();
-
-    // Establecer el nombre del Pokémon
+    const name = pokemonName ? pokemonName.toLowerCase().trim() : '';
     this.pokedexService.setPokemonName(name);
+    this.updateQueryParams({ pokemon: name || null } as NavigationExtras);
+  }
 
-    // Actualizar query param
+  /**
+   * Establecer la versión de la Pokédex y actualizar los query params.
+   * @param {number} versionId - Número identificador de la versión.
+   */
+  changeVersion(versionId: number): void {
+    this.pokedexService.setPokedexVersion(versionId);
+    this.updateQueryParams({ version: versionId } as NavigationExtras);
+  }
+
+  /**
+   * Actualizar los query params.
+   * @param {any} queryParams - Párametros de consulta.
+   */
+  private updateQueryParams(queryParams: NavigationExtras): void {
     this.router.navigate([], {
-      queryParams: {
-        pokemon: name || null,
-      },
+      queryParams,
       queryParamsHandling: 'merge',
     });
   }

@@ -10,19 +10,12 @@ import { PokemonListComponent } from './components/pokemon-list/pokemon-list.com
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
-  }
+    component: HomeComponent,
+  },
 ];
 
 @NgModule({
-  declarations: [
-    HomeComponent,
-    SidenavComponent,
-    PokemonListComponent,
-  ],
-  imports: [
-    RouterModule.forChild(routes),
-    SharedModule,
-  ]
+  declarations: [HomeComponent, SidenavComponent, PokemonListComponent],
+  imports: [RouterModule.forChild(routes), SharedModule],
 })
-export class HomeModule { }
+export class HomeModule {}

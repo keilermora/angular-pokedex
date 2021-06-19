@@ -1,14 +1,25 @@
 <section class="pokemon-details">
   <div class="pokemon" *ngIf="pokemon">
-
     <!-- Imagen -->
     <div class="image container-theme --large">
       <div class="image-container">
-        <img *ngIf="!busy" [src]="pokemon.sprites.other['official-artwork'].front_default" [alt]="pokemon.name" width="250" height="250">
+        <img
+          *ngIf="!busy"
+          [src]="pokemon.sprites.other['official-artwork'].front_default"
+          [alt]="pokemon.name"
+          width="250"
+          height="250"
+        />
       </div>
       <div class="buttons-container">
-        <a *ngIf="pokemon.id - 1 >= 1" [routerLink]="'/pokemon/' + (pokemon.id - 1)">&lt;</a>
-        <div class="number container-theme --small">{{ pokemon.id | pokemonNumber }}</div>
+        <a
+          *ngIf="pokemon.id - 1 >= 1"
+          [routerLink]="'/pokemon/' + (pokemon.id - 1)"
+          >&lt;</a
+        >
+        <div class="number container-theme --small">
+          {{ pokemon.id | pokemonNumber }}
+        </div>
         <a [routerLink]="'/pokemon/' + (pokemon.id + 1)">&gt;</a>
       </div>
     </div>
@@ -16,10 +27,14 @@
     <!-- Detalles -->
     <div class="details container-theme --large">
       <ul>
-        <li><span class="name">{{ pokemon.name | pokemonName }}</span></li>
+        <li>
+          <span class="name">{{ pokemon.name | pokemonName }}</span>
+        </li>
         <li>
           <ng-container *ngFor="let pokemonType of pokemon.types">
-            <span class="type" [ngClass]="pokemonType.type.name">{{ pokemonType.type.name | pokemonType }}</span>
+            <span class="type" [ngClass]="pokemonType.type.name">{{
+              pokemonType.type.name | pokemonType
+            }}</span>
           </ng-container>
         </li>
       </ul>
@@ -27,11 +42,11 @@
       <table>
         <tr>
           <td class="stat-name">Altura</td>
-          <td class="stat-value">{{ pokemon.height | pokemonHeight }}</td>
+          <td class="stat-value">{{ pokemon.height! | pokemonHeight }}</td>
         </tr>
         <tr>
           <td class="stat-name">Peso</td>
-          <td class="stat-value">{{ pokemon.weight | pokemonWeight }}</td>
+          <td class="stat-value">{{ pokemon.weight! | pokemonWeight }}</td>
         </tr>
         <tr *ngFor="let pokemonStat of pokemon.stats">
           <td class="stat-name">{{ pokemonStat.stat.name | pokemonStat }}</td>
@@ -44,16 +59,16 @@
     <div class="more-details container-theme --large">
       <h2 *ngIf="busyDetails">Cargando... No apague la consola.</h2>
       <h2 *ngIf="!busyDetails && pokemonGenera">{{ pokemonGenera.genus }}</h2>
-      <div class="content" [ngClass]="{'busy': busyDetails}">
+      <div class="content" [ngClass]="{ busy: busyDetails }">
         <ng-container *ngFor="let textEntry of pokemonFlavorTextEntries">
-          <h3 [ngClass]="textEntry.version.name" class="pokedex-version-name">{{ textEntry.version.name | pokedexVersionName }}</h3>
+          <h3 [ngClass]="textEntry.version.name" class="pokedex-version-name">
+            {{ textEntry.version.name | pokedexVersionName }}
+          </h3>
           <p *ngIf="textEntry.flavor_text">
             {{ textEntry.flavor_text }}
           </p>
         </ng-container>
-        <a class="button-theme button-theme--black" routerLink="/">
-          Inicio
-        </a>
+        <a class="button-theme button-theme--black" routerLink="/"> Inicio </a>
       </div>
     </div>
   </div>

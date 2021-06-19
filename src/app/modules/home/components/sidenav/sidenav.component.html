@@ -1,4 +1,4 @@
-<aside class="sidenav" [ngClass]="{ 'closed': !showNav }">
+<aside class="sidenav" [ngClass]="{ closed: !showNav }">
   <div class="content">
     <div class="filter container-theme --small">
       <button class="toggle-nav-btn" (click)="showNav = !showNav">
@@ -16,13 +16,19 @@
               [value]="version.id"
               [(ngModel)]="currentVersionId"
               (change)="changeVersion(version.id)"
-            >{{ version.name }}
+            />{{ version.name }}
           </label>
         </div>
       </div>
       <div class="form-group-theme">
         <label class="label" for="field-name">Nombre:</label>
-        <input id="field-name" type="text" [ngModel]="currentPokemonName" (ngModelChange)="changePokemonName($event)" maxlength="10">
+        <input
+          id="field-name"
+          type="text"
+          [ngModel]="currentPokemonName"
+          (ngModelChange)="changePokemonName($event)"
+          maxlength="10"
+        />
       </div>
     </div>
   </div>
