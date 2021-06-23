@@ -1,13 +1,14 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RequestInterceptor } from './interceptors/request.interceptor';
 
 import { throwIfAlreadyLoaded } from './guards/module-import.guard';
 
 @NgModule({
   declarations: [],
-  imports: [BrowserModule, HttpClientModule],
+  imports: [BrowserAnimationsModule, BrowserModule, HttpClientModule],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
