@@ -21,7 +21,6 @@
   }
 
   @include respond(xs, sm) {
-    padding: 0;
     grid-template-rows: repeat(3, auto);
     grid-template-columns: 1fr;
   }
