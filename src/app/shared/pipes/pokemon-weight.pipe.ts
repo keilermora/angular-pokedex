@@ -1,10 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'pokemonWeight'
+  name: 'pokemonWeight',
 })
 export class PokemonWeightPipe implements PipeTransform {
-
   /**
    * Convertir hectogramos a kilogramos.
    * @param hectograms Peso del Pokémon en hectogramos.

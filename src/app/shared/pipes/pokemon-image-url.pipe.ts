@@ -1,11 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { PokedexVersion } from '@data/types/pokedex-version';
+import { PokedexVersion } from '@data/types/pokedex';
 
 @Pipe({
-  name: 'pokemonImageUrl'
+  name: 'pokemonImageUrl',
 })
 export class PokemonImageUrlPipe implements PipeTransform {
-
   /**
    * Devuelve a la ruta completa de la imagen del Pokémon.
    * La ruta es conformada por la versión de la Pokédex y el número del Pokémon.
@@ -13,6 +12,6 @@ export class PokemonImageUrlPipe implements PipeTransform {
    * @param pokedexVersion Versión seleccionada de la Pokédex.
    */
   transform(position: number, pokedexVersion: PokedexVersion): string {
-    return `${pokedexVersion.spritesUrl}/${position}.gif`;
+    return `${pokedexVersion.sprites.url}/${position}.gif`;
   }
 }

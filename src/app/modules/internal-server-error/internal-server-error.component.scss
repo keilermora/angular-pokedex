@@ -13,23 +13,21 @@
     padding: 25px 15px;
   }
 
-  h1 {
+  &__title {
     margin: 0;
   }
 
-  h2 {
+  &__subtitle {
     padding: 0 24px;
   }
 
-  .container-theme {
-    p {
-      margin-top: 0;
-    }
+  &__description {
+    margin-top: 0;
+  }
 
-    .battle-container {
-      width: 100%;
-      text-align: center;
-      padding: 16px 0 24px;
-    }
+  &__battle-container {
+    width: 100%;
+    text-align: center;
+    padding: 16px 0 24px;
   }
 }

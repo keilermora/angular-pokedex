@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { Pokedex } from '@data/types/pokedex';
-import { PokedexVersion } from '@data/types/pokedex-version';
 import { ActivatedRoute } from '@angular/router';
+import { BehaviorSubject, Observable } from 'rxjs';
+import Pokedex, {
+  PokedexVersion,
+  PokedexVersionPlatform,
+} from '@data/types/pokedex';
 import { pokedexVersions } from '@data/mocks/pokedex-versions.mock';
 
 @Injectable({
@@ -51,10 +53,17 @@ export class PokedexService {
   }
 
   /**
-   * Obtiene el listado de versiones de la Pokédex
+   * Obtiene el listado de versiones de la Pokédex.
    */
   getPokedexVersions(): PokedexVersion[] {
     return this.pokedexVersions;
+  }
+
+  /**
+   * Obtiene la plataforma de la versión seleccionada en la Pokédex.
+   */
+  getPokedexVersionPlatform(): PokedexVersionPlatform {
+    return this.pokedex.version.platform;
   }
 
   /**

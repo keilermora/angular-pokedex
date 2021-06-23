@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { switchMap } from 'rxjs/operators';
 import { PokedexService } from '@data/services/pokedex.service';
 import { PokemonService } from '@data/services/pokemon.service';
-import { Pokedex } from '@data/types/pokedex';
-import { Pokemon } from '@data/types/pokemon';
-import { switchMap } from 'rxjs/operators';
+import Pokedex from '@data/types/pokedex';
+import Pokemon from '@data/types/pokemon';
 
 @Component({
   selector: 'app-home',

@@ -1,71 +1,109 @@
-<section class="pokemon-details">
-  <div class="pokemon" *ngIf="pokemon">
-    <!-- Imagen -->
-    <div class="image container-theme --large">
-      <div class="image-container">
+<section class="pokemon-details" *ngIf="pokemon">
+  <!-- Imagen -->
+  <div class="artwork">
+    <div class="container-theme container-theme--large">
+      <div class="artwork__image-placeholder">
         <img
           *ngIf="!busy && pokemon.sprites && pokemon.sprites.other"
+          [@fadeIn]
           [src]="pokemon.sprites.other['official-artwork']?.front_default"
           [alt]="pokemon.name"
           width="250"
           height="250"
         />
       </div>
-      <div class="buttons-container">
+
+      <!-- Paginador -->
+      <div class="paginator">
         <a
-          *ngIf="pokemon.id - 1 >= 1"
+          [style.pointer-events]="pokemon.id >= 1 ? 'auto' : 'none'"
           [routerLink]="'/pokemon/' + (pokemon.id - 1)"
-          >&lt;</a
+          class="paginator__button"
         >
-        <div class="number container-theme --small">
-          {{ pokemon.id | pokemonNumber }}
+          <span *ngIf="pokemon.id - 1 >= 1">&lt;</span>
+        </a>
+        <div class="container-theme container-theme--small">
+          <div class="paginator__current-number">
+            {{ pokemon.id | pokemonNumber }}
+          </div>
         </div>
-        <a [routerLink]="'/pokemon/' + (pokemon.id + 1)">&gt;</a>
+        <a
+          [routerLink]="'/pokemon/' + (pokemon.id + 1)"
+          class="paginator__button"
+          >&gt;</a
+        >
       </div>
     </div>
+  </div>
 
-    <!-- Detalles -->
-    <div class="details container-theme --large">
-      <ul>
+  <!-- Detalles -->
+  <div class="details">
+    <div class="container-theme container-theme--large">
+      <ul class="details__list --visible">
         <li>
-          <span class="name">{{ pokemon.name | pokemonName }}</span>
+          <span class="details__name" *ngIf="!busy" [@fadeIn]>{{
+            pokemon.name | pokemonName
+          }}</span
+          >&nbsp;
         </li>
         <li>
-          <span
-            class="type"
-            [ngClass]="pokemonType.type.name"
-            *ngFor="let pokemonType of pokemon.types"
-            >{{ pokemonType.type.name | pokemonType }}</span
-          >
+          <span *ngIf="!busy" [@fadeIn]>
+            <span
+              class="details__type"
+              [ngClass]="pokemonType.type.name"
+              *ngFor="let pokemonType of pokemon.types"
+              >{{ pokemonType.type.name | pokemonType }}</span
+            >
+          </span>
+          &nbsp;
         </li>
       </ul>
 
-      <table>
-        <tr>
-          <td class="stat-name">Altura</td>
-          <td class="stat-value">{{ pokemon.height! | pokemonHeight }}</td>
+      <!-- Estadísticas -->
+      <table class="stats">
+        <tr *ngIf="pokemon.height">
+          <td class="stats__name">Altura</td>
+          <td class="stats__value" *ngIf="!busy" [@fadeIn]>
+            {{ pokemon.height | pokemonHeight }}
+          </td>
         </tr>
-        <tr>
-          <td class="stat-name">Peso</td>
-          <td class="stat-value">{{ pokemon.weight! | pokemonWeight }}</td>
+        <tr *ngIf="pokemon.weight">
+          <td class="stats__name">Peso</td>
+          <td class="stats__value" *ngIf="!busy" [@fadeIn]>
+            {{ pokemon.weight | pokemonWeight }}
+          </td>
         </tr>
         <tr *ngFor="let pokemonStat of pokemon.stats">
-          <td class="stat-name">{{ pokemonStat.stat.name | pokemonStat }}</td>
-          <td class="stat-value">{{ pokemonStat.base_stat }}</td>
+          <td class="stats__name">{{ pokemonStat.stat.name | pokemonStat }}</td>
+          <td class="stats__value" *ngIf="!busy" [@fadeIn]>
+            {{ pokemonStat.base_stat }}
+          </td>
         </tr>
       </table>
     </div>
+  </div>
 
-    <!-- Más detalles -->
-    <div class="more-details container-theme --large">
-      <h2 *ngIf="busyDetails">Cargando... No apague la consola.</h2>
-      <h2 *ngIf="!busyDetails && pokemonGenera">{{ pokemonGenera.genus }}</h2>
-      <div class="content" [ngClass]="{ busy: busyDetails }">
+  <!-- Más detalles -->
+  <div class="more-details">
+    <div class="container-theme container-theme--large">
+      <h2 class="more-details__title">
+        <span *ngIf="busyDetails"> Cargando... No apague la consola. </span>
+        <span *ngIf="!busyDetails && pokemonGenera" [@fadeIn]>
+          {{ pokemonGenera.genus }}
+        </span>
+      </h2>
+      <div
+        class="more-details__content --visible"
+        [ngClass]="{ '--hidden': busyDetails }"
+      >
         <ng-container *ngFor="let textEntry of pokemonFlavorTextEntries">
-          <h3 [ngClass]="textEntry.version.name" class="pokedex-version-name">
+          <h3
+            [ngClass]="textEntry.version.name"
+            class="more-details__version-name"
+          >
             {{ textEntry.version.name | pokedexVersionName }}
           </h3>
-          <p *ngIf="textEntry.flavor_text">
+          <p class="more-details__flavor-text" *ngIf="textEntry.flavor_text">
             {{ textEntry.flavor_text }}
           </p>
         </ng-container>

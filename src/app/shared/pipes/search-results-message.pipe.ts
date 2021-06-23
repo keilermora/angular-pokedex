@@ -1,10 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'searchResultsMessage'
+  name: 'searchResultsMessage',
 })
 export class SearchResultsMessagePipe implements PipeTransform {
-
   /**
    * Muestra un mensaje personalizado, según la cantidad de resultados.
    * @param resultsLength Longitud de los resultados
@@ -14,8 +13,8 @@ export class SearchResultsMessagePipe implements PipeTransform {
     let message = resultsLength ? resultsLength.toString() : 'Sin';
     message = `${message} resultado`;
 
-    if(resultsLength !== 1) {
-      message = `${message}s`
+    if (resultsLength !== 1) {
+      message = `${message}s`;
     }
 
     return message;

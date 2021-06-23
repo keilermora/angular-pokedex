@@ -13,15 +13,13 @@
     padding: 25px 15px;
   }
 
-  .about-container {
-    h1 {
-      margin-top: 0;
-    }
+  &__title {
+    margin-top: 0;
+  }
 
-    p {
-      margin: 0;
-      padding-bottom: 3rem;
-      font-size: 0.75rem;
-    }
+  &__description {
+    margin: 0;
+    padding-bottom: 3rem;
+    font-size: 0.75rem;
   }
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Data } from '@angular/router';
+import { PokedexVersionPlatform } from '@data/types/pokedex';
 import { environment } from '@env';
 
 @Component({

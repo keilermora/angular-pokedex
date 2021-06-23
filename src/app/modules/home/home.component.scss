@@ -1,7 +1,8 @@
+@import '../../../styles/utils/colors';
 @import '../../../styles/utils/media-query';
 
 .home {
-  header {
+  &__header {
     height: 200px;
     background-image: url('../../../assets/images/lab.png');
     background-repeat: repeat-x;
@@ -9,19 +10,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
-    .container-theme {
-      display: inline-block;
-
-      h1 {
-        margin: 0 0 2px 0;
-        text-transform: uppercase;
-        line-height: 1.2;
-      }
-    }
   }
 
-  .content {
+  &__title-container {
+    background-color: $white;
+    padding: 4px;
+  }
+
+  &__title {
+    margin: 0 0 2px 0;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+
+  &__content {
     display: grid;
     grid-template-columns: min-content 1fr;
     margin: 25px 15px;

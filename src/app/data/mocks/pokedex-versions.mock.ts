@@ -1,5 +1,10 @@
-import { PokedexVersion } from '@data/types/pokedex-version';
 import { environment } from '@env';
+import { PokedexVersion } from '@data/types/pokedex';
+import {
+  gameBoy,
+  gameBoyAdvanced,
+  gameBoyColor,
+} from './pokedex-version-platforms.mock';
 
 const imagesPath = environment.imagesPath;
 
@@ -7,43 +12,109 @@ export const pokedexVersions: PokedexVersion[] = [
   {
     id: 1,
     name: 'Green',
-    spritesUrl: `${imagesPath}/pokemon-green.png`,
-    animated: false,
+    sprites: {
+      url: `${imagesPath}/pokemon-green.png`,
+      width: 56,
+      height: 56,
+      animated: false,
+    },
     limit: 151,
+    platform: gameBoy,
   },
   {
     id: 2,
     name: 'Red & Blue',
-    spritesUrl: `${imagesPath}/pokemon-red-and-blue.png`,
-    animated: false,
+    sprites: {
+      url: `${imagesPath}/pokemon-red-and-blue.png`,
+      width: 56,
+      height: 56,
+      animated: false,
+    },
     limit: 151,
+    platform: gameBoy,
   },
   {
     id: 3,
     name: 'Yellow',
-    spritesUrl: `${imagesPath}/pokemon-yellow.png`,
-    animated: false,
+    sprites: {
+      url: `${imagesPath}/pokemon-yellow.png`,
+      width: 56,
+      height: 56,
+      animated: false,
+    },
     limit: 151,
+    platform: gameBoyColor,
   },
   {
     id: 4,
     name: 'Gold',
-    spritesUrl: `${imagesPath}/pokemon-gold.png`,
-    animated: false,
+    sprites: {
+      url: `${imagesPath}/pokemon-gold.png`,
+      width: 56,
+      height: 56,
+      animated: false,
+    },
     limit: 251,
+    platform: gameBoyColor,
   },
   {
     id: 5,
     name: 'Silver',
-    spritesUrl: `${imagesPath}/pokemon-silver.png`,
-    animated: false,
+    sprites: {
+      url: `${imagesPath}/pokemon-silver.png`,
+      width: 56,
+      height: 56,
+      animated: false,
+    },
     limit: 251,
+    platform: gameBoyColor,
   },
   {
     id: 6,
     name: 'Crystal',
-    spritesUrl: `${imagesPath}/pokemon-crystal`,
-    animated: true,
+    sprites: {
+      url: `${imagesPath}/pokemon-crystal`,
+      width: 56,
+      height: 56,
+      animated: true,
+    },
     limit: 251,
+    platform: gameBoyColor,
+  },
+  {
+    id: 7,
+    name: 'Ruby & Sapphire',
+    sprites: {
+      url: `${imagesPath}/pokemon-ruby-and-sapphire.png`,
+      width: 64,
+      height: 64,
+      animated: false,
+    },
+    limit: 386,
+    platform: gameBoyAdvanced,
+  },
+  {
+    id: 8,
+    name: 'Emerald',
+    sprites: {
+      url: `${imagesPath}/pokemon-emerald`,
+      width: 64,
+      height: 64,
+      animated: true,
+    },
+    limit: 386,
+    platform: gameBoyAdvanced,
+  },
+  {
+    id: 9,
+    name: 'FireRed & LeafGreen',
+    sprites: {
+      url: `${imagesPath}/pokemon-firered-and-leafgreen.png`,
+      width: 64,
+      height: 64,
+      animated: false,
+    },
+    limit: 386,
+    platform: gameBoyAdvanced,
   },
 ];

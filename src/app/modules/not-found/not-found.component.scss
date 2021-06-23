@@ -15,11 +15,11 @@
     padding: 25px 15px;
   }
 
-  .container-theme {
-    margin-top: 16px;
+  &__rocket-img {
+    margin-bottom: 16px;
+  }
 
-    p {
-      margin: 0 0 16px;
-    }
+  &__description {
+    margin: 0 0 16px;
   }
 }

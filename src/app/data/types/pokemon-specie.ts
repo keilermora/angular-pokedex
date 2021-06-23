@@ -1,7 +1,20 @@
-import { PokemonFlavorTextEntry } from './pokemon-flavor-text-entry';
-import { PokemonGenera } from './pokemon-genera';
+import NamedPokeAPIResource from './named-poke-api-resource';
 
-export interface PokemonSpecie {
+interface PokemonSpecie {
   flavor_text_entries: PokemonFlavorTextEntry[];
   genera: PokemonGenera[];
 }
+
+interface PokemonFlavorTextEntry {
+  flavor_text: string;
+  language: NamedPokeAPIResource;
+  version: NamedPokeAPIResource;
+}
+
+interface PokemonGenera {
+  genus: string;
+  language: NamedPokeAPIResource;
+}
+
+export default PokemonSpecie;
+export { PokemonFlavorTextEntry, PokemonGenera };

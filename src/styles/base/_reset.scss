@@ -1,4 +1,4 @@
-@import "typography";
+@import 'typography';
 
 html {
   /// Evitar el scroll horizontal
@@ -40,6 +40,10 @@ html {
       /// Eliminar la línea azul en el elemento señalado
       outline-width: 0;
       box-shadow: none;
+    }
+
+    .--hidden {
+      visibility: hidden;
     }
   }
 }

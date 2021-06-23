@@ -5,11 +5,8 @@ import {
   faTimes,
   IconDefinition,
 } from '@fortawesome/free-solid-svg-icons';
-
-import { PokedexVersion } from '@data/types/pokedex-version';
+import Pokedex, { PokedexVersion } from '@data/types/pokedex';
 import { PokedexService } from '@data/services/pokedex.service';
-import { first } from 'rxjs/operators';
-import { Pokedex } from '@data/types/pokedex';
 
 @Component({
   selector: 'app-sidenav',

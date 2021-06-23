@@ -1,13 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { environment } from '@env';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faLinkedin, IconDefinition } from '@fortawesome/free-brands-svg-icons';
-import { Router } from '@angular/router';
+import {
+  faGithub,
+  faLinkedin,
+  IconDefinition,
+} from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
   iconGithub: IconDefinition = faGithub;
@@ -20,19 +24,16 @@ export class NavbarComponent implements OnInit {
 
   showSidenav: boolean = false;
 
-  constructor(
-    private router: Router
-  ) { }
+  constructor(private router: Router) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   /**
    * Navegar a la ruta. Luego, cerrar el sidenav.
    * @param route Ruta a la cual dirigir.
    */
   goTo(route: string) {
-    this.router.navigate([route]).then(()=>{
+    this.router.navigate([route]).then(() => {
       this.showSidenav = false;
     });
   }

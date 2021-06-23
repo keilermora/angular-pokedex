@@ -1,10 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { PokemonService } from '@data/services/pokemon.service';
-import { Pokedex } from '@data/types/pokedex';
-import { PokedexService } from '@data/services/pokedex.service';
-import { Pokemon } from '@data/types/pokemon';
-import { first, share, switchMap } from 'rxjs/operators';
-import { ThrowStmt } from '@angular/compiler';
+import Pokedex from '@data/types/pokedex';
+import Pokemon from '@data/types/pokemon';
 
 @Component({
   selector: 'app-pokemon-list',

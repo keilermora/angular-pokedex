@@ -5,7 +5,6 @@
 .sidenav {
   overflow: hidden;
   max-width: 100%;
-  transition: $slow;
   position: sticky;
   top: 75px;
 
@@ -20,9 +19,9 @@
       display: grid;
       grid-template-rows: repeat(2, auto);
       grid-template-columns: auto;
-      max-height: 268px;
-      width: 192px;
-      transition: $slow;
+      max-height: 500px; /* Exageramos la altura para que funcione la animación */
+      width: 315px;
+      transition: max-height $slow, width $slow;
       position: relative;
 
       @include respond-to(sm) {
@@ -43,6 +42,7 @@
         position: absolute;
         right: 3px;
         top: 3px;
+        transition: color $fast, all $slow;
 
         &:hover {
           color: $crimson;
@@ -51,18 +51,13 @@
 
       .form-group-theme {
         opacity: 1;
-        transition: $slow;
+        transition: opacity $slow;
       }
     }
   }
 
   &.closed {
-    transition: $slow;
-
     .content {
-      opacity: 1;
-      transition: $slow;
-
       .filter {
         max-height: 42px;
         width: 42px;

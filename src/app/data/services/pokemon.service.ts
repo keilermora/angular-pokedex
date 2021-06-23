@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of, EMPTY } from 'rxjs';
-import { isEmpty, map, share } from 'rxjs/operators';
-
+import { Observable, of } from 'rxjs';
+import { map, share } from 'rxjs/operators';
 import { environment } from '@env';
-import { Pokemon } from '@data/types/pokemon';
-import { NamedPokeAPIResourceList } from '@data/types/named-poke-api-resource-list';
-import { NamedPokeAPIResource } from '@data/types/named-poke-api-resource';
+import Pokemon from '@data/types/pokemon';
+import NamedPokeAPIResource, {
+  NamedPokeAPIResourceList,
+} from '@data/types/named-poke-api-resource';
 
 @Injectable({
   providedIn: 'root',

@@ -1,6 +1,10 @@
-import { Pokemon } from '@data/types/pokemon';
+import Pokemon from '@data/types/pokemon';
+import {
+  PokemonFlavorTextEntry,
+  PokemonGenera,
+} from '@data/types/pokemon-specie';
 
-export const missingNo: Pokemon = {
+const missingNo: Pokemon = {
   id: 0,
   name: 'MissingNo.',
   sprites: {
@@ -63,3 +67,52 @@ export const missingNo: Pokemon = {
     },
   ],
 };
+
+const missingNoGenera: PokemonGenera = {
+  genus: 'Pokémon ???',
+  language: {
+    name: 'es',
+  },
+};
+
+const missingNoFlavorTextEntries: PokemonFlavorTextEntry[] = [
+  {
+    language: {
+      name: 'es',
+    },
+    version: {
+      name: 'green',
+    },
+    flavor_text: 'けつばん',
+  },
+  {
+    language: {
+      name: 'es',
+    },
+    version: {
+      name: 'red',
+    },
+    flavor_text: '???',
+  },
+  {
+    language: {
+      name: 'es',
+    },
+    version: {
+      name: 'blue',
+    },
+    flavor_text: '???',
+  },
+  {
+    language: {
+      name: 'es',
+    },
+    version: {
+      name: 'yellow',
+    },
+    flavor_text: '',
+  },
+];
+
+export default missingNo;
+export { missingNoGenera, missingNoFlavorTextEntries };
