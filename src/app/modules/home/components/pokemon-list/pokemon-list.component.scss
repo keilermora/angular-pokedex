@@ -43,6 +43,7 @@
 
       .image {
         background-repeat: no-repeat;
+        image-rendering: pixelated;
       }
 
       .image-animated {
@@ -52,6 +53,7 @@
 
         img {
           position: relative;
+          image-rendering: pixelated;
         }
       }
 

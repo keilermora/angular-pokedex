@@ -1,4 +1,4 @@
-@import "../utils/colors";
+@import '../utils/colors';
 
 .radio-button-theme {
   cursor: pointer;
@@ -13,14 +13,16 @@
       opacity: 1;
 
       &:after {
-        content: "";
+        content: '';
         display: block;
         position: absolute;
         right: 0;
         width: 10px;
         height: 14px;
-        background: transparent url('../../assets/images/arrow-black-empty.png') no-repeat;
+        background: transparent url('../../assets/images/arrow-black-empty.png')
+          no-repeat;
         background-size: 10px 14px;
+        image-rendering: pixelated;
       }
     }
   }
@@ -31,7 +33,7 @@
     position: relative;
 
     &:before {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
@@ -44,14 +46,16 @@
       opacity: 1;
 
       &:after {
-        content: "";
+        content: '';
         display: block;
         position: absolute;
         right: 0;
         width: 10px;
         height: 14px;
-        background: transparent url('../../assets/images/arrow-black-filled.png') no-repeat;
+        background: transparent
+          url('../../assets/images/arrow-black-filled.png') no-repeat;
         background-size: 10px 14px;
+        image-rendering: pixelated;
       }
     }
   }
