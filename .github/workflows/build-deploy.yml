@@ -8,24 +8,24 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v1
-    - uses: actions/setup-node@v1 # Instalar node y npm
-      with:
-        node-version: '10.x'
-    - uses: actions/cache@v1 # Reutilizar node_modules
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
-    - name: Build
-      run: |
-        npm install
-        npm run-script deploy
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@releases/v3
-      with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: dist/pokedex
+      - name: Checkout
+        uses: actions/checkout@v1
+      - uses: actions/setup-node@v1 # Instalar node y npm
+        with:
+          node-version: '14.x'
+      - uses: actions/cache@v1 # Reutilizar node_modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Build
+        run: |
+          npm install
+          npm run-script deploy
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: dist/pokedex
