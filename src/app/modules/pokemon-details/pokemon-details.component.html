@@ -1,7 +1,7 @@
 <section class="pokemon-details" *ngIf="pokemon">
   <!-- Imagen -->
   <div class="artwork">
-    <div class="container-theme container-theme--large">
+    <app-dialog-box size="large">
       <div class="artwork__image-placeholder">
         <img
           *ngIf="!busy && pokemon.sprites && pokemon.sprites.other"
@@ -22,23 +22,23 @@
         >
           <span *ngIf="pokemon.id - 1 >= 1">&lt;</span>
         </a>
-        <div class="container-theme container-theme--small">
+        <app-dialog-box size="small">
           <div class="paginator__current-number">
             {{ pokemon.id | pokemonNumber }}
           </div>
-        </div>
+        </app-dialog-box>
         <a
           [routerLink]="'/pokemon/' + (pokemon.id + 1)"
           class="paginator__button"
           >&gt;</a
         >
       </div>
-    </div>
+    </app-dialog-box>
   </div>
 
   <!-- Detalles -->
   <div class="details">
-    <div class="container-theme container-theme--large">
+    <app-dialog-box size="large">
       <ul class="details__list --visible">
         <li>
           <span class="details__name" *ngIf="!busy" [@fadeIn]>{{
@@ -80,12 +80,12 @@
           </td>
         </tr>
       </table>
-    </div>
+    </app-dialog-box>
   </div>
 
   <!-- Más detalles -->
   <div class="more-details">
-    <div class="container-theme container-theme--large">
+    <app-dialog-box size="large">
       <h2 class="more-details__title">
         <span *ngIf="busyDetails"> Cargando... No apague la consola. </span>
         <span *ngIf="!busyDetails && pokemonGenera" [@fadeIn]>
@@ -109,6 +109,6 @@
         </ng-container>
         <a class="button-theme button-theme--black" routerLink="/"> Inicio </a>
       </div>
-    </div>
+    </app-dialog-box>
   </div>
 </section>

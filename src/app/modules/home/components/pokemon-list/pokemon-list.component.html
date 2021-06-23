@@ -6,39 +6,38 @@
     <div class="message">{{ _pokemons.length | searchResultsMessage }}</div>
     <div class="pokemons-container">
       <ng-container *ngFor="let pokemon of _pokemons">
-        <a
-          class="
-            pokemon-card
-            container-theme container-theme--small container-theme--hoverable
-          "
-          routerLink="pokemon/{{ pokemon.id }}"
-          [ngStyle]="{
-            'maxHeight.px': _pokedex.version.platform.pokemonCardMaxHeight
-          }"
-        >
-          <div
-            *ngIf="!_pokedex.version.sprites.animated"
-            class="image"
-            [ngStyle]="pokemon.id | pokemonSpritePosition: _pokedex.version"
-          ></div>
-          <div
-            *ngIf="_pokedex.version.sprites.animated"
-            class="image-animated"
+        <app-dialog-box size="small" [hoverable]="true">
+          <a
+            class="pokemon-card"
+            routerLink="pokemon/{{ pokemon.id }}"
             [ngStyle]="{
-              'width.px': _pokedex.version.sprites.width,
-              'height.px': _pokedex.version.sprites.height
+              'maxHeight.px': _pokedex.version.platform.pokemonCardMaxHeight
             }"
           >
-            <img
+            <div
+              *ngIf="!_pokedex.version.sprites.animated"
+              class="image"
+              [ngStyle]="pokemon.id | pokemonSpritePosition: _pokedex.version"
+            ></div>
+            <div
               *ngIf="_pokedex.version.sprites.animated"
-              [src]="pokemon.id | pokemonImageUrl: _pokedex.version"
-              appLazyImg
-              [alt]="pokemon.name"
-            />
-          </div>
-          <span class="number">{{ pokemon.id | pokemonNumber }}</span>
-          <span class="name">{{ pokemon.name | pokemonName }}</span>
-        </a>
+              class="image-animated"
+              [ngStyle]="{
+                'width.px': _pokedex.version.sprites.width,
+                'height.px': _pokedex.version.sprites.height
+              }"
+            >
+              <img
+                *ngIf="_pokedex.version.sprites.animated"
+                [src]="pokemon.id | pokemonImageUrl: _pokedex.version"
+                appLazyImg
+                [alt]="pokemon.name"
+              />
+            </div>
+            <span class="number">{{ pokemon.id | pokemonNumber }}</span>
+            <span class="name">{{ pokemon.name | pokemonName }}</span>
+          </a>
+        </app-dialog-box>
       </ng-container>
     </div>
   </ng-container>

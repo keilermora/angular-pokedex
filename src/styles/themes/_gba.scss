@@ -1,26 +1,2 @@
-@import '../utils/colors';
-
 .gba-theme {
-  .container-theme {
-    background-color: $white;
-    border-style: solid;
-    overflow: hidden;
-
-    &.container-theme--small {
-      border-image: url('../../assets/images/frame-gba-black-small.png') 7 round;
-      border-width: 6px;
-
-      &.container-theme--hoverable:hover {
-        border-image: url('../../assets/images/frame-gba-crimson-small.png') 7
-          round;
-      }
-    }
-
-    &.container-theme--large {
-      border-image: url('../../assets/images/frame-gba-black-large.png') 14
-        round;
-      border-width: 12px;
-      padding: 16px 24px;
-    }
-  }
 }

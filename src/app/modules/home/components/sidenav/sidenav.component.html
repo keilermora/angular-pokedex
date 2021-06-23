@@ -1,35 +1,37 @@
 <aside class="sidenav" [ngClass]="{ closed: !showNav }">
   <div class="content">
-    <div class="filter container-theme container-theme--small">
-      <button class="toggle-nav-btn" (click)="showNav = !showNav">
-        <fa-icon *ngIf="showNav" [icon]="iconTimes"></fa-icon>
-        <fa-icon *ngIf="!showNav" [icon]="iconSearch"></fa-icon>
-      </button>
-      <div class="form-group-theme">
-        <span class="label">Versión:</span>
-        <div *ngFor="let version of pokedexVersions">
-          <label class="radio-button-theme">
-            <input
-              type="radio"
-              id="version-{{ version.id }}"
-              name="version"
-              [value]="version.id"
-              [(ngModel)]="currentVersionId"
-              (change)="changeVersion(version.id)"
-            />{{ version.name }}
-          </label>
+    <app-dialog-box size="small">
+      <div class="filter">
+        <button class="toggle-nav-btn" (click)="showNav = !showNav">
+          <fa-icon *ngIf="showNav" [icon]="iconTimes"></fa-icon>
+          <fa-icon *ngIf="!showNav" [icon]="iconSearch"></fa-icon>
+        </button>
+        <div class="form-group-theme">
+          <span class="label">Versión:</span>
+          <div *ngFor="let version of pokedexVersions">
+            <label class="radio-button-theme">
+              <input
+                type="radio"
+                id="version-{{ version.id }}"
+                name="version"
+                [value]="version.id"
+                [(ngModel)]="currentVersionId"
+                (change)="changeVersion(version.id)"
+              />{{ version.name }}
+            </label>
+          </div>
+        </div>
+        <div class="form-group-theme">
+          <label class="label" for="field-name">Nombre:</label>
+          <input
+            id="field-name"
+            type="text"
+            [ngModel]="currentPokemonName"
+            (ngModelChange)="changePokemonName($event)"
+            maxlength="10"
+          />
         </div>
       </div>
-      <div class="form-group-theme">
-        <label class="label" for="field-name">Nombre:</label>
-        <input
-          id="field-name"
-          type="text"
-          [ngModel]="currentPokemonName"
-          (ngModelChange)="changePokemonName($event)"
-          maxlength="10"
-        />
-      </div>
-    </div>
+    </app-dialog-box>
   </div>
 </aside>

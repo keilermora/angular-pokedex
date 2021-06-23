@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 // Components
+import { DialogBoxComponent } from './component/dialog-box/dialog-box.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { FooterComponent } from './component/footer/footer.component';
 
@@ -25,6 +26,7 @@ import { LazyImgDirective } from './directives/lazy-img.directive';
 
 @NgModule({
   declarations: [
+    DialogBoxComponent,
     FooterComponent,
     LazyImgDirective,
     NavbarComponent,
@@ -42,6 +44,7 @@ import { LazyImgDirective } from './directives/lazy-img.directive';
   imports: [CommonModule, FontAwesomeModule, FormsModule, RouterModule],
   exports: [
     CommonModule,
+    DialogBoxComponent,
     FontAwesomeModule,
     FooterComponent,
     FormsModule,

@@ -21,10 +21,12 @@ export class SidenavComponent implements OnInit {
   pokedexVersions: PokedexVersion[];
   currentPokemonName!: string;
   currentVersionId!: number;
+  currentVersionPlatformCode!: string;
 
   @Input() set pokedex(pokedex: Pokedex) {
     this.currentVersionId = pokedex.version.id;
     this.currentPokemonName = pokedex.pokemonName;
+    this.currentVersionPlatformCode = pokedex.version.platform.code;
   }
 
   constructor(private pokedexService: PokedexService, private router: Router) {
