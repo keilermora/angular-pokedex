@@ -56,7 +56,7 @@ export class PokemonDetailsComponent implements OnInit {
         },
         (error) => {
           console.error(error);
-          this.pokemon = missingNo;
+          this.pokemon = { ...missingNo };
         }
       )
       .add(() => {

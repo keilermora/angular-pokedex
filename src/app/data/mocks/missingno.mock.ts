@@ -101,7 +101,7 @@ const missingNoFlavorTextEntries: PokemonFlavorTextEntry[] = [
     version: {
       name: 'blue',
     },
-    flavor_text: '???',
+    flavor_text: 'コメント さくせいちゅう',
   },
   {
     language: {
@@ -110,7 +110,7 @@ const missingNoFlavorTextEntries: PokemonFlavorTextEntry[] = [
     version: {
       name: 'yellow',
     },
-    flavor_text: '',
+    flavor_text: '...',
   },
 ];
 
