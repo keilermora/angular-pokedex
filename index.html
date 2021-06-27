@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="utf-8">
-    <title>Pokdex | Angular</title>
+    <title>Pokédex | Angular</title>
     <meta name="description" content="Desarrollado por Keiler Mora con Angular. Consume la api Restful PokéApi.">
 
     <!-- facebook open graph -->
@@ -12,11 +12,42 @@
 
     <base href="/pokedex/">
 
+    <!-- Start Single Page Apps for GitHub Pages -->
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      // This script checks to see if a redirect is present in the query string,
+      // converts it back into the correct url and adds it to the
+      // browser's history using window.history.replaceState(...),
+      // which won't cause the browser to attempt to load the new url.
+      // When the single page app is loaded further down in this file,
+      // the correct url will be waiting in the browser's history for
+      // the single page app to route accordingly.
+      (function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search
+            .slice(1)
+            .split('&')
+            .map(function (s) {
+              return s.replace(/~and~/g, '&');
+            })
+            .join('?');
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      })(window.location);
+    </script>
+    <!-- End Single Page Apps for GitHub Pages -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <style>html{line-height:1.15;-webkit-text-size-adjust:100%;}body{margin:0;}@font-face{font-family:pokemon-font;src:url(pokemon-font.827fac74b081a9471081.eot);src:url(pokemon-font.827fac74b081a9471081.eot?#iefix) format("embedded-opentype"),url(pokemon-font.2c6162341d5808452bd4.woff2) format("woff2"),url(pokemon-font.59e7be2a8b50c63b0862.woff) format("woff"),url(pokemon-font.aed34d09aa9153dc3e3b.ttf) format("truetype");}html{max-width:100%;overflow-x:hidden;scroll-behavior:smooth;height:100%;box-sizing:border-box;}html *,html :after,html :before{box-sizing:inherit;}html body{font-size:14px;font-family:pokemon-font,monospace;line-height:1.8;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;max-width:100%;overflow-y:scroll;height:100%;margin:0;}</style><link rel="stylesheet" href="styles.263da2174489661e3857.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.263da2174489661e3857.css"></noscript></head>
+  <style>html{line-height:1.15;-webkit-text-size-adjust:100%;}body{margin:0;}@font-face{font-family:pokemon-font;src:url(pokemon-font.827fac74b081a9471081.eot);src:url(pokemon-font.827fac74b081a9471081.eot?#iefix) format("embedded-opentype"),url(pokemon-font.2c6162341d5808452bd4.woff2) format("woff2"),url(pokemon-font.59e7be2a8b50c63b0862.woff) format("woff"),url(pokemon-font.aed34d09aa9153dc3e3b.ttf) format("truetype");}html{max-width:100%;overflow-x:hidden;scroll-behavior:smooth;height:100%;box-sizing:border-box;}html *,html :after,html :before{box-sizing:inherit;}html body{font-size:14px;font-family:pokemon-font,monospace;line-height:1.8;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;max-width:100%;overflow-y:scroll;height:100%;margin:0;}</style><link rel="stylesheet" href="styles.ad58fe00fc72f34b9c13.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.ad58fe00fc72f34b9c13.css"></noscript></head>
   <body>
     <app-root></app-root>
-  <script src="runtime-es2015.70ee0e7631feb7a7c484.js" type="module"></script><script src="runtime-es5.70ee0e7631feb7a7c484.js" nomodule defer></script><script src="polyfills-es5.a75be20512b4498e3614.js" nomodule defer></script><script src="polyfills-es2015.496459f0105ae10c1a80.js" type="module"></script><script src="main-es2015.246c21083ff0a924b518.js" type="module"></script><script src="main-es5.246c21083ff0a924b518.js" nomodule defer></script>
+  <script src="runtime-es2015.d8e18e4cf9fdee449d23.js" type="module"></script><script src="runtime-es5.d8e18e4cf9fdee449d23.js" nomodule defer></script><script src="polyfills-es5.a75be20512b4498e3614.js" nomodule defer></script><script src="polyfills-es2015.496459f0105ae10c1a80.js" type="module"></script><script src="main-es2015.746ff3696da7694a9179.js" type="module"></script><script src="main-es5.746ff3696da7694a9179.js" nomodule defer></script>
 
 </body></html>
