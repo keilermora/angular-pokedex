@@ -1,12 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
-import {
-  faSearch,
-  faTimes,
-  IconDefinition,
-} from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faTimes, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import Pokedex, { PokedexVersion } from '@data/types/pokedex';
 import { PokedexService } from '@data/services/pokedex.service';
+import { PokemonTypeV2 } from '@data/types/pokemon';
+import { PokemonTypeService } from '@data/services/pokemon-type.service';
 
 @Component({
   selector: 'app-sidenav',
@@ -19,18 +17,27 @@ export class SidenavComponent implements OnInit {
 
   showNav: boolean = true;
   pokedexVersions: PokedexVersion[];
+  pokemonTypes: PokemonTypeV2[] = [];
   currentPokemonName!: string;
+  currentPokemonTypeId!: number;
   currentVersionId!: number;
-  currentVersionPlatformCode!: string;
 
   @Input() set pokedex(pokedex: Pokedex) {
     this.currentVersionId = pokedex.version.id;
     this.currentPokemonName = pokedex.pokemonName;
-    this.currentVersionPlatformCode = pokedex.version.platform.code;
+    this.currentPokemonTypeId = pokedex.pokemonTypeId;
   }
 
-  constructor(private pokedexService: PokedexService, private router: Router) {
+  constructor(
+    private pokedexService: PokedexService,
+    private pokemonTypeService: PokemonTypeService,
+    private router: Router
+  ) {
     this.pokedexVersions = this.pokedexService.getPokedexVersions();
+
+    this.pokemonTypeService.getPokemonTypes().subscribe((pokemonTypes: PokemonTypeV2[]) => {
+      this.pokemonTypes = pokemonTypes;
+    });
   }
 
   ngOnInit() {}
@@ -52,6 +59,11 @@ export class SidenavComponent implements OnInit {
   changeVersion(versionId: number): void {
     this.pokedexService.setPokedexVersion(versionId);
     this.updateQueryParams({ version: versionId } as NavigationExtras);
+  }
+
+  changePokemonType(pokemonTypeId: string): void {
+    this.pokedexService.setPokemonTypeId(parseInt(pokemonTypeId));
+    this.updateQueryParams({ type: pokemonTypeId } as NavigationExtras);
   }
 
   /**

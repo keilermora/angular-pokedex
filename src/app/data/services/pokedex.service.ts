@@ -1,10 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { BehaviorSubject, Observable } from 'rxjs';
-import Pokedex, {
-  PokedexVersion,
-  PokedexVersionPlatform,
-} from '@data/types/pokedex';
+import { Observable, ReplaySubject, Subject } from 'rxjs';
+import Pokedex, { PokedexVersion } from '@data/types/pokedex';
 import { pokedexVersions } from '@data/mocks/pokedex-versions.mock';
 
 @Injectable({
@@ -13,22 +10,24 @@ import { pokedexVersions } from '@data/mocks/pokedex-versions.mock';
 export class PokedexService {
   private pokedex: Pokedex = {} as Pokedex;
   private pokedexVersions: PokedexVersion[];
-  private pokedexSubject: BehaviorSubject<Pokedex>;
+  private pokedexSubject: Subject<Pokedex>;
 
   constructor(private route: ActivatedRoute) {
     this.pokedexVersions = pokedexVersions;
+    this.pokedexSubject = new ReplaySubject<Pokedex>(1);
 
-    route.queryParams.subscribe(({ pokemon, version }) => {
+    route.queryParams.subscribe(({ pokemon, type, version }) => {
       const pokemonName = pokemon || '';
+      const pokemonTypeId = type ? parseInt(type) : 0;
       const versionId = version ? parseInt(version) : 0;
 
       this.pokedex = {
         pokemonName,
         version: this.getPokedexVersion(versionId),
+        pokemonTypeId,
       };
+      this.refresh();
     });
-
-    this.pokedexSubject = new BehaviorSubject(this.pokedex);
   }
 
   /**
@@ -47,8 +46,7 @@ export class PokedexService {
 
   getPokedexVersion(versionId: number): PokedexVersion {
     return (
-      this.pokedexVersions.find((version) => version.id === versionId) ||
-      this.pokedexVersions[0]
+      this.pokedexVersions.find((version) => version.id === versionId) || this.pokedexVersions[0]
     );
   }
 
@@ -57,13 +55,6 @@ export class PokedexService {
    */
   getPokedexVersions(): PokedexVersion[] {
     return this.pokedexVersions;
-  }
-
-  /**
-   * Obtiene la plataforma de la versión seleccionada en la Pokédex.
-   */
-  getPokedexVersionPlatform(): PokedexVersionPlatform {
-    return this.pokedex.version.platform;
   }
 
   /**
@@ -91,6 +82,11 @@ export class PokedexService {
    */
   setPokemonName(pokemonName: string): void {
     this.pokedex.pokemonName = pokemonName;
+    this.refresh();
+  }
+
+  setPokemonTypeId(pokemonTypeId: number) {
+    this.pokedex.pokemonTypeId = pokemonTypeId;
     this.refresh();
   }
 }

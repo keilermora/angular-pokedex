@@ -1,10 +1,5 @@
 import { environment } from '@env';
 import { PokedexVersion } from '@data/types/pokedex';
-import {
-  gameBoy,
-  gameBoyAdvanced,
-  gameBoyColor,
-} from './pokedex-version-platforms.mock';
 
 const imagesPath = environment.imagesPath;
 
@@ -19,7 +14,6 @@ export const pokedexVersions: PokedexVersion[] = [
       animated: false,
     },
     limit: 151,
-    platform: gameBoy,
   },
   {
     id: 2,
@@ -31,7 +25,6 @@ export const pokedexVersions: PokedexVersion[] = [
       animated: false,
     },
     limit: 151,
-    platform: gameBoy,
   },
   {
     id: 3,
@@ -43,7 +36,6 @@ export const pokedexVersions: PokedexVersion[] = [
       animated: false,
     },
     limit: 151,
-    platform: gameBoyColor,
   },
   {
     id: 4,
@@ -55,7 +47,6 @@ export const pokedexVersions: PokedexVersion[] = [
       animated: false,
     },
     limit: 251,
-    platform: gameBoyColor,
   },
   {
     id: 5,
@@ -67,7 +58,6 @@ export const pokedexVersions: PokedexVersion[] = [
       animated: false,
     },
     limit: 251,
-    platform: gameBoyColor,
   },
   {
     id: 6,
@@ -79,7 +69,6 @@ export const pokedexVersions: PokedexVersion[] = [
       animated: true,
     },
     limit: 251,
-    platform: gameBoyColor,
   },
   {
     id: 7,
@@ -91,7 +80,6 @@ export const pokedexVersions: PokedexVersion[] = [
       animated: false,
     },
     limit: 386,
-    platform: gameBoyAdvanced,
   },
   {
     id: 8,
@@ -103,7 +91,6 @@ export const pokedexVersions: PokedexVersion[] = [
       animated: true,
     },
     limit: 386,
-    platform: gameBoyAdvanced,
   },
   {
     id: 9,
@@ -115,6 +102,5 @@ export const pokedexVersions: PokedexVersion[] = [
       animated: false,
     },
     limit: 386,
-    platform: gameBoyAdvanced,
   },
 ];

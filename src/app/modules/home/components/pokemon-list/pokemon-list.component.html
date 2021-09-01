@@ -1,19 +1,13 @@
 <div class="pokemon-list" *ngIf="_pokedex.version">
-  <ng-container *ngIf="busy">
+  <ng-container *ngIf="_busy">
     <div class="message">Cargando... No apagar la consola.</div>
   </ng-container>
-  <ng-container *ngIf="!busy">
+  <ng-container *ngIf="!_busy">
     <div class="message">{{ _pokemons.length | searchResultsMessage }}</div>
     <div class="pokemons-container">
       <ng-container *ngFor="let pokemon of _pokemons">
         <app-dialog-box size="small" [hoverable]="true">
-          <a
-            class="pokemon-card"
-            routerLink="pokemon/{{ pokemon.id }}"
-            [ngStyle]="{
-              'maxHeight.px': _pokedex.version.platform.pokemonCardMaxHeight
-            }"
-          >
+          <a class="pokemon-card" routerLink="pokemon/{{ pokemon.id }}">
             <div
               *ngIf="!_pokedex.version.sprites.animated"
               class="image"

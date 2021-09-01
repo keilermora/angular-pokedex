@@ -1,5 +1,6 @@
 interface Pokedex {
   pokemonName: string;
+  pokemonTypeId: number;
   version: PokedexVersion;
 }
 
@@ -7,16 +8,7 @@ interface PokedexVersion {
   id: number;
   limit: number;
   name: string;
-  platform: PokedexVersionPlatform;
   sprites: PokedexVersionSprites;
-}
-
-interface PokedexVersionPlatform {
-  classTheme: string;
-  code: string;
-  id: number;
-  name: string;
-  pokemonCardMaxHeight: number;
 }
 
 interface PokedexVersionSprites {
@@ -27,4 +19,4 @@ interface PokedexVersionSprites {
 }
 
 export default Pokedex;
-export { PokedexVersion, PokedexVersionPlatform, PokedexVersionSprites };
+export { PokedexVersion, PokedexVersionSprites };

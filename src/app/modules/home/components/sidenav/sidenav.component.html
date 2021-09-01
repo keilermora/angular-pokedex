@@ -31,6 +31,20 @@
             maxlength="10"
           />
         </div>
+        <div class="form-group-theme">
+          <label class="label" for="field-type">Tipo</label>
+          <select
+            name="field-type"
+            id="field-type"
+            [ngModel]="currentPokemonTypeId"
+            (ngModelChange)="changePokemonType($event)"
+          >
+            <option value="0">Todos</option>
+            <option *ngFor="let pokemonType of pokemonTypes" [value]="pokemonType.id">
+              {{ pokemonType.name }}
+            </option>
+          </select>
+        </div>
       </div>
     </app-dialog-box>
   </div>

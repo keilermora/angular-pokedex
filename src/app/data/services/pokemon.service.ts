@@ -4,9 +4,10 @@ import { Observable, of } from 'rxjs';
 import { map, share } from 'rxjs/operators';
 import { environment } from '@env';
 import Pokemon from '@data/types/pokemon';
-import NamedPokeAPIResource, {
-  NamedPokeAPIResourceList,
-} from '@data/types/named-poke-api-resource';
+import { Apollo } from 'apollo-angular';
+import QueryResultsData from '@data/types/query-results-data';
+import getPokemonsQuery from '@data/queries/get-pokemons.query';
+import { ApolloQueryResult } from '@apollo/client/core';
 
 @Injectable({
   providedIn: 'root',
@@ -16,15 +17,13 @@ export class PokemonService {
   private pokemons$!: Observable<Pokemon[]>;
   private fetchingPokemons: boolean = false;
 
-  constructor(private http: HttpClient) {
-    const pokemons = localStorage.getItem('pokemons');
+  constructor(private apollo: Apollo, private http: HttpClient) {
+    const pokemons = localStorage.getItem('pokemons-v5');
     this.pokemons = pokemons ? JSON.parse(pokemons) : [];
   }
 
   getPokemon(pokemonId: number): Observable<Pokemon> {
-    return this.http.get<Pokemon>(
-      `${environment.pokeApi}/pokemon/${pokemonId}`
-    );
+    return this.http.get<Pokemon>(`${environment.pokeApi}/pokemon/${pokemonId}`);
   }
 
   /**
@@ -38,23 +37,18 @@ export class PokemonService {
       return of(this.pokemons.slice(0, limit));
     } else if (!this.fetchingPokemons) {
       this.fetchingPokemons = true;
-      this.pokemons$ = this.http
-        .get<NamedPokeAPIResourceList>(
-          `${environment.pokeApi}/pokemon/?limit=${limit}`
-        )
+
+      this.pokemons$ = this.apollo
+        .query<QueryResultsData>({
+          query: getPokemonsQuery(limit),
+        })
         .pipe(
-          map((resourceList: NamedPokeAPIResourceList) => {
-            this.pokemons = resourceList.results.map(
-              (resource: NamedPokeAPIResource, index: number) => ({
-                id: index + 1,
-                name: resource.name,
-              })
-            );
-            localStorage.setItem('pokemons', JSON.stringify(this.pokemons));
+          map(({ data }: ApolloQueryResult<QueryResultsData>) => {
+            this.pokemons = data.pokemon_v2_pokemon;
+            localStorage.setItem('pokemons-v2', JSON.stringify(this.pokemons));
             this.fetchingPokemons = false;
             return this.pokemons;
-          }),
-          share()
+          })
         );
     }
     return this.pokemons$;

@@ -16,29 +16,17 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "es2020",
-    "lib": [
-      "es2018",
-      "dom"
-    ],
+    "lib": ["es2018", "dom", "esnext.asynciterable"],
     "paths": {
-      "@app/*": [
-        "app/core/*"
-      ],
-      "@shared/*": [
-        "app/shared/*"
-      ],
-      "@env": [
-        "environments/environment"
-      ],
-      "@modules/*": [
-        "app/modules/*"
-      ],
-      "@data/*": [
-        "app/data/*"
-      ]
+      "@app/*": ["app/core/*"],
+      "@shared/*": ["app/shared/*"],
+      "@env": ["environments/environment"],
+      "@modules/*": ["app/modules/*"],
+      "@data/*": ["app/data/*"]
     }
   },
   "angularCompilerOptions": {
+    "allowSyntheticDefaultImports": true,
     "strictInjectionParameters": true,
     "strictTemplates": true
   }

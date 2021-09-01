@@ -1,9 +1,12 @@
 import NamedPokeAPIResource from './named-poke-api-resource';
 
 interface Pokemon {
-  height?: number;
   id: number;
   name: string;
+  pokemon_v2_pokemontypes?: PokemonTypeContainer[];
+
+  type?: PokemonType;
+  height?: number;
   sprites?: PokemonSprites;
   stats?: PokemonStat[];
   types?: PokemonType[];
@@ -24,9 +27,25 @@ interface PokemonStat {
   stat: NamedPokeAPIResource;
 }
 
+interface PokemonTypeContainer {
+  pokemon_v2_type: PokemonTypeV2;
+}
+
 interface PokemonType {
   type: NamedPokeAPIResource;
 }
 
+interface PokemonTypeV2 {
+  id: number;
+  name: string;
+}
+
 export default Pokemon;
-export { PokemonSprites, PokemonSpritesOther, PokemonStat, PokemonType };
+export {
+  PokemonSprites,
+  PokemonSpritesOther,
+  PokemonStat,
+  PokemonTypeContainer,
+  PokemonType,
+  PokemonTypeV2,
+};

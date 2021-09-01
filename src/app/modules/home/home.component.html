@@ -8,10 +8,6 @@
   </header>
   <div class="home__content">
     <app-sidenav [pokedex]="pokedex"></app-sidenav>
-    <app-pokemon-list
-      [busy]="busy"
-      [pokedex]="pokedex"
-      [pokemons]="pokemons"
-    ></app-pokemon-list>
+    <app-pokemon-list [busy]="busy" [pokedex]="pokedex" [pokemons]="pokemons"></app-pokemon-list>
   </div>
 </main>

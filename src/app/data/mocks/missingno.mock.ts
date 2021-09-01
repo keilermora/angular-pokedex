@@ -1,8 +1,5 @@
 import Pokemon from '@data/types/pokemon';
-import {
-  PokemonFlavorTextEntry,
-  PokemonGenera,
-} from '@data/types/pokemon-specie';
+import { PokemonFlavorTextEntry, PokemonGenera } from '@data/types/pokemon-specie';
 
 const missingNo: Pokemon = {
   id: 0,

@@ -27,11 +27,7 @@
             {{ pokemon.id | pokemonNumber }}
           </div>
         </app-dialog-box>
-        <a
-          [routerLink]="'/pokemon/' + (pokemon.id + 1)"
-          class="paginator__button"
-          >&gt;</a
-        >
+        <a [routerLink]="'/pokemon/' + (pokemon.id + 1)" class="paginator__button">&gt;</a>
       </div>
     </app-dialog-box>
   </div>
@@ -41,9 +37,7 @@
     <app-dialog-box size="large">
       <ul class="details__list --visible">
         <li>
-          <span class="details__name" *ngIf="!busy" [@fadeIn]>{{
-            pokemon.name | pokemonName
-          }}</span
+          <span class="details__name" *ngIf="!busy" [@fadeIn]>{{ pokemon.name | pokemonName }}</span
           >&nbsp;
         </li>
         <li>
@@ -92,15 +86,9 @@
           {{ pokemonGenera.genus }}
         </span>
       </h2>
-      <div
-        class="more-details__content --visible"
-        [ngClass]="{ '--hidden': busyDetails }"
-      >
+      <div class="more-details__content --visible" [ngClass]="{ '--hidden': busyDetails }">
         <ng-container *ngFor="let textEntry of pokemonFlavorTextEntries">
-          <h3
-            [ngClass]="textEntry.version.name"
-            class="more-details__version-name"
-          >
+          <h3 [ngClass]="textEntry.version.name" class="more-details__version-name">
             {{ textEntry.version.name | pokedexVersionName }}
           </h3>
           <p class="more-details__flavor-text" *ngIf="textEntry.flavor_text">
