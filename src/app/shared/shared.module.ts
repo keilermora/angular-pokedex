@@ -5,9 +5,9 @@ import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 // Components
-import { DialogBoxComponent } from './component/dialog-box/dialog-box.component';
-import { NavbarComponent } from './component/navbar/navbar.component';
-import { FooterComponent } from './component/footer/footer.component';
+import { DialogBoxComponent } from './components/dialog-box/dialog-box.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 // Pipes
 import { PokemonImageUrlPipe } from './pipes/pokemon-image-url.pipe';

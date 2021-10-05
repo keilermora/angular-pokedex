@@ -5,7 +5,6 @@
 .dialog-box {
   background-color: $white;
   position: relative;
-  transition: border-color $fast;
   margin: 2px;
 
   &.dialog-box--large {
