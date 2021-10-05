@@ -43,6 +43,29 @@
             </option>
           </select>
         </div>
+        <div class="form-group-theme">
+          <span class="label">Ordenar por:</span>
+          <label class="radio-button-theme">
+            <input
+              type="radio"
+              id="field-sort-by-number"
+              name="version"
+              value="number"
+              [(ngModel)]="currentPokemonSortBy"
+              (change)="changePokemonSortBy(pokemonSortByNumber)"
+            />Número
+          </label>
+          <label class="radio-button-theme">
+            <input
+              type="radio"
+              id="field-sort-by-name"
+              name="version"
+              value="name"
+              [(ngModel)]="currentPokemonSortBy"
+              (change)="changePokemonSortBy(pokemonSortByName)"
+            />Nombre
+          </label>
+        </div>
       </div>
     </app-dialog-box>
   </div>

@@ -1,7 +1,10 @@
+import PokemonSortByEnum from '@data/enums/pokemon-sort-by.enum';
+
 interface Pokedex {
   pokemonName: string;
   pokemonTypeId: number;
   version: PokedexVersion;
+  pokemonSortBy: PokemonSortByEnum;
 }
 
 interface PokedexVersion {

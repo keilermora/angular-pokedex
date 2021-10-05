@@ -5,6 +5,7 @@ import Pokedex, { PokedexVersion } from '@data/types/pokedex';
 import { PokedexService } from '@data/services/pokedex.service';
 import { PokemonTypeV2 } from '@data/types/pokemon';
 import { PokemonTypeService } from '@data/services/pokemon-type.service';
+import PokemonSortByEnum from '@data/enums/pokemon-sort-by.enum';
 
 @Component({
   selector: 'app-sidenav',
@@ -15,10 +16,14 @@ export class SidenavComponent implements OnInit {
   iconSearch: IconDefinition = faSearch;
   iconTimes: IconDefinition = faTimes;
 
+  pokemonSortByName: PokemonSortByEnum = PokemonSortByEnum.NAME;
+  pokemonSortByNumber: PokemonSortByEnum = PokemonSortByEnum.NUMBER;
+
   showNav: boolean = true;
   pokedexVersions: PokedexVersion[];
   pokemonTypes: PokemonTypeV2[] = [];
   currentPokemonName!: string;
+  currentPokemonSortBy!: PokemonSortByEnum;
   currentPokemonTypeId!: number;
   currentVersionId!: number;
 
@@ -26,6 +31,7 @@ export class SidenavComponent implements OnInit {
     this.currentVersionId = pokedex.version.id;
     this.currentPokemonName = pokedex.pokemonName;
     this.currentPokemonTypeId = pokedex.pokemonTypeId;
+    this.currentPokemonSortBy = pokedex.pokemonSortBy;
   }
 
   constructor(
@@ -53,17 +59,30 @@ export class SidenavComponent implements OnInit {
   }
 
   /**
+   * Establecer el indicador par aordenar la lista de Pokémon y actualizar los query params.
+   * @param {PokemonSortByEnum} pokemonSortBy - Indicador para ordenar la lista de Pokémon
+   */
+  changePokemonSortBy(pokemonSortBy: PokemonSortByEnum): void {
+    this.pokedexService.setPokemonSortBy(pokemonSortBy);
+    this.updateQueryParams({ sortBy: pokemonSortBy } as NavigationExtras);
+  }
+
+  /**
+   * Establecer el tipo de Pokémon y actualizar los query params.
+   * @param pokemonTypeId - Número identificador del tipo de Pokémon
+   */
+  changePokemonType(pokemonTypeId: string): void {
+    this.pokedexService.setPokemonTypeId(parseInt(pokemonTypeId));
+    this.updateQueryParams({ type: pokemonTypeId } as NavigationExtras);
+  }
+
+  /**
    * Establecer la versión de la Pokédex y actualizar los query params.
    * @param {number} versionId - Número identificador de la versión.
    */
   changeVersion(versionId: number): void {
     this.pokedexService.setPokedexVersion(versionId);
     this.updateQueryParams({ version: versionId } as NavigationExtras);
-  }
-
-  changePokemonType(pokemonTypeId: string): void {
-    this.pokedexService.setPokemonTypeId(parseInt(pokemonTypeId));
-    this.updateQueryParams({ type: pokemonTypeId } as NavigationExtras);
   }
 
   /**

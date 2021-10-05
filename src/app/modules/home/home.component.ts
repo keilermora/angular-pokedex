@@ -4,6 +4,7 @@ import { PokedexService } from '@data/services/pokedex.service';
 import { PokemonService } from '@data/services/pokemon.service';
 import Pokedex from '@data/types/pokedex';
 import Pokemon, { PokemonType, PokemonTypeContainer } from '@data/types/pokemon';
+import PokemonSortByEnum from '@data/enums/pokemon-sort-by.enum';
 
 @Component({
   selector: 'app-home',
@@ -41,7 +42,7 @@ export class HomeComponent implements OnInit {
    * @param {Pokedex} pokedex - Pokédex actual.
    */
   updatePokemonList(pokemons: Pokemon[], pokedex: Pokedex): void {
-    const { pokemonName, pokemonTypeId } = pokedex;
+    const { pokemonName, pokemonTypeId, pokemonSortBy } = pokedex;
 
     let pokemonResults = [...pokemons];
 
@@ -57,6 +58,11 @@ export class HomeComponent implements OnInit {
             pokemonTypeContainer.pokemon_v2_type.id === pokemonTypeId
         )
       );
+    }
+
+    // La lista de Pokémon viene ordenada por números por defecto
+    if (pokemonSortBy === PokemonSortByEnum.NAME) {
+      pokemonResults.sort((a: Pokemon, b: Pokemon) => (a.name > b.name ? 1 : -1));
     }
 
     this.pokemons = pokemonResults;

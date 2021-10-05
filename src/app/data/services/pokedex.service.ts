@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable, ReplaySubject, Subject } from 'rxjs';
 import Pokedex, { PokedexVersion } from '@data/types/pokedex';
 import { pokedexVersions } from '@data/mocks/pokedex-versions.mock';
+import PokemonSortByEnum from '@data/enums/pokemon-sort-by.enum';
 
 @Injectable({
   providedIn: 'root',
@@ -16,15 +17,17 @@ export class PokedexService {
     this.pokedexVersions = pokedexVersions;
     this.pokedexSubject = new ReplaySubject<Pokedex>(1);
 
-    route.queryParams.subscribe(({ pokemon, type, version }) => {
+    route.queryParams.subscribe(({ pokemon, sortBy, type, version }) => {
       const pokemonName = pokemon || '';
       const pokemonTypeId = type ? parseInt(type) : 0;
       const versionId = version ? parseInt(version) : 0;
+      const pokemonSortBy = sortBy || PokemonSortByEnum.NUMBER;
 
       this.pokedex = {
         pokemonName,
-        version: this.getPokedexVersion(versionId),
         pokemonTypeId,
+        pokemonSortBy,
+        version: this.getPokedexVersion(versionId),
       };
       this.refresh();
     });
@@ -87,6 +90,11 @@ export class PokedexService {
 
   setPokemonTypeId(pokemonTypeId: number) {
     this.pokedex.pokemonTypeId = pokemonTypeId;
+    this.refresh();
+  }
+
+  setPokemonSortBy(sortBy: PokemonSortByEnum): void {
+    this.pokedex.pokemonSortBy = sortBy;
     this.refresh();
   }
 }
