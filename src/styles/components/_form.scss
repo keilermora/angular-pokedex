@@ -1,4 +1,4 @@
-@import "../utils/colors";
+@import '../utils/colors';
 
 .form-group-theme {
   & + .form-group-theme {
@@ -8,17 +8,36 @@
   .label {
     display: block;
     cursor: default;
+    font-size: 0.75rem;
   }
 
   input[type='text'] {
-    border: none;
     border: 1px solid $shark;
     width: 100%;
     box-sizing: border-box;
     text-transform: uppercase;
     padding-bottom: 4px;
-    background-color: $gallery;
     padding: 4px 10px;
+
+    &:hover {
+      border-color: $crimson;
+    }
+
+    &:focus {
+      border-color: $shark;
+      outline: none;
+    }
+  }
+
+  select {
+    border: 1px solid $shark;
+    width: 100%;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 1px 6px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 
     &:hover {
       border-color: $crimson;

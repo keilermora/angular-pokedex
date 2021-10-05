@@ -7,19 +7,17 @@
           <fa-icon *ngIf="!showNav" [icon]="iconSearch"></fa-icon>
         </button>
         <div class="form-group-theme">
-          <span class="label">Versión:</span>
-          <div *ngFor="let version of pokedexVersions">
-            <label class="radio-button-theme">
-              <input
-                type="radio"
-                id="version-{{ version.id }}"
-                name="version"
-                [value]="version.id"
-                [(ngModel)]="currentVersionId"
-                (change)="changeVersion(version.id)"
-              />{{ version.name }}
-            </label>
-          </div>
+          <span class="label" for="field-version">Versión:</span>
+          <select
+            name="field-version"
+            id="field-version"
+            [ngModel]="currentVersionId"
+            (ngModelChange)="changeVersion($event)"
+          >
+            <option *ngFor="let version of pokedexVersions" [value]="version.id">
+              {{ version.name }}
+            </option>
+          </select>
         </div>
         <div class="form-group-theme">
           <label class="label" for="field-name">Nombre:</label>
@@ -32,7 +30,7 @@
           />
         </div>
         <div class="form-group-theme">
-          <label class="label" for="field-type">Tipo</label>
+          <label class="label" for="field-type">Tipo:</label>
           <select
             name="field-type"
             id="field-type"

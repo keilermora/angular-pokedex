@@ -14,13 +14,13 @@
 
   .content {
     .filter {
-      padding: 8px;
+      padding: 14px;
       white-space: nowrap;
       display: grid;
       grid-template-rows: repeat(2, auto);
       grid-template-columns: auto;
       max-height: 500px; /* Exageramos la altura para que funcione la animación */
-      width: 315px;
+      width: 220px;
       transition: max-height $slow, width $slow;
       position: relative;
 
@@ -67,6 +67,9 @@
           font-size: 1.5rem;
           line-height: 0;
           padding: 0;
+          position: absolute;
+          right: 9px;
+          top: 9px;
         }
 
         .form-group-theme {
