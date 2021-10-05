@@ -9,6 +9,7 @@ interface PokedexVersion {
   limit: number;
   name: string;
   sprites: PokedexVersionSprites;
+  releasedYear: number;
 }
 
 interface PokedexVersionSprites {

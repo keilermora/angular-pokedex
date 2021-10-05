@@ -14,6 +14,7 @@ export const pokedexVersions: PokedexVersion[] = [
       animated: false,
     },
     limit: 151,
+    releasedYear: 1996,
   },
   {
     id: 2,
@@ -25,6 +26,7 @@ export const pokedexVersions: PokedexVersion[] = [
       animated: false,
     },
     limit: 151,
+    releasedYear: 1998,
   },
   {
     id: 3,
@@ -36,6 +38,7 @@ export const pokedexVersions: PokedexVersion[] = [
       animated: false,
     },
     limit: 151,
+    releasedYear: 1999,
   },
   {
     id: 4,
@@ -47,6 +50,7 @@ export const pokedexVersions: PokedexVersion[] = [
       animated: false,
     },
     limit: 251,
+    releasedYear: 2000,
   },
   {
     id: 5,
@@ -58,6 +62,7 @@ export const pokedexVersions: PokedexVersion[] = [
       animated: false,
     },
     limit: 251,
+    releasedYear: 2000,
   },
   {
     id: 6,
@@ -69,6 +74,7 @@ export const pokedexVersions: PokedexVersion[] = [
       animated: true,
     },
     limit: 251,
+    releasedYear: 2001,
   },
   {
     id: 7,
@@ -80,20 +86,10 @@ export const pokedexVersions: PokedexVersion[] = [
       animated: false,
     },
     limit: 386,
+    releasedYear: 2003,
   },
   {
     id: 8,
-    name: 'Emerald',
-    sprites: {
-      url: `${imagesPath}/pokemon-emerald`,
-      width: 64,
-      height: 64,
-      animated: true,
-    },
-    limit: 386,
-  },
-  {
-    id: 9,
     name: 'FireRed & LeafGreen',
     sprites: {
       url: `${imagesPath}/pokemon-firered-and-leafgreen.png`,
@@ -102,5 +98,18 @@ export const pokedexVersions: PokedexVersion[] = [
       animated: false,
     },
     limit: 386,
+    releasedYear: 2004,
+  },
+  {
+    id: 9,
+    name: 'Emerald',
+    sprites: {
+      url: `${imagesPath}/pokemon-emerald`,
+      width: 64,
+      height: 64,
+      animated: true,
+    },
+    limit: 386,
+    releasedYear: 2005,
   },
 ];
