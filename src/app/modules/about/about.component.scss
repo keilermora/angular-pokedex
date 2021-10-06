@@ -19,7 +19,15 @@
 
   &__description {
     margin: 0;
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
     font-size: 0.75rem;
+  }
+
+  &__professor-img {
+    text-align: center;
+
+    img {
+      width: 160px;
+    }
   }
 }

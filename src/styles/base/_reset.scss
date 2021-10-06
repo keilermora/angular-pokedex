@@ -43,6 +43,11 @@ html {
       box-shadow: none;
     }
 
+    img {
+      /// Todas las imagenes son pixel art
+      image-rendering: pixelated;
+    }
+
     .--visible {
       opacity: 1;
       transition: $fast;

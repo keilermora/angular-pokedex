@@ -3,14 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { environment } from '@env';
 import { PokemonService } from '@data/services/pokemon.service';
 import Pokemon from '@data/types/pokemon';
-import PokemonSpecie, {
-  PokemonFlavorTextEntry,
-  PokemonGenera,
-} from '@data/types/pokemon-specie';
-import missingNo, {
-  missingNoFlavorTextEntries,
-  missingNoGenera,
-} from '@data/mocks/missingno.mock';
+import PokemonSpecie, { PokemonFlavorTextEntry, PokemonGenera } from '@data/types/pokemon-specie';
+import missingNo, { missingNoFlavorTextEntries, missingNoGenera } from '@data/mocks/missingno.mock';
 import fadeIn from '@shared/animations/fadeIn';
 
 @Component({
@@ -28,10 +22,7 @@ export class PokemonDetailsComponent implements OnInit {
   busyDetails: boolean = true;
   error: boolean = false;
 
-  constructor(
-    private pokemonService: PokemonService,
-    private route: ActivatedRoute
-  ) {}
+  constructor(private pokemonService: PokemonService, private route: ActivatedRoute) {}
 
   ngOnInit() {
     let pokemonId;
@@ -70,11 +61,9 @@ export class PokemonDetailsComponent implements OnInit {
       .subscribe(
         (pokemonSpecie: PokemonSpecie) => {
           // Obtener el tipo de Pokémon.
-          const pokemonGenera: PokemonGenera | undefined =
-            pokemonSpecie.genera.find(
-              (genera: PokemonGenera) =>
-                genera.language.name === environment.language
-            );
+          const pokemonGenera: PokemonGenera | undefined = pokemonSpecie.genera.find(
+            (genera: PokemonGenera) => genera.language.name === environment.language
+          );
 
           // Obtener los registros de la Pokédex en español.
           let pokemonFlavorTextEntries: PokemonFlavorTextEntry[] =
