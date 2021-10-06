@@ -1,26 +1,20 @@
 <nav class="navbar">
+  <app-dialog-box size="small"> Pokédex </app-dialog-box>
+
   <ul class="desktop-navbar">
     <li>
       <a class="button-theme button-theme--white" [routerLink]="'/'">Inicio</a>
     </li>
     <li>
-      <a class="button-theme button-theme--white" [routerLink]="'/acerca-de'"
-        >Acerca de</a
-      >
+      <a class="button-theme button-theme--white" [routerLink]="'/acerca-de'">Acerca de</a>
     </li>
     <li>
-      <a
-        class="button-theme button-theme--white icon"
-        [href]="pokedexGithub"
-        target="_blank"
+      <a class="button-theme button-theme--white icon" [href]="pokedexGithub" target="_blank"
         ><fa-icon [icon]="iconGithub"></fa-icon
       ></a>
     </li>
     <li>
-      <a
-        class="button-theme button-theme--white icon"
-        [href]="keilerLinkedin"
-        target="_blank"
+      <a class="button-theme button-theme--white icon" [href]="keilerLinkedin" target="_blank"
         ><fa-icon [icon]="iconLinkedin"></fa-icon
       ></a>
     </li>
@@ -34,30 +28,18 @@
     <div class="sidenav-container container-theme container-theme--large">
       <ul>
         <li>
-          <a class="button-theme button-theme--black" (click)="goTo('/')"
-            >Inicio</a
-          >
+          <a class="button-theme button-theme--black" (click)="goTo('/')">Inicio</a>
         </li>
         <li>
-          <a
-            class="button-theme button-theme--black"
-            (click)="goTo('/acerca-de')"
-            >Acerca de</a
-          >
+          <a class="button-theme button-theme--black" (click)="goTo('/acerca-de')">Acerca de</a>
         </li>
         <li>
-          <a
-            class="button-theme button-theme--black"
-            [href]="pokedexGithub"
-            target="_blank"
+          <a class="button-theme button-theme--black" [href]="pokedexGithub" target="_blank"
             >Github</a
           >
         </li>
         <li>
-          <a
-            class="button-theme button-theme--black"
-            [href]="keilerLinkedin"
-            target="_blank"
+          <a class="button-theme button-theme--black" [href]="keilerLinkedin" target="_blank"
             >Linkedin</a
           >
         </li>
