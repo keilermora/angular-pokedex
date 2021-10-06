@@ -3,14 +3,10 @@
 
 .home {
   &__header {
-    height: 200px;
-    background-image: url('../../../assets/images/lab.png');
-    background-repeat: repeat-x;
-    background-size: auto 100%;
+    height: 180px;
     display: flex;
     align-items: center;
     justify-content: center;
-    image-rendering: pixelated;
   }
 
   &__title-container {
@@ -27,7 +23,7 @@
   &__content {
     display: grid;
     grid-template-columns: min-content 1fr;
-    margin: 25px 15px;
+    margin: 0 15px 25px 15px;
     height: 100%;
 
     @include respond(xs, sm) {
