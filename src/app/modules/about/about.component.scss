@@ -7,10 +7,10 @@
   flex-direction: column;
   max-width: 700px;
   margin: 0 auto;
-  padding: 25px 0;
+  padding: 2em 0;
 
   @include respond-to(xs) {
-    padding: 25px 15px;
+    padding: 2em 1em;
   }
 
   &__title {
@@ -19,7 +19,7 @@
 
   &__description {
     margin: 0;
-    padding-bottom: 2rem;
+    padding-bottom: 2em;
     font-size: 0.75rem;
   }
 

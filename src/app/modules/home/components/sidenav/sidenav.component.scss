@@ -12,69 +12,60 @@
     width: auto;
   }
 
-  .content {
-    .filter {
-      padding: 14px;
-      white-space: nowrap;
-      display: grid;
-      grid-template-rows: repeat(2, auto);
-      grid-template-columns: auto;
-      max-height: 500px; /* Exageramos la altura para que funcione la animación */
-      width: 220px;
-      transition: max-height $slow, width $slow;
-      position: relative;
+  .filter {
+    padding: 14px;
+    white-space: nowrap;
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: auto;
+    max-height: 500px; /* Exageramos la altura para que funcione la animación */
+    width: 220px;
+    transition: max-height $slow, width $slow;
+    position: relative;
 
-      @include respond-to(sm) {
-        grid-template-rows: auto;
-        grid-template-columns: repeat(2, 1fr);
+    @include respond(xs, sm) {
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .toggle-nav-btn {
+      z-index: 1;
+      cursor: pointer;
+      background-color: $transparent;
+      border: none;
+      position: absolute;
+      right: 3px;
+      top: 3px;
+      transition: color $fast, all $slow;
+
+      &:hover {
+        color: $crimson;
       }
+    }
 
-      @include respond(xs, sm) {
-        margin: 0 auto;
-        width: 100%;
-      }
-
-      .toggle-nav-btn {
-        z-index: 1;
-        cursor: pointer;
-        background-color: $transparent;
-        border: none;
-        position: absolute;
-        right: 3px;
-        top: 3px;
-        transition: color $fast, all $slow;
-
-        &:hover {
-          color: $crimson;
-        }
-      }
-
-      .form-group-theme {
-        opacity: 1;
-        transition: opacity $slow;
-      }
+    .form-group-theme {
+      opacity: 1;
+      transition: opacity $slow;
     }
   }
 
   &.closed {
-    .content {
-      .filter {
-        max-height: 42px;
-        width: 42px;
+    .filter {
+      max-height: 42px;
+      width: 42px;
 
-        .toggle-nav-btn {
-          background-color: $transparent;
-          font-size: 1.5rem;
-          line-height: 0;
-          padding: 0;
-          position: absolute;
-          right: 9px;
-          top: 9px;
-        }
+      .toggle-nav-btn {
+        background-color: $transparent;
+        font-size: 1.5rem;
+        line-height: 0;
+        padding: 0;
+        position: absolute;
+        right: 9px;
+        top: 9px;
+      }
 
-        .form-group-theme {
-          opacity: 0;
-        }
+      .form-group-theme {
+        opacity: 0;
       }
     }
   }
