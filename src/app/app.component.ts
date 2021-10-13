@@ -1,6 +1,7 @@
-import { animate, style, transition, trigger } from '@angular/animations';
+import { ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { Event, Router, Scroll } from '@angular/router';
+import { filter } from 'rxjs/operators';
 import { PokedexService } from '@data/services/pokedex.service';
 import Pokedex from '@data/types/pokedex';
 
@@ -12,7 +13,11 @@ import Pokedex from '@data/types/pokedex';
 export class AppComponent implements OnInit {
   pokedex: Pokedex = {} as Pokedex;
 
-  constructor(private pokedexService: PokedexService, private router: Router) {}
+  constructor(
+    private pokedexService: PokedexService,
+    private router: Router,
+    private viewportScroller: ViewportScroller
+  ) {}
 
   ngOnInit() {
     // Si existe una ruta en el localStorage, navegar a ella.
@@ -24,17 +29,20 @@ export class AppComponent implements OnInit {
       this.router.navigate([route]);
     }
 
-    this.router.events.subscribe((evt) => {
-      if (!(evt instanceof NavigationEnd)) {
-        return;
-      }
-
-      // Scrollear al top sólo si el cambio de ruta no incluye query params.
-      if (!/\?/.test(evt.url)) {
-        document.body.scrollTop = 0;
-        window.scrollTo(0, 0);
-      }
-    });
+    this.router.events
+      .pipe(filter((e: Event): e is Scroll => e instanceof Scroll))
+      .subscribe((e: Scroll) => {
+        if (e.position) {
+          // backward navigation
+          this.viewportScroller.scrollToPosition(e.position);
+        } else if (e.anchor) {
+          // anchor navigation
+          this.viewportScroller.scrollToAnchor(e.anchor);
+        } else if (!/\?/.test(e.routerEvent.url)) {
+          // forward navigation
+          this.viewportScroller.scrollToPosition([0, 0]);
+        }
+      });
 
     this.pokedexService.getPokedex().subscribe(
       (pokedex: Pokedex) => {

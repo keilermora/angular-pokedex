@@ -1,0 +1,22 @@
+<header class="header">
+  <div class="header__title-container">
+    <app-dialog-box size="large">
+      <h1 class="header__title">Pokédex</h1>
+    </app-dialog-box>
+  </div>
+
+  <div class="header__subtitle-container">
+    <img src="./assets/images/red-walking-old.gif" alt="" width="32" height="32" />
+    <h2>Since 1996 to 2005</h2>
+    <img src="./assets/images/red-walking-new.gif" alt="" width="32" height="42" />
+  </div>
+
+  <img
+    class="header__arrow-bottom"
+    src="./assets/images/arrow-down.png"
+    alt=""
+    width="28"
+    height="28"
+    (click)="scrollToContent()"
+  />
+</header>

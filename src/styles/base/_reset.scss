@@ -5,11 +5,13 @@ html {
   /// Evitar el scroll horizontal
   max-width: 100%;
   overflow-x: hidden;
-  scroll-behavior: smooth;
 
-  height: 100%;
+  /// Mostrar siempre el scroll vertical
+  overflow-y: scroll;
 
   box-sizing: border-box;
+  min-height: 100vh;
+  display: flex;
 
   *,
   *:before,
@@ -30,11 +32,9 @@ html {
     /// Evitar el scroll horizontal
     max-width: 100%;
 
-    /// Mostrar siempre el scroll vertical
-    overflow-y: scroll;
-
-    height: 100%;
+    min-height: 100vh;
     margin: 0;
+    flex: 1;
 
     a:focus,
     button:focus {

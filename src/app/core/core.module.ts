@@ -9,6 +9,8 @@ import { InMemoryCache } from '@apollo/client/core';
 
 import { throwIfAlreadyLoaded } from './guards/module-import.guard';
 import { environment } from '@env';
+import { RouteReuseStrategy } from '@angular/router';
+import { CustomRouteReuseStrategy } from './customs/custom-route-reuse-strategy';
 
 @NgModule({
   declarations: [],
@@ -33,6 +35,7 @@ import { environment } from '@env';
       },
       deps: [HttpLink],
     },
+    { provide: RouteReuseStrategy, useClass: CustomRouteReuseStrategy },
   ],
 })
 export class CoreModule {

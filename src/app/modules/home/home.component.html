@@ -1,12 +1,6 @@
 <main class="home">
-  <header class="home__header">
-    <div class="home__title-container">
-      <app-dialog-box size="large">
-        <h1 class="home__title">Pokédex</h1>
-      </app-dialog-box>
-    </div>
-  </header>
-  <div class="home__content">
+  <app-home-header></app-home-header>
+  <div id="home__content" class="home__content">
     <app-sidenav [pokedex]="pokedex"></app-sidenav>
     <app-pokemon-list [busy]="busy" [pokedex]="pokedex" [pokemons]="pokemons"></app-pokemon-list>
   </div>

@@ -7,7 +7,7 @@
           <fa-icon *ngIf="!showNav" [icon]="iconSearch"></fa-icon>
         </button>
         <div class="form-group-theme">
-          <span class="label" for="field-version">Versión:</span>
+          <span class="label" for="field-version">Version:</span>
           <select
             name="field-version"
             id="field-version"
@@ -20,7 +20,7 @@
           </select>
         </div>
         <div class="form-group-theme">
-          <label class="label" for="field-name">Nombre:</label>
+          <label class="label" for="field-name">PKMN Name:</label>
           <input
             id="field-name"
             type="text"
@@ -30,21 +30,21 @@
           />
         </div>
         <div class="form-group-theme">
-          <label class="label" for="field-type">Tipo:</label>
+          <label class="label" for="field-type">PKMN Type:</label>
           <select
             name="field-type"
             id="field-type"
             [ngModel]="currentPokemonTypeId"
             (ngModelChange)="changePokemonType($event)"
           >
-            <option value="0">Todos</option>
+            <option value="0">All</option>
             <option *ngFor="let pokemonType of pokemonTypes" [value]="pokemonType.id">
               {{ pokemonType.name }}
             </option>
           </select>
         </div>
         <div class="form-group-theme">
-          <span class="label">Ordenar por:</span>
+          <span class="label">Order by:</span>
           <label class="radio-button-theme">
             <input
               type="radio"
@@ -53,7 +53,7 @@
               value="number"
               [(ngModel)]="currentPokemonSortBy"
               (change)="changePokemonSortBy(pokemonSortByNumber)"
-            />Número
+            />Number
           </label>
           <label class="radio-button-theme">
             <input
@@ -63,7 +63,7 @@
               value="name"
               [(ngModel)]="currentPokemonSortBy"
               (change)="changePokemonSortBy(pokemonSortByName)"
-            />Nombre
+            />A - Z
           </label>
         </div>
       </div>
