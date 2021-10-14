@@ -10,8 +10,8 @@ export class SearchResultsMessagePipe implements PipeTransform {
    * @example Sin resultados, 1 resultado, 2 resultados
    */
   transform(resultsLength: number): string {
-    let message = resultsLength ? resultsLength.toString() : 'Sin';
-    message = `${message} resultado`;
+    let message = resultsLength ? resultsLength.toString() : 'No';
+    message = `${message} result`;
 
     if (resultsLength !== 1) {
       message = `${message}s`;

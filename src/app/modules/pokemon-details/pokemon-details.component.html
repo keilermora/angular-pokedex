@@ -81,7 +81,7 @@
   <div class="more-details">
     <app-dialog-box size="large">
       <h2 class="more-details__title">
-        <span *ngIf="busyDetails"> Cargando... No apague la consola. </span>
+        <span *ngIf="busyDetails">Loading... Don't turn off the power</span>
         <span *ngIf="!busyDetails && pokemonGenera" [@fadeIn]>
           {{ pokemonGenera.genus }}
         </span>

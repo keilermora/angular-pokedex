@@ -1,6 +1,6 @@
 <div class="pokemon-list" *ngIf="_pokedex.version">
   <ng-container *ngIf="_busy">
-    <div class="message">Cargando... No apagar la consola.</div>
+    <div class="message">Loading... Don't turn off the power</div>
   </ng-container>
   <ng-container *ngIf="!_busy">
     <div class="message">{{ _pokemons.length | searchResultsMessage }}</div>
