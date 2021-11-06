@@ -1,115 +1,79 @@
-import Pokemon from '@data/types/pokemon';
-import { PokemonFlavorTextEntry, PokemonGenera } from '@data/types/pokemon-specie';
+import PokemonSpecieModel from '@app/domain/pokemon-specie/pokemon-specie.model';
+import Pokemon from '@app/domain/pokemon/pokemon.model';
 
 const missingNo: Pokemon = {
   id: 0,
   name: 'MissingNo.',
-  sprites: {
-    other: {
-      'official-artwork': {
-        front_default: './assets/images/missingno.png',
-      },
-    },
-  },
+  sprite: './assets/images/missingno.png',
   height: 10,
   weight: 15983,
   types: [
     {
-      type: {
-        name: 'bird',
-      },
+      id: 0,
+      name: 'bird',
     },
     {
-      type: {
-        name: 'normal',
-      },
+      id: 1,
+      name: 'normal',
     },
   ],
   stats: [
     {
-      base_stat: 33,
-      stat: {
-        name: 'hp',
-      },
+      name: 'hp',
+      value: 33,
     },
     {
-      base_stat: 136,
-      stat: {
-        name: 'attack',
-      },
+      name: 'attack',
+      value: 136,
     },
     {
-      base_stat: 0,
-      stat: {
-        name: 'defense',
-      },
+      name: 'defense',
+      value: 0,
     },
     {
-      base_stat: 6,
-      stat: {
-        name: 'special-attack',
-      },
+      name: 'special-attack',
+      value: 6,
     },
     {
-      base_stat: 6,
-      stat: {
-        name: 'special-defense',
-      },
+      name: 'special-defense',
+      value: 6,
     },
     {
-      base_stat: 29,
-      stat: {
-        name: 'speed',
-      },
+      name: 'speed',
+      value: 29,
     },
   ],
 };
 
-const missingNoGenera: PokemonGenera = {
+const missingNoSpecie: PokemonSpecieModel = {
   genus: 'Pokémon ???',
-  language: {
-    name: 'es',
-  },
+  flavorTextEntries: [
+    {
+      version: {
+        name: 'green',
+      },
+      flavorText: 'けつばん',
+    },
+    {
+      version: {
+        name: 'red',
+      },
+      flavorText: '???',
+    },
+    {
+      version: {
+        name: 'blue',
+      },
+      flavorText: 'コメント さくせいちゅう',
+    },
+    {
+      version: {
+        name: 'yellow',
+      },
+      flavorText: '...',
+    },
+  ],
 };
 
-const missingNoFlavorTextEntries: PokemonFlavorTextEntry[] = [
-  {
-    language: {
-      name: 'es',
-    },
-    version: {
-      name: 'green',
-    },
-    flavor_text: 'けつばん',
-  },
-  {
-    language: {
-      name: 'es',
-    },
-    version: {
-      name: 'red',
-    },
-    flavor_text: '???',
-  },
-  {
-    language: {
-      name: 'es',
-    },
-    version: {
-      name: 'blue',
-    },
-    flavor_text: 'コメント さくせいちゅう',
-  },
-  {
-    language: {
-      name: 'es',
-    },
-    version: {
-      name: 'yellow',
-    },
-    flavor_text: '...',
-  },
-];
-
 export default missingNo;
-export { missingNoGenera, missingNoFlavorTextEntries };
+export { missingNoSpecie };

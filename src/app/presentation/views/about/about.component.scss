@@ -1,0 +1,33 @@
+@import '../../../../styles/utils/media-query';
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2em 0;
+
+  @include respond-to(xs) {
+    padding: 2em 1em;
+  }
+
+  &__title {
+    margin-top: 0;
+  }
+
+  &__description {
+    margin: 0;
+    padding-bottom: 2em;
+    font-size: 0.75rem;
+  }
+
+  &__professor-img {
+    text-align: center;
+
+    img {
+      width: 160px;
+    }
+  }
+}

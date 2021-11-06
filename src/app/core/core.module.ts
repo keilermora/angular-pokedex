@@ -35,7 +35,7 @@ import { CustomRouteReuseStrategy } from './customs/custom-route-reuse-strategy'
       },
       deps: [HttpLink],
     },
-    { provide: RouteReuseStrategy, useClass: CustomRouteReuseStrategy },
+    // { provide: RouteReuseStrategy, useClass: CustomRouteReuseStrategy },
   ],
 })
 export class CoreModule {

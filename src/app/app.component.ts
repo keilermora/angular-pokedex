@@ -2,8 +2,7 @@ import { ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Event, Router, Scroll } from '@angular/router';
 import { filter } from 'rxjs/operators';
-import { PokedexService } from '@data/services/pokedex.service';
-import Pokedex from '@data/types/pokedex';
+import Pokedex from '@app/domain/filter/filter.model';
 
 @Component({
   selector: 'app-root',
@@ -13,11 +12,7 @@ import Pokedex from '@data/types/pokedex';
 export class AppComponent implements OnInit {
   pokedex: Pokedex = {} as Pokedex;
 
-  constructor(
-    private pokedexService: PokedexService,
-    private router: Router,
-    private viewportScroller: ViewportScroller
-  ) {}
+  constructor(private router: Router, private viewportScroller: ViewportScroller) {}
 
   ngOnInit() {
     // Si existe una ruta en el localStorage, navegar a ella.
@@ -43,14 +38,5 @@ export class AppComponent implements OnInit {
           this.viewportScroller.scrollToPosition([0, 0]);
         }
       });
-
-    this.pokedexService.getPokedex().subscribe(
-      (pokedex: Pokedex) => {
-        this.pokedex = pokedex;
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
   }
 }

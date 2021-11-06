@@ -1,0 +1,102 @@
+<section class="pokemon-details" *ngIf="pokemon">
+  <!-- Imagen -->
+  <div class="artwork">
+    <app-dialog-box size="large">
+      <div class="artwork__image-placeholder">
+        <img
+          *ngIf="!busy"
+          [@fadeIn]
+          [src]="pokemon.sprite"
+          [alt]="pokemon.name"
+          width="250"
+          height="250"
+        />
+      </div>
+
+      <!-- Paginador -->
+      <div class="paginator">
+        <a
+          [style.pointer-events]="pokemon.id >= 1 ? 'auto' : 'none'"
+          [routerLink]="'/pokemon/' + (pokemon.id - 1)"
+          class="paginator__button"
+        >
+          <span *ngIf="pokemon.id - 1 >= 1">&lt;</span>
+        </a>
+        <app-dialog-box size="small">
+          <div class="paginator__current-number">
+            {{ pokemon.id | pokemonNumber }}
+          </div>
+        </app-dialog-box>
+        <a [routerLink]="'/pokemon/' + (pokemon.id + 1)" class="paginator__button">&gt;</a>
+      </div>
+    </app-dialog-box>
+  </div>
+
+  <!-- Detalles -->
+  <div class="details">
+    <app-dialog-box size="large">
+      <ul class="details__list --visible">
+        <li>
+          <span class="details__name" *ngIf="!busy" [@fadeIn]>{{ pokemon.name | pokemonName }}</span
+          >&nbsp;
+        </li>
+        <li>
+          <span *ngIf="!busy" [@fadeIn]>
+            <span
+              class="details__type"
+              [ngClass]="pokemonType.name"
+              *ngFor="let pokemonType of pokemon.types"
+              >{{ pokemonType.name | pokemonType }}</span
+            >
+          </span>
+          &nbsp;
+        </li>
+      </ul>
+
+      <!-- Estadísticas -->
+      <table class="stats">
+        <tr *ngIf="pokemon.height">
+          <td class="stats__name">Altura</td>
+          <td class="stats__value" *ngIf="!busy" [@fadeIn]>
+            {{ pokemon.height | pokemonHeight }}
+          </td>
+        </tr>
+        <tr *ngIf="pokemon.weight">
+          <td class="stats__name">Peso</td>
+          <td class="stats__value" *ngIf="!busy" [@fadeIn]>
+            {{ pokemon.weight | pokemonWeight }}
+          </td>
+        </tr>
+        <tr *ngFor="let pokemonStat of pokemon.stats">
+          <td class="stats__name">{{ pokemonStat.name | pokemonStat }}</td>
+          <td class="stats__value" *ngIf="!busy" [@fadeIn]>
+            {{ pokemonStat.value }}
+          </td>
+        </tr>
+      </table>
+    </app-dialog-box>
+  </div>
+
+  <!-- Más detalles -->
+  <div class="more-details">
+    <app-dialog-box size="large">
+      <h2 class="more-details__title">
+        <span *ngIf="busyDetails">Loading... Don't turn off the power</span>
+        <span *ngIf="!busyDetails && pokemonSpecie" [@fadeIn]>
+          {{ pokemonSpecie.genus }}
+        </span>
+      </h2>
+      <div class="more-details__content --visible" [ngClass]="{ '--hidden': busyDetails }">
+        <ng-container *ngFor="let flavorTextEntry of pokemonSpecie.flavorTextEntries">
+          <h3 [ngClass]="flavorTextEntry.version.name" class="more-details__version-name">
+            {{ flavorTextEntry.version.name | pokedexVersionName }}
+          </h3>
+          <p class="more-details__flavor-text" *ngIf="flavorTextEntry.flavorText">
+            {{ flavorTextEntry.flavorText }}
+          </p>
+        </ng-container>
+        <a class="button-theme button-theme--black" routerLink="/"> Inicio </a>
+      </div>
+    </app-dialog-box>
+  </div>
+</section>

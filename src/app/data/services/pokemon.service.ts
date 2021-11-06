@@ -1,29 +1,24 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { map, share } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { environment } from '@env';
-import Pokemon from '@data/types/pokemon';
+import Pokemon from '@app/domain/pokemon/pokemon.model';
 import { Apollo } from 'apollo-angular';
-import QueryResultsData from '@data/types/query-results-data';
+import QueryResultsData from '@app/domain/query-results-data';
 import getPokemonsQuery from '@data/queries/get-pokemons.query';
 import { ApolloQueryResult } from '@apollo/client/core';
+import PokemonRepository from '@app/domain/pokemon/pokemon.repository';
+import PokemonEntity from '@app/domain/pokemon/pokemon.entity';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PokemonService {
-  private pokemons: Pokemon[];
-  private pokemons$!: Observable<Pokemon[]>;
-  private fetchingPokemons: boolean = false;
+  constructor(private apollo: Apollo, private http: HttpClient) {}
 
-  constructor(private apollo: Apollo, private http: HttpClient) {
-    const pokemons = localStorage.getItem('pokemons-v5');
-    this.pokemons = pokemons ? JSON.parse(pokemons) : [];
-  }
-
-  getPokemon(pokemonId: number): Observable<Pokemon> {
-    return this.http.get<Pokemon>(`${environment.pokeApi}/pokemon/${pokemonId}`);
+  getPokemonById(id: number): Observable<PokemonEntity> {
+    return this.http.get<PokemonEntity>(`${environment.pokeApi}/pokemon/${id}`);
   }
 
   /**
@@ -32,29 +27,15 @@ export class PokemonService {
    * pokémon solicitados.
    * @param {number} limit - Límite de la cantidad de pokémon.
    */
-  getPokemons(limit: number): Observable<Pokemon[]> {
-    if (this.pokemons.length >= limit) {
-      return of(this.pokemons.slice(0, limit));
-    } else if (!this.fetchingPokemons) {
-      this.fetchingPokemons = true;
-
-      this.pokemons$ = this.apollo
-        .query<QueryResultsData>({
-          query: getPokemonsQuery(limit),
+  getAllPokemonsByLimit(limit: number): Observable<PokemonEntity[]> {
+    return this.apollo
+      .query<QueryResultsData>({
+        query: getPokemonsQuery(limit),
+      })
+      .pipe(
+        map(({ data }: ApolloQueryResult<QueryResultsData>) => {
+          return data.pokemon_v2_pokemon;
         })
-        .pipe(
-          map(({ data }: ApolloQueryResult<QueryResultsData>) => {
-            this.pokemons = data.pokemon_v2_pokemon;
-            localStorage.setItem('pokemons-v2', JSON.stringify(this.pokemons));
-            this.fetchingPokemons = false;
-            return this.pokemons;
-          })
-        );
-    }
-    return this.pokemons$;
-  }
-
-  getPokemonSpecie(pokemonId: number): Observable<any> {
-    return this.http.get(`${environment.pokeApi}/pokemon-species/${pokemonId}`);
+      );
   }
 }

@@ -1,0 +1,132 @@
+@import 'styles/utils/colors';
+@import 'styles/utils/media-query';
+@import 'styles/utils/transition';
+@import 'styles/utils/z-index';
+
+.navbar {
+  position: fixed;
+  background-color: $crimson;
+  color: $white;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  z-index: $navbar-index;
+  padding: 0 15px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom: 6px solid $gallery;
+
+  .desktop-navbar {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    @include respond-to(xs) {
+      display: none;
+    }
+
+    li {
+      padding: 0 1.5em;
+
+      a {
+        text-decoration: none;
+
+        &.icon {
+          line-height: 0;
+          font-size: 1.5rem;
+
+          &:hover {
+            color: $yellow-version-light;
+          }
+        }
+      }
+    }
+  }
+
+  .open-sidenav-btn {
+    background-color: transparent;
+    border: none;
+    color: $white;
+    cursor: pointer;
+    font-size: 1.5rem;
+    line-height: 0;
+    display: none;
+
+    &:hover {
+      color: $yellow-version-light;
+    }
+
+    @include respond-to(xs) {
+      display: inline;
+    }
+  }
+
+  .mobile-sidenav {
+    background-color: $gallery;
+    display: none;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    width: 0;
+    overflow: hidden;
+    z-index: 1;
+    box-sizing: border-box;
+
+    @include respond-to(xs) {
+      display: inline;
+    }
+
+    &.open {
+      width: 100%;
+
+      .sidenav-container {
+        .close-sidenav-btn {
+          display: inline;
+        }
+
+        ul {
+          visibility: visible;
+        }
+      }
+    }
+
+    .close-sidenav-btn {
+      display: none;
+      position: absolute;
+      top: 50px;
+      right: 38px;
+      background-color: $transparent;
+      color: $black;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        color: $crimson;
+      }
+    }
+
+    .sidenav-container {
+      margin: 25px 15px;
+      padding: 15px;
+
+      ul {
+        visibility: hidden;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          & + li {
+            padding-top: 1em;
+          }
+        }
+      }
+    }
+  }
+}

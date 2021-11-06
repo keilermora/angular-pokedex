@@ -25,13 +25,11 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/og-image.jpg",
-              "src/assets",
-              "src/404.html"
-            ],
+            "assets": ["src/favicon.ico", "src/og-image.jpg", "src/assets", "src/404.html"],
             "styles": ["src/styles.scss"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/assets/styles"]
+            },
             "scripts": [],
             "vendorChunk": true,
             "extractLicenses": false,
@@ -103,11 +101,7 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
-            ],
+            "tsConfig": ["tsconfig.app.json", "tsconfig.spec.json", "e2e/tsconfig.json"],
             "exclude": ["**/node_modules/**"]
           }
         },
