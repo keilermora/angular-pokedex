@@ -8,7 +8,7 @@
     min-height: calc(100vh - 125px);
     max-width: 1366px;
     margin: 0 auto;
-    padding: 4em;
+    padding: 25px 4em 4em;
 
     @include respond(xs, sm) {
       grid-template-columns: 1fr;
