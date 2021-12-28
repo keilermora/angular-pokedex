@@ -1,4 +1,5 @@
 @import '../../../../../../styles/utils/colors';
+@import '../../../../../../styles/utils/font-sizes';
 @import '../../../../../../styles/utils/media-query';
 @import '../../../../../../styles/utils/transition';
 
@@ -61,12 +62,12 @@
         }
 
         .number {
-          font-size: 16px;
+          font-size: $font-size-small;
         }
 
         .name {
           text-transform: uppercase;
-          font-size: 14px;
+          font-size: $font-size-small;
         }
       }
     }

@@ -1,4 +1,5 @@
 @import '../../../../../../styles/utils/colors';
+@import '../../../../../../styles/utils/font-sizes';
 @import '../../../../../../styles/utils/media-query';
 @import '../../../../../../styles/utils/transition';
 
@@ -56,7 +57,7 @@
 
       .toggle-nav-btn {
         background-color: $transparent;
-        font-size: 1.5rem;
+        font-size: $font-size-large;
         line-height: 0;
         padding: 0;
         position: absolute;

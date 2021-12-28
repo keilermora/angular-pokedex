@@ -1,3 +1,4 @@
+@import '../../../../styles/base/typography';
 @import '../../../../styles/utils/media-query';
 
 .about {
@@ -20,7 +21,7 @@
   &__description {
     margin: 0;
     padding-bottom: 2em;
-    font-size: 0.75rem;
+    font-family: $roboto;
   }
 
   &__professor-img {

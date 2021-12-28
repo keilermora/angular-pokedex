@@ -1,3 +1,4 @@
+@import '../../../../styles/base/typography';
 @import '../../../../styles/utils/colors';
 @import '../../../../styles/utils/media-query';
 @import '../../../../styles/utils/transition';
@@ -195,8 +196,8 @@
     }
 
     &__flavor-text {
-      font-size: 0.75rem;
-      margin: 0 0 3em;
+      margin: 0 0 1.5em;
+      font-family: $roboto;
     }
 
     .red {

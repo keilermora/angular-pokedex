@@ -1,4 +1,5 @@
 @import 'styles/utils/colors';
+@import 'styles/utils/font-sizes';
 @import 'styles/utils/media-query';
 @import 'styles/utils/transition';
 @import 'styles/utils/z-index';
@@ -38,7 +39,7 @@
 
         &.icon {
           line-height: 0;
-          font-size: 1.5rem;
+          font-size: $font-size-largest;
 
           &:hover {
             color: $yellow-version-light;
@@ -53,7 +54,7 @@
     border: none;
     color: $white;
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: $font-size-largest;
     line-height: 0;
     display: none;
 
