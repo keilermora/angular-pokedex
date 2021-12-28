@@ -56,13 +56,13 @@
       <!-- Estadísticas -->
       <table class="stats">
         <tr *ngIf="pokemon.height">
-          <td class="stats__name">Altura</td>
+          <td class="stats__name">Height</td>
           <td class="stats__value" *ngIf="!busy" [@fadeIn]>
             {{ pokemon.height | pokemonHeight }}
           </td>
         </tr>
         <tr *ngIf="pokemon.weight">
-          <td class="stats__name">Peso</td>
+          <td class="stats__name">Weight</td>
           <td class="stats__value" *ngIf="!busy" [@fadeIn]>
             {{ pokemon.weight | pokemonWeight }}
           </td>
@@ -95,7 +95,7 @@
             {{ flavorTextEntry.flavorText }}
           </p>
         </ng-container>
-        <a class="button-theme button-theme--black" routerLink="/"> Inicio </a>
+        <a class="button-theme button-theme--black" routerLink="/">Go Back</a>
       </div>
     </app-dialog-box>
   </div>

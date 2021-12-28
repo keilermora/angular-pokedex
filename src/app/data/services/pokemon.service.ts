@@ -3,12 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from '@env';
-import Pokemon from '@app/domain/pokemon/pokemon.model';
 import { Apollo } from 'apollo-angular';
 import QueryResultsData from '@app/domain/query-results-data';
 import getPokemonsQuery from '@data/queries/get-pokemons.query';
 import { ApolloQueryResult } from '@apollo/client/core';
-import PokemonRepository from '@app/domain/pokemon/pokemon.repository';
 import PokemonEntity from '@app/domain/pokemon/pokemon.entity';
 
 @Injectable({

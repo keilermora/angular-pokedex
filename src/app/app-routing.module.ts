@@ -17,7 +17,7 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'acerca-de',
+    path: 'about',
     component: LayoutComponent,
     loadChildren: () =>
       import('app/presentation/views/about/about.module').then((m) => m.AboutModule),
