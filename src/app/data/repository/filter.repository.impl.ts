@@ -18,7 +18,7 @@ export class FilterRepositoryImpl implements FilterRepository {
 
     activatedRoute.queryParams.subscribe(({ pokemon, sortBy, type, version }) => {
       this.filter = {
-        pokedexVersionId: version ? parseInt(version) : 0,
+        pokedexVersionId: version ? parseInt(version) : 1,
         pokemonName: pokemon || '',
         pokemonSortBy: sortBy || PokemonSortByEnum.NUMBER,
         pokemonTypeId: type ? parseInt(type) : 0,
