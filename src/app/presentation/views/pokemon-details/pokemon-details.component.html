@@ -55,13 +55,13 @@
 
       <!-- Estadísticas -->
       <table class="stats">
-        <tr *ngIf="pokemon.height">
+        <tr *ngIf="!!pokemon.height">
           <td class="stats__name">Height</td>
           <td class="stats__value" *ngIf="!busy" [@fadeIn]>
             {{ pokemon.height | pokemonHeight }}
           </td>
         </tr>
-        <tr *ngIf="pokemon.weight">
+        <tr *ngIf="!!pokemon.weight">
           <td class="stats__name">Weight</td>
           <td class="stats__value" *ngIf="!busy" [@fadeIn]>
             {{ pokemon.weight | pokemonWeight }}
@@ -91,8 +91,8 @@
           <h3 [ngClass]="flavorTextEntry.version.name" class="more-details__version-name">
             {{ flavorTextEntry.version.name | pokedexVersionName }}
           </h3>
-          <p class="more-details__flavor-text" *ngIf="flavorTextEntry.flavorText">
-            {{ flavorTextEntry.flavorText }}
+          <p class="more-details__flavor-text" *ngIf="!!flavorTextEntry.flavorText">
+            {{ flavorTextEntry.flavorText | unescapeText }}
           </p>
         </ng-container>
         <a class="button-theme button-theme--black" routerLink="/">Go Back</a>

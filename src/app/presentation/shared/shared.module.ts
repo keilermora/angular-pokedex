@@ -20,6 +20,7 @@ import { PokemonTypePipe } from './pipes/pokemon-type.pipe';
 import { PokemonStatPipe } from './pipes/pokemon-stat.pipe';
 import { PokedexVersionNamePipe } from './pipes/pokedex-version-name.pipe';
 import { SearchResultsMessagePipe } from './pipes/search-results-message.pipe';
+import { UnescapeTextPipe } from './pipes/unescape-text.pipe';
 
 // Directives
 import { LazyImgDirective } from './directives/lazy-img.directive';
@@ -40,6 +41,7 @@ import { LazyImgDirective } from './directives/lazy-img.directive';
     PokemonTypePipe,
     PokemonWeightPipe,
     SearchResultsMessagePipe,
+    UnescapeTextPipe,
   ],
   imports: [CommonModule, FontAwesomeModule, FormsModule, RouterModule],
   exports: [
@@ -60,6 +62,7 @@ import { LazyImgDirective } from './directives/lazy-img.directive';
     PokemonTypePipe,
     PokemonWeightPipe,
     SearchResultsMessagePipe,
+    UnescapeTextPipe,
   ],
 })
 export class SharedModule {}
