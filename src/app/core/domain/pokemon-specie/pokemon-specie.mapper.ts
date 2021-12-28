@@ -54,7 +54,7 @@ const PokemonSpecieMapper: Mapper<PokemonSpecieEntity, PokemonSpecieModel> = {
         };
 
         return {
-          flavorText: flavorTextEntryEntity.flavor_text,
+          flavorText: flavorTextEntryEntity.flavor_text.replace(/\f/g, ' '),
           version: version,
         };
       }

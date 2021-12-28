@@ -92,7 +92,7 @@
             {{ flavorTextEntry.version.name | pokedexVersionName }}
           </h3>
           <p class="more-details__flavor-text" *ngIf="!!flavorTextEntry.flavorText">
-            {{ flavorTextEntry.flavorText | unescapeText }}
+            {{ flavorTextEntry.flavorText }}
           </p>
         </ng-container>
         <a class="button-theme button-theme--black" routerLink="/">Go Back</a>
