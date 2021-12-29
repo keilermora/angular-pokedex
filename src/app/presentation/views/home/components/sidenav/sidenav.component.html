@@ -25,7 +25,8 @@
           type="text"
           [ngModel]="currentPokemonName"
           (ngModelChange)="changePokemonName($event)"
-          maxlength="10"
+          mask="AAAAAAAAAA"
+          [showMaskTyped]="true"
         />
       </div>
       <div class="form-group-theme">

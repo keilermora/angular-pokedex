@@ -20,7 +20,7 @@
     grid-template-rows: repeat(2, auto);
     grid-template-columns: auto;
     max-height: 500px; /* Exageramos la altura para que funcione la animación */
-    width: 220px;
+    width: 188px;
     transition: max-height $slow, width $slow;
     position: relative;
 

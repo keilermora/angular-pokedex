@@ -28,6 +28,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "apollo-angular": "^2.6.0",
     "graphql": "^15.5.1",
+    "ngx-mask": "^13.0.1",
     "normalize.css": "^8.0.1",
     "pokemon-font": "^1.8.1",
     "rxjs": "~6.6.3",
