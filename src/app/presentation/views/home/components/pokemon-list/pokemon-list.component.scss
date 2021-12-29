@@ -37,9 +37,7 @@
         width: 160px;
         padding: 4px;
         margin: 4px;
-        height: 500px; /* Exageramos la altura para que funcione la animación */
-        transition: max-height $fast;
-        max-height: 130px;
+        height: 122px;
 
         &:hover,
         &:focus {
