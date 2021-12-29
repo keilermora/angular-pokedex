@@ -11,6 +11,7 @@
 
   @include respond(xs, sm) {
     width: auto;
+    margin-top: 1em;
   }
 
   .filter {

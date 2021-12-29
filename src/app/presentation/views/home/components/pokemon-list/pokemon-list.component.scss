@@ -4,14 +4,6 @@
 @import '../../../../../../styles/utils/transition';
 
 .pokemon-list {
-  .message {
-    margin: 0 20px;
-
-    @include respond(xs, md) {
-      text-align: center;
-    }
-  }
-
   .pokemons-container {
     display: flex;
     flex-wrap: wrap;
@@ -19,8 +11,9 @@
     justify-content: flex-start;
     margin: 0 14px;
 
-    @include respond(xs, md) {
+    @include respond(xs, sm) {
       justify-content: center;
+      margin: 1em 0 0;
     }
 
     .pokemon-card {

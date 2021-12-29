@@ -1,5 +1,6 @@
 @import '../../../../../../styles/utils/colors';
 @import '../../../../../../styles/utils/font-sizes';
+@import '../../../../../../styles/utils/transition';
 
 .pokemon-card {
   .pokemon-info {
@@ -14,6 +15,7 @@
     padding: 4px;
     margin: 4px auto;
     height: 122px;
+    transition: $fast;
 
     &:hover,
     &:focus {

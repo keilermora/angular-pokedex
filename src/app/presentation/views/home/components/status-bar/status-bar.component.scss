@@ -1,9 +1,16 @@
+@import '../../../../../../styles/utils/media-query';
+
 .status-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 18px;
   height: 50px;
+
+  @include respond-to(xs) {
+    flex-direction: column;
+    height: auto;
+  }
 
   .sort-by {
     label {
