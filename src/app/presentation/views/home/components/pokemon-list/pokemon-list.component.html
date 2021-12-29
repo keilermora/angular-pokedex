@@ -4,9 +4,17 @@
   </ng-container>
   <ng-container *ngIf="!_busy">
     <div class="pokemons-container">
-      <div class="pokemon-card" *ngFor="let pokemon of _pokemons">
-        <app-pokemon-card [pokemon]="pokemon" [pokedexVersion]="_pokedexVersion"></app-pokemon-card>
-      </div>
+      <ng-container *ngIf="_pokemons.length">
+        <div class="pokemon-card" *ngFor="let pokemon of _pokemons">
+          <app-pokemon-card
+            [pokemon]="pokemon"
+            [pokedexVersion]="_pokedexVersion"
+          ></app-pokemon-card>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="!_pokemons.length">
+        <img src="/assets/images/sleeping-pikachu.gif" alt="" height="54" width="54" />
+      </ng-container>
     </div>
   </ng-container>
 </div>

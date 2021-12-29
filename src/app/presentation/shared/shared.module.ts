@@ -46,7 +46,13 @@ const maskConfig: Partial<IConfig> = {
     PokemonWeightPipe,
     SearchResultsMessagePipe,
   ],
-  imports: [CommonModule, FontAwesomeModule, FormsModule, NgxMaskModule.forRoot(), RouterModule],
+  imports: [
+    CommonModule,
+    FontAwesomeModule,
+    FormsModule,
+    NgxMaskModule.forRoot(maskConfig),
+    RouterModule,
+  ],
   exports: [
     CommonModule,
     DialogBoxComponent,
