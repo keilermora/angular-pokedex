@@ -1,11 +1,11 @@
 @import 'styles/utils/colors';
 @import 'styles/utils/transition';
-@import 'styles/utils/dialog-box-border';
 
 .dialog-box {
   background-color: $white;
   position: relative;
   margin: 2px;
+  transition: $fast;
 
   &.dialog-box--large {
     padding: 1em 2em;
@@ -18,124 +18,36 @@
     cursor: pointer;
   }
 
-  .gb-corner {
-    visibility: hidden;
-  }
-}
+  border: (2px) solid $black;
+  border-radius: 12px;
 
-.gb-theme {
-  .gb-corner {
-    visibility: visible;
+  &:before {
+    content: '';
     position: absolute;
-    z-index: 1;
-    transition: border-color $fast;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border: (2px) solid $gray;
+    border-radius: 10px;
+    pointer-events: none;
+    transition: $fast;
   }
 
-  .dialog-box--large {
-    @include gbDialogBox(2);
-
-    .gb-corner {
-      width: 2px;
-      height: 2px;
-
-      &:nth-of-type(1) {
-        @include gbTopLeftCornerDialogBox($black, 2);
-      }
-
-      &:nth-of-type(2) {
-        @include gbTopRightCornerDialogBox($black, 2);
-      }
-
-      &:nth-of-type(3) {
-        @include gbBottomRightCornerDialogBox($black, 2);
-      }
-
-      &:nth-of-type(4) {
-        @include gbBottomLeftCornerDialogBox($black, 2);
-      }
-    }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
+    right: 2px;
+    border: (2px) solid $silver;
+    border-radius: 8px;
+    pointer-events: none;
+    transition: $fast;
   }
 
-  .dialog-box--small {
-    @include gbDialogBox(1);
-
-    .gb-corner {
-      width: 1px;
-      height: 1px;
-
-      &:nth-of-type(1) {
-        @include gbTopLeftCornerDialogBox($black, 1);
-      }
-
-      &:nth-of-type(2) {
-        @include gbTopRightCornerDialogBox($black, 1);
-      }
-
-      &:nth-of-type(3) {
-        @include gbBottomRightCornerDialogBox($black, 1);
-      }
-
-      &:nth-of-type(4) {
-        @include gbBottomLeftCornerDialogBox($black, 1);
-      }
-    }
-  }
-
-  .dialog-box--hoverable:hover {
-    border-color: $crimson;
-
-    &:after {
-      border-color: $crimson;
-    }
-
-    .gb-corner {
-      &:nth-of-type(1) {
-        @include gbTopLeftCornerDialogBox($crimson, 1);
-      }
-
-      &:nth-of-type(2) {
-        @include gbTopRightCornerDialogBox($crimson, 1);
-      }
-
-      &:nth-of-type(3) {
-        @include gbBottomRightCornerDialogBox($crimson, 1);
-      }
-
-      &:nth-of-type(4) {
-        @include gbBottomLeftCornerDialogBox($crimson, 1);
-      }
-    }
-  }
-}
-
-.gbc-theme {
-  .dialog-box--large {
-    @include gbcDialogBox(2);
-  }
-
-  .dialog-box--small {
-    @include gbcDialogBox(1);
-  }
-
-  .dialog-box--hoverable:hover {
-    border-color: $crimson;
-
-    &:after {
-      border-color: $crimson;
-    }
-  }
-}
-
-.gba-theme {
-  .dialog-box--large {
-    @include gbaDialogBox(2);
-  }
-
-  .dialog-box--small {
-    @include gbaDialogBox(1);
-  }
-
-  .dialog-box--hoverable:hover {
+  &--hoverable:hover {
     border-color: $crimson;
 
     &:before {
