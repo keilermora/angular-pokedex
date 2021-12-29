@@ -6,7 +6,7 @@
         <fa-icon *ngIf="!showNav" [icon]="iconSearch"></fa-icon>
       </button>
       <div class="form-group-theme">
-        <span class="label" for="field-version">Version:</span>
+        <label class="label" for="field-version">Version:</label>
         <select
           name="field-version"
           id="field-version"
@@ -41,29 +41,6 @@
             {{ pokemonType.name }}
           </option>
         </select>
-      </div>
-      <div class="form-group-theme">
-        <span class="label">Order by:</span>
-        <label class="radio-button-theme">
-          <input
-            type="radio"
-            id="field-sort-by-number"
-            name="version"
-            value="number"
-            [(ngModel)]="currentPokemonSortBy"
-            (change)="changePokemonSortBy(pokemonSortByNumber)"
-          />Number
-        </label>
-        <label class="radio-button-theme">
-          <input
-            type="radio"
-            id="field-sort-by-name"
-            name="version"
-            value="name"
-            [(ngModel)]="currentPokemonSortBy"
-            (change)="changePokemonSortBy(pokemonSortByName)"
-          />A - Z
-        </label>
       </div>
     </div>
   </app-dialog-box>

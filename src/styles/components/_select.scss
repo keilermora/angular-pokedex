@@ -1,0 +1,24 @@
+@import '../utils/colors';
+@import '../utils/transition';
+
+select {
+  border: 1px solid $shark;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 0 6px;
+  height: 24px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  transition: $fast;
+
+  &:hover {
+    border-color: $crimson;
+  }
+
+  &:focus {
+    border-color: $shark;
+    outline: none;
+  }
+}

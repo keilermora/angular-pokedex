@@ -3,6 +3,7 @@
 .home {
   &__content {
     display: grid;
+    grid-template-rows: min-content auto;
     grid-template-columns: min-content 1fr;
     margin: 0 15px 25px 15px;
     min-height: calc(100vh - 125px);

@@ -3,28 +3,23 @@ import PokedexVersionModel from '@app/domain/pokedex-version/pokedex-version.mod
 import PokemonModel from '@app/domain/pokemon/pokemon.model';
 
 @Component({
-  selector: 'app-pokemon-list',
-  templateUrl: './pokemon-list.component.html',
-  styleUrls: ['./pokemon-list.component.scss'],
+  selector: 'app-pokemon-card',
+  templateUrl: './pokemon-card.component.html',
+  styleUrls: ['./pokemon-card.component.scss'],
 })
-export class PokemonListComponent implements OnInit {
-  _busy: boolean = true;
+export class PokemonCardComponent implements OnInit {
+  _pokemon: PokemonModel = {} as PokemonModel;
   _pokedexVersion: PokedexVersionModel = {} as PokedexVersionModel;
-  _pokemons: PokemonModel[] = [];
 
-  @Input() set busy(busy: boolean) {
-    this._busy = busy;
+  @Input() set pokemon(pokemon: PokemonModel) {
+    this._pokemon = pokemon;
   }
 
   @Input() set pokedexVersion(pokedexVersion: PokedexVersionModel) {
     this._pokedexVersion = pokedexVersion;
   }
 
-  @Input() set pokemons(pokemons: PokemonModel[]) {
-    this._pokemons = pokemons;
-  }
-
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit(): void {}
 }

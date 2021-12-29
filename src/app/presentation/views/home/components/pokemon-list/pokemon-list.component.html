@@ -3,39 +3,9 @@
     <div class="message">Loading... Don't turn off the power</div>
   </ng-container>
   <ng-container *ngIf="!_busy">
-    <div class="message">{{ _pokemons.length | searchResultsMessage }}</div>
     <div class="pokemons-container">
       <div class="pokemon-card" *ngFor="let pokemon of _pokemons">
-        <app-dialog-box size="small" [hoverable]="true">
-          <a class="pokemon-info" routerLink="pokemon/{{ pokemon.id }}">
-            <!-- Sprite estático -->
-            <div
-              *ngIf="!_pokedexVersion.sprites.animated"
-              class="image"
-              [ngStyle]="pokemon.id | pokemonSpritePosition: _pokedexVersion"
-            ></div>
-            <!-- Sprite animado -->
-            <div
-              *ngIf="_pokedexVersion.sprites.animated"
-              class="image-animated"
-              [ngStyle]="{
-                'width.px': _pokedexVersion.sprites.width,
-                'height.px': _pokedexVersion.sprites.height
-              }"
-            >
-              <img
-                *ngIf="_pokedexVersion.sprites.animated"
-                [src]="pokemon.id | pokemonImageUrl: _pokedexVersion"
-                appLazyImg
-                [alt]="pokemon.name"
-              />
-            </div>
-            <!-- Número del Pokémon -->
-            <span class="number">{{ pokemon.id | pokemonNumber }}</span>
-            <!-- Nombre del Pokémon -->
-            <span class="name">{{ pokemon.name | pokemonName }}</span>
-          </a>
-        </app-dialog-box>
+        <app-pokemon-card [pokemon]="pokemon" [pokedexVersion]="_pokedexVersion"></app-pokemon-card>
       </div>
     </div>
   </ng-container>

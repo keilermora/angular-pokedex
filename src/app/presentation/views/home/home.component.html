@@ -1,5 +1,7 @@
 <main class="home">
-  <div id="home__content" class="home__content">
+  <div class="home__content">
+    <div></div>
+    <app-status-bar [pokemons]="pokemons"></app-status-bar>
     <app-sidenav></app-sidenav>
     <app-pokemon-list
       [busy]="busy"

@@ -1,0 +1,13 @@
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 18px;
+  height: 50px;
+
+  .sort-by {
+    label {
+      margin-right: 1em;
+    }
+  }
+}
