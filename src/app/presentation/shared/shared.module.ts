@@ -24,6 +24,7 @@ import { SearchResultsMessagePipe } from './pipes/search-results-message.pipe';
 
 // Directives
 import { LazyImgDirective } from './directives/lazy-img.directive';
+import { QueryParamsHandlingDirective } from './directives/query-params-handling.directive';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -44,6 +45,7 @@ const maskConfig: Partial<IConfig> = {
     PokemonStatPipe,
     PokemonTypePipe,
     PokemonWeightPipe,
+    QueryParamsHandlingDirective,
     SearchResultsMessagePipe,
   ],
   imports: [
@@ -71,6 +73,7 @@ const maskConfig: Partial<IConfig> = {
     PokemonStatPipe,
     PokemonTypePipe,
     PokemonWeightPipe,
+    QueryParamsHandlingDirective,
     SearchResultsMessagePipe,
   ],
 })
