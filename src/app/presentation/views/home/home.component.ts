@@ -8,6 +8,7 @@ import { GetFilterUseCase } from '@app/domain/filter/use-cases/get-filter.use-ca
 import FilterModel from '@app/domain/filter/filter.model';
 import { GetPokedexVersionByIdUseCase } from '@app/domain/pokedex-version/use-cases/get-pokedex-version-by-id.use-case';
 import PokedexVersionModel from '@app/domain/pokedex-version/pokedex-version.model';
+import { GetAllPokedexVersionsUseCase } from '@app/domain/pokedex-version/use-cases/get-all-pokedex-versions.use-case';
 
 @Component({
   selector: 'app-home',
@@ -21,8 +22,12 @@ export class HomeComponent implements OnInit {
   pokemons: PokemonModel[] = [];
   pokemonTypes: PokemonTypeModel[] = [];
 
+  since: number = 0;
+  until: number = 0;
+
   constructor(
     private getFilter: GetFilterUseCase,
+    private getAllPokedexVersions: GetAllPokedexVersionsUseCase,
     private getAllPokemonsByLimit: GetAllPokemonsByLimitUseCase,
     private getPokedexVersionById: GetPokedexVersionByIdUseCase
   ) {
@@ -44,6 +49,11 @@ export class HomeComponent implements OnInit {
         this.updatePokemonList(pokemons, this.filter);
         this.busy = false;
       });
+
+    this.getAllPokedexVersions.execute().subscribe((pokedexVersions: PokedexVersionModel[]) => {
+      this.since = pokedexVersions[0].releasedYear;
+      this.until = pokedexVersions[pokedexVersions.length - 1].releasedYear;
+    });
   }
 
   ngOnInit() {}

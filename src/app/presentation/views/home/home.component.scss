@@ -1,6 +1,31 @@
+@import '../../../../styles/utils/font-sizes';
 @import '../../../../styles/utils/media-query';
 
 .home {
+  &__header {
+    display: flex;
+    align-items: center;
+    height: 154px;
+    width: 254px;
+    margin: 0 auto;
+    text-align: center;
+
+    h1 {
+      margin: 0;
+    }
+
+    .since-until-years {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      span {
+        font-size: $font-size-smallest;
+        padding: 0 1em;
+      }
+    }
+  }
+
   &__content {
     display: grid;
     grid-template-rows: min-content auto;

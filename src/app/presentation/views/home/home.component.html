@@ -1,4 +1,14 @@
 <main class="home">
+  <div class="home__header">
+    <app-dialog-box size="large">
+      <h1>POKÉDEX</h1>
+      <div class="since-until-years">
+        <img src="/assets/images/red-walking-old.gif" alt="" width="24" height="24" />
+        <span>{{ since }} - {{ until }}</span>
+        <img src="/assets/images/red-walking-new.gif" alt="" width="24" height="31.5" />
+      </div>
+    </app-dialog-box>
+  </div>
   <div class="home__content">
     <div></div>
     <app-status-bar [pokemons]="pokemons"></app-status-bar>
