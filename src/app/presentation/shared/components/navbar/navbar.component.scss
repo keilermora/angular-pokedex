@@ -40,6 +40,7 @@
         &.icon {
           line-height: 0;
           font-size: $font-size-largest;
+          transition: $fast;
 
           &:hover {
             color: $yellow-version-light;
@@ -57,6 +58,7 @@
     font-size: $font-size-largest;
     line-height: 0;
     display: none;
+    transition: $fast;
 
     &:hover {
       color: $yellow-version-light;
@@ -78,6 +80,7 @@
     overflow: hidden;
     z-index: 1;
     box-sizing: border-box;
+    transition: $slow;
 
     @include respond-to(xs) {
       display: inline;
@@ -100,12 +103,13 @@
     .close-sidenav-btn {
       display: none;
       position: absolute;
-      top: 50px;
-      right: 38px;
+      top: 6px;
+      right: 18px;
       background-color: $transparent;
       color: $black;
       border: none;
       cursor: pointer;
+      font-size: $font-size-largest;
 
       &:hover {
         color: $crimson;
