@@ -7,6 +7,8 @@ const getPokemonsQuery = (limit: number): DocumentNode => {
       pokemon_v2_pokemon(limit: ${limit}) {
         id
         name
+        weight
+        height
         pokemon_v2_pokemontypes {
           pokemon_v2_type {
             id

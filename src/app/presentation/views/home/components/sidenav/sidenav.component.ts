@@ -20,9 +20,6 @@ export class SidenavComponent implements OnInit {
   iconSearch: IconDefinition = faSearch;
   iconTimes: IconDefinition = faTimes;
 
-  pokemonSortByName: PokemonSortByEnum = PokemonSortByEnum.NAME;
-  pokemonSortByNumber: PokemonSortByEnum = PokemonSortByEnum.NUMBER;
-
   showNav: boolean = true;
   pokedexVersions: PokedexVersionModel[] = [];
   pokemonTypes: PokemonTypeModel[] = [];

@@ -16,7 +16,7 @@ export class PokemonRepositoryImpl implements PokemonRepository {
   fetchingPokemons: boolean = false;
 
   constructor(private pokemonService: PokemonService) {
-    const pokemons = localStorage.getItem('pokemons-v3');
+    const pokemons = localStorage.getItem('pokemons-v4');
     this.pokemons = pokemons ? JSON.parse(pokemons) : [];
   }
 
@@ -32,7 +32,7 @@ export class PokemonRepositoryImpl implements PokemonRepository {
       this.pokemons$ = this.pokemonService.getAllPokemonsByLimit(limit).pipe(
         map((pokemonEntity: PokemonEntity[]) => pokemonEntity.map(PokemonMapper.mapFrom)),
         map((pokemons: PokemonModel[]) => {
-          localStorage.setItem('pokemons-v3', JSON.stringify(pokemons));
+          localStorage.setItem('pokemons-v4', JSON.stringify(pokemons));
           this.pokemons = pokemons;
           this.fetchingPokemons = false;
           return pokemons;

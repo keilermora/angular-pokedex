@@ -80,8 +80,20 @@ export class HomeComponent implements OnInit {
     }
 
     // La lista de Pokémon viene ordenada por números por defecto
-    if (pokemonSortBy === PokemonSortByEnum.NAME) {
+    if (pokemonSortBy === PokemonSortByEnum.NAME_ASC) {
       pokemonResults.sort((a: PokemonModel, b: PokemonModel) => (a.name > b.name ? 1 : -1));
+    } else if (pokemonSortBy === PokemonSortByEnum.WEIGHT_ASC) {
+      pokemonResults.sort((a: PokemonModel, b: PokemonModel) => (a.weight > b.weight ? 1 : -1));
+    } else if (pokemonSortBy === PokemonSortByEnum.HEIGHT_ASC) {
+      pokemonResults.sort((a: PokemonModel, b: PokemonModel) => (a.height > b.height ? 1 : -1));
+    } else if (pokemonSortBy === PokemonSortByEnum.NUMBER_DSC) {
+      pokemonResults.sort((a: PokemonModel, b: PokemonModel) => (a.id < b.id ? 1 : -1));
+    } else if (pokemonSortBy === PokemonSortByEnum.NAME_DSC) {
+      pokemonResults.sort((a: PokemonModel, b: PokemonModel) => (a.name < b.name ? 1 : -1));
+    } else if (pokemonSortBy === PokemonSortByEnum.WEIGHT_DSC) {
+      pokemonResults.sort((a: PokemonModel, b: PokemonModel) => (a.weight < b.weight ? 1 : -1));
+    } else if (pokemonSortBy === PokemonSortByEnum.HEIGHT_DSC) {
+      pokemonResults.sort((a: PokemonModel, b: PokemonModel) => (a.height < b.height ? 1 : -1));
     }
 
     this.pokemons = pokemonResults;

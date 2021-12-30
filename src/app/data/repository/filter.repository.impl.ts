@@ -20,7 +20,7 @@ export class FilterRepositoryImpl implements FilterRepository {
       this.filter = {
         pokedexVersionId: version ? parseInt(version) : 1,
         pokemonName: pokemon || '',
-        pokemonSortBy: sortBy || PokemonSortByEnum.NUMBER,
+        pokemonSortBy: sortBy || PokemonSortByEnum.NUMBER_ASC,
         pokemonTypeId: type ? parseInt(type) : 0,
       };
       this.refresh();

@@ -11,8 +11,15 @@ import PokemonSortByEnum from '@data/enums/pokemon-sort-by.enum';
   styleUrls: ['./status-bar.component.scss'],
 })
 export class StatusBarComponent implements OnInit {
-  pokemonSortByName: PokemonSortByEnum = PokemonSortByEnum.NAME;
-  pokemonSortByNumber: PokemonSortByEnum = PokemonSortByEnum.NUMBER;
+  pokemonSortByNameASC: PokemonSortByEnum = PokemonSortByEnum.NAME_ASC;
+  pokemonSortByNumberASC: PokemonSortByEnum = PokemonSortByEnum.NUMBER_ASC;
+  pokemonSortByHeightASC: PokemonSortByEnum = PokemonSortByEnum.HEIGHT_ASC;
+  pokemonSortByWeightASC: PokemonSortByEnum = PokemonSortByEnum.WEIGHT_ASC;
+
+  pokemonSortByNameDSC: PokemonSortByEnum = PokemonSortByEnum.NAME_DSC;
+  pokemonSortByNumberDSC: PokemonSortByEnum = PokemonSortByEnum.NUMBER_DSC;
+  pokemonSortByHeightDSC: PokemonSortByEnum = PokemonSortByEnum.HEIGHT_DSC;
+  pokemonSortByWeightDSC: PokemonSortByEnum = PokemonSortByEnum.WEIGHT_DSC;
 
   currentPokemonSortBy!: PokemonSortByEnum;
 

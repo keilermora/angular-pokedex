@@ -8,8 +8,14 @@
       [ngModel]="currentPokemonSortBy"
       (ngModelChange)="changePokemonSortBy($event)"
     >
-      <option [value]="pokemonSortByName">A - Z</option>
-      <option [value]="pokemonSortByNumber">Number</option>
+      <option [value]="pokemonSortByHeightASC">Height ↗</option>
+      <option [value]="pokemonSortByHeightDSC">Height ↘</option>
+      <option [value]="pokemonSortByNameASC">Name (A-Z)</option>
+      <option [value]="pokemonSortByNameDSC">Name (Z-A)</option>
+      <option [value]="pokemonSortByNumberASC">Number ↗</option>
+      <option [value]="pokemonSortByNumberDSC">Number ↘</option>
+      <option [value]="pokemonSortByWeightASC">Weight ↗</option>
+      <option [value]="pokemonSortByWeightDSC">Weight ↘</option>
     </select>
   </div>
 </div>
