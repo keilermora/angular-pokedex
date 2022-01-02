@@ -1,32 +1,31 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, ExtraOptions } from '@angular/router';
-import { LayoutComponent } from './presentation/shared/layout/layout.component';
+import { LayoutComponent } from './shared/layout/layout.component';
 
 const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
-    loadChildren: () => import('app/presentation/views/home/home.module').then((m) => m.HomeModule),
+    loadChildren: () => import('app/views/home/home.module').then((m) => m.HomeModule),
   },
   {
     path: 'pokemon/:id',
     component: LayoutComponent,
     loadChildren: () =>
-      import('app/presentation/views/pokemon-details/pokemon-details.module').then(
+      import('app/views/pokemon-details/pokemon-details.module').then(
         (m) => m.PokemonDetailsModule
       ),
   },
   {
     path: 'about',
     component: LayoutComponent,
-    loadChildren: () =>
-      import('app/presentation/views/about/about.module').then((m) => m.AboutModule),
+    loadChildren: () => import('app/views/about/about.module').then((m) => m.AboutModule),
   },
   {
     path: 'error',
     component: LayoutComponent,
     loadChildren: () =>
-      import('app/presentation/views/internal-server-error/internal-server-error.module').then(
+      import('app/views/internal-server-error/internal-server-error.module').then(
         (m) => m.InternalServerErrorModule
       ),
   },
@@ -34,7 +33,7 @@ const routes: Routes = [
     path: '**',
     component: LayoutComponent,
     loadChildren: () =>
-      import('app/presentation/views/not-found/not-found.module').then((m) => m.NotFoundModule),
+      import('app/views/not-found/not-found.module').then((m) => m.NotFoundModule),
   },
 ];
 

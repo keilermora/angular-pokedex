@@ -1,5 +1,6 @@
-import PokedexVersionModel from '@app/domain/pokedex-version/pokedex-version.model';
+import PokedexVersionModel from '@app/services/pokedex-version/pokedex-version.model';
 import { environment } from '@env';
+
 const imagesPath = environment.imagesPath;
 
 export const pokedexVersions: PokedexVersionModel[] = [

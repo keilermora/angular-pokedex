@@ -1,7 +1,7 @@
-import PokemonSpecieModel from '@app/domain/pokemon-specie/pokemon-specie.model';
-import Pokemon from '@app/domain/pokemon/pokemon.model';
+import PokemonSpecieModel from '@app/services/pokemon-specie/pokemon-specie.model';
+import PokemonModel from '@app/services/pokemon/pokemon.model';
 
-const missingNo: Pokemon = {
+const missingNo: PokemonModel = {
   id: 0,
   name: 'MissingNo.',
   sprite: './assets/images/missingno.png',

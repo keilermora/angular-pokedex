@@ -3,8 +3,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 
 import { AppComponent } from './app.component';
-import { SharedModule } from './presentation/shared/shared.module';
-import { LayoutComponent } from './presentation/shared/layout/layout.component';
+import { SharedModule } from './shared/shared.module';
+import { LayoutComponent } from './shared/layout/layout.component';
 
 @NgModule({
   declarations: [AppComponent, LayoutComponent],
