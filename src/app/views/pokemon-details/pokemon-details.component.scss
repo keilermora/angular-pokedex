@@ -1,7 +1,7 @@
-@import '../../../../styles/base/typography';
-@import '../../../../styles/utils/colors';
-@import '../../../../styles/utils/media-query';
-@import '../../../../styles/utils/transition';
+@import 'base/typography';
+@import 'utils/colors';
+@import 'utils/media-query';
+@import 'utils/transition';
 
 .pokemon-details {
   max-width: 700px;

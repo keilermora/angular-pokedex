@@ -33,7 +33,7 @@ export class FilterService {
     let pokemonResults = [...pokemons];
 
     if (pokemonName) {
-      const re = new RegExp(pokemonName, 'g');
+      const re = new RegExp(pokemonName);
       pokemonResults = pokemonResults.filter((pokemon: PokemonModel) => re.test(pokemon.name));
     }
 
