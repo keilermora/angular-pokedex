@@ -4,8 +4,6 @@ import { map } from 'rxjs/operators';
 import PokemonEntity from './pokemon.entity';
 import PokemonMapper from './pokemon.mapper';
 import { Apollo } from 'apollo-angular';
-import { HttpClient } from '@angular/common/http';
-import { environment } from '@env';
 import QueryResultsData from '../query-results-data';
 import getPokemonsQuery from '@data/queries/get-pokemons.query';
 import PokemonModel from './pokemon.model';
@@ -18,15 +16,9 @@ export class PokemonService {
   pokemons$!: Observable<PokemonModel[]>;
   fetchingPokemons: boolean = false;
 
-  constructor(private apollo: Apollo, private http: HttpClient) {
+  constructor(private apollo: Apollo) {
     const pokemons = localStorage.getItem('pokemons-v4');
     this.pokemons = pokemons ? JSON.parse(pokemons) : [];
-  }
-
-  getPokemonById(id: number): Observable<PokemonModel> {
-    return this.http
-      .get<PokemonEntity>(`${environment.pokeApi}/pokemon/${id}`)
-      .pipe(map(PokemonMapper.mapFrom));
   }
 
   getAllPokemonsByLimit(limit: number): Observable<PokemonModel[]> {

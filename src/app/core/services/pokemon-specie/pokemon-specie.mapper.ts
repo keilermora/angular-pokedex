@@ -1,68 +1,55 @@
-import { environment } from '@env';
 import Mapper from '@app/base/mapper';
-import PokemonSpecieModel, {
-  FlavorTextEntryModel,
-  VersionModel,
-} from '@app/services/pokemon-specie/pokemon-specie.model';
-import PokemonSpecieEntity, { FlavorTextEntryEntity, GeneraEntity } from './pokemon-specie.entity';
+import { FlavorText, PokemonSpecieModel } from '@app/services/pokemon-specie/pokemon-specie.model';
+import { PokemonSpecieEntity, PokemonV2Pokemonspeciesflavortexts } from './pokemon-specie.entity';
 
 const PokemonSpecieMapper: Mapper<PokemonSpecieEntity, PokemonSpecieModel> = {
   mapFrom: (pokemonSpecieEntity: PokemonSpecieEntity): PokemonSpecieModel => {
-    // Find genus
-    const generaEntity: GeneraEntity | undefined = pokemonSpecieEntity.genera.find(
-      (genera: GeneraEntity) => genera.language.name === environment.language
-    );
-
-    // Filter flavor text entries by language
-    let flavorTextEntriesEntity: FlavorTextEntryEntity[] =
-      pokemonSpecieEntity.flavor_text_entries.filter(
-        (flavorTextEntry: FlavorTextEntryEntity) =>
-          flavorTextEntry.language.name === environment.language
-      );
-
-    // Remove duplicated entries
-    flavorTextEntriesEntity = flavorTextEntriesEntity.reduce(
-      (acc: FlavorTextEntryEntity[], cur: FlavorTextEntryEntity) => {
-        const elementFound: FlavorTextEntryEntity | undefined = acc.find(
-          (flavorTextEntry: FlavorTextEntryEntity) =>
-            flavorTextEntry.version.name === cur.version.name
-        );
-        return elementFound ? acc : acc.concat([cur]);
-      },
-      []
-    );
+    const {
+      id,
+      name,
+      pokemon_v2_pokemonspeciesflavortexts,
+      pokemon_v2_pokemonspeciesnames,
+      pokemon_v2_pokemons,
+    } = pokemonSpecieEntity;
 
     // Remove duplicated entries between versions
-    flavorTextEntriesEntity = flavorTextEntriesEntity.reduce(
-      (acc: FlavorTextEntryEntity[], cur: FlavorTextEntryEntity) => {
-        const elementFound: FlavorTextEntryEntity | undefined = acc.find(
-          (flavorTextEntry: FlavorTextEntryEntity) =>
-            flavorTextEntry.flavor_text === cur.flavor_text
+    let flavorTexts: FlavorText[] = [];
+    pokemon_v2_pokemonspeciesflavortexts.forEach(
+      (flavorTextEntity: PokemonV2Pokemonspeciesflavortexts) => {
+        const elementFound = flavorTexts.find(
+          (flavorTextEntry) =>
+            flavorTextEntry.text === flavorTextEntity.flavor_text.replace(/\f/g, ' ')
         );
         if (elementFound) {
-          elementFound.flavor_text = '';
+          elementFound.versionNames.push(flavorTextEntity.pokemon_v2_version.name);
+        } else {
+          flavorTexts.push({
+            text: flavorTextEntity.flavor_text.replace(/\f/g, ' '),
+            versionNames: [flavorTextEntity.pokemon_v2_version.name],
+          });
         }
-        return acc.concat([cur]);
-      },
-      []
-    );
-
-    let flavorTextEntriesModel: FlavorTextEntryModel[] = flavorTextEntriesEntity.map(
-      (flavorTextEntryEntity: FlavorTextEntryEntity): FlavorTextEntryModel => {
-        const version: VersionModel = {
-          name: flavorTextEntryEntity.version.name || '',
-        };
-
-        return {
-          flavorText: flavorTextEntryEntity.flavor_text.replace(/\f/g, ' '),
-          version: version,
-        };
       }
     );
 
     return {
-      genus: generaEntity?.genus || '',
-      flavorTextEntries: flavorTextEntriesModel,
+      id: id,
+      name: name,
+      genus: pokemon_v2_pokemonspeciesnames[0].genus,
+      weight: pokemon_v2_pokemons[0].weight,
+      height: pokemon_v2_pokemons[0].height,
+      sprite: `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id
+        .toString()
+        .padStart(3, '0')}.png`,
+      flavorTexts: flavorTexts,
+      types: pokemon_v2_pokemons[0].pokemon_v2_pokemontypes.map(({ pokemon_v2_type }) => ({
+        name: pokemon_v2_type.name,
+      })),
+      stats: pokemon_v2_pokemons[0].pokemon_v2_pokemonstats.map(
+        ({ base_stat, pokemon_v2_stat }) => ({
+          name: pokemon_v2_stat.name,
+          value: base_stat,
+        })
+      ),
     };
   },
 };

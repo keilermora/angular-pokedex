@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import PokemonSpecieModel from '@app/services/pokemon-specie/pokemon-specie.model';
+import { PokemonSpecieModel } from '@app/services/pokemon-specie/pokemon-specie.model';
 import { PokemonSpecieService } from '@app/services/pokemon-specie/pokemon-specie.service';
 import PokemonModel from '@app/services/pokemon/pokemon.model';
-import { PokemonService } from '@app/services/pokemon/pokemon.service';
-import missingNo, { missingNoSpecie } from '@data/mocks/missingno.mock';
+import { missingNo } from '@data/mocks/missingno.mock';
 import fadeIn from 'app/shared/animations/fadeIn';
 
 @Component({
@@ -18,44 +17,19 @@ export class PokemonDetailsComponent implements OnInit {
   pokemonSpecie: PokemonSpecieModel = {} as PokemonSpecieModel;
 
   busy: boolean = true;
-  busyDetails: boolean = true;
   error: boolean = false;
 
-  constructor(
-    private route: ActivatedRoute,
-    private pokemonService: PokemonService,
-    private pokemonSpecieService: PokemonSpecieService
-  ) {}
+  constructor(private route: ActivatedRoute, private pokemonSpecieService: PokemonSpecieService) {}
 
   ngOnInit() {
     let pokemonId;
-
     this.route.params.subscribe(({ id }) => {
       let routeParamId = id;
       pokemonId = routeParamId ? parseInt(routeParamId) : 0;
       this.pokemon.id = pokemonId;
       this.busy = true;
-      this.busyDetails = true;
-      this.getPokemon(pokemonId);
       this.getPokemonSpecie(pokemonId);
     });
-  }
-
-  getPokemon(pokemonId: number) {
-    this.pokemonService
-      .getPokemonById(pokemonId)
-      .subscribe(
-        (pokemon: PokemonModel) => {
-          this.pokemon = pokemon;
-        },
-        (error) => {
-          console.error(error);
-          this.pokemon = { ...missingNo };
-        }
-      )
-      .add(() => {
-        this.busy = false;
-      });
   }
 
   getPokemonSpecie(pokemonId: number) {
@@ -63,15 +37,15 @@ export class PokemonDetailsComponent implements OnInit {
       .getPokemonSpecieByPokemonId(pokemonId)
       .subscribe(
         (pokemonSpecie) => {
-          this.pokemonSpecie = pokemonSpecie;
+          this.pokemonSpecie = pokemonSpecie || missingNo;
         },
         (error) => {
           console.error(error);
-          this.pokemonSpecie = missingNoSpecie;
+          this.pokemonSpecie = missingNo;
         }
       )
       .add(() => {
-        this.busyDetails = false;
+        this.busy = false;
       });
   }
 }

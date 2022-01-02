@@ -18,6 +18,7 @@ export const environment = {
 
   // Idioma por defecto
   language: 'en',
+  languageId: 9,
 };
 
 /*

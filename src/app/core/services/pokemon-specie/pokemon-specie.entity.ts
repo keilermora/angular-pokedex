@@ -1,78 +1,30 @@
-import NamedPokeAPIResource from '@app/services/named-poke-api-resource';
-
-interface PokemonSpecieEntity {
-  base_happiness: number;
-  capture_rate: number;
-  color: NamedPokeAPIResource;
-  egg_groups: NamedPokeAPIResource[];
-  evolution_chain: NamedPokeAPIResource;
-  flavor_text_entries: FlavorTextEntryEntity[];
-  form_descriptions: FormDescriptionEntity[];
-  forms_switchable: boolean;
-  gender_rate: number;
-  genera: GeneraEntity[];
-  generation: NamedPokeAPIResource;
-  grow_rate: NamedPokeAPIResource;
-  habitat: NamedPokeAPIResource;
-  has_gender_differences: boolean;
-  hatch_counter: number;
+export interface PokemonSpecieEntity {
   id: number;
-  is_baby: boolean;
-  is_legendary: boolean;
-  is_mythical: boolean;
   name: string;
-  names: NameEntity[];
-  order: number;
-  pal_park_encounters: PalParkEncounterEntity[];
-  pokedex_numbers: PokedexNumberEntity[];
-  shape: NamedPokeAPIResource;
-  varieties: VarietyEntity[];
+  pokemon_v2_pokemonspeciesnames: Array<{
+    genus: string;
+  }>;
+  pokemon_v2_pokemonspeciesflavortexts: Array<PokemonV2Pokemonspeciesflavortexts>;
+  pokemon_v2_pokemons: Array<{
+    weight: number;
+    height: number;
+    pokemon_v2_pokemontypes: Array<{
+      pokemon_v2_type: {
+        name: string;
+      };
+    }>;
+    pokemon_v2_pokemonstats: Array<{
+      base_stat: number;
+      pokemon_v2_stat: {
+        name: string;
+      };
+    }>;
+  }>;
 }
 
-interface FlavorTextEntryEntity {
+export interface PokemonV2Pokemonspeciesflavortexts {
   flavor_text: string;
-  language: NamedPokeAPIResource;
-  version: NamedPokeAPIResource;
+  pokemon_v2_version: {
+    name: string;
+  };
 }
-
-interface FormDescriptionEntity {
-  description: string;
-  language: NamedPokeAPIResource;
-}
-
-interface GeneraEntity {
-  genus: string;
-  language: NamedPokeAPIResource;
-}
-
-interface NameEntity {
-  language: NamedPokeAPIResource;
-  name: string;
-}
-
-interface PalParkEncounterEntity {
-  area: NamedPokeAPIResource;
-  base_score: number;
-  rate: number;
-}
-
-interface PokedexNumberEntity {
-  entry_number: number;
-  pokedex: NamedPokeAPIResource;
-}
-
-interface VarietyEntity {
-  is_default: boolean;
-  pokemon: NamedPokeAPIResource;
-}
-
-export default PokemonSpecieEntity;
-export {
-  FlavorTextEntryEntity,
-  FormDescriptionEntity,
-  GeneraEntity,
-  NameEntity,
-  PalParkEncounterEntity,
-  PokedexNumberEntity,
-  VarietyEntity,
-};

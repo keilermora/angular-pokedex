@@ -8,4 +8,5 @@ export const environment = {
   pokedexGithub: 'https://github.com/keilermora/pokedex',
   imagesPath: '/pokedex/assets/images',
   language: 'en',
+  languageId: 9,
 };

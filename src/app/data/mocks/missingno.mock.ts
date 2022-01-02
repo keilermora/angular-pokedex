@@ -1,19 +1,17 @@
-import PokemonSpecieModel from '@app/services/pokemon-specie/pokemon-specie.model';
-import PokemonModel from '@app/services/pokemon/pokemon.model';
+import { PokemonSpecieModel } from '@app/services/pokemon-specie/pokemon-specie.model';
 
-const missingNo: PokemonModel = {
+export const missingNo: PokemonSpecieModel = {
   id: 0,
   name: 'MissingNo.',
+  genus: 'Pokémon ???',
   sprite: './assets/images/missingno.png',
   height: 10,
   weight: 15983,
   types: [
     {
-      id: 0,
       name: 'bird',
     },
     {
-      id: 1,
       name: 'normal',
     },
   ],
@@ -43,37 +41,22 @@ const missingNo: PokemonModel = {
       value: 29,
     },
   ],
-};
-
-const missingNoSpecie: PokemonSpecieModel = {
-  genus: 'Pokémon ???',
-  flavorTextEntries: [
+  flavorTexts: [
     {
-      version: {
-        name: 'green',
-      },
-      flavorText: 'けつばん',
+      versionNames: ['green'],
+      text: 'けつばん',
     },
     {
-      version: {
-        name: 'red',
-      },
-      flavorText: '???',
+      versionNames: ['red'],
+      text: '???',
     },
     {
-      version: {
-        name: 'blue',
-      },
-      flavorText: 'コメント さくせいちゅう',
+      versionNames: ['blue'],
+      text: 'コメント さくせいちゅう',
     },
     {
-      version: {
-        name: 'yellow',
-      },
-      flavorText: '...',
+      versionNames: ['yellow'],
+      text: '...',
     },
   ],
 };
-
-export default missingNo;
-export { missingNoSpecie };

@@ -2,16 +2,19 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import PokemonSpecieMapper from './pokemon-specie.mapper';
-import PokemonSpecieModel from '@app/services/pokemon-specie/pokemon-specie.model';
 import { HttpClient } from '@angular/common/http';
-import PokemonSpecieEntity from './pokemon-specie.entity';
 import { environment } from '@env';
+import { PokemonSpecieModel } from './pokemon-specie.model';
+import { PokemonSpecieEntity } from './pokemon-specie.entity';
+import { Apollo } from 'apollo-angular';
+import QueryResultsData from '../query-results-data';
+import { getPokemonSpecieQuery } from '@data/queries/get-pokemon-specie.query';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PokemonSpecieService {
-  constructor(private http: HttpClient) {}
+  constructor(private apollo: Apollo) {}
 
   /**
    * Get a Pokémon specie by Pokémon Id
@@ -19,8 +22,16 @@ export class PokemonSpecieService {
    * @returns {Observable<PokemonSpecieModel>}
    */
   getPokemonSpecieByPokemonId(pokemonId: number): Observable<PokemonSpecieModel> {
-    return this.http
-      .get<PokemonSpecieEntity>(`${environment.pokeApi}/pokemon-species/${pokemonId}`)
-      .pipe(map(PokemonSpecieMapper.mapFrom));
+    return this.apollo
+      .query<QueryResultsData>({
+        query: getPokemonSpecieQuery(pokemonId),
+      })
+      .pipe(
+        map(({ data }) => data.pokemon_v2_pokemonspecies),
+        map((pokemonEntity: PokemonSpecieEntity[]) =>
+          pokemonEntity.map(PokemonSpecieMapper.mapFrom)
+        ),
+        map((pokemonSpecie: PokemonSpecieModel[]) => pokemonSpecie[0])
+      );
   }
 }
