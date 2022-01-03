@@ -1,0 +1,86 @@
+@import 'screen-width';
+
+/// Responder al ancho de pantalla de un dispositivo.
+/// @param {string} $media [xs|sm|md|lg|xl] Tamaño de la pantalla a evaluar.
+/// @output Media Query.
+@mixin respond-to($media) {
+  @if $media == xs {
+    @media only screen and (max-width: $xs-max) {
+      @content;
+    }
+  } @else if $media == sm {
+    @media only screen and (min-width: $sm-min) and (max-width: $sm-max) {
+      @content;
+    }
+  } @else if $media == md {
+    @media only screen and (min-width: $md-min) and (max-width: $md-max) {
+      @content;
+    }
+  } @else if $media == lg {
+    @media only screen and (min-width: $lg-min) and (max-width: $lg-max) {
+      @content;
+    }
+  } @else if $media == xl {
+    @media only screen and (min-width: $xl-min) {
+      @content;
+    }
+  }
+}
+
+/// Responder al ancho de pantalla.
+/// @param {string} $from-media [xs|sm|md|lg] Tamaño de la pantalla a evaluar desde.
+/// @param {string} $to-media [sm|md|lg|xl] Tamaño de la pantalla a evaluar hasta.
+/// @output Media Query.
+@mixin respond($from-media, $to-media) {
+  $rule: '';
+  $min-width: 0px;
+  $max-width: 9999px;
+
+  /// Declarar el ancho desde
+  @if $from-media == xs {
+    $min-width: 0px;
+  } @else if $from-media == sm {
+    $min-width: $sm-min;
+  } @else if $from-media == md {
+    $min-width: $md-min;
+  } @else if $from-media == lg {
+    $min-width: $lg-min;
+  } @else if $from-media == xl {
+    @error 'No es posible escribir una media query desde el ancho de pantalla más grande.';
+  } @else {
+    @error 'La propiedad "desde" debe ser alguno de los valores: xs | sm | md | lg';
+  }
+
+  /// Declarar el ancho hasta
+  @if $to-media == xl {
+    @error 'No es posible escribir una media query hasta el ancho de pantalla más pequeño.';
+  } @else if $to-media == sm {
+    $max-width: 767.98px;
+  } @else if $to-media == md {
+    $max-width: 991.98px;
+  } @else if $to-media == lg {
+    $max-width: 1199.98px;
+  } @else if $to-media == xl {
+    $max-width: 9999px;
+  } @else {
+    @error 'La propiedad "hasta" debe ser alguno de los valores: sm | md | lg | xl';
+  }
+
+  /// Escribir la regla incluyendo desde-hasta
+  @if $max-width > $min-width {
+    @if $min-width != 0px and $max-width != 0px {
+      $rule: 'min-width:' + $min-width + ') and (max-width:' + $max-width;
+    } @else if $min-width == 0px {
+      $rule: 'max-width:' + $max-width;
+    } @else if $max-width == 9999px {
+      $rule: 'min-width:' + $min-width;
+    }
+  } @else {
+    @error 'La propiedad "desde" no debe ser mayor a la propiedad "hasta"';
+  }
+
+  /// @return
+  @media only screen and ($rule) {
+    @content;
+  }
+}
