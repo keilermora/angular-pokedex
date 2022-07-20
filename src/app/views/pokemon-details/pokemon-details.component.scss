@@ -1,5 +1,6 @@
 @import 'base/typography';
 @import 'utils/colors';
+@import 'utils/font-sizes';
 @import 'utils/media-query';
 @import 'utils/transition';
 
@@ -43,7 +44,7 @@
       }
 
       .paginator {
-        padding: 14px 0 0;
+        padding-top: 6px;
         line-height: 1.1rem;
         display: flex;
         align-items: center;
@@ -52,7 +53,9 @@
         &__current-number {
           width: 56px;
           height: 23px;
-          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
         &__button {
@@ -79,8 +82,7 @@
     .details {
       grid-row-start: 1;
       grid-row-end: 2;
-      display: flex;
-      flex-direction: column;
+      font-size: $font-size-normal;
 
       .container-theme {
         flex: 1;
@@ -174,6 +176,7 @@
 
         &__name {
           text-transform: uppercase;
+          white-space: nowrap;
         }
 
         &__value {

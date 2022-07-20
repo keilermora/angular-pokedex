@@ -21,7 +21,7 @@
         </div>
 
         <!-- Paginador -->
-        <div class="paginator">
+        <div class="paginator" *ngIf="!busy">
           <a
             [style.pointer-events]="pokemonSpecie.id >= 1 ? 'auto' : 'none'"
             [routerLink]="'/pokemon/' + (pokemonSpecie.id - 1)"
@@ -29,13 +29,11 @@
           >
             <span *ngIf="pokemonSpecie.id - 1 >= 1">&lt;</span>
           </a>
-          <app-dialog-box size="small">
-            <div class="paginator__current-number">
-              <span *ngIf="!busy" [@fadeIn]>
-                {{ pokemonSpecie.id | pokemonNumber }}
-              </span>
-            </div>
-          </app-dialog-box>
+          <div class="paginator__current-number">
+            <span *ngIf="!busy" [@fadeIn]>
+              {{ pokemonSpecie.id | pokemonNumber }}
+            </span>
+          </div>
           <a [routerLink]="'/pokemon/' + (pokemonSpecie.id + 1)" class="paginator__button">&gt;</a>
         </div>
       </app-dialog-box>

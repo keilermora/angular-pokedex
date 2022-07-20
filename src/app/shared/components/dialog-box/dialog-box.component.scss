@@ -5,6 +5,7 @@
   background-color: $white;
   position: relative;
   transition: $fast;
+  height: 100%;
 
   &.dialog-box--large {
     padding: 1em 2em;
@@ -19,32 +20,6 @@
 
   border: (2px) solid $black;
   border-radius: 12px;
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    border: (2px) solid $gray;
-    border-radius: 10px;
-    pointer-events: none;
-    transition: $fast;
-  }
-
-  &:after {
-    content: '';
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    bottom: 2px;
-    right: 2px;
-    border: (2px) solid $silver;
-    border-radius: 8px;
-    pointer-events: none;
-    transition: $fast;
-  }
 
   &--hoverable:hover {
     border-color: $crimson;

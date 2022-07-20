@@ -5,7 +5,7 @@ export const environment = {
   homeAngular: 'https://angular.io/',
   homePokeApi: 'https://pokeapi.co/',
   keilerLinkedin: 'https://www.linkedin.com/in/keilermora/',
-  pokedexGithub: 'https://github.com/keilermora/pokedex',
+  pokedexGithub: 'https://github.com/keilermora/pokedex-angular',
   imagesPath: '/pokedex/assets/images',
   language: 'en',
   languageId: 9,

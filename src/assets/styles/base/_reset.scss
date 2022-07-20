@@ -21,7 +21,7 @@ html {
 
   body {
     /// Establecer Pokémon Font como fuente principal
-    font-size: 14px;
+    font-size: 16px;
     font-family: $pokemonFont;
     line-height: 1.8;
 
@@ -41,11 +41,6 @@ html {
       /// Eliminar la línea azul en el elemento señalado
       outline-width: 0;
       box-shadow: none;
-    }
-
-    img {
-      /// Todas las imagenes son pixel art
-      image-rendering: pixelated;
     }
 
     .--visible {
