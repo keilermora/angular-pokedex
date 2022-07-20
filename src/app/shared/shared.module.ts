@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { NgxMaskModule, IConfig } from 'ngx-mask';
 
 // Components
 import { DialogBoxComponent } from './components/dialog-box/dialog-box.component';
@@ -26,10 +25,6 @@ import { SearchResultsMessagePipe } from './pipes/search-results-message.pipe';
 import { LazyImgDirective } from './directives/lazy-img.directive';
 import { QueryParamsHandlingDirective } from './directives/query-params-handling.directive';
 
-const maskConfig: Partial<IConfig> = {
-  validation: false,
-};
-
 @NgModule({
   declarations: [
     DialogBoxComponent,
@@ -48,13 +43,7 @@ const maskConfig: Partial<IConfig> = {
     QueryParamsHandlingDirective,
     SearchResultsMessagePipe,
   ],
-  imports: [
-    CommonModule,
-    FontAwesomeModule,
-    FormsModule,
-    NgxMaskModule.forRoot(maskConfig),
-    RouterModule,
-  ],
+  imports: [CommonModule, FontAwesomeModule, FormsModule, RouterModule],
   exports: [
     CommonModule,
     DialogBoxComponent,
@@ -63,7 +52,6 @@ const maskConfig: Partial<IConfig> = {
     FormsModule,
     LazyImgDirective,
     NavbarComponent,
-    NgxMaskModule,
     PokedexVersionNamePipe,
     PokemonHeightPipe,
     PokemonImageUrlPipe,
