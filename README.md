@@ -1,4 +1,4 @@
-# Pokedex Angular
+# Pokédex Angular
 
 [https://keilermora.github.io/pokedex-angular/](https://keilermora.github.io/pokedex-angular/)
 
