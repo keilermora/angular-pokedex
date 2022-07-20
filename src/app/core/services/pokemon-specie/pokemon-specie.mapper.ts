@@ -1,6 +1,6 @@
-import Mapper from '@app/base/mapper';
-import { FlavorText, PokemonSpecieModel } from '@app/services/pokemon-specie/pokemon-specie.model';
+import Mapper from '../../base/mapper';
 import { PokemonSpecieEntity, PokemonV2Pokemonspeciesflavortexts } from './pokemon-specie.entity';
+import { FlavorText, PokemonSpecieModel } from './pokemon-specie.model';
 
 const PokemonSpecieMapper: Mapper<PokemonSpecieEntity, PokemonSpecieModel> = {
   mapFrom: (pokemonSpecieEntity: PokemonSpecieEntity): PokemonSpecieModel => {

@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
-import FilterModel from '@app/services/filter/filter.model';
-import PokedexVersionModel from '@app/services/pokedex-version/pokedex-version.model';
-import PokemonModel, { PokemonTypeModel } from '@app/services/pokemon/pokemon.model';
-import { FilterService } from '@app/services/filter/filter.service';
-import { PokedexVersionService } from '@app/services/pokedex-version/pokedex-version.service';
-import { PokemonService } from '@app/services/pokemon/pokemon.service';
+import { switchMap } from 'rxjs/operators';
+import FilterModel from 'src/app/core/services/filter/filter.model';
+import { FilterService } from 'src/app/core/services/filter/filter.service';
+import PokedexVersionModel from 'src/app/core/services/pokedex-version/pokedex-version.model';
+import { PokedexVersionService } from 'src/app/core/services/pokedex-version/pokedex-version.service';
+import PokemonModel, { PokemonTypeModel } from 'src/app/core/services/pokemon/pokemon.model';
+import { PokemonService } from 'src/app/core/services/pokemon/pokemon.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   busy: boolean = false;
   filter: FilterModel = {} as FilterModel;
   pokedexVersion: PokedexVersionModel = {} as PokedexVersionModel;
@@ -52,6 +52,4 @@ export class HomeComponent implements OnInit {
     this.since = pokedexVersions[0].releasedYear;
     this.until = pokedexVersions[pokedexVersions.length - 1].releasedYear;
   }
-
-  ngOnInit() {}
 }

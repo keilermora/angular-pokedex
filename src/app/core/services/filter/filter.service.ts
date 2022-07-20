@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
-import PokemonSortByEnum from '@data/enums/pokemon-sort-by.enum';
 import { Observable, ReplaySubject, Subject } from 'rxjs';
-import PokemonTypeModel from '../pokemon-type/pokemon-type.model';
-import PokemonModel from '../pokemon/pokemon.model';
+import PokemonSortByEnum from 'src/app/data/enums/pokemon-sort-by.enum';
+import PokemonModel, { PokemonTypeModel } from '../pokemon/pokemon.model';
 import FilterModel from './filter.model';
 
 @Injectable({

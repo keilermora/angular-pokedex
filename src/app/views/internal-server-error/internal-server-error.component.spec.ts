@@ -6,13 +6,11 @@ describe('InternalServerErrorComponent', () => {
   let component: InternalServerErrorComponent;
   let fixture: ComponentFixture<InternalServerErrorComponent>;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [InternalServerErrorComponent],
-      }).compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [InternalServerErrorComponent],
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(InternalServerErrorComponent);

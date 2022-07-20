@@ -6,10 +6,8 @@ import { Router } from '@angular/router';
   templateUrl: './internal-server-error.component.html',
   styleUrls: ['./internal-server-error.component.scss'],
 })
-export class InternalServerErrorComponent implements OnInit {
+export class InternalServerErrorComponent {
   constructor(private router: Router) {}
-
-  ngOnInit(): void {}
 
   reload(): void {
     this.router.navigate(['/']).then(() => {

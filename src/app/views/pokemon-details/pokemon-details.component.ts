@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PokemonSpecieModel } from '@app/services/pokemon-specie/pokemon-specie.model';
-import { PokemonSpecieService } from '@app/services/pokemon-specie/pokemon-specie.service';
-import PokemonModel from '@app/services/pokemon/pokemon.model';
-import { missingNo } from '@data/mocks/missingno.mock';
-import fadeIn from 'app/shared/animations/fadeIn';
+import { PokemonSpecieModel } from 'src/app/core/services/pokemon-specie/pokemon-specie.model';
+import { PokemonSpecieService } from 'src/app/core/services/pokemon-specie/pokemon-specie.service';
+import PokemonModel from 'src/app/core/services/pokemon/pokemon.model';
+import { missingNo } from 'src/app/data/mocks/missingno.mock';
+import fadeIn from 'src/app/shared/animations/fadeIn';
 
 @Component({
   selector: 'app-pokemon-details',

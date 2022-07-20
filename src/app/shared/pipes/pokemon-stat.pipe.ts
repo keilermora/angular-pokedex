@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { environment } from '@env';
+import { environment } from 'src/environments/environment';
 
 @Pipe({
   name: 'pokemonStat',

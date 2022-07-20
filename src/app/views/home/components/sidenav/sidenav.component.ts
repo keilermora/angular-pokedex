@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import FilterModel from '@app/services/filter/filter.model';
-import { FilterService } from '@app/services/filter/filter.service';
-import PokedexVersionModel from '@app/services/pokedex-version/pokedex-version.model';
-import { PokedexVersionService } from '@app/services/pokedex-version/pokedex-version.service';
-import { PokemonTypeService } from '@app/services/pokemon-type/pokemon-type.service';
-import { PokemonTypeModel } from '@app/services/pokemon/pokemon.model';
 import { faSearch, faTimes, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import FilterModel from 'src/app/core/services/filter/filter.model';
+import { FilterService } from 'src/app/core/services/filter/filter.service';
+import PokedexVersionModel from 'src/app/core/services/pokedex-version/pokedex-version.model';
+import { PokedexVersionService } from 'src/app/core/services/pokedex-version/pokedex-version.service';
+import PokemonTypeModel from 'src/app/core/services/pokemon-type/pokemon-type.model';
+import { PokemonTypeService } from 'src/app/core/services/pokemon-type/pokemon-type.service';
 
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.scss'],
 })
-export class SidenavComponent implements OnInit {
+export class SidenavComponent {
   iconSearch: IconDefinition = faSearch;
   iconTimes: IconDefinition = faTimes;
 
@@ -41,8 +41,6 @@ export class SidenavComponent implements OnInit {
       this.pokemonTypes = pokemonTypes;
     });
   }
-
-  ngOnInit() {}
 
   /**
    * Establecer el nombre del Pokémon y actualizar los query params.

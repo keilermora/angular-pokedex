@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
-import PokemonEntity from './pokemon.entity';
-import PokemonMapper from './pokemon.mapper';
 import { Apollo } from 'apollo-angular';
-import QueryResultsData from '../query-results-data';
-import getPokemonsQuery from '@data/queries/get-pokemons.query';
+import { map, Observable, of } from 'rxjs';
+import getPokemonsQuery from 'src/app/data/queries/get-pokemons.query';
+import PokemonEntity, { QueryResultsData } from './pokemon.entity';
+import PokemonMapper from './pokemon.mapper';
 import PokemonModel from './pokemon.model';
 
 @Injectable({

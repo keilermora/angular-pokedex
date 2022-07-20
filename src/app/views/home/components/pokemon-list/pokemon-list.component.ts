@@ -1,13 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
-import PokedexVersionModel from '@app/services/pokedex-version/pokedex-version.model';
-import PokemonModel from '@app/services/pokemon/pokemon.model';
+import PokedexVersionModel from 'src/app/core/services/pokedex-version/pokedex-version.model';
+import PokemonModel from 'src/app/core/services/pokemon/pokemon.model';
 
 @Component({
   selector: 'app-pokemon-list',
   templateUrl: './pokemon-list.component.html',
   styleUrls: ['./pokemon-list.component.scss'],
 })
-export class PokemonListComponent implements OnInit {
+export class PokemonListComponent {
   _busy: boolean = true;
   _pokedexVersion: PokedexVersionModel = {} as PokedexVersionModel;
   _pokemons: PokemonModel[] = [];
@@ -25,6 +25,4 @@ export class PokemonListComponent implements OnInit {
   }
 
   constructor() {}
-
-  ngOnInit() {}
 }

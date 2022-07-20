@@ -1,4 +1,4 @@
-import { PokemonSpecieModel } from '@app/services/pokemon-specie/pokemon-specie.model';
+import { PokemonSpecieModel } from 'src/app/core/services/pokemon-specie/pokemon-specie.model';
 
 export const missingNo: PokemonSpecieModel = {
   id: 0,

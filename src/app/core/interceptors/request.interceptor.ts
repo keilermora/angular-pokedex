@@ -13,12 +13,9 @@ import { map, catchError } from 'rxjs/operators';
 
 @Injectable()
 export class RequestInterceptor implements HttpInterceptor {
-  constructor(
-    private router: Router
-  ) {}
+  constructor(private router: Router) {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-
     return next.handle(request).pipe(
       map((event: HttpEvent<any>) => {
         return event;
@@ -29,6 +26,7 @@ export class RequestInterceptor implements HttpInterceptor {
         }
 
         return throwError(error);
-      }));
+      })
+    );
   }
 }

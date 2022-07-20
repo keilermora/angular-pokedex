@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import PokedexVersionModel from '@app/services/pokedex-version/pokedex-version.model';
+import PokedexVersionModel from 'src/app/core/services/pokedex-version/pokedex-version.model';
 
 @Pipe({
   name: 'pokemonImageUrl',

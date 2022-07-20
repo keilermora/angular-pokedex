@@ -8,9 +8,8 @@ describe('StatusBarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ StatusBarComponent ]
-    })
-    .compileComponents();
+      declarations: [StatusBarComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

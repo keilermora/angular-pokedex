@@ -2,7 +2,7 @@ import { ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Event, Router, Scroll } from '@angular/router';
 import { filter } from 'rxjs/operators';
-import Pokedex from '@app/services/filter/filter.model';
+import Pokedex from 'src/app/core/services/filter/filter.model';
 
 @Component({
   selector: 'app-root',

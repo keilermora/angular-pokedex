@@ -1,6 +1,6 @@
-import { environment } from '@env';
 import { gql } from 'apollo-angular';
 import { DocumentNode } from 'graphql';
+import { environment } from 'src/environments/environment';
 
 export const getPokemonSpecieQuery = (id: number): DocumentNode => {
   return gql`

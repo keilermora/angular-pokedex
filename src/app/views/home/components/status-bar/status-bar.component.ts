@@ -1,15 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
-import FilterModel from '@app/services/filter/filter.model';
-import { FilterService } from '@app/services/filter/filter.service';
-import PokemonModel from '@app/services/pokemon/pokemon.model';
-import PokemonSortByEnum from '@data/enums/pokemon-sort-by.enum';
+import FilterModel from 'src/app/core/services/filter/filter.model';
+import { FilterService } from 'src/app/core/services/filter/filter.service';
+import PokemonModel from 'src/app/core/services/pokemon/pokemon.model';
+import PokemonSortByEnum from 'src/app/data/enums/pokemon-sort-by.enum';
 
 @Component({
   selector: 'app-status-bar',
   templateUrl: './status-bar.component.html',
   styleUrls: ['./status-bar.component.scss'],
 })
-export class StatusBarComponent implements OnInit {
+export class StatusBarComponent {
   pokemonSortByNameASC: PokemonSortByEnum = PokemonSortByEnum.NAME_ASC;
   pokemonSortByNumberASC: PokemonSortByEnum = PokemonSortByEnum.NUMBER_ASC;
   pokemonSortByHeightASC: PokemonSortByEnum = PokemonSortByEnum.HEIGHT_ASC;
@@ -33,8 +33,6 @@ export class StatusBarComponent implements OnInit {
       this.currentPokemonSortBy = filter.pokemonSortBy as PokemonSortByEnum;
     });
   }
-
-  ngOnInit() {}
 
   /**
    * Establecer el indicador para ordenar la lista de Pokémon y actualizar los query params.

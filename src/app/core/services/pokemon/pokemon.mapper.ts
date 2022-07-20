@@ -1,4 +1,4 @@
-import Mapper from '@app/base/mapper';
+import Mapper from '../../base/mapper';
 import PokemonEntity, {
   PokemonV2PokemonTypeEntity,
   StatEntity,

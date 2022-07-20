@@ -1,14 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import PokemonSpecieMapper from './pokemon-specie.mapper';
-import { HttpClient } from '@angular/common/http';
-import { environment } from '@env';
-import { PokemonSpecieModel } from './pokemon-specie.model';
-import { PokemonSpecieEntity } from './pokemon-specie.entity';
 import { Apollo } from 'apollo-angular';
+import { map, Observable } from 'rxjs';
+import { getPokemonSpecieQuery } from 'src/app/data/queries/get-pokemon-specie.query';
 import QueryResultsData from '../query-results-data';
-import { getPokemonSpecieQuery } from '@data/queries/get-pokemon-specie.query';
+import { PokemonSpecieEntity } from './pokemon-specie.entity';
+import PokemonSpecieMapper from './pokemon-specie.mapper';
+import { PokemonSpecieModel } from './pokemon-specie.model';
 
 @Injectable({
   providedIn: 'root',

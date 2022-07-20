@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { pokedexVersions } from '@data/mocks/pokedex-versions.mock';
-import { Observable, of } from 'rxjs';
+import { pokedexVersions } from 'src/app/data/mocks/pokedex-versions.mock';
 import PokedexVersionModel from './pokedex-version.model';
 
 @Injectable({

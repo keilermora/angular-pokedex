@@ -6,11 +6,9 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./dialog-box.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class DialogBoxComponent implements OnInit {
+export class DialogBoxComponent {
   @Input() size: 'small' | 'large' = 'small';
   @Input() hoverable: boolean = false;
 
   constructor() {}
-
-  ngOnInit(): void {}
 }
