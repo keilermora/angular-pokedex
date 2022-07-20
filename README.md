@@ -1,6 +1,6 @@
 # Pokedex
 
-[https://keilermora.github.io/pokedex/](https://keilermora.github.io/pokedex/)
+[https://keilermora.github.io/pokedex-angular/](https://keilermora.github.io/pokedex-angular/)
 
 La aplicación muestra el listado y el detalle de los Pokémon de las primeras 2 generaciones.
 
