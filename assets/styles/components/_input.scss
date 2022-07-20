@@ -1,3 +1,4 @@
+@import '../base/_typography';
 @import '../utils/colors';
 @import '../utils/font-sizes';
 @import '../utils/transition';
@@ -9,7 +10,7 @@ input[type='text'] {
   height: 24px;
   padding: 0 10px;
   border-radius: 8px;
-  font-size: $font-size-small;
+  font-family: $roboto;
   transition: $fast;
 
   &:hover {

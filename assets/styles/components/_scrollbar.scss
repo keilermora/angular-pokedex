@@ -1,9 +1,9 @@
-@import "../utils/colors";
-@import "../utils/transition";
+@import '../utils/colors';
+@import '../utils/transition';
 
 ::-webkit-scrollbar {
   width: 10px;
-  background-color:  $gallery;
+  background-color: $gallery;
 }
 
 /* Track */

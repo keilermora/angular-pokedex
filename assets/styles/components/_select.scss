@@ -6,13 +6,13 @@ select {
   border: 1px solid $shark;
   border-radius: 8px;
   cursor: pointer;
-  text-transform: uppercase;
+  text-transform: capitalize;
   padding: 0 6px;
   height: 24px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  font-size: $font-size-small;
+  font-family: $roboto;
   transition: $fast;
 
   &:hover {
