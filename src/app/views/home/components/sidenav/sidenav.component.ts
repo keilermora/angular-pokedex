@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { faSearch, faTimes, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import FilterModel from 'src/app/core/services/filter/filter.model';
 import { FilterService } from 'src/app/core/services/filter/filter.service';

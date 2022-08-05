@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import { map, Observable } from 'rxjs';
 import { getPokemonSpecieQuery } from 'src/app/data/queries/get-pokemon-specie.query';
-import QueryResultsData from '../query-results-data';
-import { PokemonSpecieEntity } from './pokemon-specie.entity';
+import QueryResultsDataInterface from 'src/app/shared/interfaces/query-results-data.interface';
 import PokemonSpecieMapper from './pokemon-specie.mapper';
 import { PokemonSpecieModel } from './pokemon-specie.model';
 
@@ -20,15 +19,15 @@ export class PokemonSpecieService {
    */
   getPokemonSpecieByPokemonId(pokemonId: number): Observable<PokemonSpecieModel> {
     return this.apollo
-      .query<QueryResultsData>({
+      .query<QueryResultsDataInterface>({
         query: getPokemonSpecieQuery(pokemonId),
       })
       .pipe(
-        map(({ data }) => data.pokemon_v2_pokemonspecies),
-        map((pokemonEntity: PokemonSpecieEntity[]) =>
-          pokemonEntity.map(PokemonSpecieMapper.mapFrom)
-        ),
-        map((pokemonSpecie: PokemonSpecieModel[]) => pokemonSpecie[0])
+        map(({ data }) => {
+          const pokemonSpecieEntities = data.pokemon_v2_pokemonspecies;
+          const pokemonSpecieModels = pokemonSpecieEntities.map(PokemonSpecieMapper.mapFrom);
+          return pokemonSpecieModels[0];
+        })
       );
   }
 }

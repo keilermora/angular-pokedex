@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
-import { map, Observable, of } from 'rxjs';
+import { map, Observable, of, tap } from 'rxjs';
 import getPokemonTypesQuery from 'src/app/data/queries/get-pokemon-types.query';
-import QueryResultsData from '../query-results-data';
+import QueryResultsDataInterface from 'src/app/shared/interfaces/query-results-data.interface';
 import PokemonTypeMapper from './pokemon-type.mapper';
 import PokemonTypeModel from './pokemon-type.model';
 
@@ -12,7 +12,7 @@ import PokemonTypeModel from './pokemon-type.model';
 export class PokemonTypeService {
   pokemonTypes: PokemonTypeModel[];
   pokemonTypes$!: Observable<PokemonTypeModel[]>;
-  fetchingPokemonTypes: boolean = false;
+  fetchingPokemonTypes = false;
 
   constructor(private apollo: Apollo) {
     const pokemonTypes = localStorage.getItem('pokemon-types');
@@ -30,15 +30,16 @@ export class PokemonTypeService {
       this.fetchingPokemonTypes = true;
 
       this.pokemonTypes$ = this.apollo
-        .query<QueryResultsData>({ query: getPokemonTypesQuery })
+        .query<QueryResultsDataInterface>({ query: getPokemonTypesQuery })
         .pipe(
-          map(({ data }) => data.pokemon_v2_type),
-          map((pokemonEntity) => pokemonEntity.map(PokemonTypeMapper.mapFrom)),
-          map((pokemonTypes) => {
+          map(({ data }) => {
+            const pokemonEntities = data.pokemon_v2_type;
+            return pokemonEntities.map(PokemonTypeMapper.mapFrom);
+          }),
+          tap((pokemonTypes: PokemonTypeModel[]) => {
             localStorage.setItem('pokemons-types', JSON.stringify(pokemonTypes));
             this.pokemonTypes = pokemonTypes;
             this.fetchingPokemonTypes = false;
-            return pokemonTypes;
           })
         );
     }

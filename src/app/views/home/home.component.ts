@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import FilterModel from 'src/app/core/services/filter/filter.model';

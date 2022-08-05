@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import FilterModel from 'src/app/core/services/filter/filter.model';
 import { FilterService } from 'src/app/core/services/filter/filter.service';
 import PokemonModel from 'src/app/core/services/pokemon/pokemon.model';

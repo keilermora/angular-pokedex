@@ -7,7 +7,6 @@ import {
   HttpErrorResponse,
 } from '@angular/common/http';
 import { Router } from '@angular/router';
-
 import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
@@ -21,11 +20,11 @@ export class RequestInterceptor implements HttpInterceptor {
         return event;
       }),
       catchError((error: HttpErrorResponse) => {
-        if (error.status >= 500 || error.status === 0) {
+        if (error.status >= 500 || !error.status) {
           this.router.navigate(['/error']);
         }
 
-        return throwError(error);
+        return throwError(() => new Error(error.message));
       })
     );
   }

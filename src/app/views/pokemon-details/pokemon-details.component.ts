@@ -13,11 +13,11 @@ import fadeIn from 'src/app/shared/animations/fadeIn';
   animations: [fadeIn],
 })
 export class PokemonDetailsComponent implements OnInit {
-  pokemon: PokemonModel = {} as PokemonModel;
-  pokemonSpecie: PokemonSpecieModel = {} as PokemonSpecieModel;
+  pokemon = {} as PokemonModel;
+  pokemonSpecie = {} as PokemonSpecieModel;
 
-  busy: boolean = true;
-  error: boolean = false;
+  busy = true;
+  error = false;
 
   constructor(private route: ActivatedRoute, private pokemonSpecieService: PokemonSpecieService) {}
 
@@ -35,15 +35,15 @@ export class PokemonDetailsComponent implements OnInit {
   getPokemonSpecie(pokemonId: number) {
     this.pokemonSpecieService
       .getPokemonSpecieByPokemonId(pokemonId)
-      .subscribe(
-        (pokemonSpecie) => {
+      .subscribe({
+        next: (pokemonSpecie) => {
           this.pokemonSpecie = pokemonSpecie || missingNo;
         },
-        (error) => {
+        error: (error) => {
           console.error(error);
           this.pokemonSpecie = missingNo;
-        }
-      )
+        },
+      })
       .add(() => {
         this.busy = false;
       });

@@ -1,9 +1,9 @@
-import NamedPokeAPIResource from '../named-poke-api-resource';
+import NamedPokeAPIResourceInterface from '../../../shared/interfaces/named-poke-api-resource.interface';
 
 interface PokemonEntity {
   abilities: AbilityEntity[];
   base_experience: number;
-  forms: NamedPokeAPIResource[];
+  forms: NamedPokeAPIResourceInterface[];
   game_indices: GameIndexEntity[];
   height: number;
   held_items: HeldItemEntity[];
@@ -14,7 +14,7 @@ interface PokemonEntity {
   name: string;
   order: number;
   past_types: PastTypeEntity[];
-  species: NamedPokeAPIResource;
+  species: NamedPokeAPIResourceInterface;
   sprites: SpritesEntity;
   stats?: StatEntity[];
   types: TypeEntity[];
@@ -23,23 +23,23 @@ interface PokemonEntity {
 }
 
 interface AbilityEntity {
-  ability: NamedPokeAPIResource;
+  ability: NamedPokeAPIResourceInterface;
   is_hidden: boolean;
   slot: number;
 }
 
 interface GameIndexEntity {
   game_index: number;
-  version: NamedPokeAPIResource;
+  version: NamedPokeAPIResourceInterface;
 }
 
 interface HeldItemEntity {
-  item: NamedPokeAPIResource;
+  item: NamedPokeAPIResourceInterface;
   version_details: VersionDetailEntity;
 }
 
 interface MoveEntity {
-  move: NamedPokeAPIResource;
+  move: NamedPokeAPIResourceInterface;
   version_group_details: VersionGroupDetailEntity[];
 }
 
@@ -50,12 +50,8 @@ interface OtherSpritesEntity {
 }
 
 interface PastTypeEntity {
-  generation: NamedPokeAPIResource;
+  generation: NamedPokeAPIResourceInterface;
   types: TypeEntity[];
-}
-
-interface QueryResultsData {
-  pokemon_v2_pokemon: PokemonEntity[];
 }
 
 interface SpritesEntity {
@@ -73,23 +69,23 @@ interface SpritesEntity {
 interface StatEntity {
   base_stat: number;
   effort: number;
-  stat: NamedPokeAPIResource;
+  stat: NamedPokeAPIResourceInterface;
 }
 
 interface TypeEntity {
   slot: number;
-  type: NamedPokeAPIResource;
+  type: NamedPokeAPIResourceInterface;
 }
 
 interface VersionDetailEntity {
   rarity: number;
-  version: NamedPokeAPIResource;
+  version: NamedPokeAPIResourceInterface;
 }
 
 interface VersionGroupDetailEntity {
   level_learned_at: number;
-  move_learn_method: NamedPokeAPIResource;
-  version_group: NamedPokeAPIResource;
+  move_learn_method: NamedPokeAPIResourceInterface;
+  version_group: NamedPokeAPIResourceInterface;
 }
 
 interface PokemonV2PokemonTypeEntity {
@@ -111,7 +107,6 @@ export {
   PastTypeEntity,
   PokemonV2PokemonTypeEntity,
   PokemonV2TypeEntity,
-  QueryResultsData,
   SpritesEntity,
   StatEntity,
   TypeEntity,

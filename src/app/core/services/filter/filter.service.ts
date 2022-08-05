@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { Observable, ReplaySubject, Subject } from 'rxjs';
 import PokemonSortByEnum from 'src/app/data/enums/pokemon-sort-by.enum';
-import PokemonModel, { PokemonTypeModel } from '../pokemon/pokemon.model';
+import QueryParamsInterface from 'src/app/shared/interfaces/query-params.interface';
+import PokemonModel from '../pokemon/pokemon.model';
 import FilterModel from './filter.model';
 
 @Injectable({
@@ -10,20 +11,22 @@ import FilterModel from './filter.model';
 })
 export class FilterService {
   private filterSubject: Subject<FilterModel>;
-  private filter: FilterModel = {} as FilterModel;
+  private filter = {} as FilterModel;
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router) {
     this.filterSubject = new ReplaySubject<FilterModel>(1);
 
-    this.activatedRoute.queryParams.subscribe(({ pokemon, sortBy, type, version }) => {
-      this.filter = {
-        pokedexVersionId: version ? parseInt(version) : 1,
-        pokemonName: pokemon || '',
-        pokemonSortBy: sortBy || PokemonSortByEnum.NUMBER_ASC,
-        pokemonTypeId: type ? parseInt(type) : 0,
-      };
-      this.refresh();
-    });
+    this.activatedRoute.queryParams.subscribe(
+      ({ pokemon, sortBy, type, version }: QueryParamsInterface) => {
+        this.filter = {
+          pokedexVersionId: version ? parseInt(version) : 1,
+          pokemonName: pokemon || '',
+          pokemonSortBy: sortBy || PokemonSortByEnum.NUMBER_ASC,
+          pokemonTypeId: type ? parseInt(type) : 0,
+        };
+        this.refresh();
+      }
+    );
   }
 
   filterPokemons(pokemons: PokemonModel[]): PokemonModel[] {
@@ -33,30 +36,30 @@ export class FilterService {
 
     if (pokemonName) {
       const re = new RegExp(pokemonName);
-      pokemonResults = pokemonResults.filter((pokemon: PokemonModel) => re.test(pokemon.name));
+      pokemonResults = pokemonResults.filter((pokemon) => re.test(pokemon.name));
     }
 
     if (pokemonTypeId) {
-      pokemonResults = pokemonResults.filter((pokemon: PokemonModel) =>
-        pokemon.types?.some((pokemonType: PokemonTypeModel) => pokemonType.id === pokemonTypeId)
+      pokemonResults = pokemonResults.filter((pokemon) =>
+        pokemon.types?.some((pokemonType) => pokemonType.id === pokemonTypeId)
       );
     }
 
     // La lista de Pokémon viene ordenada por números por defecto
     if (pokemonSortBy === PokemonSortByEnum.NAME_ASC) {
-      pokemonResults.sort((a: PokemonModel, b: PokemonModel) => (a.name > b.name ? 1 : -1));
+      pokemonResults.sort((a, b) => (a.name > b.name ? 1 : -1));
     } else if (pokemonSortBy === PokemonSortByEnum.WEIGHT_ASC) {
-      pokemonResults.sort((a: PokemonModel, b: PokemonModel) => (a.weight > b.weight ? 1 : -1));
+      pokemonResults.sort((a, b) => (a.weight > b.weight ? 1 : -1));
     } else if (pokemonSortBy === PokemonSortByEnum.HEIGHT_ASC) {
-      pokemonResults.sort((a: PokemonModel, b: PokemonModel) => (a.height > b.height ? 1 : -1));
+      pokemonResults.sort((a, b) => (a.height > b.height ? 1 : -1));
     } else if (pokemonSortBy === PokemonSortByEnum.NUMBER_DSC) {
-      pokemonResults.sort((a: PokemonModel, b: PokemonModel) => (a.id < b.id ? 1 : -1));
+      pokemonResults.sort((a, b) => (a.id < b.id ? 1 : -1));
     } else if (pokemonSortBy === PokemonSortByEnum.NAME_DSC) {
-      pokemonResults.sort((a: PokemonModel, b: PokemonModel) => (a.name < b.name ? 1 : -1));
+      pokemonResults.sort((a, b) => (a.name < b.name ? 1 : -1));
     } else if (pokemonSortBy === PokemonSortByEnum.WEIGHT_DSC) {
-      pokemonResults.sort((a: PokemonModel, b: PokemonModel) => (a.weight < b.weight ? 1 : -1));
+      pokemonResults.sort((a, b) => (a.weight < b.weight ? 1 : -1));
     } else if (pokemonSortBy === PokemonSortByEnum.HEIGHT_DSC) {
-      pokemonResults.sort((a: PokemonModel, b: PokemonModel) => (a.height < b.height ? 1 : -1));
+      pokemonResults.sort((a, b) => (a.height < b.height ? 1 : -1));
     }
 
     return pokemonResults;

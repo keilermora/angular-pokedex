@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faLinkedin, IconDefinition } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -10,15 +10,15 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
-  iconGithub: IconDefinition = faGithub;
-  iconLinkedin: IconDefinition = faLinkedin;
-  iconBars: IconDefinition = faBars;
-  iconTimes: IconDefinition = faTimes;
+  iconGithub = faGithub;
+  iconLinkedin = faLinkedin;
+  iconBars = faBars;
+  iconTimes = faTimes;
 
-  keilerLinkedin: string = environment.keilerLinkedin;
-  pokedexGithub: string = environment.pokedexGithub;
+  keilerLinkedin = environment.keilerLinkedin;
+  pokedexGithub = environment.pokedexGithub;
 
-  showSidenav: boolean = false;
+  showSidenav = false;
 
   constructor(private router: Router) {}
 
