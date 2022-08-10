@@ -18,7 +18,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "outputPath": "dist/pokedex-angular",
             "index": "src/index.html",
@@ -40,7 +40,13 @@
                 "src/assets/styles"
               ]
             },
-            "scripts": []
+            "scripts": [],
+            "customWebpackConfig": {
+              "path": "./webpack.config.ts",
+              "mergeRules": {
+                "externals": "replace"
+              }
+            }
           },
           "configurations": {
             "production": {
@@ -76,7 +82,7 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "configurations": {
             "production": {
               "browserTarget": "pokedex-angular:build:production"

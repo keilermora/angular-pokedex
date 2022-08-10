@@ -1,0 +1,6 @@
+query GetPokemonTypes {
+  pokemon_v2_type(order_by: { name: asc }) {
+    id
+    name
+  }
+}

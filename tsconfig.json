@@ -18,8 +18,10 @@
     "target": "es2020",
     "module": "es2020",
     "lib": ["es2020", "dom", "esnext.asynciterable"],
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "typeRoots": ["src/@types"]
   },
+  "files": ["src/@types/graphql.d"],
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,

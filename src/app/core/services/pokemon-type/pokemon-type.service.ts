@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import { map, Observable, of, tap } from 'rxjs';
-import getPokemonTypesQuery from 'src/app/data/queries/get-pokemon-types.query';
 import QueryResultsDataInterface from 'src/app/shared/interfaces/query-results-data.interface';
 import PokemonTypeMapper from './pokemon-type.mapper';
 import PokemonTypeModel from './pokemon-type.model';
+import getPokemonTypesQuery from 'src/app/data/graphql/get-pokemon-types.graphql';
 
 @Injectable({
   providedIn: 'root',
