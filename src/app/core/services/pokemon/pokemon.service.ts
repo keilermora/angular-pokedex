@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import { map, Observable, of, tap } from 'rxjs';
-import getPokemonsQuery from 'src/app/data/graphql/get-pokemons.graphql';
+import getPokemonsQuery from '../../../data/graphql/get-pokemons.graphql';
 import QueryResultsDataInterface from 'src/app/shared/interfaces/query-results-data.interface';
 import PokemonMapper from './pokemon.mapper';
 import PokemonModel from './pokemon.model';

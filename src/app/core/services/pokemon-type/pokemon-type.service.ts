@@ -4,7 +4,7 @@ import { map, Observable, of, tap } from 'rxjs';
 import QueryResultsDataInterface from 'src/app/shared/interfaces/query-results-data.interface';
 import PokemonTypeMapper from './pokemon-type.mapper';
 import PokemonTypeModel from './pokemon-type.model';
-import getPokemonTypesQuery from 'src/app/data/graphql/get-pokemon-types.graphql';
+import getPokemonTypesQuery from '../../../data/graphql/get-pokemon-types.graphql';
 
 @Injectable({
   providedIn: 'root',
