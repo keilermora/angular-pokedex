@@ -18,7 +18,10 @@ yarn-error.log
 .c9/
 *.launch
 .settings/
-*.sublime-workspace
+*.sublime-workspace}}
+
+# Optional eslint cache
+.eslintcache
 
 # Visual Studio Code
 .vscode/*
