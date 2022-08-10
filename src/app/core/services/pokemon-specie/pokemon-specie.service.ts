@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Apollo } from 'apollo-angular';
 import { map, Observable } from 'rxjs';
-import getPokemonSpecieQuery from '../../../data/graphql/get-pokemon-specie.graphql';
-import QueryResultsDataInterface from 'src/app/shared/interfaces/query-results-data.interface';
+import { Apollo } from 'apollo-angular';
 import { environment } from 'src/environments/environment';
-import PokemonSpecieMapper from './pokemon-specie.mapper';
 import { PokemonSpecieModel } from './pokemon-specie.model';
+import getPokemonSpecieQuery from '../../../data/graphql/get-pokemon-specie.graphql';
+import PokemonSpecieMapper from './pokemon-specie.mapper';
+import PokemonSpecieQueryResultsInterface from 'src/app/shared/interfaces/pokemon-specie-query-results.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -20,7 +20,7 @@ export class PokemonSpecieService {
    */
   getPokemonSpecieByPokemonId(pokemonId: number): Observable<PokemonSpecieModel> {
     return this.apollo
-      .query<QueryResultsDataInterface>({
+      .query<PokemonSpecieQueryResultsInterface>({
         query: getPokemonSpecieQuery,
         variables: {
           pokemonId,

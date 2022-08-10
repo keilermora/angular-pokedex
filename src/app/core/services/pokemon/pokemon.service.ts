@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import { map, Observable, of, tap } from 'rxjs';
 import getPokemonsQuery from '../../../data/graphql/get-pokemons.graphql';
-import QueryResultsDataInterface from 'src/app/shared/interfaces/query-results-data.interface';
 import PokemonMapper from './pokemon.mapper';
 import PokemonModel from './pokemon.model';
+import PokemonsQueryResultsInterface from 'src/app/shared/interfaces/pokemons-query-results.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -25,18 +25,18 @@ export class PokemonService {
     } else if (!this.fetchingPokemons) {
       this.fetchingPokemons = true;
       this.pokemons$ = this.apollo
-        .query<QueryResultsDataInterface>({
+        .query<PokemonsQueryResultsInterface>({
           query: getPokemonsQuery,
           variables: {
             limit: limit,
           },
         })
         .pipe(
-          map(({ data }) => {
+          map(({ data }): PokemonModel[] => {
             const pokemonEntities = data.pokemon_v2_pokemon;
             return pokemonEntities.map(PokemonMapper.mapFrom);
           }),
-          tap((pokemons: PokemonModel[]) => {
+          tap((pokemons) => {
             localStorage.setItem('pokemons-v4', JSON.stringify(pokemons));
             this.pokemons = pokemons;
             this.fetchingPokemons = false;

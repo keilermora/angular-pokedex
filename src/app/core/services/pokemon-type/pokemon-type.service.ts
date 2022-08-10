@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import { map, Observable, of, tap } from 'rxjs';
-import QueryResultsDataInterface from 'src/app/shared/interfaces/query-results-data.interface';
 import PokemonTypeMapper from './pokemon-type.mapper';
 import PokemonTypeModel from './pokemon-type.model';
 import getPokemonTypesQuery from '../../../data/graphql/get-pokemon-types.graphql';
+import PokemonTypesQueryResults from 'src/app/shared/interfaces/pokemon-types-query-results.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -30,7 +30,7 @@ export class PokemonTypeService {
       this.fetchingPokemonTypes = true;
 
       this.pokemonTypes$ = this.apollo
-        .query<QueryResultsDataInterface>({ query: getPokemonTypesQuery })
+        .query<PokemonTypesQueryResults>({ query: getPokemonTypesQuery })
         .pipe(
           map(({ data }) => {
             const pokemonEntities = data.pokemon_v2_type;
