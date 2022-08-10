@@ -5,9 +5,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SearchResultsMessagePipe implements PipeTransform {
   /**
-   * Muestra un mensaje personalizado, según la cantidad de resultados.
-   * @param resultsLength Longitud de los resultados
-   * @example Sin resultados, 1 resultado, 2 resultados
+   * Show a custom message depending of search results quantity.
+   * @param resultsLength
+   * @example
+   * No results
+   * 1 result
+   * 2 results
    */
   transform(resultsLength: number): string {
     let message = resultsLength ? resultsLength.toString() : 'No';

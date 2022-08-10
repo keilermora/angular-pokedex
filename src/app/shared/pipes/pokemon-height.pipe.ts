@@ -5,8 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class PokemonHeightPipe implements PipeTransform {
   /**
-   * Convertir decímetros a metros.
-   * @param decimeters Altura del Pokémon en decímetros.
+   * Convert decimeters to meters.
+   * @param decimeters Pokémon height in decimeters.
    */
   transform(decimeters: number): string {
     return `${decimeters / 10}m`;

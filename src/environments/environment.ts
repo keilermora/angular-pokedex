@@ -5,18 +5,18 @@ export const environment = {
   pokeApi: 'https://pokeapi.co/api/v2',
   pokeApiGraphQL: 'https://beta.pokeapi.co/graphql/v1beta',
 
-  // Páginas de referencias
+  // Reference pages
   homeAngular: 'https://angular.io/',
   homePokeApi: 'https://pokeapi.co/',
 
-  // Redes sociales
+  // Social media
   keilerLinkedin: 'https://www.linkedin.com/in/keilermora/',
   pokedexGithub: 'https://github.com/keilermora/pokedex-angular',
 
-  // Ruta a la carpeta de imágenes que no están asociadas directamente a la plantilla
+  // Images folder url
   imagesPath: '/assets/images',
 
-  // Idioma por defecto
+  // Default language
   language: 'en',
   languageId: 9,
 };

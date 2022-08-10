@@ -5,9 +5,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class PokemonNumberPipe implements PipeTransform {
   /**
-   * El formato del número del Pokémon debe ser de mínimo 3 caracteres.
-   * Los números van desde el 001 hasta el 999.
-   * @param number Número del Pokémon.
+   * Pokémon numbers are between 001 and 999.
+   * It's format must have min 3 characters.
+   * @param number Pokémon number.
    */
   transform(number: number): string {
     if (number) {

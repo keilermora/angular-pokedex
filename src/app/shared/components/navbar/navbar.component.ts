@@ -23,7 +23,7 @@ export class NavbarComponent {
   constructor(private router: Router) {}
 
   /**
-   * Navegar a la ruta. Luego, cerrar el sidenav.
+   * Navigate to route. Then, close sidenav.
    * @param route Ruta a la cual dirigir.
    */
   goTo(route: string) {

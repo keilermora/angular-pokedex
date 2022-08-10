@@ -5,9 +5,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class PokemonNamePipe implements PipeTransform {
   /**
-   * Algunos nombres de Pokémon deben ser formateados.
-   * @example nidoran-f y nidoran-m,
-   * @param name nombre del Pokémon,
+   * Some Pokémon names must be formatted.
+   * @example
+   * // returns nidoran♀
+   * transform('nidoran-f');
+   * @param name Pokémon name,
    */
   transform(name: string): string {
     if (name) {

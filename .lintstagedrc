@@ -1,6 +1,6 @@
 {
   "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-    "ng lint",
-    "prettier --write"
+    "prettier --write --ignore-unknown --cache --cache-strategy metadata src",
+    "eslint --fix --cache --max-warnings=0"
   ]
 }

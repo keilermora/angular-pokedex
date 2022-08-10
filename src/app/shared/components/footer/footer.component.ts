@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -9,7 +9,6 @@ export class FooterComponent {
   currentYear: number;
 
   constructor() {
-    // Agregar fecha actual a la línea de copyright.
     const date = new Date();
     this.currentYear = date.getFullYear();
   }

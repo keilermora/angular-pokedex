@@ -5,7 +5,7 @@ import { HttpLink } from 'apollo-angular/http';
 import { environment } from 'src/environments/environment';
 
 const uri = environment.pokeApiGraphQL;
-export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
+function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
   return {
     link: httpLink.create({ uri }),
     cache: new InMemoryCache(),

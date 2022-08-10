@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import PokedexVersionModel from 'src/app/core/services/pokedex-version/pokedex-version.model';
 import PokemonModel from 'src/app/core/services/pokemon/pokemon.model';
 

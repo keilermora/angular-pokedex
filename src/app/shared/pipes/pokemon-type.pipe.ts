@@ -6,8 +6,8 @@ import { environment } from 'src/environments/environment';
 })
 export class PokemonTypePipe implements PipeTransform {
   /**
-   * Traducir el tipo del Pokémon.
-   * @param type Tipo.
+   * Translate.
+   * @param type Pokémon type.
    */
   transform(type: string): string {
     if (environment.language === 'en') {

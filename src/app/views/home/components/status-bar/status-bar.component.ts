@@ -10,15 +10,15 @@ import PokemonSortByEnum from 'src/app/data/enums/pokemon-sort-by.enum';
   styleUrls: ['./status-bar.component.scss'],
 })
 export class StatusBarComponent {
-  pokemonSortByNameASC: PokemonSortByEnum = PokemonSortByEnum.NAME_ASC;
-  pokemonSortByNumberASC: PokemonSortByEnum = PokemonSortByEnum.NUMBER_ASC;
-  pokemonSortByHeightASC: PokemonSortByEnum = PokemonSortByEnum.HEIGHT_ASC;
-  pokemonSortByWeightASC: PokemonSortByEnum = PokemonSortByEnum.WEIGHT_ASC;
+  pokemonSortByNameASC = PokemonSortByEnum.NAME_ASC;
+  pokemonSortByNumberASC = PokemonSortByEnum.NUMBER_ASC;
+  pokemonSortByHeightASC = PokemonSortByEnum.HEIGHT_ASC;
+  pokemonSortByWeightASC = PokemonSortByEnum.WEIGHT_ASC;
 
-  pokemonSortByNameDSC: PokemonSortByEnum = PokemonSortByEnum.NAME_DSC;
-  pokemonSortByNumberDSC: PokemonSortByEnum = PokemonSortByEnum.NUMBER_DSC;
-  pokemonSortByHeightDSC: PokemonSortByEnum = PokemonSortByEnum.HEIGHT_DSC;
-  pokemonSortByWeightDSC: PokemonSortByEnum = PokemonSortByEnum.WEIGHT_DSC;
+  pokemonSortByNameDSC = PokemonSortByEnum.NAME_DSC;
+  pokemonSortByNumberDSC = PokemonSortByEnum.NUMBER_DSC;
+  pokemonSortByHeightDSC = PokemonSortByEnum.HEIGHT_DSC;
+  pokemonSortByWeightDSC = PokemonSortByEnum.WEIGHT_DSC;
 
   currentPokemonSortBy!: PokemonSortByEnum;
 
@@ -34,10 +34,6 @@ export class StatusBarComponent {
     });
   }
 
-  /**
-   * Establecer el indicador para ordenar la lista de Pokémon y actualizar los query params.
-   * @param {PokemonSortByEnum} pokemonSortBy - Indicador para ordenar la lista de Pokémon
-   */
   changePokemonSortBy(pokemonSortBy: PokemonSortByEnum) {
     this.filterService.setPokemonSortBy(pokemonSortBy);
   }

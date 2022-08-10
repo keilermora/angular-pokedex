@@ -6,8 +6,8 @@ import { environment } from 'src/environments/environment';
 })
 export class PokemonStatPipe implements PipeTransform {
   /**
-   * Traducir el título de la estadística del Pokémon.
-   * @param stat Estadística.
+   * Translate.
+   * @param stat Pokémon statistic title.
    */
   transform(stat: string): string {
     if (environment.language === 'en') {

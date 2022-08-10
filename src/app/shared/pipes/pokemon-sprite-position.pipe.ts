@@ -6,10 +6,11 @@ import PokedexVersionModel from 'src/app/core/services/pokedex-version/pokedex-v
 })
 export class PokemonSpritePositionPipe implements PipeTransform {
   /**
-   * Calcular la posición del sprite del Pokémon, según su posición.
-   * La posición del Pokémon se divide entre 10, porque son 10 los Pokémon que hay por fila en las imágenes de sprites.
-   * La parte entera representa la posición Y y la parte decimal la posición X.
-   * Las dimensiones de cada sprite es de 56x56.
+   * Calculate Pokémon sprite position by Pokémon number.
+   * We divide by 10 because we have 10 Pokémon per file in spritesheet resources.
+   * The integer part represents Y position.
+   * The decimal part represents X position.
+   * Sprites dimension are 56x56 pixels.
    */
   transform(pokemonNumber: number, pokedexVersion: PokedexVersionModel): any {
     const {

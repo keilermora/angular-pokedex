@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faSearch, faTimes, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
 import FilterModel from 'src/app/core/services/filter/filter.model';
 import { FilterService } from 'src/app/core/services/filter/filter.service';
 import PokedexVersionModel from 'src/app/core/services/pokedex-version/pokedex-version.model';
@@ -13,10 +13,10 @@ import { PokemonTypeService } from 'src/app/core/services/pokemon-type/pokemon-t
   styleUrls: ['./sidenav.component.scss'],
 })
 export class SidenavComponent {
-  iconSearch: IconDefinition = faSearch;
-  iconTimes: IconDefinition = faTimes;
+  iconSearch = faSearch;
+  iconTimes = faTimes;
 
-  showNav: boolean = true;
+  showNav = true;
   pokedexVersions: PokedexVersionModel[] = [];
   pokemonTypes: PokemonTypeModel[] = [];
 
@@ -42,26 +42,14 @@ export class SidenavComponent {
     });
   }
 
-  /**
-   * Establecer el nombre del Pokémon y actualizar los query params.
-   * @param {string} pokemonName - Nombre del Pokémon.
-   */
   changePokemonName(pokemonName: string) {
     this.filterService.setPokemonName(pokemonName);
   }
 
-  /**
-   * Establecer el tipo de Pokémon y actualizar los query params.
-   * @param {string} pokemonTypeId - Número identificador del tipo de Pokémon
-   */
   changePokemonType(pokemonTypeId: string) {
     this.filterService.setPokemonTypeId(pokemonTypeId);
   }
 
-  /**
-   * Establecer la versión de la Pokédex y actualizar los query params.
-   * @param {number} versionId - Número identificador de la versión.
-   */
   changeVersion(versionId: number) {
     this.filterService.setPokedexVersionId(versionId);
   }
