@@ -4,6 +4,10 @@
 @import 'utils/transition';
 
 .pokemon-list {
+  .message {
+    padding: 0 1em;
+  }
+
   .pokemons-container {
     display: flex;
     flex-wrap: wrap;

@@ -14,14 +14,14 @@ import { PokemonService } from 'src/app/core/services/pokemon/pokemon.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  busy: boolean = false;
-  filter: FilterModel = {} as FilterModel;
-  pokedexVersion: PokedexVersionModel = {} as PokedexVersionModel;
+  busy = true;
+  filter = {} as FilterModel;
+  pokedexVersion = {} as PokedexVersionModel;
   pokemons: PokemonModel[] = [];
   pokemonTypes: PokemonTypeModel[] = [];
 
-  since: number = 0;
-  until: number = 0;
+  since = 0;
+  until = 0;
 
   constructor(
     private filterService: FilterService,
@@ -32,6 +32,7 @@ export class HomeComponent {
       .getFilter()
       .pipe(
         switchMap((filter: FilterModel) => {
+          this.busy = true;
           this.filter = filter;
           return of(this.pokedexVersionService.getPokedexVersionById(filter.pokedexVersionId));
         }),
