@@ -14,11 +14,9 @@ jobs:
         with:
           node-version: 18.x
 
-      - name: Install codecov dependency
-        run: npm install -g codecov
-
       # pipeline actions
+      - run: npm install
       - run: npm run test:cov
-      - run: codecov
+      - run: ./node_modules/.bin/codecov
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
