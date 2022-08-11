@@ -3,13 +3,13 @@
     <a class="pokemon-info" routerLink="pokemon/{{ _pokemon.id }}">
       <!-- Sprite estático -->
       <div
-        *ngIf="!_pokedexVersion.sprites.animated"
+        *ngIf="_pokedexVersion.sprites?.animated"
         class="image"
         [ngStyle]="_pokemon.id | pokemonSpritePosition: _pokedexVersion"
       ></div>
       <!-- Sprite animado -->
       <div
-        *ngIf="_pokedexVersion.sprites.animated"
+        *ngIf="_pokedexVersion.sprites?.animated"
         class="image-animated"
         [ngStyle]="{
           'width.px': _pokedexVersion.sprites.width,
@@ -17,7 +17,7 @@
         }"
       >
         <img
-          *ngIf="_pokedexVersion.sprites.animated"
+          *ngIf="_pokedexVersion.sprites?.animated"
           [src]="_pokemon.id | pokemonImageUrl: _pokedexVersion"
           appLazyImg
           [alt]="_pokemon.name"

@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { SearchResultsMessagePipe } from 'src/app/shared/pipes/search-results-message.pipe';
 
 import { StatusBarComponent } from './status-bar.component';
 
@@ -8,7 +10,8 @@ describe('StatusBarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [StatusBarComponent],
+      declarations: [SearchResultsMessagePipe, StatusBarComponent],
+      imports: [RouterTestingModule],
     }).compileComponents();
   });
 

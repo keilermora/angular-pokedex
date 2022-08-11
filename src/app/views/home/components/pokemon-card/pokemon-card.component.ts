@@ -8,8 +8,8 @@ import PokemonModel from 'src/app/core/services/pokemon/pokemon.model';
   styleUrls: ['./pokemon-card.component.scss'],
 })
 export class PokemonCardComponent {
-  _pokemon: PokemonModel = {} as PokemonModel;
-  _pokedexVersion: PokedexVersionModel = {} as PokedexVersionModel;
+  _pokemon = {} as PokemonModel;
+  _pokedexVersion = {} as PokedexVersionModel;
 
   @Input() set pokemon(pokemon: PokemonModel) {
     this._pokemon = pokemon;

@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { Apollo } from 'apollo-angular';
 
 import { SidenavComponent } from './sidenav.component';
 
@@ -9,6 +11,8 @@ describe('SidenavComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [SidenavComponent],
+      imports: [RouterTestingModule],
+      providers: [Apollo],
     }).compileComponents();
   }));
 
