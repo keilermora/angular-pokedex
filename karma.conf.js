@@ -27,14 +27,14 @@ module.exports = function (config) {
     coverageReporter: {
       dir: require('path').join(__dirname, './coverage/pokedex-angular'),
       subdir: '.',
-      reporters: [{ type: 'html' }, { type: 'text-summary' }],
+      reporters: [{ type: 'html' }, { type: 'text-summary' }, { type: 'lcov' }],
     },
     reporters: ['progress', 'kjhtml'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: ['Chrome', 'ChromeHeadless', 'ChromeHeadlessCI'],
     singleRun: false,
     restartOnFileChange: true,
   });
