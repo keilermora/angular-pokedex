@@ -14,9 +14,7 @@ describe('StatusBarComponent', () => {
       declarations: [SearchResultsMessagePipe, StatusBarComponent],
       imports: [FormsModule, RouterTestingModule],
     }).compileComponents();
-  });
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(StatusBarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

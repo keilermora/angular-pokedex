@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { FontAwesomeTestingModule } from '@fortawesome/angular-fontawesome/testing';
 import { FooterComponent } from '../components/footer/footer.component';
 import { NavbarComponent } from '../components/navbar/navbar.component';
 
@@ -12,7 +13,7 @@ describe('LayoutComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [FooterComponent, LayoutComponent, NavbarComponent],
-      imports: [RouterTestingModule],
+      imports: [FontAwesomeTestingModule, RouterTestingModule],
     }).compileComponents();
   });
 

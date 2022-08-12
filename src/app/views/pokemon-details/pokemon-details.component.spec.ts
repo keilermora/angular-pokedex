@@ -17,8 +17,8 @@ describe('PokemonDetailsComponent', () => {
   let component: PokemonDetailsComponent;
   let fixture: ComponentFixture<PokemonDetailsComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       declarations: [
         DialogBoxComponent,
         PokedexVersionNamePipe,
@@ -32,9 +32,7 @@ describe('PokemonDetailsComponent', () => {
       ],
       imports: [ApolloTestingModule, BrowserAnimationsModule, RouterTestingModule],
     }).compileComponents();
-  }));
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(PokemonDetailsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

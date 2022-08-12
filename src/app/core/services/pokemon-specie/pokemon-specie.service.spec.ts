@@ -44,8 +44,8 @@ describe('PokemonSpecieService', () => {
   let controller: ApolloTestingController;
   let service: PokemonSpecieService;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       imports: [ApolloTestingModule],
       providers: [PokemonSpecieService],
     });

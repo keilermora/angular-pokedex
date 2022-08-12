@@ -13,7 +13,7 @@ describe('QueryParamsHandlingDirective', () => {
   let fixture: ComponentFixture<HostComponent>;
 
   beforeEach(async () => {
-    TestBed.configureTestingModule({
+    await TestBed.configureTestingModule({
       declarations: [QueryParamsHandlingDirective, HostComponent],
       imports: [RouterTestingModule],
     }).compileComponents();

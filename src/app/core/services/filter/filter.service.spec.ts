@@ -71,8 +71,8 @@ describe('FilterService', () => {
 
   let service: FilterService;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       imports: [RouterTestingModule],
       providers: [FilterService],
     });

@@ -22,9 +22,7 @@ describe('PokemonCardComponent', () => {
       ],
       imports: [RouterTestingModule],
     }).compileComponents();
-  });
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(PokemonCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

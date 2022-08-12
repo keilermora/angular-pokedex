@@ -1,5 +1,7 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
+import { FontAwesomeTestingModule } from '@fortawesome/angular-fontawesome/testing';
 import { ApolloTestingModule } from 'apollo-angular/testing';
 import { DialogBoxComponent } from 'src/app/shared/components/dialog-box/dialog-box.component';
 import { SearchResultsMessagePipe } from 'src/app/shared/pipes/search-results-message/search-results-message.pipe';
@@ -14,8 +16,8 @@ describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       declarations: [
         DialogBoxComponent,
         HomeComponent,
@@ -25,11 +27,9 @@ describe('HomeComponent', () => {
         SidenavComponent,
         StatusBarComponent,
       ],
-      imports: [ApolloTestingModule, RouterTestingModule],
+      imports: [ApolloTestingModule, FontAwesomeTestingModule, FormsModule, RouterTestingModule],
     }).compileComponents();
-  }));
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

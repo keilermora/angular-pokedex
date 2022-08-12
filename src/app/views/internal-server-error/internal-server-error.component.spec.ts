@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { DialogBoxComponent } from 'src/app/shared/components/dialog-box/dialog-box.component';
 
@@ -8,14 +8,12 @@ describe('InternalServerErrorComponent', () => {
   let component: InternalServerErrorComponent;
   let fixture: ComponentFixture<InternalServerErrorComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       declarations: [DialogBoxComponent, InternalServerErrorComponent],
       imports: [RouterTestingModule],
     }).compileComponents();
-  }));
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(InternalServerErrorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

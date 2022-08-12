@@ -12,7 +12,7 @@ describe('LazyImgDirective', () => {
   let fixture: ComponentFixture<HostComponent>;
 
   beforeEach(async () => {
-    TestBed.configureTestingModule({
+    await TestBed.configureTestingModule({
       declarations: [LazyImgDirective, HostComponent],
     }).compileComponents();
 
