@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { DialogBoxComponent } from 'src/app/shared/components/dialog-box/dialog-box.component';
 
 import { NotFoundComponent } from './not-found.component';
 
@@ -8,7 +9,7 @@ describe('NotFoundComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [NotFoundComponent],
+      declarations: [DialogBoxComponent, NotFoundComponent],
     }).compileComponents();
   }));
 

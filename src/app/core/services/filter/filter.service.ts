@@ -10,8 +10,8 @@ import FilterModel from './filter.model';
   providedIn: 'root',
 })
 export class FilterService {
-  private filterSubject: Subject<FilterModel>;
   private filter = {} as FilterModel;
+  private filterSubject: Subject<FilterModel>;
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router) {
     this.filterSubject = new ReplaySubject<FilterModel>(1);
@@ -30,7 +30,7 @@ export class FilterService {
   }
 
   filterPokemons(pokemons: PokemonModel[]): PokemonModel[] {
-    const { pokemonName, pokemonTypeId, pokemonSortBy } = this.filter;
+    const { pokemonName, pokemonTypeId } = this.filter;
 
     let pokemonResults = [...pokemons];
 
@@ -43,23 +43,6 @@ export class FilterService {
       pokemonResults = pokemonResults.filter((pokemon) =>
         pokemon.types?.some((pokemonType) => pokemonType.id === pokemonTypeId)
       );
-    }
-
-    // La lista de Pokémon viene ordenada por números por defecto
-    if (pokemonSortBy === PokemonSortByEnum.NAME_ASC) {
-      pokemonResults.sort((a, b) => (a.name > b.name ? 1 : -1));
-    } else if (pokemonSortBy === PokemonSortByEnum.WEIGHT_ASC) {
-      pokemonResults.sort((a, b) => (a.weight > b.weight ? 1 : -1));
-    } else if (pokemonSortBy === PokemonSortByEnum.HEIGHT_ASC) {
-      pokemonResults.sort((a, b) => (a.height > b.height ? 1 : -1));
-    } else if (pokemonSortBy === PokemonSortByEnum.NUMBER_DSC) {
-      pokemonResults.sort((a, b) => (a.id < b.id ? 1 : -1));
-    } else if (pokemonSortBy === PokemonSortByEnum.NAME_DSC) {
-      pokemonResults.sort((a, b) => (a.name < b.name ? 1 : -1));
-    } else if (pokemonSortBy === PokemonSortByEnum.WEIGHT_DSC) {
-      pokemonResults.sort((a, b) => (a.weight < b.weight ? 1 : -1));
-    } else if (pokemonSortBy === PokemonSortByEnum.HEIGHT_DSC) {
-      pokemonResults.sort((a, b) => (a.height < b.height ? 1 : -1));
     }
 
     return pokemonResults;
@@ -92,6 +75,31 @@ export class FilterService {
     this.updateQueryParams({ sortBy: sortBy } as NavigationExtras);
     this.filter.pokemonSortBy = sortBy;
     this.refresh();
+  }
+
+  sortPokemons(pokemons: PokemonModel[]): PokemonModel[] {
+    const { pokemonSortBy } = this.filter;
+
+    let pokemonResults = [...pokemons];
+
+    // La lista de Pokémon viene ordenada por números por defecto
+    if (pokemonSortBy === PokemonSortByEnum.NAME_ASC) {
+      pokemonResults.sort((a, b) => (a.name > b.name ? 1 : -1));
+    } else if (pokemonSortBy === PokemonSortByEnum.WEIGHT_ASC) {
+      pokemonResults.sort((a, b) => (a.weight > b.weight ? 1 : -1));
+    } else if (pokemonSortBy === PokemonSortByEnum.HEIGHT_ASC) {
+      pokemonResults.sort((a, b) => (a.height > b.height ? 1 : -1));
+    } else if (pokemonSortBy === PokemonSortByEnum.NUMBER_DSC) {
+      pokemonResults.sort((a, b) => (a.id < b.id ? 1 : -1));
+    } else if (pokemonSortBy === PokemonSortByEnum.NAME_DSC) {
+      pokemonResults.sort((a, b) => (a.name < b.name ? 1 : -1));
+    } else if (pokemonSortBy === PokemonSortByEnum.WEIGHT_DSC) {
+      pokemonResults.sort((a, b) => (a.weight < b.weight ? 1 : -1));
+    } else if (pokemonSortBy === PokemonSortByEnum.HEIGHT_DSC) {
+      pokemonResults.sort((a, b) => (a.height < b.height ? 1 : -1));
+    }
+
+    return pokemonResults;
   }
 
   /**

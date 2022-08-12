@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
-import { Apollo } from 'apollo-angular';
+import { FontAwesomeTestingModule } from '@fortawesome/angular-fontawesome/testing';
+import { ApolloTestingModule } from 'apollo-angular/testing';
+import { DialogBoxComponent } from 'src/app/shared/components/dialog-box/dialog-box.component';
 
 import { SidenavComponent } from './sidenav.component';
 
@@ -10,9 +13,8 @@ describe('SidenavComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [SidenavComponent],
-      imports: [RouterTestingModule],
-      providers: [Apollo],
+      declarations: [DialogBoxComponent, SidenavComponent],
+      imports: [ApolloTestingModule, FontAwesomeTestingModule, FormsModule, RouterTestingModule],
     }).compileComponents();
   }));
 

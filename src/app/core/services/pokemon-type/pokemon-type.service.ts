@@ -10,9 +10,9 @@ import PokemonTypesQueryResults from 'src/app/shared/interfaces/pokemon-types-qu
   providedIn: 'root',
 })
 export class PokemonTypeService {
-  pokemonTypes: PokemonTypeModel[];
-  pokemonTypes$!: Observable<PokemonTypeModel[]>;
-  fetchingPokemonTypes = false;
+  private pokemonTypes: PokemonTypeModel[];
+  private pokemonTypes$!: Observable<PokemonTypeModel[]>;
+  private fetchingPokemonTypes = false;
 
   constructor(private apollo: Apollo) {
     const pokemonTypes = localStorage.getItem('pokemon-types');

@@ -4,13 +4,7 @@ interface PokemonModel {
   sprite: string;
   height: number;
   weight: number;
-  stats?: PokemonStatModel[];
-  types?: PokemonTypeModel[];
-}
-
-interface PokemonStatModel {
-  name: string;
-  value: number;
+  types: PokemonTypeModel[];
 }
 
 interface PokemonTypeModel {
@@ -19,4 +13,4 @@ interface PokemonTypeModel {
 }
 
 export default PokemonModel;
-export { PokemonStatModel, PokemonTypeModel };
+export { PokemonTypeModel };

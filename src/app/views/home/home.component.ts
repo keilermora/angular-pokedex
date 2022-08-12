@@ -42,6 +42,9 @@ export class HomeComponent {
         }),
         switchMap((pokemons) => {
           return of(this.filterService.filterPokemons(pokemons));
+        }),
+        switchMap((pokemons) => {
+          return of(this.filterService.sortPokemons(pokemons));
         })
       )
       .subscribe((pokemons: PokemonModel[]) => {

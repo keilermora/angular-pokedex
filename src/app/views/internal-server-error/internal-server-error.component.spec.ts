@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { DialogBoxComponent } from 'src/app/shared/components/dialog-box/dialog-box.component';
 
 import { InternalServerErrorComponent } from './internal-server-error.component';
 
@@ -9,7 +10,7 @@ describe('InternalServerErrorComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [InternalServerErrorComponent],
+      declarations: [DialogBoxComponent, InternalServerErrorComponent],
       imports: [RouterTestingModule],
     }).compileComponents();
   }));

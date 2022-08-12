@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { DialogBoxComponent } from 'src/app/shared/components/dialog-box/dialog-box.component';
 
 import { AboutComponent } from './about.component';
 
@@ -8,7 +9,7 @@ describe('AboutComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [AboutComponent],
+      declarations: [AboutComponent, DialogBoxComponent],
     }).compileComponents();
   }));
 

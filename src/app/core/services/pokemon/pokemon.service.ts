@@ -10,9 +10,9 @@ import PokemonsQueryResultsInterface from 'src/app/shared/interfaces/pokemons-qu
   providedIn: 'root',
 })
 export class PokemonService {
-  pokemons: PokemonModel[];
-  pokemons$!: Observable<PokemonModel[]>;
-  fetchingPokemons = false;
+  private pokemons: PokemonModel[];
+  private pokemons$!: Observable<PokemonModel[]>;
+  private fetchingPokemons = false;
 
   constructor(private apollo: Apollo) {
     const pokemons = localStorage.getItem('pokemons-v4');

@@ -3,7 +3,7 @@
     <a class="pokemon-info" routerLink="pokemon/{{ _pokemon.id }}">
       <!-- Sprite estático -->
       <div
-        *ngIf="_pokedexVersion.sprites?.animated"
+        *ngIf="_pokedexVersion.sprites && !_pokedexVersion.sprites.animated"
         class="image"
         [ngStyle]="_pokemon.id | pokemonSpritePosition: _pokedexVersion"
       ></div>
