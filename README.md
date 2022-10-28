@@ -29,8 +29,24 @@ npm start
 
 ## Referencias
 
-- [Angular](https://angular.io/): One framework.
+[![Angular Badge](https://img.shields.io/badge/Angular-DD0031?logo=angular&logoColor=fff&style=flat)](https://angular.io/)
+[![Codecov Badge](https://img.shields.io/badge/Codecov-F01F7A?logo=codecov&logoColor=fff&style=flat)](https://about.codecov.io/)
+[![Conventional Commits Badge](https://img.shields.io/badge/Conventional%20Commits-FE5196?logo=conventionalcommits&logoColor=fff&style=flat)](https://www.conventionalcommits.org/en/v1.0.0/)
+[![ESLint Badge](https://img.shields.io/badge/ESLint-4B32C3?logo=eslint&logoColor=fff&style=flat)](https://eslint.org/)
+[![Font Awesome Badge](https://img.shields.io/badge/Font%20Awesome-528DD7?logo=fontawesome&logoColor=fff&style=flat)](https://fontawesome.com/v5/docs/web/use-with/angular)
+[![GitHub Actions Badge](https://img.shields.io/badge/GitHub%20Actions-2088FF?logo=githubactions&logoColor=fff&style=flat)](https://github.com/features/actions)
+[![GitHub Pages Badge](https://img.shields.io/badge/GitHub%20Pages-222?logo=githubpages&logoColor=fff&style=flat)](https://pages.github.com/)
+[![GraphQL Badge](https://img.shields.io/badge/GraphQL-E10098?logo=graphql&logoColor=fff&style=flat)](https://graphql.org/)
+[![HTML5 Badge](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff&style=flat)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![Jasmine Badge](https://img.shields.io/badge/Jasmine-8A4182?logo=jasmine&logoColor=fff&style=flat)](https://jasmine.github.io/)
+[![npm Badge](https://img.shields.io/badge/npm-CB3837?logo=npm&logoColor=fff&style=flat)](https://www.npmjs.com/)
+[![Pokémon Badge](https://img.shields.io/badge/Pok%C3%A9mon-FFCB05?logo=pokemon&logoColor=000&style=flat)](https://www.pokemon.com/el/pokedex/)
+[![Prettier Badge](https://img.shields.io/badge/Prettier-F7B93E?logo=prettier&logoColor=fff&style=flat)](https://prettier.io/)
+[![Sass Badge](https://img.shields.io/badge/Sass-C69?logo=sass&logoColor=fff&style=flat)](https://sass-lang.com/guide)
+[![TypeScript Badge](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff&style=flat)](https://www.typescriptlang.org/)
+[![Visual Studio Code Badge](https://img.shields.io/badge/Visual%20Studio%20Code-007ACC?logo=visualstudiocode&logoColor=fff&style=flat)](https://code.visualstudio.com/)
+[![Webpack Badge](https://img.shields.io/badge/Webpack-8DD6F9?logo=webpack&logoColor=000&style=flat)](https://webpack.js.org/)
+
 - [Angular Folder Structure](https://angular-folder-structure.readthedocs.io/en/latest/): Create a skeleton structure which is flexible for projects big or small.
-- [Font Awesome](https://fontawesome.com/): The web's most popular icon set and toolkit.
 - [Normalize.css](https://necolas.github.io/normalize.css/): A modern, HTML5-ready alternative to CSS resets.
 - [PokéAPI](https://pokeapi.co/): The RESTful Pokémon API.
