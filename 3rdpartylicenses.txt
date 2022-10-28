@@ -16,6 +16,9 @@ MIT
 @angular/router
 MIT
 
+@angular/service-worker
+MIT
+
 @apollo/client
 MIT
 The MIT License (MIT)
