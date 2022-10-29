@@ -1,7 +1,7 @@
 {
-  "name": "pokedex-angular",
-  "short_name": "pokedex-angular",
-  "theme_color": "#1976d2",
+  "name": "Pokédex Angular",
+  "short_name": "Pokédex Angular",
+  "theme_color": "#000000",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
