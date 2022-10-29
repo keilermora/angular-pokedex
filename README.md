@@ -3,6 +3,8 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![codecov](https://codecov.io/gh/keilermora/pokedex-angular/branch/master/graph/badge.svg?token=9E0D28IOFT)](https://codecov.io/gh/keilermora/pokedex-angular)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![pages-build-deployment](https://github.com/keilermora/pokedex-angular/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/keilermora/pokedex-angular/actions/workflows/pages/pages-build-deployment)
+[![Run test-coverage](https://github.com/keilermora/pokedex-angular/actions/workflows/pipelines.yml/badge.svg)](https://github.com/keilermora/pokedex-angular/actions/workflows/pipelines.yml)
 
 [https://keilermora.github.io/pokedex-angular/](https://keilermora.github.io/pokedex-angular/)
 
@@ -42,6 +44,7 @@ npm start
 [![npm Badge](https://img.shields.io/badge/npm-CB3837?logo=npm&logoColor=fff&style=flat)](https://www.npmjs.com/)
 [![Pokémon Badge](https://img.shields.io/badge/Pok%C3%A9mon-FFCB05?logo=pokemon&logoColor=000&style=flat)](https://www.pokemon.com/el/pokedex/)
 [![Prettier Badge](https://img.shields.io/badge/Prettier-F7B93E?logo=prettier&logoColor=fff&style=flat)](https://prettier.io/)
+[![PWA Badge](https://img.shields.io/badge/PWA-5A0FC8?logo=pwa&logoColor=fff&style=flat)](https://web.dev/progressive-web-apps/)
 [![Sass Badge](https://img.shields.io/badge/Sass-C69?logo=sass&logoColor=fff&style=flat)](https://sass-lang.com/guide)
 [![TypeScript Badge](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff&style=flat)](https://www.typescriptlang.org/)
 [![Visual Studio Code Badge](https://img.shields.io/badge/Visual%20Studio%20Code-007ACC?logo=visualstudiocode&logoColor=fff&style=flat)](https://code.visualstudio.com/)
