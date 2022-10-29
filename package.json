@@ -32,6 +32,7 @@
     "@graphql-tools/webpack-loader": "^6.7.1",
     "apollo-angular": "^4.1.0",
     "graphql": "^16.6.0",
+    "ngx-google-analytics": "^14.0.1",
     "normalize.css": "^8.0.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

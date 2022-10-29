@@ -19,6 +19,9 @@ export const environment = {
   // Default language
   language: 'en',
   languageId: 9,
+
+  // Google Analytics measurement Id
+  gaMeasurementId: 'G-V6HSHTVL2K',
 };
 
 /*

@@ -38,6 +38,7 @@ npm start
 [![Font Awesome Badge](https://img.shields.io/badge/Font%20Awesome-528DD7?logo=fontawesome&logoColor=fff&style=flat)](https://fontawesome.com/v5/docs/web/use-with/angular)
 [![GitHub Actions Badge](https://img.shields.io/badge/GitHub%20Actions-2088FF?logo=githubactions&logoColor=fff&style=flat)](https://github.com/features/actions)
 [![GitHub Pages Badge](https://img.shields.io/badge/GitHub%20Pages-222?logo=githubpages&logoColor=fff&style=flat)](https://pages.github.com/)
+[![Google Analytics Badge](https://img.shields.io/badge/Google%20Analytics-E37400?logo=googleanalytics&logoColor=fff&style=flat)](https://analytics.google.com/analytics/web/)
 [![GraphQL Badge](https://img.shields.io/badge/GraphQL-E10098?logo=graphql&logoColor=fff&style=flat)](https://graphql.org/)
 [![HTML5 Badge](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff&style=flat)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![Jasmine Badge](https://img.shields.io/badge/Jasmine-8A4182?logo=jasmine&logoColor=fff&style=flat)](https://jasmine.github.io/)

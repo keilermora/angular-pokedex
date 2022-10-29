@@ -9,4 +9,5 @@ export const environment = {
   imagesPath: '/pokedex-angular/assets/images',
   language: 'en',
   languageId: 9,
+  gaMeasurementId: 'G-V6HSHTVL2K',
 };
