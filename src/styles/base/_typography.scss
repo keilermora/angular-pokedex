@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'pokemon-gb';
+  src: url('../../assets/fonts/pokemon-gb.ttf') format('embedded-opentype'),
+    url('../../assets/fonts/pokemon-gb.ttf') format('woff2'),
+    url('../../assets/fonts/pokemon-gb.ttf') format('woff'),
+    url('../../assets/fonts/pokemon-gb.ttf') format('truetype'),
+    url('../../assets/fonts/pokemon-gb.ttf') format('svg');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+$pokemonFont: 'pokemon-gb', monospace;
+$roboto: 'Roboto', sans-serif;

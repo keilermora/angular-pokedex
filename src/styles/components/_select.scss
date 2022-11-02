@@ -18,9 +18,4 @@ select {
   &:hover {
     border-color: $crimson;
   }
-
-  &:focus {
-    border-color: $shark;
-    outline: none;
-  }
 }
