@@ -5,6 +5,7 @@ import getPokemonsQuery from '../../../data/graphql/get-pokemons.graphql';
 import PokemonMapper from './pokemon.mapper';
 import PokemonModel from './pokemon.model';
 import PokemonsQueryResultsInterface from 'src/app/shared/interfaces/pokemons-query-results.interface';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -37,7 +38,7 @@ export class PokemonService {
             return pokemonEntities.map(PokemonMapper.mapFrom);
           }),
           tap((pokemons) => {
-            localStorage.setItem('pokemons-v4', JSON.stringify(pokemons));
+            localStorage.setItem(environment.pokemonsKey, JSON.stringify(pokemons));
             this.pokemons = pokemons;
             this.fetchingPokemons = false;
           })

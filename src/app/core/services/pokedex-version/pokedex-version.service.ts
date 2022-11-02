@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { pokedexVersions } from 'src/app/data/mocks/pokedex-versions.mock';
+import { pokedexVersions } from 'src/app/data/constants/pokedex-versions.constant';
 import PokedexVersionModel from './pokedex-version.model';
 
 @Injectable({

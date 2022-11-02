@@ -6,20 +6,21 @@
   position: relative;
   transition: $fast;
   height: 100%;
+  border-image: url(../../../../assets/images/frame-large.png) 42 round;
+  border-style: solid;
 
   &.dialog-box--large {
     padding: 1em 2em;
+    border-width: 21px;
   }
 
   &.dialog-box--small {
+    border-width: 7px;
   }
 
   &.dialog-box--hoverable:hover {
     cursor: pointer;
   }
-
-  border: (2px) solid $black;
-  border-radius: 12px;
 
   &--hoverable:hover {
     border-color: $crimson;

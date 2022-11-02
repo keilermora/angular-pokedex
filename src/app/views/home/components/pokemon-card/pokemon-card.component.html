@@ -1,13 +1,14 @@
 <div class="pokemon-card">
-  <app-dialog-box size="small" [hoverable]="true">
+  <app-dialog-box size="small" [hoverable]="true" [backgroundStyles]="backgroundStyles">
     <a class="pokemon-info" routerLink="pokemon/{{ _pokemon.id }}">
-      <!-- Sprite estático -->
+      <!-- Static sprite -->
       <div
         *ngIf="_pokedexVersion.sprites && !_pokedexVersion.sprites.animated"
         class="image"
         [ngStyle]="_pokemon.id | pokemonSpritePosition: _pokedexVersion"
       ></div>
-      <!-- Sprite animado -->
+
+      <!-- Animated sprite -->
       <div
         *ngIf="_pokedexVersion.sprites?.animated"
         class="image-animated"
@@ -23,9 +24,11 @@
           [alt]="_pokemon.name"
         />
       </div>
-      <!-- Número del Pokémon -->
+
+      <!-- Pokémon number -->
       <span class="number">{{ _pokemon.id | pokemonNumber }}</span>
-      <!-- Nombre del Pokémon -->
+
+      <!-- Pokémon name -->
       <span class="name">{{ _pokemon.name | pokemonName }}</span>
     </a>
   </app-dialog-box>

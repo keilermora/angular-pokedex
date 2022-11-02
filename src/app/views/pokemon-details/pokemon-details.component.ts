@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { PokemonSpecieModel } from 'src/app/core/services/pokemon-specie/pokemon-specie.model';
 import { PokemonSpecieService } from 'src/app/core/services/pokemon-specie/pokemon-specie.service';
 import PokemonModel from 'src/app/core/services/pokemon/pokemon.model';
-import { missingNo } from 'src/app/data/mocks/missingno.mock';
+import { missingNo } from 'src/app/data/constants/missingno.constant';
 import fadeIn from 'src/app/shared/animations/fadeIn';
 
 @Component({

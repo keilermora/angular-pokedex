@@ -22,6 +22,10 @@ export const environment = {
 
   // Google Analytics measurement Id
   gaMeasurementId: 'G-V6HSHTVL2K',
+
+  // Local storage keys
+  pokemonsKey: 'pokemon-v5',
+  pokemonTypesKey: 'pokemon-types-v2',
 };
 
 /*

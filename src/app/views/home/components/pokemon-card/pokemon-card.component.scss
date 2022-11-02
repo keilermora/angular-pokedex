@@ -17,11 +17,6 @@
     height: 122px;
     transition: $fast;
 
-    &:hover,
-    &:focus {
-      color: $crimson;
-    }
-
     .image {
       background-repeat: no-repeat;
     }

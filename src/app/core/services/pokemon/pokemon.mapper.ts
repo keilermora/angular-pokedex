@@ -1,10 +1,8 @@
 import Mapper from '../../base/mapper';
-import PokemonEntity, {
-  PokemonV2PokemonTypeEntity,
-  StatEntity,
-  TypeEntity,
-} from './pokemon.entity';
-import PokemonModel, { PokemonTypeModel } from './pokemon.model';
+import PokemonTypeMapper from '../pokemon-type/pokemon-type.mapper';
+import PokemonTypeModel from '../pokemon-type/pokemon-type.model';
+import PokemonEntity from './pokemon.entity';
+import PokemonModel from './pokemon.model';
 
 const PokemonMapper: Mapper<PokemonEntity, PokemonModel> = {
   mapFrom: (pokemonEntity: PokemonEntity): PokemonModel => {
@@ -12,12 +10,16 @@ const PokemonMapper: Mapper<PokemonEntity, PokemonModel> = {
 
     let pokemonTypes: PokemonTypeModel[] = [];
     if (pokemon_v2_pokemontypes?.length) {
-      pokemonTypes = pokemon_v2_pokemontypes.map(
-        ({ pokemon_v2_type }: PokemonV2PokemonTypeEntity) => ({
-          id: pokemon_v2_type.id,
-          name: pokemon_v2_type.name,
-        })
+      const pokemonTypeEntities = pokemon_v2_pokemontypes.map(
+        (typeEntity) => typeEntity.pokemon_v2_type
       );
+      const pokemonTypeModels = pokemonTypeEntities.map(PokemonTypeMapper.mapFrom);
+
+      pokemonTypes = pokemonTypeModels.map((typeModel: PokemonTypeModel) => ({
+        id: typeModel.id,
+        name: typeModel.name,
+        color: typeModel.color,
+      }));
     }
 
     return {

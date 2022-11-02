@@ -1,4 +1,4 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-dialog-box',
@@ -9,6 +9,7 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
 export class DialogBoxComponent {
   @Input() size: 'small' | 'large' = 'small';
   @Input() hoverable = false;
+  @Input() backgroundStyles: any = {};
 
   constructor() {}
 }

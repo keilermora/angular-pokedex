@@ -1,3 +1,5 @@
+import PokemonTypeModel from '../pokemon-type/pokemon-type.model';
+
 interface PokemonModel {
   id: number;
   name: string;
@@ -7,10 +9,4 @@ interface PokemonModel {
   types: PokemonTypeModel[];
 }
 
-interface PokemonTypeModel {
-  id: number;
-  name: string;
-}
-
 export default PokemonModel;
-export { PokemonTypeModel };

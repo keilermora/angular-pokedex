@@ -1,3 +1,7 @@
-<div class="dialog-box dialog-box--{{ size }}" [ngClass]="{ 'dialog-box--hoverable': hoverable }">
+<div
+  class="dialog-box dialog-box--{{ size }}"
+  [ngClass]="{ 'dialog-box--hoverable': hoverable }"
+  [ngStyle]="backgroundStyles"
+>
   <ng-content></ng-content>
 </div>

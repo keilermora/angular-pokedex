@@ -5,7 +5,8 @@ import FilterModel from 'src/app/core/services/filter/filter.model';
 import { FilterService } from 'src/app/core/services/filter/filter.service';
 import PokedexVersionModel from 'src/app/core/services/pokedex-version/pokedex-version.model';
 import { PokedexVersionService } from 'src/app/core/services/pokedex-version/pokedex-version.service';
-import PokemonModel, { PokemonTypeModel } from 'src/app/core/services/pokemon/pokemon.model';
+import PokemonTypeModel from 'src/app/core/services/pokemon-type/pokemon-type.model';
+import PokemonModel from 'src/app/core/services/pokemon/pokemon.model';
 import { PokemonService } from 'src/app/core/services/pokemon/pokemon.service';
 
 @Component({

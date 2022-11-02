@@ -5,6 +5,7 @@ import PokemonTypeMapper from './pokemon-type.mapper';
 import PokemonTypeModel from './pokemon-type.model';
 import getPokemonTypesQuery from '../../../data/graphql/get-pokemon-types.graphql';
 import PokemonTypesQueryResults from 'src/app/shared/interfaces/pokemon-types-query-results.interface';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -37,7 +38,7 @@ export class PokemonTypeService {
             return pokemonEntities.map(PokemonTypeMapper.mapFrom);
           }),
           tap((pokemonTypes: PokemonTypeModel[]) => {
-            localStorage.setItem('pokemons-types', JSON.stringify(pokemonTypes));
+            localStorage.setItem(environment.pokemonTypesKey, JSON.stringify(pokemonTypes));
             this.pokemonTypes = pokemonTypes;
             this.fetchingPokemonTypes = false;
           })

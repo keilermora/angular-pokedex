@@ -10,4 +10,6 @@ export const environment = {
   language: 'en',
   languageId: 9,
   gaMeasurementId: 'G-V6HSHTVL2K',
+  pokemonsKey: 'pokemon-v5',
+  pokemonTypesKey: 'pokemon-types-v2',
 };
