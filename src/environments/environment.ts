@@ -21,7 +21,7 @@ export const environment = {
   languageId: 9,
 
   // Google Analytics measurement Id
-  gaMeasurementId: 'G-V6HSHTVL2K',
+  gaMeasurementId: '',
 
   // Local storage keys
   pokemonsKey: 'pokemon-v5',
