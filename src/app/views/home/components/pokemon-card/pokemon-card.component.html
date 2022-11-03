@@ -1,35 +1,30 @@
 <div class="pokemon-card">
-  <app-dialog-box size="small" [hoverable]="true" [backgroundStyles]="backgroundStyles">
-    <a class="pokemon-info" routerLink="pokemon/{{ _pokemon.id }}">
+  <app-dialog-box size="small" [hoverable]="true" [backgroundStyles]="background">
+    <a class="pokemon-card__content" routerLink="pokemon/{{ id }}">
+      <!-- Pokémon number -->
+      <span class="number">{{ id | pokemonNumber }}</span>
+
       <!-- Static sprite -->
       <div
-        *ngIf="_pokedexVersion.sprites && !_pokedexVersion.sprites.animated"
+        *ngIf="!animated"
         class="image"
-        [ngStyle]="_pokemon.id | pokemonSpritePosition: _pokedexVersion"
+        [ngStyle]="id | pokemonSpritePosition: _pokedexVersion"
       ></div>
 
       <!-- Animated sprite -->
       <div
-        *ngIf="_pokedexVersion.sprites?.animated"
+        *ngIf="animated"
         class="image-animated"
         [ngStyle]="{
-          'width.px': _pokedexVersion.sprites.width,
-          'height.px': _pokedexVersion.sprites.height
+          'width.px': width,
+          'height.px': height
         }"
       >
-        <img
-          *ngIf="_pokedexVersion.sprites?.animated"
-          [src]="_pokemon.id | pokemonImageUrl: _pokedexVersion"
-          appLazyImg
-          [alt]="_pokemon.name"
-        />
+        <img [src]="id | pokemonImageUrl: _pokedexVersion" appLazyImg [alt]="name" />
       </div>
 
-      <!-- Pokémon number -->
-      <span class="number">{{ _pokemon.id | pokemonNumber }}</span>
-
       <!-- Pokémon name -->
-      <span class="name">{{ _pokemon.name | pokemonName }}</span>
+      <span class="name">{{ name | pokemonName }}</span>
     </a>
   </app-dialog-box>
 </div>

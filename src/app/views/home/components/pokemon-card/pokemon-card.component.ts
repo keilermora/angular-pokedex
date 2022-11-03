@@ -9,31 +9,49 @@ import PokemonModel from 'src/app/core/services/pokemon/pokemon.model';
   styleUrls: ['./pokemon-card.component.scss'],
 })
 export class PokemonCardComponent implements OnInit {
-  _pokemon = {} as PokemonModel;
+  // Pokémon data
+  id = 0;
+  name = '';
+  private types: PokemonTypeModel[] = [];
+
+  // Sprites
+  animated = false;
+  width = 0;
+  height = 0;
+
   _pokedexVersion = {} as PokedexVersionModel;
 
-  backgroundStyles = {};
+  // Card styles
+  background = {};
 
   @Input() set pokemon(pokemon: PokemonModel) {
-    this._pokemon = pokemon;
+    const { id, name, types } = pokemon;
+    this.id = id;
+    this.name = name;
+    this.types = types;
   }
 
   @Input() set pokedexVersion(pokedexVersion: PokedexVersionModel) {
+    const { sprites } = pokedexVersion;
+    const { animated, height, width } = sprites;
     this._pokedexVersion = pokedexVersion;
+    this.animated = animated;
+    this.height = height;
+    this.width = width;
   }
 
   constructor() {}
 
   ngOnInit(): void {
-    this.backgroundStyles = this.getBackgroundSyles(this._pokemon.types);
+    this.setStyles();
   }
 
-  private getBackgroundSyles(pokemonTypes: PokemonTypeModel[]) {
-    const primaryColor = pokemonTypes[0].color?.light;
-    const secondaryColor = pokemonTypes[1]?.color?.light || '#ffffff';
+  private setStyles() {
+    const primaryColor = this.types[0].color?.light;
+    const secondaryColor = this.types[1]?.color?.light || '#ffffff';
 
-    return {
-      background: `radial-gradient(circle, ${secondaryColor} 0%, ${primaryColor} 75%)`,
+    this.background = {
+      background: `radial-gradient(circle, ${secondaryColor} 25%, ${primaryColor} 75%)`,
     };
   }
 }

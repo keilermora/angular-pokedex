@@ -36,11 +36,6 @@ html {
     margin: 0;
     flex: 1;
 
-    a:focus,
-    button:focus {
-      /// Eliminar la línea azul en el elemento señalado
-    }
-
     .--visible {
       opacity: 1;
       transition: $fast;

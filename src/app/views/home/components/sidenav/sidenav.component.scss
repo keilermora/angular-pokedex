@@ -22,7 +22,7 @@
     grid-template-columns: auto;
     max-height: 500px; /* Exageramos la altura para que funcione la animación */
     width: 188px;
-    transition: max-height $slow, width $slow;
+    transition: max-height $medium, width $medium;
     position: relative;
 
     @include respond(xs, sm) {
@@ -38,7 +38,7 @@
       position: absolute;
       right: 4px;
       top: 4px;
-      transition: color $fast, all $slow;
+      transition: color $fast, all $fast;
 
       &:hover {
         color: $crimson;
@@ -47,7 +47,7 @@
 
     .form-group-theme {
       opacity: 1;
-      transition: opacity $slow;
+      transition: opacity ease-in $slow;
     }
   }
 
@@ -67,6 +67,8 @@
       }
 
       .form-group-theme {
+        pointer-events: none;
+        transition: opacity $fast;
         opacity: 0;
       }
     }
