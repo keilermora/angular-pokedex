@@ -1,5 +1,5 @@
 import PokedexVersionModel from 'src/app/core/services/pokedex-version/pokedex-version.model';
-import { pokedexVersions } from 'src/app/data/mocks/pokedex-versions.mock';
+import { pokedexVersions } from 'src/app/data/constants/pokedex-versions.constant';
 import { PokemonSpritePositionPipe } from './pokemon-sprite-position.pipe';
 
 describe('PokemonSpritePositionPipe', () => {
