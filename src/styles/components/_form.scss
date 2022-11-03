@@ -1,8 +1,8 @@
 @import '../utils/colors';
 @import '../utils/font-sizes';
 
-.form-group-theme {
-  & + .form-group-theme {
+.form-group {
+  & + .form-group {
     padding-top: 16px;
   }
 

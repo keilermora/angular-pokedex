@@ -45,7 +45,7 @@
       }
     }
 
-    .form-group-theme {
+    .form-group {
       opacity: 1;
       transition: opacity ease-in $slow;
     }
@@ -66,7 +66,7 @@
         top: 12px;
       }
 
-      .form-group-theme {
+      .form-group {
         pointer-events: none;
         transition: opacity $fast;
         opacity: 0;

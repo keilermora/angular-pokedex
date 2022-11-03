@@ -1,18 +1,18 @@
 <nav class="navbar">
   <ul class="desktop-navbar">
     <li>
-      <a class="button-theme button-theme--white" [routerLink]="'/'">Home</a>
+      <a class="button button--white" [routerLink]="'/'">Home</a>
     </li>
     <li>
-      <a class="button-theme button-theme--white" [routerLink]="'/about'">About</a>
+      <a class="button button--white" [routerLink]="'/about'">About</a>
     </li>
     <li>
-      <a class="button-theme button-theme--white icon" [href]="pokedexGithub" target="_blank"
+      <a class="button button--white icon" [href]="pokedexGithub" target="_blank"
         ><fa-icon [icon]="iconGithub"></fa-icon
       ></a>
     </li>
     <li>
-      <a class="button-theme button-theme--white icon" [href]="keilerLinkedin" target="_blank"
+      <a class="button button--white icon" [href]="keilerLinkedin" target="_blank"
         ><fa-icon [icon]="iconLinkedin"></fa-icon
       ></a>
     </li>
@@ -23,23 +23,19 @@
   </button>
 
   <div class="mobile-sidebar" [ngClass]="{ open: showSidebar }">
-    <div class="sidebar-container container-theme container-theme--large">
+    <div class="sidebar-container container container--large">
       <ul>
         <li>
-          <a class="button-theme button-theme--black" (click)="goTo('/')">Inicio</a>
+          <a class="button button--black" (click)="goTo('/')">Inicio</a>
         </li>
         <li>
-          <a class="button-theme button-theme--black" (click)="goTo('/about')">Acerca de</a>
+          <a class="button button--black" (click)="goTo('/about')">Acerca de</a>
         </li>
         <li>
-          <a class="button-theme button-theme--black" [href]="pokedexGithub" target="_blank"
-            >Github</a
-          >
+          <a class="button button--black" [href]="pokedexGithub" target="_blank">Github</a>
         </li>
         <li>
-          <a class="button-theme button-theme--black" [href]="keilerLinkedin" target="_blank"
-            >Linkedin</a
-          >
+          <a class="button button--black" [href]="keilerLinkedin" target="_blank">Linkedin</a>
         </li>
       </ul>
       <button class="close-sidebar-btn" (click)="showSidebar = false">
