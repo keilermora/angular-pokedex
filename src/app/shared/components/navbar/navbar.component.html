@@ -18,12 +18,12 @@
     </li>
   </ul>
 
-  <button class="open-sidenav-btn" (click)="showSidenav = true">
+  <button class="open-sidebar-btn" (click)="showSidebar = true">
     <fa-icon [icon]="iconBars"></fa-icon>
   </button>
 
-  <div class="mobile-sidenav" [ngClass]="{ open: showSidenav }">
-    <div class="sidenav-container container-theme container-theme--large">
+  <div class="mobile-sidebar" [ngClass]="{ open: showSidebar }">
+    <div class="sidebar-container container-theme container-theme--large">
       <ul>
         <li>
           <a class="button-theme button-theme--black" (click)="goTo('/')">Inicio</a>
@@ -42,7 +42,7 @@
           >
         </li>
       </ul>
-      <button class="close-sidenav-btn" (click)="showSidenav = false">
+      <button class="close-sidebar-btn" (click)="showSidebar = false">
         <fa-icon [icon]="iconTimes"></fa-icon>
       </button>
     </div>

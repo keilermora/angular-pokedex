@@ -10,13 +10,18 @@
     </app-dialog-box>
   </div>
   <div class="home__content">
-    <div></div>
-    <app-status-bar [pokemons]="pokemons"></app-status-bar>
-    <app-sidenav></app-sidenav>
-    <app-pokemon-list
-      [busy]="busy"
-      [pokedexVersion]="pokedexVersion"
-      [pokemons]="pokemons"
-    ></app-pokemon-list>
+    <div class="home__status-bar">
+      <app-status-bar [pokemons]="pokemons"></app-status-bar>
+    </div>
+    <div class="home__sidebar">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="home__pokemon-list">
+      <app-pokemon-list
+        [busy]="busy"
+        [pokedexVersion]="pokedexVersion"
+        [pokemons]="pokemons"
+      ></app-pokemon-list>
+    </div>
   </div>
 </main>

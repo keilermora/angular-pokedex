@@ -5,19 +5,19 @@ import { FontAwesomeTestingModule } from '@fortawesome/angular-fontawesome/testi
 import { ApolloTestingModule } from 'apollo-angular/testing';
 import { DialogBoxComponent } from 'src/app/shared/components/dialog-box/dialog-box.component';
 
-import { SidenavComponent } from './sidenav.component';
+import { SidebarComponent } from './sidebar.component';
 
-describe('SidenavComponent', () => {
-  let component: SidenavComponent;
-  let fixture: ComponentFixture<SidenavComponent>;
+describe('SidebarComponent', () => {
+  let component: SidebarComponent;
+  let fixture: ComponentFixture<SidebarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DialogBoxComponent, SidenavComponent],
+      declarations: [DialogBoxComponent, SidebarComponent],
       imports: [ApolloTestingModule, FontAwesomeTestingModule, FormsModule, RouterTestingModule],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SidenavComponent);
+    fixture = TestBed.createComponent(SidebarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -18,17 +18,17 @@ export class NavbarComponent {
   keilerLinkedin = environment.keilerLinkedin;
   pokedexGithub = environment.pokedexGithub;
 
-  showSidenav = false;
+  showSidebar = false;
 
   constructor(private router: Router) {}
 
   /**
-   * Navigate to route. Then, close sidenav.
+   * Navigate to route. Then, close sidebar.
    * @param route Ruta a la cual dirigir.
    */
   goTo(route: string) {
     this.router.navigate([route]).then(() => {
-      this.showSidenav = false;
+      this.showSidebar = false;
     });
   }
 }

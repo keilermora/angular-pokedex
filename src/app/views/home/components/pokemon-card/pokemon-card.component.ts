@@ -51,7 +51,7 @@ export class PokemonCardComponent implements OnChanges {
     const secondaryColor = this.types[1]?.color?.light || '#ffffff';
 
     this.background = {
-      background: `radial-gradient(circle, ${secondaryColor} 25%, ${primaryColor} 75%)`,
+      background: `linear-gradient(45deg, ${secondaryColor}, ${primaryColor}, ${secondaryColor})`,
     };
   }
 }

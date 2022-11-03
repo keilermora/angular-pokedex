@@ -3,13 +3,13 @@
 @import 'utils/media-query';
 @import 'utils/transition';
 
-.sidenav {
+.sidebar {
   overflow: hidden;
   max-width: 100%;
   position: sticky;
   top: 75px;
 
-  @include respond(xs, sm) {
+  @include respond-to(xs) {
     width: auto;
     margin-top: 1em;
   }

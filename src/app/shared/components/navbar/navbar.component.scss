@@ -50,7 +50,7 @@
     }
   }
 
-  .open-sidenav-btn {
+  .open-sidebar-btn {
     background-color: transparent;
     border: none;
     color: $white;
@@ -69,7 +69,7 @@
     }
   }
 
-  .mobile-sidenav {
+  .mobile-sidebar {
     background-color: $gallery;
     display: none;
     position: fixed;
@@ -89,8 +89,8 @@
     &.open {
       width: 100%;
 
-      .sidenav-container {
-        .close-sidenav-btn {
+      .sidebar-container {
+        .close-sidebar-btn {
           display: inline;
         }
 
@@ -100,7 +100,7 @@
       }
     }
 
-    .close-sidenav-btn {
+    .close-sidebar-btn {
       display: none;
       position: absolute;
       top: 6px;
@@ -116,7 +116,7 @@
       }
     }
 
-    .sidenav-container {
+    .sidebar-container {
       margin: 25px 15px;
       padding: 15px;
 

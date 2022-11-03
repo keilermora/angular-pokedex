@@ -8,11 +8,11 @@ import PokemonTypeModel from 'src/app/core/services/pokemon-type/pokemon-type.mo
 import { PokemonTypeService } from 'src/app/core/services/pokemon-type/pokemon-type.service';
 
 @Component({
-  selector: 'app-sidenav',
-  templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.scss'],
+  selector: 'app-sidebar',
+  templateUrl: './sidebar.component.html',
+  styleUrls: ['./sidebar.component.scss'],
 })
-export class SidenavComponent {
+export class SidebarComponent {
   iconSearch = faSearch;
   iconTimes = faTimes;
 
