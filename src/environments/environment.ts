@@ -25,7 +25,7 @@ export const environment = {
 
   // Local storage keys
   pokemonsKey: 'pokemon-v5',
-  pokemonTypesKey: 'pokemon-types-v2',
+  pokemonTypesKey: 'pokemon-types-v3',
 };
 
 /*
