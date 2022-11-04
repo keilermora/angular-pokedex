@@ -24,7 +24,7 @@ export const environment = {
   gaMeasurementId: '',
 
   // Local storage keys
-  pokemonsKey: 'pokemon-v5',
+  pokemonsKey: 'pokemon-v6',
   pokemonTypesKey: 'pokemon-types-v3',
 };
 
