@@ -35,6 +35,7 @@ describe('PokemonService', () => {
   });
 
   afterEach(() => {
+    localStorage.clear();
     controller.verify();
   });
 

@@ -1,11 +1,12 @@
 import { TestBed, waitForAsync } from '@angular/core/testing';
 import { Apollo } from 'apollo-angular';
 import { ApolloTestingController, ApolloTestingModule } from 'apollo-angular/testing';
+import PokemonTypeModel from './pokemon-type.model';
 import { PokemonTypeService } from './pokemon-type.service';
 
 describe('PokemonTypeService', () => {
-  const BUG_TYPE_MOCK = { id: 7, name: 'bug' };
-  const DARK_TYPE_MOCK = { id: 17, name: 'dark' };
+  const BUG_TYPE_MOCK: PokemonTypeModel = { id: 7, name: 'bug' };
+  const DARK_TYPE_MOCK: PokemonTypeModel = { id: 17, name: 'dark' };
 
   let apollo: Apollo;
   let controller: ApolloTestingController;
@@ -23,6 +24,7 @@ describe('PokemonTypeService', () => {
   });
 
   afterEach(() => {
+    localStorage.clear();
     controller.verify();
   });
 
@@ -42,6 +44,8 @@ describe('PokemonTypeService', () => {
   });
 
   it('#getAllPokemonTypes should run GetPokemonTypes query', waitForAsync(() => {
+    spyOn(localStorage, 'getItem').and.callFake(() => '');
+
     service.getAllPokemonTypes().subscribe((pokemonTypes) => {
       expect(pokemonTypes.length).toBe(0);
     });
