@@ -16,7 +16,7 @@ export class PokemonService {
   private fetchingPokemons = false;
 
   constructor(private apollo: Apollo) {
-    const pokemons = localStorage.getItem('pokemons-v4');
+    const pokemons = localStorage.getItem(environment.pokemonsKey);
     this.pokemons = pokemons ? JSON.parse(pokemons) : [];
   }
 

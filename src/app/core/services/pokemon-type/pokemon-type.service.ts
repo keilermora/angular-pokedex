@@ -16,7 +16,7 @@ export class PokemonTypeService {
   private fetchingPokemonTypes = false;
 
   constructor(private apollo: Apollo) {
-    const pokemonTypes = localStorage.getItem('pokemon-types');
+    const pokemonTypes = localStorage.getItem(environment.pokemonTypesKey);
     this.pokemonTypes = pokemonTypes ? JSON.parse(pokemonTypes) : [];
   }
 
