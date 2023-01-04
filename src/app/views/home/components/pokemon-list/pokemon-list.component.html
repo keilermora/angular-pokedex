@@ -1,6 +1,6 @@
 <div class="pokemon-list" *ngIf="_pokedexVersion">
   <ng-container *ngIf="_busy">
-    <div class="message">Loading... Don't turn off the power</div>
+    <div class="message">{{ 'LOADING_MESSAGE' | translate }}</div>
   </ng-container>
   <ng-container *ngIf="!_busy">
     <div class="pokemons-container">

@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TranslateFakeLoader, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 import { PokemonListComponent } from './pokemon-list.component';
 
@@ -9,6 +10,14 @@ describe('PokemonListComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [PokemonListComponent],
+      imports: [
+        TranslateModule.forRoot({
+          loader: {
+            provide: TranslateLoader,
+            useClass: TranslateFakeLoader,
+          },
+        }),
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(PokemonListComponent);
