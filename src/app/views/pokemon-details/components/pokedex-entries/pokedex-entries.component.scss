@@ -1,0 +1,142 @@
+@import 'base/typography';
+@import 'utils/colors';
+@import 'utils/font-sizes';
+
+.pokedex-entries {
+  &__title {
+    margin-top: 0;
+    font-weight: bold;
+  }
+
+  &__entries {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+  }
+
+  &__version-names {
+    padding: 1em;
+
+    &--odd {
+      background-color: $whisper;
+    }
+  }
+
+  &__version-name {
+    text-transform: uppercase;
+    margin-bottom: 0;
+    font-size: $font-size-normal;
+    font-weight: bold;
+    margin-top: 0;
+  }
+
+  &__flavor-text {
+    margin: 0;
+    padding: 1em;
+    font-family: $roboto;
+
+    &--odd {
+      background-color: $whisper;
+      height: 100%;
+    }
+  }
+}
+
+.red {
+  color: $red-version-dark;
+}
+.green {
+  color: $green-version-dark;
+}
+.blue {
+  color: $blue-version-dark;
+}
+.yellow {
+  color: $yellow-version-dark;
+}
+.gold {
+  color: $gold-version-dark;
+}
+.silver {
+  color: $silver-version-dark;
+}
+.crystal {
+  color: $crystal-version-dark;
+}
+.ruby {
+  color: $ruby-version-dark;
+}
+.sapphire {
+  color: $sapphire-version-dark;
+}
+.emerald {
+  color: $emerald-version-dark;
+}
+.firered {
+  color: $fire-red-version-dark;
+}
+.leafgreen {
+  color: $leaf-green-version-dark;
+}
+.diamond {
+  color: $diamond-version-dark;
+}
+.pearl {
+  color: $pearl-version-dark;
+}
+.platinum {
+  color: $platinum-version-dark;
+}
+.heartgold {
+  color: $heart-gold-version-dark;
+}
+.soulsilver {
+  color: $soul-silver-version-dark;
+}
+.black {
+  color: $black-version-dark;
+}
+.white {
+  color: $white-version-dark;
+}
+.black-2 {
+  color: $black-2-version-dark;
+}
+.white-2 {
+  color: $white-2-version-dark;
+}
+.x {
+  color: $x-version-dark;
+}
+.y {
+  color: $y-version-dark;
+}
+.omega-ruby {
+  color: $omega-ruby-version-dark;
+}
+.alpha-sapphire {
+  color: $alpha-sapphire-version-dark;
+}
+.sun {
+  color: $sun-version-dark;
+}
+.moon {
+  color: $moon-version-dark;
+}
+.ultra-sun {
+  color: $ultra-sun-version-dark;
+}
+.ultra-moon {
+  color: $ultra-moon-version-dark;
+}
+.lets-go-pikachu {
+  color: $lets-go-pikachu-version-dark;
+}
+.lets-go-eevee {
+  color: $lets-go-eevee-version-dark;
+}
+.sword {
+  color: $sword-version-dark;
+}
+.shield {
+  color: $shield-version-dark;
+}

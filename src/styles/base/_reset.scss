@@ -36,13 +36,12 @@ html {
     margin: 0;
     flex: 1;
 
-    .--visible {
-      opacity: 1;
-      transition: $fast;
+    img {
+      transform: rotate(0.00000000001deg);
     }
 
-    .--hidden {
-      opacity: 0;
+    [hidden] {
+      display: none !important;
     }
   }
 }

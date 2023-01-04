@@ -1,113 +1,20 @@
 <section class="pokemon-details">
-  <div class="breadcrumb">
-    <span
-      ><a routerLink="/">Home</a> /
-      <span *ngIf="!busy" [@fadeIn]>{{ pokemonSpecie.id | pokemonNumber }}</span></span
-    >
+  <div class="pokemon-details__breadcrumb">
+    <app-breadcrumb [busy]="busy" [pokemonSpecie]="pokemonSpecie"></app-breadcrumb>
   </div>
-  <div class="pokemon-details__content">
-    <!-- Imagen -->
-    <div class="artwork">
-      <app-dialog-box size="large">
-        <div class="artwork__image-placeholder">
-          <img
-            *ngIf="!busy"
-            [@fadeIn]
-            [src]="pokemonSpecie.sprite"
-            [alt]="pokemonSpecie.name"
-            width="250"
-            height="250"
-          />
-        </div>
 
-        <!-- Paginador -->
-        <div class="paginator" *ngIf="!busy">
-          <a
-            [style.pointer-events]="pokemonSpecie.id >= 1 ? 'auto' : 'none'"
-            [routerLink]="'/pokemon/' + (pokemonSpecie.id - 1)"
-            class="paginator__button"
-          >
-            <span *ngIf="pokemonSpecie.id - 1 >= 1">&lt;</span>
-          </a>
-          <div class="paginator__current-number">
-            <span *ngIf="!busy" [@fadeIn]>
-              {{ pokemonSpecie.id | pokemonNumber }}
-            </span>
-          </div>
-          <a [routerLink]="'/pokemon/' + (pokemonSpecie.id + 1)" class="paginator__button">&gt;</a>
-        </div>
-      </app-dialog-box>
-    </div>
+  <!-- Profile -->
+  <div class="pokemon-details__artwork">
+    <app-pokemon-profile [busy]="busy" [pokemonSpecie]="pokemonSpecie"></app-pokemon-profile>
+  </div>
 
-    <!-- Detalles -->
-    <div class="details">
-      <app-dialog-box size="large">
-        <ul class="details__list --visible">
-          <li>
-            <span class="details__name" *ngIf="!busy" [@fadeIn]>{{
-              pokemonSpecie.name | pokemonName
-            }}</span
-            >&nbsp;
-          </li>
-          <li>
-            <span *ngIf="!busy" [@fadeIn]>
-              <ng-container *ngFor="let type of pokemonSpecie.types">
-                <span class="details__type" [ngClass]="type.name">{{
-                  type.name | pokemonType
-                }}</span>
-              </ng-container>
-            </span>
-            &nbsp;
-          </li>
-        </ul>
+  <!-- Attributes -->
+  <div class="pokemon-details__attributes">
+    <app-battle-stats [busy]="busy" [pokemonSpecie]="pokemonSpecie"></app-battle-stats>
+  </div>
 
-        <!-- Estadísticas -->
-        <table class="stats">
-          <tr *ngIf="!!pokemonSpecie.height">
-            <td class="stats__name">Height</td>
-            <td class="stats__value" *ngIf="!busy" [@fadeIn]>
-              {{ pokemonSpecie.height | pokemonHeight }}
-            </td>
-          </tr>
-          <tr *ngIf="!!pokemonSpecie.weight">
-            <td class="stats__name">Weight</td>
-            <td class="stats__value" *ngIf="!busy" [@fadeIn]>
-              {{ pokemonSpecie.weight | pokemonWeight }}
-            </td>
-          </tr>
-          <tr *ngFor="let stat of pokemonSpecie.stats">
-            <td class="stats__name">{{ stat.name | pokemonStat }}</td>
-            <td class="stats__value" *ngIf="!busy" [@fadeIn]>
-              {{ stat.value }}
-            </td>
-          </tr>
-        </table>
-      </app-dialog-box>
-    </div>
-
-    <!-- Más detalles -->
-    <div class="more-details">
-      <app-dialog-box size="large">
-        <h2 class="more-details__title">
-          <span *ngIf="busy">Loading... Don't turn off the power</span>
-          <span *ngIf="!busy && pokemonSpecie" [@fadeIn]>
-            {{ pokemonSpecie.genus }}
-          </span>
-        </h2>
-        <div class="more-details__content --visible" [ngClass]="{ '--hidden': busy }">
-          <ng-container *ngFor="let flavorTextEntry of pokemonSpecie.flavorTexts">
-            <ng-container *ngFor="let versionName of flavorTextEntry.versionNames">
-              <h3 [ngClass]="versionName" class="more-details__version-name">
-                {{ versionName | pokedexVersionName }}
-              </h3>
-            </ng-container>
-            <p class="more-details__flavor-text">
-              {{ flavorTextEntry.text }}
-            </p>
-          </ng-container>
-          <a class="button button--black" routerLink="/">Go Back</a>
-        </div>
-      </app-dialog-box>
-    </div>
+  <!-- More details -->
+  <div class="pokemon-details__description">
+    <app-pokedex-entries [busy]="busy" [pokemonSpecie]="pokemonSpecie"></app-pokedex-entries>
   </div>
 </section>

@@ -1,0 +1,18 @@
+<div class="paginator" [appHideElement]="busy">
+  <!-- Previous -->
+  <a
+    [style.pointer-events]="pokemonSpecie.id >= 0 ? 'auto' : 'none'"
+    [routerLink]="'/pokemon/' + (pokemonSpecie.id - 1)"
+  >
+    <fa-icon *ngIf="pokemonSpecie.id - 1 >= 0" [icon]="iconLeft"></fa-icon>
+  </a>
+
+  <!-- Current -->
+  <div class="paginator__current-pokemon">
+    <span class="paginator__pokemon-name">{{ pokemonSpecie.name | pokemonName }}</span>
+    <span class="paginator__pokemon-genus">{{ pokemonSpecie.genus }}</span>
+  </div>
+
+  <!-- Next -->
+  <a [routerLink]="'/pokemon/' + (pokemonSpecie.id + 1)"><fa-icon [icon]="iconRight"></fa-icon></a>
+</div>

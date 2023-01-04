@@ -10,10 +10,6 @@
   margin: 0 auto;
   padding: 2em 0;
 
-  @include respond-to(xs) {
-    padding: 2em 1em;
-  }
-
   &__title {
     margin-top: 0;
   }
@@ -28,7 +24,7 @@
     text-align: center;
 
     img {
-      width: 160px;
+      image-rendering: pixelated;
     }
   }
 }

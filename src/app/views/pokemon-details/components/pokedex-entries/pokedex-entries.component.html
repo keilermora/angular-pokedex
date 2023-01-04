@@ -1,0 +1,34 @@
+<app-dialog-box size="large">
+  <div class="pokedex-entries">
+    <!-- Title -->
+    <span class="pokedex-entries__title">
+      <span *ngIf="busy">Loading... Don't turn off the power</span>
+      <span *ngIf="!busy">Pokédex entries</span>
+    </span>
+
+    <div class="pokedex-entries__entries">
+      <ng-container *ngIf="!busy && pokemonSpecie">
+        <ng-container *ngFor="let flavorTextEntry of pokemonSpecie.flavorTexts; let odd = odd">
+          <!-- Version name(s) -->
+          <div
+            class="pokedex-entries__version-names"
+            [ngClass]="{ 'pokedex-entries__version-names--odd': odd }"
+          >
+            <ng-container *ngFor="let versionName of flavorTextEntry.versionNames">
+              <span [ngClass]="versionName" class="pokedex-entries__version-name">
+                {{ versionName | pokedexVersionName }} </span
+              ><br />
+            </ng-container>
+          </div>
+          <!-- Pokédex flavor text entry -->
+          <p
+            class="pokedex-entries__flavor-text"
+            [ngClass]="{ 'pokedex-entries__flavor-text--odd': odd }"
+          >
+            {{ flavorTextEntry.text }}
+          </p>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</app-dialog-box>

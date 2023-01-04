@@ -1,0 +1,23 @@
+@import 'base/typography';
+
+.paginator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 36px;
+
+  &__current-pokemon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__pokemon-name {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  &__pokemon-genus {
+    font-family: $roboto;
+  }
+}

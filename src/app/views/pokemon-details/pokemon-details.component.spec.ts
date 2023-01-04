@@ -12,6 +12,11 @@ import { PokemonTypePipe } from 'src/app/shared/pipes/pokemon-type/pokemon-type.
 import { PokemonWeightPipe } from 'src/app/shared/pipes/pokemon-weight/pokemon-weight.pipe';
 
 import { PokemonDetailsComponent } from './pokemon-details.component';
+import { PaginatorComponent } from './components/paginator/paginator.component';
+import { PokedexEntriesComponent } from './components/pokedex-entries/pokedex-entries.component';
+import { PokemonProfileComponent } from './components/pokemon-profile/pokemon-profile.component';
+import { BattleStatsComponent } from './components/battle-stats/battle-stats.component';
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 
 describe('PokemonDetailsComponent', () => {
   let component: PokemonDetailsComponent;
@@ -29,6 +34,12 @@ describe('PokemonDetailsComponent', () => {
         PokemonStatPipe,
         PokemonTypePipe,
         PokemonWeightPipe,
+
+        PaginatorComponent,
+        PokedexEntriesComponent,
+        PokemonProfileComponent,
+        BattleStatsComponent,
+        BreadcrumbComponent,
       ],
       imports: [ApolloTestingModule, BrowserAnimationsModule, RouterTestingModule],
     }).compileComponents();

@@ -22,6 +22,7 @@ import { PokedexVersionNamePipe } from './pipes/pokedex-version-name/pokedex-ver
 import { SearchResultsMessagePipe } from './pipes/search-results-message/search-results-message.pipe';
 
 // Directives
+import { HideElementDirective } from './directives/hide-element.directive';
 import { LazyImgDirective } from './directives/lazy-img.directive';
 import { QueryParamsHandlingDirective } from './directives/query-params-handling.directive';
 
@@ -30,6 +31,7 @@ import { QueryParamsHandlingDirective } from './directives/query-params-handling
     DialogBoxComponent,
     FooterComponent,
     LazyImgDirective,
+    HideElementDirective,
     NavbarComponent,
     PokedexVersionNamePipe,
     PokemonHeightPipe,
@@ -50,6 +52,7 @@ import { QueryParamsHandlingDirective } from './directives/query-params-handling
     FontAwesomeModule,
     FooterComponent,
     FormsModule,
+    HideElementDirective,
     LazyImgDirective,
     NavbarComponent,
     PokedexVersionNamePipe,

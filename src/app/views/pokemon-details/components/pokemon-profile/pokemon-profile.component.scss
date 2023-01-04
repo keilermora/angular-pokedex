@@ -1,0 +1,19 @@
+@import 'base/typography';
+
+.pokemon-artwork {
+  &__image-placeholder {
+    height: 298px;
+    width: 250px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__name {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  &__genus {
+    font-family: $roboto;
+  }
+}

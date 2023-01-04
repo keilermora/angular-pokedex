@@ -26,8 +26,12 @@
       justify-content: center;
 
       span {
-        font-size: $font-size-smallest;
+        font-size: $font-size-small;
         padding: 0 1em;
+      }
+
+      img {
+        image-rendering: pixelated;
       }
     }
   }
