@@ -8,28 +8,26 @@
 
 [https://keilermora.github.io/pokedex-angular/](https://keilermora.github.io/pokedex-angular/)
 
-La aplicación muestra el listado y el detalle de los Pokémon de las primeras 3 generaciones.
+The app shows a list of Pokémon from first 3 generations.
 
-La imagen que representa un Pokémon en el listado muestra las variaciones que estos tuvieron durante las primeras versiones, desde la versión Green (1996) hasta la version Emerald (2005).
+The image that represents a Pokémon in the list shows the variations that they had through the first versions, from the Green version (1996) to the Emerald version (2005).
 
-Los detalles de un Pokémon individual muestra sus estadísticas base y los registros de la Pokédex de las diferentes versiones.
+The project was developed using [Angular](https://angular.io/) to create the UI, in communication with the GraphQL server from [PokéAPI](https://pokeapi.co/).
 
-El proyecto fue desarrollado usando la librería de JavaScript [Angular](https://angular.io/) para crear la interfaz de usuario, en comunicación con la Api RESTful [PokéAPI](https://pokeapi.co/).
+## Minimum requirements
 
-## Requisitos mínimos
+- [Nodejs](https://nodejs.org) with LTS support.
+- A web browser
 
-- [Nodejs](https://nodejs.org) con soporte de largo plazo (LTS).
-- Un navegador web
+## Dev environment
 
-## Ambiente de pruebas
-
-Ejecutar en la raíz del proyecto:
+Run in the root of the project:
 
 ```
 npm start
 ```
 
-## Referencias
+## References
 
 [![Angular Badge](https://img.shields.io/badge/Angular-DD0031?logo=angular&logoColor=fff&style=flat)](https://angular.io/)
 [![Codecov Badge](https://img.shields.io/badge/Codecov-F01F7A?logo=codecov&logoColor=fff&style=flat)](https://about.codecov.io/)
@@ -54,3 +52,4 @@ npm start
 - [Angular Folder Structure](https://angular-folder-structure.readthedocs.io/en/latest/): Create a skeleton structure which is flexible for projects big or small.
 - [Normalize.css](https://necolas.github.io/normalize.css/): A modern, HTML5-ready alternative to CSS resets.
 - [PokéAPI](https://pokeapi.co/): The RESTful Pokémon API.
+- [@ngx-translate/core](https://github.com/ngx-translate/core): The internationalization (i18n) library for Angular.

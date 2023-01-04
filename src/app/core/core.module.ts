@@ -31,7 +31,7 @@ import { LanguageService } from './services/language/language.service';
       loader: {
         provide: TranslateLoader,
         useFactory: (http: HttpClient) => {
-          return new TranslateHttpLoader(http);
+          return new TranslateHttpLoader(http, './assets/i18n/', '.json');
         },
         deps: [HttpClient],
       },
