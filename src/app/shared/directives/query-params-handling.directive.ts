@@ -1,11 +1,11 @@
 import { Directive } from '@angular/core';
-import { RouterLinkWithHref } from '@angular/router';
+import { RouterLink } from '@angular/router';
 
 @Directive({
   selector: 'a[routerLink]',
 })
 export class QueryParamsHandlingDirective {
-  constructor(routerLink: RouterLinkWithHref) {
+  constructor(routerLink: RouterLink) {
     routerLink.queryParamsHandling = 'merge';
   }
 }
