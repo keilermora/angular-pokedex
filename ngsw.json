@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1672813784792,
+  "timestamp": 1672814636842,
   "index": "/pokedex-angular/index.html",
   "assetGroups": [
     {
@@ -758,8 +758,8 @@
     "/pokedex-angular/assets/fonts/pokemon-gb.ttf": "3d4b93796acf4934f1bdcf08414d0d9238c4bae6",
     "/pokedex-angular/assets/fonts/pokemon-gb.woff": "57169c117e86f884e7f5f3956d64a9be18a126d9",
     "/pokedex-angular/assets/fonts/pokemon-gb.woff2": "a48714b1c13ec5dafc0c729a77456d4c3851b140",
-    "/pokedex-angular/assets/i18n/en.json": "42863c89ceb83c841f18ca4e2e288e32bb62fe8d",
-    "/pokedex-angular/assets/i18n/es.json": "7786758c0aca4b63b33d52dccab12a1d437d685b",
+    "/pokedex-angular/assets/i18n/en.json": "318a0ab866778ef3eb315e2fce814cd1ce61be2a",
+    "/pokedex-angular/assets/i18n/es.json": "517f8b7fbd038c3b8c2615cd35c1fb002701c7cc",
     "/pokedex-angular/assets/icons/icon-128x128.png": "d76e68c1a41007a3eb1761e6cde1eeeda15a3fec",
     "/pokedex-angular/assets/icons/icon-144x144.png": "5571b8d1a95d81513e0c4575356ada7e4a7cfd36",
     "/pokedex-angular/assets/icons/icon-152x152.png": "a109d5e85dd567a25f8b04676734751bd6771176",

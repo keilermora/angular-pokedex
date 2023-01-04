@@ -2,7 +2,7 @@
   "404_MESSAGE": "¿Estás perdido? No deberías estar aquí",
   "500_MESSAGE": "¿Qué? ¿POKÉAPI está evolucionando?<br/><br/>No estamos seguros. La verdad es que no ha respondido lo que esperábamos...",
   "ABOUT": "Acerca de",
-  "ABOUT_MESSAGE": "Sitio web elaborado por <a target=\"_blank\" href=\"{{ keilerLinkedin }}\">Keiler Mora</a> con fines demostrativos. El proyecto fue desarrollado con <a target=\"_blank\" href=\"{{ homeAngular }}\">Angular</a> para crear la interfaz, en comunicación con la API RESTful y GraphQL <a target=\"_blank\" href=\"{{ homePokeApi }}\">PokéApi</a>.<br><br>El código fuente está disponible en <a target=\"_blank\" href=\"{{ pokedexGithub }}\">Github</a>.",
+  "ABOUT_MESSAGE": "Sitio web elaborado por <a target=\"_blank\" href=\"{{ keilerLinkedin }}\">Keiler Mora</a> con fines demostrativos. El proyecto fue desarrollado con <a target=\"_blank\" href=\"{{ homeAngular }}\">Angular</a> para crear la interfaz, en comunicación con el servidor GraphQL de <a target=\"_blank\" href=\"{{ homePokeApi }}\">PokéApi</a>.<br><br>El código fuente está disponible en <a target=\"_blank\" href=\"{{ pokedexGithub }}\">Github</a>.",
   "ALL": "Todos",
   "ALPHA_SAPPHIRE": "Zafiro Alfa",
   "ARE_YOU_LOST": "¿Estás perdido?",
