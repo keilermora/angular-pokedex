@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { PokemonSpecieModel } from 'src/app/core/services/pokemon-specie/pokemon-specie.model';
 import { PokemonSpecieService } from 'src/app/core/services/pokemon-specie/pokemon-specie.service';
 import PokemonModel from 'src/app/core/services/pokemon/pokemon.model';
@@ -19,20 +20,27 @@ export class PokemonDetailsComponent implements OnInit {
   busy = true;
   error = false;
 
-  constructor(private route: ActivatedRoute, private pokemonSpecieService: PokemonSpecieService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private pokemonSpecieService: PokemonSpecieService,
+    private translate: TranslateService
+  ) {}
 
   ngOnInit() {
     let pokemonId;
     this.route.params.subscribe(({ id }) => {
-      let routeParamId = id;
-      pokemonId = routeParamId ? parseInt(routeParamId) : 0;
+      pokemonId = id ? parseInt(id) : 0;
       this.pokemon.id = pokemonId;
-      this.busy = true;
       this.getPokemonSpecie(pokemonId);
+    });
+
+    this.translate.onLangChange.subscribe(() => {
+      this.getPokemonSpecie(this.pokemon.id);
     });
   }
 
   getPokemonSpecie(pokemonId: number) {
+    this.busy = true;
     this.pokemonSpecieService
       .getPokemonSpecieByPokemonId(pokemonId)
       .subscribe({

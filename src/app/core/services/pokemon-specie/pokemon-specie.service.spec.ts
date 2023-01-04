@@ -1,5 +1,7 @@
 import { TestBed } from '@angular/core/testing';
+import { TranslateFakeLoader, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { ApolloTestingController, ApolloTestingModule } from 'apollo-angular/testing';
+
 import { PokemonSpecieService } from './pokemon-specie.service';
 
 describe('PokemonSpecieService', () => {
@@ -46,7 +48,15 @@ describe('PokemonSpecieService', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ApolloTestingModule],
+      imports: [
+        ApolloTestingModule,
+        TranslateModule.forRoot({
+          loader: {
+            provide: TranslateLoader,
+            useClass: TranslateFakeLoader,
+          },
+        }),
+      ],
       providers: [PokemonSpecieService],
     });
 

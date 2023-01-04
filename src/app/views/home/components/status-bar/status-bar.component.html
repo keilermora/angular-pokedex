@@ -1,21 +1,27 @@
 <div class="status-bar">
-  <div class="message">{{ _pokemons.length | searchResultsMessage }}</div>
+  <div class="message" [ngPlural]="_pokemons.length">
+    <ng-template ngPluralCase="=0">{{ 'NO_RESULTS' | translate }}</ng-template>
+    <ng-template ngPluralCase="=1">1 {{ 'RESULT' | translate }}</ng-template>
+    <ng-template ngPluralCase="other"
+      >{{ _pokemons.length }} {{ 'RESULTS' | translate }}</ng-template
+    >
+  </div>
   <div class="sort-by">
-    <label for="field-sort-by">Order by:</label>
+    <label for="field-sort-by">{{ 'ORDER_BY' | translate }}:</label>
     <select
       name="field-sort-by"
       id="field-sort-by"
       [ngModel]="currentPokemonSortBy"
       (ngModelChange)="changePokemonSortBy($event)"
     >
-      <option [value]="pokemonSortByHeightASC">Height ↑</option>
-      <option [value]="pokemonSortByHeightDSC">Height ↓</option>
-      <option [value]="pokemonSortByNameASC">Name (A-Z)</option>
-      <option [value]="pokemonSortByNameDSC">Name (Z-A)</option>
-      <option [value]="pokemonSortByNumberASC">Number ↑</option>
-      <option [value]="pokemonSortByNumberDSC">Number ↓</option>
-      <option [value]="pokemonSortByWeightASC">Weight ↑</option>
-      <option [value]="pokemonSortByWeightDSC">Weight ↓</option>
+      <option [value]="pokemonSortByHeightASC">{{ 'HEIGHT' | translate }} ↑</option>
+      <option [value]="pokemonSortByHeightDSC">{{ 'HEIGHT' | translate }} ↓</option>
+      <option [value]="pokemonSortByNameASC">{{ 'NAME' | translate }} (A-Z)</option>
+      <option [value]="pokemonSortByNameDSC">{{ 'NAME' | translate }} (Z-A)</option>
+      <option [value]="pokemonSortByNumberASC">{{ 'NUMBER' | translate }} ↑</option>
+      <option [value]="pokemonSortByNumberDSC">{{ 'NUMBER' | translate }} ↓</option>
+      <option [value]="pokemonSortByWeightASC">{{ 'WEIGHT' | translate }} ↑</option>
+      <option [value]="pokemonSortByWeightDSC">{{ 'WEIGHT' | translate }} ↓</option>
     </select>
   </div>
 </div>

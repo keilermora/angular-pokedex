@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { TranslateFakeLoader, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { DialogBoxComponent } from 'src/app/shared/components/dialog-box/dialog-box.component';
 
 import { NotFoundComponent } from './not-found.component';
@@ -10,6 +11,14 @@ describe('NotFoundComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [DialogBoxComponent, NotFoundComponent],
+      imports: [
+        TranslateModule.forRoot({
+          loader: {
+            provide: TranslateLoader,
+            useClass: TranslateFakeLoader,
+          },
+        }),
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(NotFoundComponent);

@@ -1,10 +1,15 @@
 <nav class="navbar">
   <ul class="desktop-navbar">
     <li>
-      <a class="button button--white" [routerLink]="'/'">Home</a>
+      <a class="button button--white" [routerLink]="'/'">{{ 'HOME' | translate }}</a>
     </li>
     <li>
-      <a class="button button--white" [routerLink]="'/about'">About</a>
+      <button class="button button--white" (click)="onToggleLanguage()">
+        {{ 'LANGUAGE' | translate }}: {{ currentLanguage.name }}
+      </button>
+    </li>
+    <li>
+      <a class="button button--white" [routerLink]="'/about'">{{ 'ABOUT' | translate }}</a>
     </li>
     <li>
       <a class="button button--white icon" [href]="pokedexGithub" target="_blank"
@@ -26,10 +31,15 @@
     <div class="sidebar-container container container--large">
       <ul>
         <li>
-          <a class="button button--black" (click)="goTo('/')">Inicio</a>
+          <a class="button button--black" (click)="goTo('/')">{{ 'HOME' | translate }}</a>
         </li>
         <li>
-          <a class="button button--black" (click)="goTo('/about')">Acerca de</a>
+          <a class="button button--black" (click)="goTo('/about')">{{ 'ABOUT' | translate }}</a>
+        </li>
+        <li>
+          <button class="button button--black" (click)="onToggleLanguage()">
+            {{ 'LANGUAGE' | translate }}: {{ currentLanguage.name }}
+          </button>
         </li>
         <li>
           <a class="button button--black" [href]="pokedexGithub" target="_blank">Github</a>

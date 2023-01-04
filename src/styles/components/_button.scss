@@ -13,6 +13,7 @@
   height: 32px;
   cursor: pointer;
   transition: $fast;
+  white-space: nowrap;
 
   &--black {
     color: $black;

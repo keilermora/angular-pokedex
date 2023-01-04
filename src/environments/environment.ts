@@ -16,14 +16,11 @@ export const environment = {
   // Images folder url
   imagesPath: '/assets/images',
 
-  // Default language
-  language: 'en',
-  languageId: 9,
-
   // Google Analytics measurement Id
   gaMeasurementId: '',
 
   // Local storage keys
+  defaultLanguage: 'default-language-v1',
   pokemonsKey: 'pokemon-v6',
   pokemonTypesKey: 'pokemon-types-v3',
 };

@@ -1,20 +1,20 @@
 <app-dialog-box size="large">
   <ng-container *ngIf="pokemonSpecie">
     <div class="battle-stats">
-      <span class="battle-stats__title">Battle Stats</span>
+      <span class="battle-stats__title">{{ 'ATTRIBUTES' | translate }}</span>
 
       <!-- Statistics -->
       <table class="stats">
         <tr *ngIf="!!pokemonSpecie.height">
-          <td class="stats__name">Height</td>
+          <td class="stats__name">{{ 'HEIGHT' | translate }}</td>
           <td class="stats__value" *ngIf="!busy">{{ pokemonSpecie.height | pokemonHeight }}</td>
         </tr>
         <tr *ngIf="!!pokemonSpecie.weight">
-          <td class="stats__name">Weight</td>
+          <td class="stats__name">{{ 'WEIGHT' | translate }}</td>
           <td class="stats__value" *ngIf="!busy">{{ pokemonSpecie.weight | pokemonWeight }}</td>
         </tr>
         <tr *ngFor="let stat of pokemonSpecie.stats">
-          <td class="stats__name">{{ stat.name | pokemonStat }}</td>
+          <td class="stats__name">{{ stat.name | i18nKey | translate }}</td>
           <td class="stats__value" *ngIf="!busy">{{ stat.value }}</td>
         </tr>
       </table>

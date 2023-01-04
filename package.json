@@ -30,6 +30,8 @@
     "@fortawesome/free-brands-svg-icons": "^6.1.2",
     "@fortawesome/free-solid-svg-icons": "^6.1.2",
     "@graphql-tools/webpack-loader": "^6.7.1",
+    "@ngx-translate/core": "^14.0.0",
+    "@ngx-translate/http-loader": "^7.0.0",
     "apollo-angular": "^4.1.0",
     "graphql": "^16.6.0",
     "ngx-google-analytics": "^14.0.1",

@@ -1,20 +1,24 @@
 <section class="about">
   <app-dialog-box size="large">
     <h1 class="about__title">POKÉDEX</h1>
-    <p class="about__description">
-      Website made by
-      <a [href]="keilerLinkedin" target="_blank">Keiler Mora</a> for demonstration purposes. The
-      project was developed using <a [href]="homeAngular" target="_blank">Angular</a> to create the
-      UI, in communication with the RESTful Api and GraphQL
-      <a [href]="homePokeApi" target="_blank">PokéApi</a>. <br /><br />
-      The source code is available at
-      <a [href]="pokedexGithub" target="_blank">Github</a>.
-    </p>
+    <p
+      class="about__description"
+      [innerHTML]="
+        'ABOUT_MESSAGE'
+          | translate
+            : {
+                homeAngular: homeAngular,
+                homePokeApi: homePokeApi,
+                pokedexGithub: pokedexGithub,
+                keilerLinkedin: keilerLinkedin
+              }
+      "
+    ></p>
 
     <div class="about__professor-img">
       <img class="" src="./assets/images/professor.png" alt="Professor" width="224" height="224" />
     </div>
 
-    <a class="button button--black" routerLink="/">Home</a>
+    <a class="button button--black" routerLink="/">{{ 'HOME' | translate }}</a>
   </app-dialog-box>
 </section>

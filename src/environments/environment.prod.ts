@@ -7,8 +7,6 @@ export const environment = {
   keilerLinkedin: 'https://www.linkedin.com/in/keilermora/',
   pokedexGithub: 'https://github.com/keilermora/pokedex-angular',
   imagesPath: '/pokedex-angular/assets/images',
-  language: 'en',
-  languageId: 9,
   gaMeasurementId: 'G-V6HSHTVL2K',
   pokemonsKey: 'pokemon-v6',
   pokemonTypesKey: 'pokemon-types-v3',

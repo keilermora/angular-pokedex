@@ -2,8 +2,8 @@
   <div class="pokedex-entries">
     <!-- Title -->
     <span class="pokedex-entries__title">
-      <span *ngIf="busy">Loading... Don't turn off the power</span>
-      <span *ngIf="!busy">Pokédex entries</span>
+      <span *ngIf="busy">{{ 'LOADING_MESSAGE' | translate }}</span>
+      <span *ngIf="!busy">{{ 'POKEDEX_ENTRIES' | translate }}</span>
     </span>
 
     <div class="pokedex-entries__entries">
@@ -16,7 +16,7 @@
           >
             <ng-container *ngFor="let versionName of flavorTextEntry.versionNames">
               <span [ngClass]="versionName" class="pokedex-entries__version-name">
-                {{ versionName | pokedexVersionName }} </span
+                {{ versionName | i18nKey | translate }} </span
               ><br />
             </ng-container>
           </div>

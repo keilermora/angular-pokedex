@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { Apollo } from 'apollo-angular';
-import { environment } from 'src/environments/environment';
 import { PokemonSpecieModel } from './pokemon-specie.model';
 import getPokemonSpecieQuery from '../../../data/graphql/get-pokemon-specie.graphql';
 import PokemonSpecieMapper from './pokemon-specie.mapper';
 import PokemonSpecieQueryResultsInterface from 'src/app/shared/interfaces/pokemon-specie-query-results.interface';
+import { LanguageService } from '../language/language.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PokemonSpecieService {
-  constructor(private apollo: Apollo) {}
+  constructor(private apollo: Apollo, private languageService: LanguageService) {}
 
   /**
    * Get a Pokémon specie by Pokémon Id
@@ -19,12 +19,14 @@ export class PokemonSpecieService {
    * @returns {Observable<PokemonSpecieModel>}
    */
   getPokemonSpecieByPokemonId(pokemonId: number): Observable<PokemonSpecieModel> {
+    const currentLanguage = this.languageService.getCurrentLanguage();
+
     return this.apollo
       .query<PokemonSpecieQueryResultsInterface>({
         query: getPokemonSpecieQuery,
         variables: {
           pokemonId,
-          languageId: environment.languageId,
+          languageId: currentLanguage.id,
         },
       })
       .pipe(

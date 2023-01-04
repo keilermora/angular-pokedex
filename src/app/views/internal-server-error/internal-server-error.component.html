@@ -1,15 +1,11 @@
 <section class="internal-server-error">
   <h1 class="internal-server-error__title">500</h1>
-  <h2 class="internal-server-error__subtitle">Internal server error</h2>
+  <h2 class="internal-server-error__subtitle">{{ 'INTERNAL_SERVER_ERROR' | translate }}</h2>
   <app-dialog-box size="large">
-    <p class="internal-server-error__description">
-      What? POKÉAPI is evolving?<br />
-      <br />
-      We're not sure. The truth is that it didn't respond what we expected...
-    </p>
+    <p class="internal-server-error__description" [innerHTML]="'500_MESSAGE' | translate"></p>
     <div class="internal-server-error__battle-container">
       <img src="./assets/images/battle.gif" alt="" height="288" width="320" />
     </div>
-    <a class="button button--black" [routerLink]="'/'">Try again</a>
+    <a class="button button--black" [routerLink]="'/'">{{ 'TRY_AGAIN' | translate }}</a>
   </app-dialog-box>
 </section>
