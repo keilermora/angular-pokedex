@@ -21,7 +21,7 @@ export class LanguageService {
   private currentLanguage: LanguageModel;
 
   constructor(private translateService: TranslateService) {
-    const defaultLanguage = localStorage.getItem(environment.defaultLanguage);
+    const defaultLanguage = localStorage.getItem(environment.defaultLanguageKey);
     this.currentLanguage = defaultLanguage ? this.languages[defaultLanguage] : this.languages['en'];
     this.translateService.use(this.currentLanguage.name);
   }
@@ -36,6 +36,6 @@ export class LanguageService {
         ? this.languages['es']
         : this.languages['en'];
     this.translateService.use(this.currentLanguage.name);
-    localStorage.setItem(environment.defaultLanguage, this.currentLanguage.name);
+    localStorage.setItem(environment.defaultLanguageKey, this.currentLanguage.name);
   }
 }

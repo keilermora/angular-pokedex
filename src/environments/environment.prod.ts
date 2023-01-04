@@ -8,6 +8,7 @@ export const environment = {
   pokedexGithub: 'https://github.com/keilermora/pokedex-angular',
   imagesPath: '/pokedex-angular/assets/images',
   gaMeasurementId: 'G-V6HSHTVL2K',
+  defaultLanguageKey: 'default-language-v1',
   pokemonsKey: 'pokemon-v6',
   pokemonTypesKey: 'pokemon-types-v3',
 };

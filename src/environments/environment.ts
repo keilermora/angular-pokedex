@@ -20,7 +20,7 @@ export const environment = {
   gaMeasurementId: '',
 
   // Local storage keys
-  defaultLanguage: 'default-language-v1',
+  defaultLanguageKey: 'default-language-v1',
   pokemonsKey: 'pokemon-v6',
   pokemonTypesKey: 'pokemon-types-v3',
 };
