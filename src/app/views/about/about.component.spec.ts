@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TranslateFakeLoader, TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { RouterTestingModule } from '@angular/router/testing';
 import { DialogBoxComponent } from 'src/app/shared/components/dialog-box/dialog-box.component';
 
 import { AboutComponent } from './about.component';
@@ -13,6 +14,7 @@ describe('AboutComponent', () => {
       imports: [
         AboutComponent,
         DialogBoxComponent,
+        RouterTestingModule,
         TranslateModule.forRoot({
           loader: {
             provide: TranslateLoader,
