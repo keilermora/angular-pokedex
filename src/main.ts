@@ -1,9 +1,8 @@
-import { enableProdMode, importProvidersFrom } from '@angular/core';
+import { enableProdMode } from '@angular/core';
 
 import { environment } from './environments/environment';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './app/app.component';
-import { CoreModule } from './app/core/core.module';
 import { appConfig } from './app/app.config';
 
 if (environment.production) {
