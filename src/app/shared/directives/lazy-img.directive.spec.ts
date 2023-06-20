@@ -4,6 +4,7 @@ import { LazyImgDirective } from './lazy-img.directive';
 
 @Component({
   template: `<img appLazyImg />`,
+  standalone: true,
 })
 class HostComponent {}
 
@@ -13,7 +14,7 @@ describe('LazyImgDirective', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [LazyImgDirective, HostComponent],
+      imports: [HostComponent, LazyImgDirective],
     }).compileComponents();
 
     fixture = TestBed.createComponent(HostComponent);

@@ -9,7 +9,7 @@ describe('PokemonProfileComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DialogBoxComponent, PokemonProfileComponent],
+      imports: [DialogBoxComponent, PokemonProfileComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(PokemonProfileComponent);

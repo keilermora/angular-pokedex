@@ -10,8 +10,9 @@ describe('AboutComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AboutComponent, DialogBoxComponent],
       imports: [
+        AboutComponent,
+        DialogBoxComponent,
         TranslateModule.forRoot({
           loader: {
             provide: TranslateLoader,

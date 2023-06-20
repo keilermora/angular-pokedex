@@ -12,8 +12,13 @@ describe('PaginatorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [HideElementDirective, PaginatorComponent, PokemonNamePipe],
-      imports: [FontAwesomeTestingModule, RouterTestingModule],
+      imports: [
+        FontAwesomeTestingModule,
+        RouterTestingModule,
+        HideElementDirective,
+        PaginatorComponent,
+        PokemonNamePipe,
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(PaginatorComponent);

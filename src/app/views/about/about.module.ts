@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SharedModule } from 'src/app/shared/shared.module';
 import { AboutComponent } from './about.component';
 
 const routes: Routes = [
@@ -11,7 +10,6 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AboutComponent],
-  imports: [RouterModule.forChild(routes), SharedModule],
+  imports: [AboutComponent, RouterModule.forChild(routes)],
 })
 export class AboutModule {}

@@ -13,6 +13,7 @@ describe('NavbarComponent', () => {
     await TestBed.configureTestingModule({
       imports: [
         FontAwesomeTestingModule,
+        NavbarComponent,
         RouterTestingModule,
         TranslateModule.forRoot({
           loader: {
@@ -21,7 +22,6 @@ describe('NavbarComponent', () => {
           },
         }),
       ],
-      declarations: [NavbarComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(NavbarComponent);

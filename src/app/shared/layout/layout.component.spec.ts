@@ -13,9 +13,11 @@ describe('LayoutComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [FooterComponent, LayoutComponent, NavbarComponent],
       imports: [
         FontAwesomeTestingModule,
+        FooterComponent,
+        LayoutComponent,
+        NavbarComponent,
         RouterTestingModule,
         TranslateModule.forRoot({
           loader: {

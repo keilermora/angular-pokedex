@@ -2,6 +2,7 @@ import { Directive, ElementRef, Input, OnChanges } from '@angular/core';
 
 @Directive({
   selector: '[appHideElement]',
+  standalone: true,
 })
 export class HideElementDirective implements OnChanges {
   @Input() appHideElement: boolean = false;

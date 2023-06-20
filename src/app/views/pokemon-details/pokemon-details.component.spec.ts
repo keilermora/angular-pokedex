@@ -22,28 +22,23 @@ describe('PokemonDetailsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
+      imports: [
+        ApolloTestingModule,
+        BattleStatsComponent,
+        BreadcrumbComponent,
+        BrowserAnimationsModule,
         DialogBoxComponent,
+        PaginatorComponent,
+        PokedexEntriesComponent,
         PokemonDetailsComponent,
         PokemonHeightPipe,
         PokemonNamePipe,
         PokemonNumberPipe,
-        PokemonWeightPipe,
-        PaginatorComponent,
-        PokedexEntriesComponent,
         PokemonProfileComponent,
-        BattleStatsComponent,
-        BreadcrumbComponent,
-      ],
-      imports: [
-        ApolloTestingModule,
-        BrowserAnimationsModule,
+        PokemonWeightPipe,
         RouterTestingModule,
         TranslateModule.forRoot({
-          loader: {
-            provide: TranslateLoader,
-            useClass: TranslateFakeLoader,
-          },
+          loader: { provide: TranslateLoader, useClass: TranslateFakeLoader },
         }),
       ],
     }).compileComponents();

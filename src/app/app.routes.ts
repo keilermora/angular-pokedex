@@ -1,8 +1,7 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule, ExtraOptions } from '@angular/router';
+import { Routes } from '@angular/router';
 import { LayoutComponent } from './shared/layout/layout.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
@@ -33,13 +32,3 @@ const routes: Routes = [
     loadChildren: () => import('./views/not-found/not-found.module').then((m) => m.NotFoundModule),
   },
 ];
-
-const config: ExtraOptions = {
-  scrollOffset: [0, 50],
-};
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes, config)],
-  exports: [RouterModule],
-})
-export class AppRoutingModule {}

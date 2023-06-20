@@ -5,6 +5,8 @@ import { QueryParamsHandlingDirective } from './query-params-handling.directive'
 
 @Component({
   template: `<a routerLink=""></a>`,
+  standalone: true,
+  imports: [RouterTestingModule],
 })
 class HostComponent {}
 
@@ -14,8 +16,7 @@ describe('QueryParamsHandlingDirective', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [QueryParamsHandlingDirective, HostComponent],
-      imports: [RouterTestingModule],
+      imports: [HostComponent, QueryParamsHandlingDirective, RouterTestingModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(HostComponent);

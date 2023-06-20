@@ -3,6 +3,7 @@ import PokedexVersionModel from 'src/app/core/services/pokedex-version/pokedex-v
 
 @Pipe({
   name: 'pokemonSpritePosition',
+  standalone: true,
 })
 export class PokemonSpritePositionPipe implements PipeTransform {
   /**

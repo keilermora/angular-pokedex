@@ -11,10 +11,10 @@ describe('StatusBarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [StatusBarComponent],
       imports: [
         FormsModule,
         RouterTestingModule,
+        StatusBarComponent,
         TranslateModule.forRoot({
           loader: {
             provide: TranslateLoader,

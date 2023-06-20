@@ -11,8 +11,9 @@ describe('InternalServerErrorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DialogBoxComponent, InternalServerErrorComponent],
       imports: [
+        DialogBoxComponent,
+        InternalServerErrorComponent,
         RouterTestingModule,
         TranslateModule.forRoot({
           loader: {

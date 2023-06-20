@@ -13,14 +13,14 @@ describe('PokemonCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
+      imports: [
         DialogBoxComponent,
         PokemonCardComponent,
         PokemonNamePipe,
         PokemonNumberPipe,
         PokemonSpritePositionPipe,
+        RouterTestingModule,
       ],
-      imports: [RouterTestingModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(PokemonCardComponent);

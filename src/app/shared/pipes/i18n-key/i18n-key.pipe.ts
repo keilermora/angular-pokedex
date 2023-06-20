@@ -2,6 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'i18nKey',
+  standalone: true,
 })
 export class I18nKeyPipe implements PipeTransform {
   transform(string: string): string {

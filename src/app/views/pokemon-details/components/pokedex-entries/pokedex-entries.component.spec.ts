@@ -10,7 +10,6 @@ describe('PokedexEntriesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DialogBoxComponent, PokedexEntriesComponent],
       imports: [
         TranslateModule.forRoot({
           loader: {
@@ -18,6 +17,8 @@ describe('PokedexEntriesComponent', () => {
             useClass: TranslateFakeLoader,
           },
         }),
+        DialogBoxComponent,
+        PokedexEntriesComponent,
       ],
     }).compileComponents();
 

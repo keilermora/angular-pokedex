@@ -15,12 +15,14 @@ describe('SidebarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DialogBoxComponent, I18nKeyPipe, SidebarComponent],
       imports: [
         ApolloTestingModule,
+        DialogBoxComponent,
         FontAwesomeTestingModule,
         FormsModule,
+        I18nKeyPipe,
         RouterTestingModule,
+        SidebarComponent,
         TranslateModule.forRoot({
           loader: {
             provide: TranslateLoader,

@@ -9,7 +9,7 @@ describe('BattleStatsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [BattleStatsComponent, DialogBoxComponent],
+      imports: [BattleStatsComponent, DialogBoxComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(BattleStatsComponent);

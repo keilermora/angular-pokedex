@@ -9,7 +9,6 @@ describe('BreadcrumbComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [BreadcrumbComponent],
       imports: [
         TranslateModule.forRoot({
           loader: {
@@ -17,6 +16,7 @@ describe('BreadcrumbComponent', () => {
             useClass: TranslateFakeLoader,
           },
         }),
+        BreadcrumbComponent,
       ],
     }).compileComponents();
 

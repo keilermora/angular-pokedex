@@ -8,7 +8,7 @@ describe('DialogBoxComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DialogBoxComponent],
+      imports: [DialogBoxComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(DialogBoxComponent);

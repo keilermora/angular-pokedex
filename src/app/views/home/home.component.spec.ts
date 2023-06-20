@@ -19,25 +19,20 @@ describe('HomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
+      imports: [
+        ApolloTestingModule,
         DialogBoxComponent,
+        FontAwesomeTestingModule,
+        FormsModule,
         HomeComponent,
         I18nKeyPipe,
         PokemonCardComponent,
         PokemonListComponent,
+        RouterTestingModule,
         SidebarComponent,
         StatusBarComponent,
-      ],
-      imports: [
-        ApolloTestingModule,
-        FontAwesomeTestingModule,
-        FormsModule,
-        RouterTestingModule,
         TranslateModule.forRoot({
-          loader: {
-            provide: TranslateLoader,
-            useClass: TranslateFakeLoader,
-          },
+          loader: { provide: TranslateLoader, useClass: TranslateFakeLoader },
         }),
       ],
     }).compileComponents();

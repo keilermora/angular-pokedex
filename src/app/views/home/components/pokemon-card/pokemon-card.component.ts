@@ -1,12 +1,33 @@
 import { Component, Input, OnChanges } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import PokedexVersionModel from 'src/app/core/services/pokedex-version/pokedex-version.model';
 import PokemonTypeModel from 'src/app/core/services/pokemon-type/pokemon-type.model';
 import PokemonModel from 'src/app/core/services/pokemon/pokemon.model';
+import { PokemonSpritePositionPipe } from '../../../../shared/pipes/pokemon-sprite-position/pokemon-sprite-position.pipe';
+import { PokemonNumberPipe } from '../../../../shared/pipes/pokemon-number/pokemon-number.pipe';
+import { PokemonNamePipe } from '../../../../shared/pipes/pokemon-name/pokemon-name.pipe';
+import { PokemonImageUrlPipe } from '../../../../shared/pipes/pokemon-image-url/pokemon-image-url.pipe';
+import { LazyImgDirective } from '../../../../shared/directives/lazy-img.directive';
+import { QueryParamsHandlingDirective } from '../../../../shared/directives/query-params-handling.directive';
+import { DialogBoxComponent } from '../../../../shared/components/dialog-box/dialog-box.component';
 
 @Component({
   selector: 'app-pokemon-card',
   templateUrl: './pokemon-card.component.html',
   styleUrls: ['./pokemon-card.component.scss'],
+  standalone: true,
+  imports: [
+    CommonModule,
+    DialogBoxComponent,
+    LazyImgDirective,
+    PokemonImageUrlPipe,
+    PokemonNamePipe,
+    PokemonNumberPipe,
+    PokemonSpritePositionPipe,
+    QueryParamsHandlingDirective,
+    RouterLink,
+  ],
 })
 export class PokemonCardComponent implements OnChanges {
   // Pokémon data

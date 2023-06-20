@@ -3,6 +3,7 @@ import PokedexVersionModel from 'src/app/core/services/pokedex-version/pokedex-v
 
 @Pipe({
   name: 'pokemonImageUrl',
+  standalone: true,
 })
 export class PokemonImageUrlPipe implements PipeTransform {
   /**

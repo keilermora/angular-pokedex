@@ -8,11 +8,17 @@ import { PokedexVersionService } from 'src/app/core/services/pokedex-version/pok
 import PokemonTypeModel from 'src/app/core/services/pokemon-type/pokemon-type.model';
 import PokemonModel from 'src/app/core/services/pokemon/pokemon.model';
 import { PokemonService } from 'src/app/core/services/pokemon/pokemon.service';
+import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { StatusBarComponent } from './components/status-bar/status-bar.component';
+import { DialogBoxComponent } from '../../shared/components/dialog-box/dialog-box.component';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
+  standalone: true,
+  imports: [DialogBoxComponent, PokemonListComponent, StatusBarComponent, SidebarComponent],
 })
 export class HomeComponent {
   busy = true;

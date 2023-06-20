@@ -10,8 +10,9 @@ describe('NotFoundComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DialogBoxComponent, NotFoundComponent],
       imports: [
+        DialogBoxComponent,
+        NotFoundComponent,
         TranslateModule.forRoot({
           loader: {
             provide: TranslateLoader,

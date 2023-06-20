@@ -6,12 +6,23 @@ import { PokemonSpecieService } from 'src/app/core/services/pokemon-specie/pokem
 import PokemonModel from 'src/app/core/services/pokemon/pokemon.model';
 import { missingNo } from 'src/app/data/constants/missingno.constant';
 import fadeIn from 'src/app/shared/animations/fadeIn';
+import { PokedexEntriesComponent } from './components/pokedex-entries/pokedex-entries.component';
+import { BattleStatsComponent } from './components/battle-stats/battle-stats.component';
+import { PokemonProfileComponent } from './components/pokemon-profile/pokemon-profile.component';
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-pokemon-details',
   templateUrl: './pokemon-details.component.html',
   styleUrls: ['./pokemon-details.component.scss'],
   animations: [fadeIn],
+  standalone: true,
+  imports: [
+    BreadcrumbComponent,
+    BattleStatsComponent,
+    PokedexEntriesComponent,
+    PokemonProfileComponent,
+  ],
 })
 export class PokemonDetailsComponent implements OnInit {
   pokemon = {} as PokemonModel;

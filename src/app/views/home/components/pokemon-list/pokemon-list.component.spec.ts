@@ -9,8 +9,8 @@ describe('PokemonListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PokemonListComponent],
       imports: [
+        PokemonListComponent,
         TranslateModule.forRoot({
           loader: {
             provide: TranslateLoader,
