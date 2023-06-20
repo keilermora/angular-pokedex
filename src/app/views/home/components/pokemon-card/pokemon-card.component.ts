@@ -45,14 +45,14 @@ export class PokemonCardComponent implements OnChanges {
   // Card styles
   background = {};
 
-  @Input() set pokemon(pokemon: PokemonModel) {
+  @Input({ required: true }) set pokemon(pokemon: PokemonModel) {
     const { id, name, types } = pokemon;
     this.id = id;
     this.name = name;
     this.types = types;
   }
 
-  @Input() set pokedexVersion(pokedexVersion: PokedexVersionModel) {
+  @Input({ required: true }) set pokedexVersion(pokedexVersion: PokedexVersionModel) {
     const { sprites } = pokedexVersion;
     const { animated, height, width } = sprites;
     this._pokedexVersion = pokedexVersion;

@@ -14,7 +14,7 @@ import { QueryParamsHandlingDirective } from '../../../../shared/directives/quer
   imports: [QueryParamsHandlingDirective, RouterLink, NgIf, PokemonNumberPipe, TranslateModule],
 })
 export class BreadcrumbComponent {
-  @Input() busy: boolean = true;
+  @Input({ required: true }) busy: boolean = true;
 
-  @Input() pokemonSpecie!: PokemonSpecieModel;
+  @Input({ required: true }) pokemonSpecie!: PokemonSpecieModel;
 }

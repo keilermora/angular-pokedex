@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -52,9 +53,12 @@ export class SidebarComponent {
 
     this.pokedexVersions = this.pokedexVersionService.getAllPokedexVersions();
 
-    this.pokemonTypeService.getAllPokemonTypes().subscribe((pokemonTypes: PokemonTypeModel[]) => {
-      this.pokemonTypes = pokemonTypes;
-    });
+    this.pokemonTypeService
+      .getAllPokemonTypes()
+      .pipe(takeUntilDestroyed())
+      .subscribe((pokemonTypes: PokemonTypeModel[]) => {
+        this.pokemonTypes = pokemonTypes;
+      });
   }
 
   changePokemonName(pokemonName: string) {

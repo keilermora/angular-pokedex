@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
@@ -29,14 +30,17 @@ export class StatusBarComponent {
 
   _pokemons: PokemonModel[] = [];
 
-  @Input() set pokemons(pokemons: PokemonModel[]) {
+  @Input({ required: true }) set pokemons(pokemons: PokemonModel[]) {
     this._pokemons = pokemons;
   }
 
   constructor(private filterService: FilterService) {
-    this.filterService.getFilter().subscribe((filter: FilterModel) => {
-      this.currentPokemonSortBy = filter.pokemonSortBy as PokemonSortByEnum;
-    });
+    this.filterService
+      .getFilter()
+      .pipe(takeUntilDestroyed())
+      .subscribe((filter: FilterModel) => {
+        this.currentPokemonSortBy = filter.pokemonSortBy as PokemonSortByEnum;
+      });
   }
 
   changePokemonSortBy(pokemonSortBy: PokemonSortByEnum) {

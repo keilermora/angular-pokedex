@@ -23,7 +23,7 @@ import { DialogBoxComponent } from '../../../../shared/components/dialog-box/dia
   ],
 })
 export class BattleStatsComponent {
-  @Input() busy: boolean = true;
+  @Input({ required: true }) busy: boolean = true;
 
-  @Input() pokemonSpecie: PokemonSpecieModel | null = null;
+  @Input({ required: true }) pokemonSpecie: PokemonSpecieModel | null = null;
 }

@@ -12,7 +12,7 @@ import { DialogBoxComponent } from '../../../../shared/components/dialog-box/dia
   imports: [DialogBoxComponent, NgIf, PaginatorComponent],
 })
 export class PokemonProfileComponent {
-  @Input() busy: boolean = true;
+  @Input({ required: true }) busy: boolean = true;
 
-  @Input() pokemonSpecie!: PokemonSpecieModel;
+  @Input({ required: true }) pokemonSpecie!: PokemonSpecieModel;
 }

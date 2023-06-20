@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import FilterModel from 'src/app/core/services/filter/filter.model';
@@ -38,6 +39,7 @@ export class HomeComponent {
     this.filterService
       .getFilter()
       .pipe(
+        takeUntilDestroyed(),
         switchMap((filter: FilterModel) => {
           this.busy = true;
           this.filter = filter;

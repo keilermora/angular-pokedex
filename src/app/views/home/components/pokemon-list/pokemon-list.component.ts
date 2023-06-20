@@ -17,17 +17,15 @@ export class PokemonListComponent {
   _pokedexVersion: PokedexVersionModel = {} as PokedexVersionModel;
   _pokemons: PokemonModel[] = [];
 
-  @Input() set busy(busy: boolean) {
+  @Input({ required: true }) set busy(busy: boolean) {
     this._busy = busy;
   }
 
-  @Input() set pokedexVersion(pokedexVersion: PokedexVersionModel) {
+  @Input({ required: true }) set pokedexVersion(pokedexVersion: PokedexVersionModel) {
     this._pokedexVersion = pokedexVersion;
   }
 
-  @Input() set pokemons(pokemons: PokemonModel[]) {
+  @Input({ required: true }) set pokemons(pokemons: PokemonModel[]) {
     this._pokemons = pokemons;
   }
-
-  constructor() {}
 }

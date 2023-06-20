@@ -11,6 +11,4 @@ import { DialogBoxComponent } from '../../shared/components/dialog-box/dialog-bo
   standalone: true,
   imports: [DialogBoxComponent, QueryParamsHandlingDirective, RouterLink, TranslateModule],
 })
-export class NotFoundComponent {
-  constructor() {}
-}
+export class NotFoundComponent {}

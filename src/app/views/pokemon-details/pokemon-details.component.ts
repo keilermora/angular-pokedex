@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DestroyRef, OnInit } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { PokemonSpecieModel } from 'src/app/core/services/pokemon-specie/pokemon-specie.model';
@@ -32,20 +33,21 @@ export class PokemonDetailsComponent implements OnInit {
   error = false;
 
   constructor(
-    private route: ActivatedRoute,
+    private destroyRef: DestroyRef,
     private pokemonSpecieService: PokemonSpecieService,
+    private route: ActivatedRoute,
     private translate: TranslateService
   ) {}
 
   ngOnInit() {
     let pokemonId;
-    this.route.params.subscribe(({ id }) => {
+    this.route.params.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(({ id }) => {
       pokemonId = id ? parseInt(id) : 0;
       this.pokemon.id = pokemonId;
       this.getPokemonSpecie(pokemonId);
     });
 
-    this.translate.onLangChange.subscribe(() => {
+    this.translate.onLangChange.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(() => {
       this.getPokemonSpecie(this.pokemon.id);
     });
   }
@@ -54,6 +56,7 @@ export class PokemonDetailsComponent implements OnInit {
     this.busy = true;
     this.pokemonSpecieService
       .getPokemonSpecieByPokemonId(pokemonId)
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe({
         next: (pokemonSpecie) => {
           this.pokemonSpecie = pokemonSpecie || missingNo;

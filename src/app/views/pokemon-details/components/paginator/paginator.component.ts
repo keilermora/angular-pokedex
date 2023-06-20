@@ -26,7 +26,7 @@ export class PaginatorComponent {
   iconLeft = faArrowLeft;
   iconRight = faArrowRight;
 
-  @Input() busy: boolean = true;
+  @Input({ required: true }) busy: boolean = true;
 
-  @Input() pokemonSpecie: PokemonSpecieModel = {} as PokemonSpecieModel;
+  @Input({ required: true }) pokemonSpecie: PokemonSpecieModel = {} as PokemonSpecieModel;
 }

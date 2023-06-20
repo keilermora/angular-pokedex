@@ -13,7 +13,7 @@ import { DialogBoxComponent } from '../../../../shared/components/dialog-box/dia
   imports: [DialogBoxComponent, NgIf, NgFor, NgClass, I18nKeyPipe, TranslateModule],
 })
 export class PokedexEntriesComponent {
-  @Input() busy: boolean = true;
+  @Input({ required: true }) busy: boolean = true;
 
-  @Input() pokemonSpecie: PokemonSpecieModel | null = null;
+  @Input({ required: true }) pokemonSpecie: PokemonSpecieModel | null = null;
 }

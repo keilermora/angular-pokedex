@@ -10,10 +10,12 @@ import { routes } from './app.routes';
 import { requestInterceptor } from './core/interceptors/request.interceptor';
 import { GraphQLModule } from './core/graphql.module';
 import { environment } from 'src/environments/environment';
+import { provideClientHydration } from '@angular/platform-browser';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideAnimations(),
+    provideClientHydration(),
     provideHttpClient(withInterceptors([requestInterceptor])),
     provideRouter(routes),
     provideServiceWorker('ngsw-worker.js', {
