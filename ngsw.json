@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1672815099775,
+  "timestamp": 1688789833227,
   "index": "/pokedex-angular/index.html",
   "assetGroups": [
     {
@@ -11,19 +11,19 @@
         "ignoreVary": true
       },
       "urls": [
-        "/pokedex-angular/267.220d842c5c3b296e.js",
-        "/pokedex-angular/354.d95e5220f67ab3e6.js",
-        "/pokedex-angular/626.89e7deb032c64e78.js",
-        "/pokedex-angular/710.4e54430940e7fd88.js",
-        "/pokedex-angular/737.d01da50223341e52.js",
-        "/pokedex-angular/common.68ad20a4dacd0483.js",
+        "/pokedex-angular/223.371ab7b32c77dc9f.js",
+        "/pokedex-angular/450.e2f5a710e20a379f.js",
+        "/pokedex-angular/575.3c3a9948d2359777.js",
+        "/pokedex-angular/785.e2a3c2bd0d7fc875.js",
+        "/pokedex-angular/860.c8d5a1682c2f3c8d.js",
+        "/pokedex-angular/959.c5a6a647f22e5018.js",
         "/pokedex-angular/favicon.ico",
         "/pokedex-angular/index.html",
-        "/pokedex-angular/main.865a961bccf563fa.js",
+        "/pokedex-angular/main.c95c065589450a02.js",
         "/pokedex-angular/manifest.webmanifest",
-        "/pokedex-angular/polyfills.fa6f98b6deae32c5.js",
-        "/pokedex-angular/runtime.b3f58e3684856b2b.js",
-        "/pokedex-angular/styles.4a4e4a0c801708ed.css"
+        "/pokedex-angular/polyfills.f94d7e30625da93a.js",
+        "/pokedex-angular/runtime.82dd082319848f00.js",
+        "/pokedex-angular/styles.4bf7a07ff0f2aeab.css"
       ],
       "patterns": []
     },
@@ -745,11 +745,12 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/pokedex-angular/267.220d842c5c3b296e.js": "9b45dc4ec68856d041281fa84af36dfcf1695f0e",
-    "/pokedex-angular/354.d95e5220f67ab3e6.js": "bbc3dd116edb03f25f8806f30c991a837e516db7",
-    "/pokedex-angular/626.89e7deb032c64e78.js": "20a3c03e2393dcb1ffd6f91cd3ba29bd6ab69347",
-    "/pokedex-angular/710.4e54430940e7fd88.js": "a60adabcc875bb3416a81997909262ee9ef3f3c9",
-    "/pokedex-angular/737.d01da50223341e52.js": "33a6e8c7875346a2591de770a3004e97d39b6caa",
+    "/pokedex-angular/223.371ab7b32c77dc9f.js": "dbdb75a5a30721bcb704b93f9cfb5e7c1071b330",
+    "/pokedex-angular/450.e2f5a710e20a379f.js": "4fbb801c58aaec56e78dcbd7bfb640f38916ce08",
+    "/pokedex-angular/575.3c3a9948d2359777.js": "e4975bd7c4ec696a267166843c4c18ab7b85d4f1",
+    "/pokedex-angular/785.e2a3c2bd0d7fc875.js": "bf7ca8e5dca81fa3b89ad140e475d5a7cc555b89",
+    "/pokedex-angular/860.c8d5a1682c2f3c8d.js": "3ad2eec43122ce70f442e9aff0c47b34d3aed050",
+    "/pokedex-angular/959.c5a6a647f22e5018.js": "40066fca51f1a2f74d73aa82573ac095a7da719b",
     "/pokedex-angular/arrow-black-empty.7803183bb8f343c8.png": "c0af680d94bcdf08b87964e3ad556a015212b275",
     "/pokedex-angular/arrow-black-filled.65c12e508f65de34.png": "881b933458f1c6004813d683c406b98fa672b6da",
     "/pokedex-angular/arrow-white-filled.17bea43ad9df854e.png": "13bf7bac41fd7841d595fa155751ff72de8dcb6e",
@@ -1451,17 +1452,16 @@
     "/pokedex-angular/assets/images/red-walking-old.gif": "89622efa3d96d17ddeacc66c9b1df56a0b2005cb",
     "/pokedex-angular/assets/images/rocket.png": "97d85d7e9d9fe903cf479b661ca37550b1002341",
     "/pokedex-angular/assets/images/sleeping-pikachu.gif": "c33c19a84acab53bbf183b7cf02a2a834bd71ff2",
-    "/pokedex-angular/common.68ad20a4dacd0483.js": "968cc4891aa4e9ac1581c19e3fff220a02d7d870",
     "/pokedex-angular/favicon.ico": "5511513b1cde8d34a50f5152870c324a8f9ff4c2",
     "/pokedex-angular/frame-large.dec05198f588ed83.png": "15622f88c389d47130b62d5ec2751ef97835a311",
-    "/pokedex-angular/index.html": "1d5db5606fae710bae741f37241a1e21979e6d81",
-    "/pokedex-angular/main.865a961bccf563fa.js": "1462329d566b83caae8de808b266705e6af7b339",
+    "/pokedex-angular/index.html": "0a84249e09d45fe285e98c395026a09be481c466",
+    "/pokedex-angular/main.c95c065589450a02.js": "14bfce3d6f98f4772399df8f81b5a1a0ddb36936",
     "/pokedex-angular/manifest.webmanifest": "fb7cb8ef1d6000c4f0002f3c4507e0f11f79e28b",
     "/pokedex-angular/og-image.jpg": "595ac463097f4a4117684f1a554e283f7fee14bd",
     "/pokedex-angular/pokemon-gb.d3cbb610bbe0be9f.ttf": "3d4b93796acf4934f1bdcf08414d0d9238c4bae6",
-    "/pokedex-angular/polyfills.fa6f98b6deae32c5.js": "7e041c36f4e5db1f974f093f0745a872df5133c7",
-    "/pokedex-angular/runtime.b3f58e3684856b2b.js": "1f3084b2d83c84480a56394c9a0a39194a82ef19",
-    "/pokedex-angular/styles.4a4e4a0c801708ed.css": "bb6866785d0ecd102861d607386f1d8e8f254d32"
+    "/pokedex-angular/polyfills.f94d7e30625da93a.js": "8eda7fdf16759bf0decab9aee79e8915990186cb",
+    "/pokedex-angular/runtime.82dd082319848f00.js": "a58edff152181de6c7f2e2b6c35b975105619fe8",
+    "/pokedex-angular/styles.4bf7a07ff0f2aeab.css": "758c99a710990b0f178dd66b6aa26bb20101ae7a"
   },
   "navigationUrls": [
     {
