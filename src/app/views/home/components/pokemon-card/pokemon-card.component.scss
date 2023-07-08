@@ -18,7 +18,7 @@
 
     .image {
       background-repeat: no-repeat;
-      transition: scale $fast;
+      transition: $fast;
       transform-origin: bottom;
     }
 
@@ -31,6 +31,7 @@
       img {
         position: relative;
         z-index: 1;
+        transition: $fast;
       }
     }
   }
@@ -46,8 +47,9 @@
   }
 
   &:hover {
-    position: relative;
-    z-index: 1;
-    transform: scale(1.3);
+    img,
+    .image {
+      transform: scale(1.25);
+    }
   }
 }

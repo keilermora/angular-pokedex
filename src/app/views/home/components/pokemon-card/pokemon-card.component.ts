@@ -62,16 +62,17 @@ export class PokemonCardComponent implements OnChanges {
     this.width = width;
   }
 
-  ngOnChanges(): void {
+  ngOnChanges() {
     this.setStyles();
   }
 
   private setStyles() {
     const primaryColor = this.types[0].color?.light;
     const secondaryColor = this.types[1]?.color?.light || '#ffffff';
+    const opacity = 80;
 
     this.backgroundStyles = {
-      background: `linear-gradient(45deg, ${secondaryColor}, ${primaryColor}, ${secondaryColor})`,
+      background: `linear-gradient(45deg, ${secondaryColor}${opacity}, ${primaryColor}${opacity}, ${secondaryColor}${opacity})`,
     };
   }
 }

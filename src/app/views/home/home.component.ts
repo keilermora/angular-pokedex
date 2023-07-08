@@ -61,7 +61,7 @@ export class HomeComponent implements OnInit {
       });
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     // Set since and until years
     const pokedexVersions = this.pokedexVersionService.getAllPokedexVersions();
     this.since = pokedexVersions[0].releasedYear;

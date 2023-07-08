@@ -14,7 +14,7 @@ import { DialogBoxComponent } from 'src/app/shared/components/dialog-box/dialog-
 export class InternalServerErrorComponent {
   private router = inject(Router);
 
-  reload(): void {
+  reload() {
     this.router.navigate(['/']).then(() => {
       window.location.reload();
     });
