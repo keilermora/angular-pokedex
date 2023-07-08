@@ -1,9 +1,9 @@
-import { Component, DestroyRef, OnInit } from '@angular/core';
+import { Component, DestroyRef, OnInit, inject } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { PokemonSpecieModel } from 'src/app/core/services/pokemon-specie/pokemon-specie.model';
 import { PokemonSpecieService } from 'src/app/core/services/pokemon-specie/pokemon-specie.service';
+import { PokemonSpecieModel } from 'src/app/core/services/pokemon-specie/pokemon-specie.model';
 import PokemonModel from 'src/app/core/services/pokemon/pokemon.model';
 import { missingNo } from 'src/app/data/constants/missingno.constant';
 import fadeIn from 'src/app/shared/animations/fadeIn';
@@ -29,15 +29,13 @@ export class PokemonDetailsComponent implements OnInit {
   pokemon = {} as PokemonModel;
   pokemonSpecie = {} as PokemonSpecieModel;
 
-  busy = true;
+  isBusy = true;
   error = false;
 
-  constructor(
-    private destroyRef: DestroyRef,
-    private pokemonSpecieService: PokemonSpecieService,
-    private route: ActivatedRoute,
-    private translate: TranslateService
-  ) {}
+  private destroyRef = inject(DestroyRef);
+  private pokemonSpecieService = inject(PokemonSpecieService);
+  private route = inject(ActivatedRoute);
+  private translate = inject(TranslateService);
 
   ngOnInit() {
     let pokemonId;
@@ -53,7 +51,7 @@ export class PokemonDetailsComponent implements OnInit {
   }
 
   getPokemonSpecie(pokemonId: number) {
-    this.busy = true;
+    this.isBusy = true;
     this.pokemonSpecieService
       .getPokemonSpecieByPokemonId(pokemonId)
       .pipe(takeUntilDestroyed(this.destroyRef))
@@ -67,7 +65,7 @@ export class PokemonDetailsComponent implements OnInit {
         },
       })
       .add(() => {
-        this.busy = false;
+        this.isBusy = false;
       });
   }
 }

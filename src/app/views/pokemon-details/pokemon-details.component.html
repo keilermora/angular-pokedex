@@ -1,20 +1,20 @@
 <section class="pokemon-details">
   <div class="pokemon-details__breadcrumb">
-    <app-breadcrumb [busy]="busy" [pokemonSpecie]="pokemonSpecie"></app-breadcrumb>
+    <app-breadcrumb [isBusy]="isBusy" [pokemonSpecie]="pokemonSpecie" />
   </div>
 
   <!-- Profile -->
   <div class="pokemon-details__artwork">
-    <app-pokemon-profile [busy]="busy" [pokemonSpecie]="pokemonSpecie"></app-pokemon-profile>
+    <app-pokemon-profile [isBusy]="isBusy" [pokemonSpecie]="pokemonSpecie" />
   </div>
 
   <!-- Attributes -->
   <div class="pokemon-details__attributes">
-    <app-battle-stats [busy]="busy" [pokemonSpecie]="pokemonSpecie"></app-battle-stats>
+    <app-battle-stats [isBusy]="isBusy" [pokemonSpecie]="pokemonSpecie" />
   </div>
 
   <!-- More details -->
   <div class="pokemon-details__description">
-    <app-pokedex-entries [busy]="busy" [pokemonSpecie]="pokemonSpecie"></app-pokedex-entries>
+    <app-pokedex-entries [isBusy]="isBusy" [pokemonSpecie]="pokemonSpecie" />
   </div>
 </section>

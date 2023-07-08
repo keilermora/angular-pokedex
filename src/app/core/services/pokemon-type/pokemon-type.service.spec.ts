@@ -37,7 +37,7 @@ describe('PokemonTypeService', () => {
 
     spyOn(localStorage, 'getItem').and.callFake(() => POKEMON_TYPES_VALUE_MOCK);
 
-    const newServiceInstance = new PokemonTypeService(apollo);
+    const newServiceInstance = TestBed.runInInjectionContext(() => new PokemonTypeService());
     newServiceInstance.getAllPokemonTypes().subscribe((pokemonTypes) => {
       expect(pokemonTypes.length).toBe(1);
     });

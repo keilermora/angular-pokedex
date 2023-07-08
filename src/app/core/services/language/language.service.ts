@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment';
 import { LanguageModel, LanguagesModel } from './languages.model';
@@ -20,7 +20,9 @@ export class LanguageService {
 
   private currentLanguage: LanguageModel;
 
-  constructor(private translateService: TranslateService) {
+  private translateService = inject(TranslateService);
+
+  constructor() {
     const defaultLanguage = localStorage.getItem(environment.defaultLanguageKey);
     this.currentLanguage = defaultLanguage ? this.languages[defaultLanguage] : this.languages['en'];
     this.translateService.use(this.currentLanguage.name);

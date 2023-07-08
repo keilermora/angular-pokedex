@@ -1,19 +1,23 @@
-<div class="pokemon-list" *ngIf="_pokedexVersion">
-  <ng-container *ngIf="_busy">
-    <div class="message">{{ 'LOADING_MESSAGE' | translate }}</div>
-  </ng-container>
-  <ng-container *ngIf="!_busy">
+<div class="pokemon-list" *ngIf="pokedexVersion">
+  <!-- Busy state-->
+  <div *ngIf="isBusy" class="message">{{ 'LOADING_MESSAGE' | translate }}</div>
+
+  <ng-container *ngIf="!isBusy">
     <div class="pokemons-container">
-      <ng-container *ngIf="_pokemons.length">
-        <div class="pokemon-card" *ngFor="let pokemon of _pokemons">
-          <app-pokemon-card
-            [pokemon]="pokemon"
-            [pokedexVersion]="_pokedexVersion"
-          ></app-pokemon-card>
+      <!-- Empty state -->
+      <img
+        *ngIf="!pokemons.length"
+        src="./assets/images/sleeping-pikachu.gif"
+        alt=""
+        height="54"
+        width="54"
+      />
+
+      <!-- Pokémon list -->
+      <ng-container *ngIf="pokemons.length">
+        <div class="pokemon-card" *ngFor="let pokemon of pokemons">
+          <app-pokemon-card [pokemon]="pokemon" [pokedexVersion]="pokedexVersion" />
         </div>
-      </ng-container>
-      <ng-container *ngIf="!_pokemons.length">
-        <img src="./assets/images/sleeping-pikachu.gif" alt="" height="54" width="54" />
       </ng-container>
     </div>
   </ng-container>

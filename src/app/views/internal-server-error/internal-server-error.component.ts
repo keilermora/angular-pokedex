@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { QueryParamsHandlingDirective } from '../../shared/directives/query-params-handling.directive';
-import { DialogBoxComponent } from '../../shared/components/dialog-box/dialog-box.component';
+import { QueryParamsHandlingDirective } from 'src/app/shared/directives/query-params-handling/query-params-handling.directive';
+import { DialogBoxComponent } from 'src/app/shared/components/dialog-box/dialog-box.component';
 
 @Component({
   selector: 'app-internal-server-error',
@@ -12,7 +12,7 @@ import { DialogBoxComponent } from '../../shared/components/dialog-box/dialog-bo
   imports: [DialogBoxComponent, QueryParamsHandlingDirective, RouterLink, TranslateModule],
 })
 export class InternalServerErrorComponent {
-  constructor(private router: Router) {}
+  private router = inject(Router);
 
   reload(): void {
     this.router.navigate(['/']).then(() => {

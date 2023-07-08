@@ -5,8 +5,8 @@ import { PokemonNamePipe } from '../../../../shared/pipes/pokemon-name/pokemon-n
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgIf } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { QueryParamsHandlingDirective } from '../../../../shared/directives/query-params-handling.directive';
-import { HideElementDirective } from '../../../../shared/directives/hide-element.directive';
+import { QueryParamsHandlingDirective } from '../../../../shared/directives/query-params-handling/query-params-handling.directive';
+import { HideElementDirective } from 'src/app/shared/directives/hide-element/hide-element.directive';
 
 @Component({
   selector: 'app-paginator',
@@ -26,7 +26,6 @@ export class PaginatorComponent {
   iconLeft = faArrowLeft;
   iconRight = faArrowRight;
 
-  @Input({ required: true }) busy: boolean = true;
-
+  @Input({ required: true }) isBusy: boolean = true;
   @Input({ required: true }) pokemonSpecie: PokemonSpecieModel = {} as PokemonSpecieModel;
 }

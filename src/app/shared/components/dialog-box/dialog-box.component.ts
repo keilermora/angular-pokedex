@@ -1,5 +1,5 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgClass, NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-dialog-box',
@@ -7,12 +7,10 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./dialog-box.component.scss'],
   encapsulation: ViewEncapsulation.None,
   standalone: true,
-  imports: [CommonModule],
+  imports: [NgClass, NgStyle],
 })
 export class DialogBoxComponent {
   @Input() size: 'small' | 'large' = 'small';
   @Input() hoverable = false;
   @Input() backgroundStyles: any = {};
-
-  constructor() {}
 }

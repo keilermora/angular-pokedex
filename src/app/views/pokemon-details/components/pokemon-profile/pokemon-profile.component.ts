@@ -1,8 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { NgIf } from '@angular/common';
 import { PokemonSpecieModel } from 'src/app/core/services/pokemon-specie/pokemon-specie.model';
 import { PaginatorComponent } from '../paginator/paginator.component';
-import { NgIf } from '@angular/common';
-import { DialogBoxComponent } from '../../../../shared/components/dialog-box/dialog-box.component';
+import { DialogBoxComponent } from 'src/app/shared/components/dialog-box/dialog-box.component';
 
 @Component({
   selector: 'app-pokemon-profile',
@@ -12,7 +12,6 @@ import { DialogBoxComponent } from '../../../../shared/components/dialog-box/dia
   imports: [DialogBoxComponent, NgIf, PaginatorComponent],
 })
 export class PokemonProfileComponent {
-  @Input({ required: true }) busy: boolean = true;
-
+  @Input({ required: true }) isBusy: boolean = true;
   @Input({ required: true }) pokemonSpecie!: PokemonSpecieModel;
 }

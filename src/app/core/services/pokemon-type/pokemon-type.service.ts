@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import { map, Observable, of, tap } from 'rxjs';
 import PokemonTypeMapper from './pokemon-type.mapper';
@@ -15,7 +15,9 @@ export class PokemonTypeService {
   private pokemonTypes$!: Observable<PokemonTypeModel[]>;
   private fetchingPokemonTypes = false;
 
-  constructor(private apollo: Apollo) {
+  private apollo = inject(Apollo);
+
+  constructor() {
     const pokemonTypes = localStorage.getItem(environment.pokemonTypesKey);
     this.pokemonTypes = pokemonTypes ? JSON.parse(pokemonTypes) : [];
   }

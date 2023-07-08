@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
@@ -21,8 +21,8 @@ import { DialogBoxComponent } from '../../shared/components/dialog-box/dialog-bo
   standalone: true,
   imports: [DialogBoxComponent, PokemonListComponent, StatusBarComponent, SidebarComponent],
 })
-export class HomeComponent {
-  busy = true;
+export class HomeComponent implements OnInit {
+  isBusy = true;
   filter = {} as FilterModel;
   pokedexVersion = {} as PokedexVersionModel;
   pokemons: PokemonModel[] = [];
@@ -31,17 +31,16 @@ export class HomeComponent {
   since = 0;
   until = 0;
 
-  constructor(
-    private filterService: FilterService,
-    private pokedexVersionService: PokedexVersionService,
-    private pokemonService: PokemonService
-  ) {
+  private filterService = inject(FilterService);
+  private pokedexVersionService = inject(PokedexVersionService);
+  private pokemonService = inject(PokemonService);
+
+  constructor() {
     this.filterService
       .getFilter()
       .pipe(
         takeUntilDestroyed(),
         switchMap((filter: FilterModel) => {
-          this.busy = true;
           this.filter = filter;
           return of(this.pokedexVersionService.getPokedexVersionById(filter.pokedexVersionId));
         }),
@@ -58,9 +57,12 @@ export class HomeComponent {
       )
       .subscribe((pokemons: PokemonModel[]) => {
         this.pokemons = pokemons;
-        this.busy = false;
+        this.isBusy = false;
       });
+  }
 
+  ngOnInit(): void {
+    // Set since and until years
     const pokedexVersions = this.pokedexVersionService.getAllPokedexVersions();
     this.since = pokedexVersions[0].releasedYear;
     this.until = pokedexVersions[pokedexVersions.length - 1].releasedYear;

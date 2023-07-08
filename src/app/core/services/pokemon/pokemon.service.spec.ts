@@ -49,7 +49,7 @@ describe('PokemonService', () => {
 
     spyOn(localStorage, 'getItem').and.callFake(() => POKEMONS_VALUE_MOCK);
 
-    const newServiceInstance = new PokemonService(apollo);
+    const newServiceInstance = TestBed.runInInjectionContext(() => new PokemonService());
     newServiceInstance.getAllPokemonsByLimit(1).subscribe((pokemonTypes) => {
       expect(pokemonTypes.length).toBe(1);
     });

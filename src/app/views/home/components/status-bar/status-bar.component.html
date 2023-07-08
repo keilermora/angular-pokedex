@@ -1,9 +1,9 @@
 <div class="status-bar">
-  <div class="message" [ngPlural]="_pokemons.length">
+  <div class="message" [ngPlural]="pokemons.length">
     <ng-template ngPluralCase="=0">{{ 'NO_RESULTS' | translate }}</ng-template>
     <ng-template ngPluralCase="=1">1 {{ 'RESULT' | translate }}</ng-template>
     <ng-template ngPluralCase="other"
-      >{{ _pokemons.length }} {{ 'RESULTS' | translate }}</ng-template
+      >{{ pokemons.length }} {{ 'RESULTS' | translate }}</ng-template
     >
   </div>
   <div class="sort-by">

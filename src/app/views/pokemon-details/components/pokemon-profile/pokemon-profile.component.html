@@ -1,15 +1,9 @@
 <app-dialog-box size="large">
   <div class="pokemon-artwork">
     <div class="pokemon-artwork__image-placeholder">
-      <ng-container *ngIf="!busy">
-        <img
-          *ngIf="!busy"
-          [src]="pokemonSpecie.sprite"
-          [alt]="pokemonSpecie.name"
-          width="240"
-          height="240"
-        />
-        <app-paginator [busy]="busy" [pokemonSpecie]="pokemonSpecie"></app-paginator>
+      <ng-container *ngIf="!isBusy">
+        <img [src]="pokemonSpecie.sprite" [alt]="pokemonSpecie.name" width="240" height="240" />
+        <app-paginator [isBusy]="isBusy" [pokemonSpecie]="pokemonSpecie" />
       </ng-container>
     </div>
   </div>

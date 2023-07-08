@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { Apollo } from 'apollo-angular';
 import { PokemonSpecieModel } from './pokemon-specie.model';
@@ -11,7 +11,8 @@ import { LanguageService } from '../language/language.service';
   providedIn: 'root',
 })
 export class PokemonSpecieService {
-  constructor(private apollo: Apollo, private languageService: LanguageService) {}
+  private apollo = inject(Apollo);
+  private languageService = inject(LanguageService);
 
   /**
    * Get a Pokémon specie by Pokémon Id

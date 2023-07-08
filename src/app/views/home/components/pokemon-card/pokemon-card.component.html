@@ -1,5 +1,5 @@
 <div class="pokemon-card">
-  <app-dialog-box size="small" [hoverable]="true" [backgroundStyles]="background">
+  <app-dialog-box size="small" [hoverable]="true" [backgroundStyles]="backgroundStyles">
     <ng-container *ngIf="id">
       <a class="pokemon-card__content" routerLink="pokemon/{{ id }}">
         <!-- Pokémon number -->
@@ -9,7 +9,7 @@
         <div
           *ngIf="!animated"
           class="image"
-          [ngStyle]="id | pokemonSpritePosition: _pokedexVersion"
+          [ngStyle]="id | pokemonSpritePosition : _pokedexVersion"
         ></div>
 
         <!-- Animated sprite -->
@@ -21,7 +21,7 @@
             'height.px': height
           }"
         >
-          <img [src]="id | pokemonImageUrl: _pokedexVersion" appLazyImg [alt]="name" />
+          <img [src]="id | pokemonImageUrl : _pokedexVersion" appLazyImg [alt]="name" />
         </div>
 
         <!-- Pokémon name -->

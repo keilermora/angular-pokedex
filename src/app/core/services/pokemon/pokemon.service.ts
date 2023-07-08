@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import { map, Observable, of, tap } from 'rxjs';
 import getPokemonsQuery from '../../../data/graphql/get-pokemons.graphql';
@@ -15,7 +15,9 @@ export class PokemonService {
   private pokemons$!: Observable<PokemonModel[]>;
   private fetchingPokemons = false;
 
-  constructor(private apollo: Apollo) {
+  private apollo = inject(Apollo);
+
+  constructor() {
     const pokemons = localStorage.getItem(environment.pokemonsKey);
     this.pokemons = pokemons ? JSON.parse(pokemons) : [];
   }

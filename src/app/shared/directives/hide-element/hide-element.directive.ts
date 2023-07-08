@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input, OnChanges } from '@angular/core';
+import { Directive, ElementRef, Input, OnChanges, inject } from '@angular/core';
 
 @Directive({
   selector: '[appHideElement]',
@@ -7,7 +7,7 @@ import { Directive, ElementRef, Input, OnChanges } from '@angular/core';
 export class HideElementDirective implements OnChanges {
   @Input() appHideElement: boolean = false;
 
-  constructor(private el: ElementRef) {}
+  private el = inject(ElementRef);
 
   ngOnChanges() {
     this.el.nativeElement.style.visibility = this.appHideElement ? 'hidden' : 'visible';

@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { CommonModule } from '@angular/common';
+import { NgPlural, NgPluralCase } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import FilterModel from 'src/app/core/services/filter/filter.model';
@@ -13,7 +13,7 @@ import PokemonSortByEnum from 'src/app/data/enums/pokemon-sort-by.enum';
   templateUrl: './status-bar.component.html',
   styleUrls: ['./status-bar.component.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, TranslateModule],
+  imports: [FormsModule, NgPlural, NgPluralCase, TranslateModule],
 })
 export class StatusBarComponent {
   pokemonSortByNameASC = PokemonSortByEnum.NAME_ASC;
@@ -28,13 +28,11 @@ export class StatusBarComponent {
 
   currentPokemonSortBy!: PokemonSortByEnum;
 
-  _pokemons: PokemonModel[] = [];
+  @Input({ required: true }) pokemons: PokemonModel[] = [];
 
-  @Input({ required: true }) set pokemons(pokemons: PokemonModel[]) {
-    this._pokemons = pokemons;
-  }
+  private filterService = inject(FilterService);
 
-  constructor(private filterService: FilterService) {
+  constructor() {
     this.filterService
       .getFilter()
       .pipe(takeUntilDestroyed())

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { Observable, ReplaySubject, Subject } from 'rxjs';
 import PokemonSortByEnum from 'src/app/data/enums/pokemon-sort-by.enum';
@@ -13,7 +13,10 @@ export class FilterService {
   private filter = {} as FilterModel;
   private filterSubject: Subject<FilterModel>;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router) {
+  private activatedRoute = inject(ActivatedRoute);
+  private router = inject(Router);
+
+  constructor() {
     this.filterSubject = new ReplaySubject<FilterModel>(1);
 
     this.activatedRoute.queryParams.subscribe(
@@ -80,9 +83,9 @@ export class FilterService {
   sortPokemons(pokemons: PokemonModel[]): PokemonModel[] {
     const { pokemonSortBy } = this.filter;
 
+    // The Pokémon list is sorted by number by default
     let pokemonResults = [...pokemons];
 
-    // La lista de Pokémon viene ordenada por números por defecto
     if (pokemonSortBy === PokemonSortByEnum.NAME_ASC) {
       pokemonResults.sort((a, b) => (a.name > b.name ? 1 : -1));
     } else if (pokemonSortBy === PokemonSortByEnum.WEIGHT_ASC) {
@@ -102,17 +105,10 @@ export class FilterService {
     return pokemonResults;
   }
 
-  /**
-   * Actualiza el observable del filtro
-   */
   private refresh() {
     this.filterSubject.next(this.filter);
   }
 
-  /**
-   * Actualizar los query params.
-   * @param {NavigationExtras} queryParams - Parámetros de consulta.
-   */
   private updateQueryParams(queryParams: NavigationExtras) {
     this.router.navigate([], {
       queryParams,

@@ -2,12 +2,12 @@
   <div class="pokedex-entries">
     <!-- Title -->
     <span class="pokedex-entries__title">
-      <span *ngIf="busy">{{ 'LOADING_MESSAGE' | translate }}</span>
-      <span *ngIf="!busy">{{ 'POKEDEX_ENTRIES' | translate }}</span>
+      <span *ngIf="isBusy">{{ 'LOADING_MESSAGE' | translate }}</span>
+      <span *ngIf="!isBusy">{{ 'POKEDEX_ENTRIES' | translate }}</span>
     </span>
 
     <div class="pokedex-entries__entries">
-      <ng-container *ngIf="!busy && pokemonSpecie">
+      <ng-container *ngIf="!isBusy && pokemonSpecie">
         <ng-container *ngFor="let flavorTextEntry of pokemonSpecie.flavorTexts; let odd = odd">
           <!-- Version name(s) -->
           <div

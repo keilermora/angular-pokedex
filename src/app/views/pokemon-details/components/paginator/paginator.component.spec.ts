@@ -4,7 +4,7 @@ import { PaginatorComponent } from './paginator.component';
 import { PokemonNamePipe } from 'src/app/shared/pipes/pokemon-name/pokemon-name.pipe';
 import { FontAwesomeTestingModule } from '@fortawesome/angular-fontawesome/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { HideElementDirective } from 'src/app/shared/directives/hide-element.directive';
+import { HideElementDirective } from 'src/app/shared/directives/hide-element/hide-element.directive';
 
 describe('PaginatorComponent', () => {
   let component: PaginatorComponent;

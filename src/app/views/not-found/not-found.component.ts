@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterLink } from '@angular/router';
-import { QueryParamsHandlingDirective } from '../../shared/directives/query-params-handling.directive';
-import { DialogBoxComponent } from '../../shared/components/dialog-box/dialog-box.component';
+import { QueryParamsHandlingDirective } from 'src/app/shared/directives/query-params-handling/query-params-handling.directive';
+import { DialogBoxComponent } from 'src/app/shared/components/dialog-box/dialog-box.component';
 
 @Component({
   selector: 'app-not-found',

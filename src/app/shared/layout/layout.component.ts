@@ -10,6 +10,4 @@ import { NavbarComponent } from '../components/navbar/navbar.component';
   standalone: true,
   imports: [FooterComponent, NavbarComponent, RouterOutlet],
 })
-export class LayoutComponent {
-  constructor() {}
-}
+export class LayoutComponent {}
