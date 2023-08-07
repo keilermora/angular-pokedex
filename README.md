@@ -1,18 +1,18 @@
-# Pokédex Angular
+# Pokédex
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
-[![codecov](https://codecov.io/gh/keilermora/pokedex-angular/branch/master/graph/badge.svg?token=9E0D28IOFT)](https://codecov.io/gh/keilermora/pokedex-angular)
+[![codecov](https://codecov.io/gh/keilermora/angular-pokedex/branch/master/graph/badge.svg?token=9E0D28IOFT)](https://codecov.io/gh/keilermora/angular-pokedex)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-[![pages-build-deployment](https://github.com/keilermora/pokedex-angular/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/keilermora/pokedex-angular/actions/workflows/pages/pages-build-deployment)
-[![Run test-coverage](https://github.com/keilermora/pokedex-angular/actions/workflows/pipelines.yml/badge.svg)](https://github.com/keilermora/pokedex-angular/actions/workflows/pipelines.yml)
+[![pages-build-deployment](https://github.com/keilermora/angular-pokedex/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/keilermora/angular-pokedex/actions/workflows/pages/pages-build-deployment)
+[![Run test-coverage](https://github.com/keilermora/angular-pokedex/actions/workflows/pipelines.yml/badge.svg)](https://github.com/keilermora/angular-pokedex/actions/workflows/pipelines.yml)
 
-[https://keilermora.github.io/pokedex-angular/](https://keilermora.github.io/pokedex-angular/)
+[https://keilermora.github.io/angular-pokedex/](https://keilermora.github.io/angular-pokedex/)
 
 The app shows a list of Pokémon from first 3 generations.
 
 The image that represents a Pokémon in the list shows the variations that they had through the first versions, from the Green version (1996) to the Emerald version (2005).
 
-The project was developed using [Angular](https://angular.io/) to create the UI, in communication with the GraphQL server from [PokéAPI](https://pokeapi.co/).
+The project was developed using [Angular](https://angular.io/) to create the UI, and the data is provided by the GraphQL server from [PokéAPI](https://pokeapi.co/).
 
 ## Minimum requirements
 

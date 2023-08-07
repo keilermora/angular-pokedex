@@ -11,7 +11,7 @@ export const environment = {
 
   // Social media
   keilerLinkedin: 'https://www.linkedin.com/in/keilermora/',
-  pokedexGithub: 'https://github.com/keilermora/pokedex-angular',
+  pokedexGithub: 'https://github.com/keilermora/angular-pokedex',
 
   // Images folder url
   imagesPath: '/assets/images',

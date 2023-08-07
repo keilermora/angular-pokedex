@@ -1,6 +1,7 @@
 {
-  "name": "pokedex-angular",
+  "name": "angular-pokedex",
   "version": "0.0.0",
+  "homepage": "https://github.com/keilermora/angular-pokedex#readme",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,8 +10,8 @@
     "test": "ng test --code-coverage --browsers=Chrome",
     "test:cov": "ng test --code-coverage --no-watch --no-progress --browsers=ChromeHeadlessCI",
     "lint": "ng lint",
-    "predeploy": "ng build --configuration production --aot --base-href=/pokedex-angular/",
-    "deploy": "gh-pages -d dist/pokedex-angular",
+    "predeploy": "ng build --configuration production --aot --base-href=/angular-pokedex/",
+    "deploy": "gh-pages -d dist/angular-pokedex",
     "prepare": "husky install"
   },
   "private": true,
