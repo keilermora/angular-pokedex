@@ -1,9 +1,9 @@
 <section class="internal-server-error">
-  <h1 class="internal-server-error__title">500</h1>
-  <h2 class="internal-server-error__subtitle">{{ 'INTERNAL_SERVER_ERROR' | translate }}</h2>
+  <h1>500</h1>
+  <h2>{{ 'INTERNAL_SERVER_ERROR' | translate }}</h2>
   <app-dialog-box size="large">
-    <p class="internal-server-error__description" [innerHTML]="'500_MESSAGE' | translate"></p>
-    <div class="internal-server-error__battle-container">
+    <p [innerHTML]="'500_MESSAGE' | translate"></p>
+    <div class="internal-server-error__img-container">
       <img ngSrc="./assets/images/battle.gif" alt="" height="288" width="320" priority />
     </div>
     <a class="button button--black" [routerLink]="'/'">{{ 'TRY_AGAIN' | translate }}</a>

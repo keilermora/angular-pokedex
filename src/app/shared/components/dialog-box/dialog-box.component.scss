@@ -8,28 +8,16 @@
   border-image: url(../../../../assets/images/frame-large.png) 42 round;
   border-style: solid;
 
-  &.dialog-box--large {
+  &--large {
     padding: 1em;
     border-width: 21px;
   }
 
-  &.dialog-box--small {
+  &--small {
     border-width: 7px;
   }
 
-  &.dialog-box--hoverable:hover {
-    cursor: pointer;
-  }
-
   &--hoverable:hover {
-    border-color: $crimson;
-
-    &:before {
-      border-color: $mauvelous;
-    }
-
-    &:after {
-      border-color: $cherub;
-    }
+    cursor: pointer;
   }
 }

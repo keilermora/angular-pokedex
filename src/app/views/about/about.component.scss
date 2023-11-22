@@ -10,17 +10,17 @@
   margin: 0 auto;
   padding: 2em 0;
 
-  &__title {
+  h1 {
     margin-top: 0;
   }
 
-  &__description {
+  p {
     margin: 0;
     padding-bottom: 2em;
     font-family: $roboto;
   }
 
-  &__professor-img {
+  &__img-container {
     text-align: center;
 
     img {

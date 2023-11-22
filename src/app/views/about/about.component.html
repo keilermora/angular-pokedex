@@ -1,8 +1,7 @@
 <section class="about">
   <app-dialog-box size="large">
-    <h1 class="about__title">POKÉDEX</h1>
+    <h1>POKÉDEX</h1>
     <p
-      class="about__description"
       [innerHTML]="
         'ABOUT_MESSAGE'
           | translate
@@ -15,7 +14,7 @@
       "
     ></p>
 
-    <div class="about__professor-img">
+    <div class="about__img-container">
       <img ngSrc="./assets/images/professor.png" alt="" width="224" height="224" priority />
     </div>
 
