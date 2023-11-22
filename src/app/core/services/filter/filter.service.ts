@@ -58,26 +58,22 @@ export class FilterService {
   setPokedexVersionId(pokedexVersionId: number) {
     this.filter.pokedexVersionId = pokedexVersionId;
     this.updateQueryParams({ version: pokedexVersionId } as NavigationExtras);
-    this.refresh();
   }
 
   setPokemonName(pokemonName: string) {
     const name = pokemonName ? pokemonName.toLowerCase().trim() : '';
     this.filter.pokemonName = name;
     this.updateQueryParams({ pokemon: name || null } as NavigationExtras);
-    this.refresh();
   }
 
   setPokemonTypeId(pokemonTypeId: string) {
     this.filter.pokemonTypeId = parseInt(pokemonTypeId);
     this.updateQueryParams({ type: pokemonTypeId } as NavigationExtras);
-    this.refresh();
   }
 
   setPokemonSortBy(sortBy: string) {
     this.updateQueryParams({ sortBy: sortBy } as NavigationExtras);
     this.filter.pokemonSortBy = sortBy;
-    this.refresh();
   }
 
   sortPokemons(pokemons: PokemonModel[]): PokemonModel[] {
