@@ -95,7 +95,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-pokedex:build"
+            "buildTarget": "angular-pokedex:build"
           }
         },
         "test": {
