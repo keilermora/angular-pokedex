@@ -84,10 +84,10 @@
           "builder": "@angular-builders/custom-webpack:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-pokedex:build:production"
+              "buildTarget": "angular-pokedex:build:production"
             },
             "development": {
-              "browserTarget": "angular-pokedex:build:development"
+              "buildTarget": "angular-pokedex:build:development"
             }
           },
           "defaultConfiguration": "development"
