@@ -1,0 +1,12 @@
+{
+  "translationFiles": [
+    {
+      "lang": "es",
+      "uri": "dist/angular-pokedex/assets/i18n/es.json"
+    },
+    {
+      "lang": "en",
+      "uri": "dist/angular-pokedex/assets/i18n/en.json"
+    }
+  ]
+}
