@@ -21,7 +21,13 @@
             'height.px': height
           }"
         >
-          <img [src]="id | pokemonImageUrl : _pokedexVersion" appLazyImg [alt]="name" />
+          <img
+            [ngSrc]="id | pokemonImageUrl : _pokedexVersion"
+            appLazyImg
+            [alt]="name"
+            [width]="width"
+            [height]="height"
+          />
         </div>
 
         <!-- Pokémon name -->

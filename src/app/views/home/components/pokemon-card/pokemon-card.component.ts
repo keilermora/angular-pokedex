@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges } from '@angular/core';
-import { NgIf, NgStyle } from '@angular/common';
+import { NgIf, NgOptimizedImage, NgStyle } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import PokedexVersionModel from 'src/app/core/services/pokedex-version/pokedex-version.model';
 import PokemonTypeModel from 'src/app/core/services/pokemon-type/pokemon-type.model';
@@ -21,6 +21,7 @@ import { DialogBoxComponent } from 'src/app/shared/components/dialog-box/dialog-
     DialogBoxComponent,
     LazyImgDirective,
     NgIf,
+    NgOptimizedImage,
     NgStyle,
     PokemonImageUrlPipe,
     PokemonNamePipe,

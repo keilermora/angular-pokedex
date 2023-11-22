@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { DialogBoxComponent } from 'src/app/shared/components/dialog-box/dialog-box.component';
@@ -10,7 +11,13 @@ import { environment } from 'src/environments/environment';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
   standalone: true,
-  imports: [DialogBoxComponent, QueryParamsHandlingDirective, RouterLink, TranslateModule],
+  imports: [
+    DialogBoxComponent,
+    NgOptimizedImage,
+    QueryParamsHandlingDirective,
+    RouterLink,
+    TranslateModule,
+  ],
 })
 export class AboutComponent {
   homeAngular = environment.homeAngular;

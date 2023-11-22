@@ -1,5 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { NgOptimizedImage } from '@angular/common';
 import { of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import FilterModel from 'src/app/core/services/filter/filter.model';
@@ -19,7 +20,13 @@ import { DialogBoxComponent } from '../../shared/components/dialog-box/dialog-bo
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   standalone: true,
-  imports: [DialogBoxComponent, PokemonListComponent, StatusBarComponent, SidebarComponent],
+  imports: [
+    DialogBoxComponent,
+    NgOptimizedImage,
+    PokemonListComponent,
+    StatusBarComponent,
+    SidebarComponent,
+  ],
 })
 export class HomeComponent implements OnInit {
   isBusy = true;
