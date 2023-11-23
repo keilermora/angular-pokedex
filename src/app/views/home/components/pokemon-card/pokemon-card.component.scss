@@ -15,41 +15,48 @@
     cursor: pointer;
     padding: 4px;
     max-height: 115px;
+  }
 
-    .image {
+  .pokemon {
+    &__image {
       background-repeat: no-repeat;
+      image-rendering: pixelated;
       transition: $fast;
       transform-origin: bottom;
     }
 
-    .image-animated {
+    &__image-animated {
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: scale $fast;
+      transition: $fast;
+      max-height: 4rem;
 
       img {
         position: relative;
         z-index: 1;
+        image-rendering: pixelated;
         transition: $fast;
       }
     }
-  }
 
-  .number {
-    font-size: $font-size-small;
-    display: block;
-  }
+    &__number {
+      display: block;
+      font-size: $font-size-small;
+    }
 
-  .name {
-    text-transform: uppercase;
-    font-size: $font-size-small;
+    &__name {
+      font-size: $font-size-small;
+      text-transform: uppercase;
+    }
   }
 
   &:hover {
-    img,
-    .image {
-      transform: scale(1.25);
+    .pokemon {
+      img,
+      &__image {
+        transform: scale(2);
+      }
     }
   }
 }

@@ -3,7 +3,7 @@ import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { PokemonSpecieModel } from 'src/app/core/services/pokemon-specie/pokemon-specie.model';
 import { PokemonNamePipe } from '../../../../shared/pipes/pokemon-name/pokemon-name.pipe';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { NgIf } from '@angular/common';
+
 import { RouterLink } from '@angular/router';
 import { QueryParamsHandlingDirective } from '../../../../shared/directives/query-params-handling/query-params-handling.directive';
 import { HideElementDirective } from 'src/app/shared/directives/hide-element/hide-element.directive';
@@ -17,7 +17,6 @@ import { HideElementDirective } from 'src/app/shared/directives/hide-element/hid
     HideElementDirective,
     QueryParamsHandlingDirective,
     RouterLink,
-    NgIf,
     FontAwesomeModule,
     PokemonNamePipe,
   ],

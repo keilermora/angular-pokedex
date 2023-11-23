@@ -1,5 +1,6 @@
 <div class="breadcrumb">
   <a routerLink="/">{{ 'HOME' | translate }}</a
-  >&nbsp;>&nbsp;
-  <span *ngIf="!isBusy">{{ pokemonSpecie.id | pokemonNumber }}</span>
+  >&nbsp;>&nbsp; @if (!isBusy) {
+  <span>{{ pokemonSpecie.id | pokemonNumber }}</span>
+  }
 </div>

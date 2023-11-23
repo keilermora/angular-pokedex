@@ -4,7 +4,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { PokemonWeightPipe } from '../../../../shared/pipes/pokemon-weight/pokemon-weight.pipe';
 import { PokemonHeightPipe } from '../../../../shared/pipes/pokemon-height/pokemon-height.pipe';
 import { I18nKeyPipe } from '../../../../shared/pipes/i18n-key/i18n-key.pipe';
-import { NgIf, NgFor } from '@angular/common';
+
 import { DialogBoxComponent } from '../../../../shared/components/dialog-box/dialog-box.component';
 
 @Component({
@@ -12,15 +12,7 @@ import { DialogBoxComponent } from '../../../../shared/components/dialog-box/dia
   templateUrl: './battle-stats.component.html',
   styleUrls: ['./battle-stats.component.scss'],
   standalone: true,
-  imports: [
-    DialogBoxComponent,
-    NgIf,
-    NgFor,
-    I18nKeyPipe,
-    PokemonHeightPipe,
-    PokemonWeightPipe,
-    TranslateModule,
-  ],
+  imports: [DialogBoxComponent, I18nKeyPipe, PokemonHeightPipe, PokemonWeightPipe, TranslateModule],
 })
 export class BattleStatsComponent {
   @Input({ required: true }) isBusy: boolean = true;

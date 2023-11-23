@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { NgClass, NgForOf, NgIf } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -25,8 +25,6 @@ import { DialogBoxComponent } from 'src/app/shared/components/dialog-box/dialog-
     FormsModule,
     I18nKeyPipe,
     NgClass,
-    NgForOf,
-    NgIf,
     TranslateModule,
   ],
 })

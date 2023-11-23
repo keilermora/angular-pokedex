@@ -2,8 +2,11 @@
   <app-dialog-box size="small">
     <div class="filter">
       <button class="toggle-nav-btn" (click)="showNav = !showNav">
-        <fa-icon *ngIf="showNav" [icon]="iconTimes"></fa-icon>
-        <fa-icon *ngIf="!showNav" [icon]="iconSearch"></fa-icon>
+        @if (showNav) {
+        <fa-icon [icon]="iconTimes"></fa-icon>
+        } @if (!showNav) {
+        <fa-icon [icon]="iconSearch"></fa-icon>
+        }
       </button>
       <div class="form-group">
         <label class="label" for="field-version">{{ 'VERSION' | translate }}:</label>
@@ -13,9 +16,11 @@
           [ngModel]="currentVersionId"
           (ngModelChange)="changeVersion($event)"
         >
-          <option *ngFor="let version of pokedexVersions" [value]="version.id">
+          @for (version of pokedexVersions; track version) {
+          <option [value]="version.id">
             {{ version.name | i18nKey | translate }}
           </option>
+          }
         </select>
       </div>
       <div class="form-group">
@@ -37,9 +42,11 @@
           (ngModelChange)="changePokemonType($event)"
         >
           <option value="0">{{ 'ALL' | translate }}</option>
-          <option *ngFor="let pokemonType of pokemonTypes" [value]="pokemonType.id">
+          @for (pokemonType of pokemonTypes; track pokemonType) {
+          <option [value]="pokemonType.id">
             {{ pokemonType.name | i18nKey | translate }}
           </option>
+          }
         </select>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges } from '@angular/core';
-import { NgIf, NgOptimizedImage, NgStyle } from '@angular/common';
+import { NgOptimizedImage, NgStyle } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import PokedexVersionModel from 'src/app/core/services/pokedex-version/pokedex-version.model';
 import PokemonTypeModel from 'src/app/core/services/pokemon-type/pokemon-type.model';
@@ -20,7 +20,6 @@ import { DialogBoxComponent } from 'src/app/shared/components/dialog-box/dialog-
   imports: [
     DialogBoxComponent,
     LazyImgDirective,
-    NgIf,
     NgOptimizedImage,
     NgStyle,
     PokemonImageUrlPipe,
@@ -32,6 +31,8 @@ import { DialogBoxComponent } from 'src/app/shared/components/dialog-box/dialog-
   ],
 })
 export class PokemonCardComponent implements OnChanges {
+  isBusy = true;
+
   // Pokémon data
   id = 0;
   name = '';
@@ -46,6 +47,9 @@ export class PokemonCardComponent implements OnChanges {
 
   // Card styles
   backgroundStyles = {};
+  private DEFAULT_ANGLE = '45deg';
+  private DEFAULT_OPACITY = 80;
+  private DEFAULT_SECONDARY_COLOR = '#ffffff';
 
   @Input({ required: true }) set pokemon(pokemon: PokemonModel) {
     const { id, name, types } = pokemon;
@@ -64,16 +68,21 @@ export class PokemonCardComponent implements OnChanges {
   }
 
   ngOnChanges() {
+    if (this.isBusy && this.id && this._pokedexVersion?.id) {
+      this.isBusy = false;
+    }
+
     this.setStyles();
   }
 
   private setStyles() {
+    const angle = this.DEFAULT_ANGLE;
     const primaryColor = this.types[0].color?.light;
-    const secondaryColor = this.types[1]?.color?.light || '#ffffff';
-    const opacity = 80;
+    const secondaryColor = this.types[1]?.color?.light || this.DEFAULT_SECONDARY_COLOR;
+    const opacity = this.DEFAULT_OPACITY;
 
     this.backgroundStyles = {
-      background: `linear-gradient(45deg, ${secondaryColor}${opacity}, ${primaryColor}${opacity}, ${secondaryColor}${opacity})`,
+      background: `linear-gradient(${angle}, ${secondaryColor}${opacity}, ${primaryColor}${opacity}, ${secondaryColor}${opacity})`,
     };
   }
 }
